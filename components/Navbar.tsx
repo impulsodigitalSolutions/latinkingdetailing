@@ -54,14 +54,14 @@ export function Navbar() {
   const getServiceIcon = (name: string) => {
     switch (name) {
       case 'ShieldCheck':
-        return <ShieldCheck className="w-4 h-4 text-amber-500" />;
+        return <ShieldCheck className="w-4 h-4 text-red-500" />;
       case 'Shield':
-        return <Shield className="w-4 h-4 text-amber-500" />;
+        return <Shield className="w-4 h-4 text-red-500" />;
       case 'Sparkles':
-        return <Sparkles className="w-4 h-4 text-amber-500" />;
+        return <Sparkles className="w-4 h-4 text-red-500" />;
       case 'Armchair':
       default:
-        return <Armchair className="w-4 h-4 text-amber-500" />;
+        return <Armchair className="w-4 h-4 text-red-500" />;
     }
   };
 
@@ -80,7 +80,7 @@ export function Navbar() {
             {/* Left: Full Official Brand Logo */}
             <Link
               href="/"
-              className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-full py-0.5"
+              className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 rounded-full py-0.5"
               aria-label="Latin King Detailing"
             >
               {/* Dark mode full logo */}
@@ -117,15 +117,15 @@ export function Navbar() {
                   onMouseEnter={() => setServicesDropdownOpen(true)}
                   className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                     servicesDropdownOpen
-                      ? 'text-amber-600 dark:text-amber-400 bg-amber-500/10'
-                      : 'text-zinc-700 dark:text-zinc-200 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
+                      ? 'text-red-600 dark:text-red-500 bg-red-500/10'
+                      : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
                   }`}
                   aria-expanded={servicesDropdownOpen}
                 >
                   <span>Services</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                      servicesDropdownOpen ? 'rotate-180 text-amber-500' : 'text-zinc-400'
+                      servicesDropdownOpen ? 'rotate-180 text-red-500' : 'text-zinc-400'
                     }`}
                   />
                 </button>
@@ -137,7 +137,7 @@ export function Navbar() {
                     className="absolute top-full left-0 mt-3 w-80 rounded-3xl bg-white dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10 shadow-2xl p-3 z-50 animate-in fade-in zoom-in-95 duration-200"
                   >
                     <div className="px-3 py-2 border-b border-zinc-100 dark:border-zinc-800/80 mb-1 flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-red-600 dark:text-red-500">
                         Certified Detailing Services
                       </span>
                       <span className="text-[10px] text-zinc-400">Bolton Workshop</span>
@@ -154,11 +154,11 @@ export function Navbar() {
                           }}
                           className="w-full text-left p-2.5 rounded-2xl hover:bg-zinc-100 dark:hover:bg-zinc-800/70 transition-colors flex items-start gap-3 group/item cursor-pointer"
                         >
-                          <div className="p-2 rounded-xl bg-amber-500/10 group-hover/item:bg-amber-500/20 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5 transition-colors">
+                          <div className="p-2 rounded-xl bg-red-500/10 group-hover/item:bg-red-500/20 text-red-600 dark:text-red-500 shrink-0 mt-0.5 transition-colors">
                             {getServiceIcon(srv.iconName)}
                           </div>
                           <div>
-                            <div className="text-xs font-bold text-zinc-900 dark:text-white group-hover/item:text-amber-500 dark:group-hover/item:text-amber-400 transition-colors">
+                            <div className="text-xs font-bold text-zinc-900 dark:text-white group-hover/item:text-red-600 dark:group-hover/item:text-red-500 transition-colors">
                               {srv.title}
                             </div>
                             <div className="text-[11px] text-zinc-500 dark:text-zinc-400 line-clamp-1 mt-0.5">
@@ -173,7 +173,7 @@ export function Navbar() {
                       <Link
                         href="#services"
                         onClick={() => setServicesDropdownOpen(false)}
-                        className="text-amber-600 dark:text-amber-400 font-bold hover:underline inline-flex items-center gap-1"
+                        className="text-red-600 dark:text-red-500 font-bold hover:underline inline-flex items-center gap-1"
                       >
                         <Layers className="w-3.5 h-3.5" />
                         <span>Compare All Tiers</span>
@@ -194,61 +194,61 @@ export function Navbar() {
               {/* Other streamlined nav links */}
               <Link
                 href="#gallery"
-                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
+                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
               >
                 Gallery
               </Link>
 
               <Link
                 href="#comparison"
-                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
+                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
               >
                 Comparison
               </Link>
 
               <Link
                 href="#locations"
-                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
+                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
               >
                 Locations
               </Link>
 
               <Link
                 href="#reviews"
-                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
+                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
               >
                 Reviews
               </Link>
 
               <Link
                 href="#faq"
-                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
+                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
               >
                 FAQ
               </Link>
             </nav>
 
-            {/* Right Controls: Pill CTA Button & Theme Toggle (Matching reference image) */}
+            {/* Right Controls: Red Pill CTA Button & Theme Toggle */}
             <div className="flex items-center gap-2 sm:gap-2.5">
               {/* Subtle Map Pin Icon Shortcut */}
               <a
                 href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden xl:inline-flex items-center justify-center w-8 h-8 rounded-full text-zinc-500 dark:text-zinc-400 hover:text-amber-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                className="hidden xl:inline-flex items-center justify-center w-8 h-8 rounded-full text-zinc-500 dark:text-zinc-400 hover:text-red-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
                 title="Workshop Directions on Google Maps"
                 aria-label="Google Maps Location"
               >
                 <MapPin className="w-4 h-4" />
               </a>
 
-              {/* Primary Pill Button (Matching "RESUME" pill style from reference image) */}
+              {/* Primary Red Pill Button (Matching Latin King crown) */}
               <button
                 type="button"
                 onClick={() => openQuoteModal()}
-                className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-black text-xs uppercase tracking-wider shadow-md hover:shadow-amber-500/25 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-gradient-to-r from-red-600 via-red-500 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-black text-xs uppercase tracking-wider shadow-md shadow-red-600/25 hover:shadow-red-600/40 transition-all hover:scale-105 active:scale-95 cursor-pointer"
               >
-                <Sparkles className="w-3.5 h-3.5 text-zinc-950" />
+                <Sparkles className="w-3.5 h-3.5 text-white" />
                 <span className="whitespace-nowrap">Get Quote</span>
               </button>
 
@@ -323,7 +323,7 @@ export function Navbar() {
 
               {/* Services Section in Drawer */}
               <div className="py-4 border-b border-zinc-100 dark:border-zinc-800/80">
-                <div className="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-2">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-red-600 dark:text-red-500 mb-2">
                   Our Detailing Services
                 </div>
                 <div className="space-y-1">
@@ -397,10 +397,10 @@ export function Navbar() {
                   href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between text-xs text-amber-700 dark:text-amber-300 hover:bg-amber-500/15 transition-colors"
+                  className="p-3 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-between text-xs text-red-700 dark:text-red-300 hover:bg-red-500/15 transition-colors"
                 >
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-amber-500 shrink-0" />
+                    <MapPin className="w-4 h-4 text-red-500 shrink-0" />
                     <div>
                       <div className="font-bold">Workshop Directions</div>
                       <div className="text-[10px] text-zinc-500 dark:text-zinc-400">
@@ -408,7 +408,7 @@ export function Navbar() {
                       </div>
                     </div>
                   </div>
-                  <ExternalLink className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                  <ExternalLink className="w-3.5 h-3.5 text-red-500 shrink-0" />
                 </a>
               </div>
             </div>
@@ -421,7 +421,7 @@ export function Navbar() {
                   setMobileMenuOpen(false);
                   openQuoteModal();
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-zinc-950 font-bold text-xs uppercase tracking-wider shadow-md"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-gradient-to-r from-red-600 via-red-500 to-rose-600 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-red-600/30"
               >
                 <Sparkles className="w-4 h-4" />
                 <span>Get a Free Quote</span>
@@ -442,7 +442,7 @@ export function Navbar() {
                   href={SITE_CONFIG.phoneHref}
                   className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold text-xs"
                 >
-                  <Phone className="w-3.5 h-3.5 text-amber-500" />
+                  <Phone className="w-3.5 h-3.5 text-red-500" />
                   <span>Call Us</span>
                 </a>
               </div>

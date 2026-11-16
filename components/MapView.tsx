@@ -56,7 +56,7 @@ export function MapView() {
             onClick={() => setActiveLocation('bolton')}
             className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
               activeLocation === 'bolton'
-                ? 'bg-amber-500 text-zinc-950 shadow-md scale-102'
+                ? 'bg-red-600 text-white shadow-md shadow-red-600/30 scale-102'
                 : 'bg-zinc-100 dark:bg-[#252630] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
             }`}
           >
@@ -69,7 +69,7 @@ export function MapView() {
             onClick={() => setActiveLocation('manchester')}
             className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
               activeLocation === 'manchester'
-                ? 'bg-amber-500 text-zinc-950 shadow-md scale-102'
+                ? 'bg-red-600 text-white shadow-md shadow-red-600/30 scale-102'
                 : 'bg-zinc-100 dark:bg-[#252630] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
             }`}
           >
@@ -80,10 +80,10 @@ export function MapView() {
 
         <div className="hidden sm:flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
           <span className="flex items-center gap-1">
-            <Clock className="w-3.5 h-3.5 text-amber-500" /> 24/7 Available
+            <Clock className="w-3.5 h-3.5 text-red-500" /> 24/7 Available
           </span>
           <span className="flex items-center gap-1">
-            <ShieldCheck className="w-3.5 h-3.5 text-amber-500" /> Secure Indoor Bay
+            <ShieldCheck className="w-3.5 h-3.5 text-red-500" /> Secure Indoor Bay
           </span>
         </div>
       </div>
@@ -98,57 +98,52 @@ export function MapView() {
           width="100%"
           height="100%"
           style={{ border: 0 }}
+          allowFullScreen={false}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          className="w-full h-full filter contrast-[1.02] dark:opacity-90 transition-opacity"
+          className="w-full h-full grayscale-[25%] contrast-[105%]"
         />
 
-        {/* Floating Address Card Overlay (Matching user screenshot) */}
-        <div className="absolute top-4 left-4 z-10 max-w-[calc(100%-2rem)] sm:max-w-xs animate-in fade-in slide-in-from-top-2 duration-300">
-          <div className="bg-white/95 dark:bg-[#181922]/95 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-zinc-200/90 dark:border-white/15 text-zinc-900 dark:text-white">
-            <h4 className="text-base font-black tracking-tight text-zinc-900 dark:text-white">
-              {current.shortTitle}
-            </h4>
-            <p className="text-xs text-zinc-600 dark:text-zinc-300 mt-1 leading-relaxed">
-              {current.address}
-            </p>
-
-            <div className="mt-3.5 pt-3 border-t border-zinc-100 dark:border-white/10 flex items-center gap-2">
-              {/* Blue "Open in Maps" Pill Button (Matching user screenshot) */}
-              <a
-                href={current.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-[#1a73e8] hover:bg-[#1557b0] text-white text-xs font-semibold shadow-md transition-all hover:scale-105 active:scale-95"
-              >
-                <ExternalLink className="w-3.5 h-3.5" />
-                <span>Open in Maps</span>
-              </a>
-
-              {/* Directions Icon Button (Matching user screenshot) */}
-              <a
-                href={current.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-zinc-100 dark:bg-[#252632] hover:bg-zinc-200 dark:hover:bg-[#2e303d] text-[#1a73e8] dark:text-[#8ab4f8] flex items-center justify-center shadow-sm transition-colors"
-                title="Get Directions"
-                aria-label="Get Directions"
-              >
-                <Navigation className="w-4 h-4 fill-current" />
-              </a>
+        {/* Floating Google Maps Style Card Overlay */}
+        <div className="absolute top-4 left-4 z-10 max-w-[280px] sm:max-w-xs rounded-2xl bg-white/95 dark:bg-[#1c1d25]/95 backdrop-blur-md p-4 shadow-2xl border border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white">
+          <div className="flex items-start justify-between gap-2">
+            <div>
+              <div className="font-extrabold text-sm sm:text-base leading-tight">
+                {current.shortTitle}
+              </div>
+              <div className="text-[11px] sm:text-xs text-zinc-600 dark:text-zinc-300 mt-1 leading-snug">
+                {current.address}
+              </div>
+            </div>
+            <div className="w-8 h-8 rounded-full bg-red-600/10 text-red-600 flex items-center justify-center shrink-0">
+              <MapPin className="w-4 h-4 fill-red-600" />
             </div>
           </div>
-        </div>
 
-        {/* Bottom Location Indicator Bar */}
-        <div className="absolute bottom-3 left-4 right-4 z-10 pointer-events-none">
-          <div className="max-w-max mx-auto px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-white text-[11px] font-medium flex items-center gap-2 shadow-lg">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>{current.landmark}</span>
+          <div className="mt-3 pt-3 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center gap-2">
+            <a
+              href={current.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs shadow-md shadow-red-600/25 transition-all"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              <span>Open in Maps</span>
+            </a>
+
+            <a
+              href={current.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-200 transition-colors"
+              title="Get Driving Directions"
+              aria-label="Get Driving Directions"
+            >
+              <Navigation className="w-4 h-4 text-red-500" />
+            </a>
           </div>
         </div>
       </div>
     </div>
   );
 }
-

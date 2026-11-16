@@ -22,12 +22,12 @@ export function Gallery() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-semibold uppercase tracking-wider mb-3">
               <Sparkles className="w-3.5 h-3.5" /> Showroom Precision
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-zinc-900 dark:text-white tracking-tight">
               Recent Work —{' '}
-              <span className="bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
                 Bolton Workshop
               </span>
             </h2>
@@ -41,9 +41,9 @@ export function Gallery() {
             <button
               type="button"
               onClick={() => setFilter('all')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 filter === 'all'
-                  ? 'bg-amber-500 text-zinc-950 shadow-md'
+                  ? 'bg-red-600 text-white shadow-md'
                   : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
               }`}
             >
@@ -52,9 +52,9 @@ export function Gallery() {
             <button
               type="button"
               onClick={() => setFilter('ceramic')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 filter === 'ceramic'
-                  ? 'bg-amber-500 text-zinc-950 shadow-md'
+                  ? 'bg-red-600 text-white shadow-md'
                   : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
               }`}
             >
@@ -63,9 +63,9 @@ export function Gallery() {
             <button
               type="button"
               onClick={() => setFilter('correction')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 filter === 'correction'
-                  ? 'bg-amber-500 text-zinc-950 shadow-md'
+                  ? 'bg-red-600 text-white shadow-md'
                   : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
               }`}
             >
@@ -95,12 +95,12 @@ export function Gallery() {
 
                 {/* Top badges */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-amber-400 text-xs font-bold">
-                    <ShieldCheck className="w-3.5 h-3.5" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-red-400 text-xs font-bold">
+                    <ShieldCheck className="w-3.5 h-3.5 text-red-500" />
                     {item.service}
                   </span>
 
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-amber-500 text-zinc-950 text-xs font-black shadow-md">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-red-600 text-white text-xs font-black shadow-md shadow-red-600/30">
                     <Eye className="w-3.5 h-3.5" />
                     Inspect Finish
                   </span>
@@ -108,11 +108,11 @@ export function Gallery() {
 
                 {/* Bottom Overlay Info */}
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <div className="flex items-center gap-1.5 text-xs text-amber-400 font-semibold mb-1">
-                    <MapPin className="w-3.5 h-3.5" />
+                  <div className="flex items-center gap-1.5 text-xs text-red-400 font-semibold mb-1">
+                    <MapPin className="w-3.5 h-3.5 text-red-500" />
                     {item.location}
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-amber-300 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-red-400 transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-xs text-zinc-300 line-clamp-1 mt-0.5">
@@ -127,12 +127,12 @@ export function Gallery() {
                   <div className="font-bold text-zinc-800 dark:text-zinc-200">
                     {item.package}
                   </div>
-                  <div className="text-amber-600 dark:text-amber-400 font-medium">
+                  <div className="text-red-600 dark:text-red-400 font-medium">
                     {item.finish}
                   </div>
                 </div>
 
-                <div className="inline-flex items-center gap-1 font-bold text-zinc-900 dark:text-white group-hover:text-amber-500 transition-colors">
+                <div className="inline-flex items-center gap-1 font-bold text-zinc-900 dark:text-white group-hover:text-red-500 transition-colors">
                   <span>View Details</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </div>
@@ -146,14 +146,13 @@ export function Gallery() {
           <button
             type="button"
             onClick={() => openQuoteModal('Finish from Bolton Gallery')}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-zinc-300 dark:border-white/10 hover:border-amber-500 dark:hover:border-amber-400 bg-white dark:bg-[#1d1e25] text-zinc-900 dark:text-white hover:text-amber-500 dark:hover:text-amber-400 font-bold text-sm shadow-sm transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 bg-white dark:bg-[#1d1e25] text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 font-bold text-sm shadow-sm transition-all cursor-pointer"
           >
             <span>Book Your Vehicle Into Our Bolton Workshop</span>
-            <ArrowRight className="w-4 h-4 text-amber-500" />
+            <ArrowRight className="w-4 h-4 text-red-500" />
           </button>
         </div>
       </div>
     </section>
   );
 }
-

@@ -12,13 +12,13 @@ export function Reviews() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-semibold uppercase tracking-wider mb-3">
               <GoogleIcon className="w-3.5 h-3.5" />
               <span>{SITE_CONFIG.googleRating} ★ · {SITE_CONFIG.googleReviewCount} Google reviews</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
               What Bolton & Manchester{' '}
-              <span className="bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
                 Drivers Say
               </span>
             </h2>
@@ -60,19 +60,19 @@ export function Reviews() {
           {REVIEWS.map((rev) => (
             <div
               key={rev.id}
-              className="relative rounded-3xl p-8 bg-white dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10 shadow-md hover:shadow-xl hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between group"
+              className="relative rounded-3xl p-8 bg-white dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10 shadow-md hover:shadow-xl hover:border-red-500/40 dark:hover:border-red-500/40 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* Top reviewer meta & platform */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 text-zinc-950 font-black text-sm flex items-center justify-center shadow-sm">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-600 to-rose-600 text-white font-black text-sm flex items-center justify-center shadow-sm">
                       {rev.author.charAt(0)}
                     </div>
                     <div>
                       <div className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-1.5">
                         <span>{rev.author}</span>
-                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-red-500 shrink-0" />
                       </div>
                       <div className="text-[11px] text-zinc-500 dark:text-zinc-400">
                         {rev.vehicle} · {rev.date}
@@ -102,32 +102,32 @@ export function Reviews() {
                 </p>
               </div>
 
-              {/* Bottom tag */}
+              {/* Bottom Card Verification with Official Logo Emblem */}
               <div className="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400">
-                <span className="font-semibold text-amber-600 dark:text-amber-400">
-                  Verified Customer
-                </span>
-                <span className="capitalize">{rev.platform} Review</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-md bg-zinc-950 border border-red-500/40 p-0.5 shrink-0">
+                    <img
+                      src="/images/logo-dark.png"
+                      alt="Crown"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <span>Verified Customer</span>
+                </div>
+                <a
+                  href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-red-600 dark:text-red-400 hover:text-red-500 font-medium"
+                >
+                  <span>Read on {rev.platform}</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Read All Reviews & External Link */}
-        <div className="mt-12 text-center">
-          <a
-            href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-zinc-700 dark:text-zinc-300 hover:text-amber-500 transition-colors"
-          >
-            <GoogleIcon className="w-4 h-4" />
-            <span>Read all 15 reviews on our Google Business Profile</span>
-            <ExternalLink className="w-3.5 h-3.5 text-zinc-400" />
-          </a>
         </div>
       </div>
     </section>
   );
 }
-

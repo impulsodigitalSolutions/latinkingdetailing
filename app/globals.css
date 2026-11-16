@@ -3,17 +3,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-gold-50: #fefce8;
-  --color-gold-100: #fef9c3;
-  --color-gold-200: #fef08a;
-  --color-gold-300: #fde047;
-  --color-gold-400: #facc15;
-  --color-gold-500: #eab308;
-  --color-gold-600: #ca8a04;
-  --color-gold-700: #a16207;
-  --color-brand-gold: #d4af37;
-  --color-brand-gold-hover: #ca8a04;
-  --color-brand-gold-light: #fef3c7;
+  --color-brand-red: #c21c20;
+  --color-brand-red-hover: #9f1317;
+  --color-brand-red-light: #fee2e2;
+  --color-brand-red-glow: rgba(194, 28, 32, 0.28);
   --color-brand-green: #25d366;
   --color-brand-green-hover: #1ebe5d;
 }
@@ -47,23 +40,23 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom luxury gradients and glows */
-.gold-glow {
-  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.22);
+/* Custom luxury crimson gradients and glows matching Latin King crown */
+.red-glow, .gold-glow {
+  box-shadow: 0 0 25px -4px rgba(194, 28, 32, 0.3);
 }
 
-.dark .gold-glow-lg {
-  box-shadow: 0 0 50px -10px rgba(212, 175, 55, 0.25);
+.dark .red-glow-lg, .dark .gold-glow-lg {
+  box-shadow: 0 0 50px -10px rgba(194, 28, 32, 0.35);
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #facc15 0%, #d4af37 50%, #ca8a04 100%);
+.red-gradient-text, .gold-gradient-text {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 35%, #c21c20 70%, #991b1b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gold-gradient-bg {
-  background: linear-gradient(135deg, #eab308 0%, #d4af37 50%, #ca8a04 100%);
+.red-gradient-bg, .gold-gradient-bg {
+  background: linear-gradient(135deg, #ef4444 0%, #c21c20 50%, #991b1b 100%);
 }
 
 /* Smooth glassmorphic panels */
@@ -93,5 +86,5 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4af37;
+  background: #c21c20;
 }

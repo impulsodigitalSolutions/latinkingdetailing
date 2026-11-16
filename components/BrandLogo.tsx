@@ -66,15 +66,15 @@ export function BrandLogo({
 
   return (
     <div className={`inline-flex items-center gap-3 ${className}`}>
-      {/* Luxury Logo Emblem Box */}
+      {/* Luxury Logo Emblem Box with crimson red glow */}
       <div
-        className={`relative ${dimensions.box} rounded-xl bg-[#181920] p-1 flex items-center justify-center border border-amber-500/40 shadow-md shrink-0 overflow-hidden group-hover:scale-105 transition-transform duration-300`}
+        className={`relative ${dimensions.box} rounded-xl bg-[#181920] p-1 flex items-center justify-center border border-red-600/40 shadow-md shrink-0 overflow-hidden group-hover:scale-105 transition-transform duration-300`}
         style={{
-          boxShadow: '0 0 15px -3px rgba(212, 175, 55, 0.25)',
+          boxShadow: '0 0 15px -3px rgba(194, 28, 32, 0.35)',
         }}
       >
-        {/* Gold sheen highlight */}
-        <div className="absolute top-0 right-0 w-6 h-6 bg-amber-400/20 blur-xs rounded-full pointer-events-none" />
+        {/* Crimson sheen highlight */}
+        <div className="absolute top-0 right-0 w-6 h-6 bg-red-500/20 blur-xs rounded-full pointer-events-none" />
 
         {/* Official Logo with red crown */}
         <Image
@@ -91,14 +91,14 @@ export function BrandLogo({
         <div className={`flex flex-col text-left ${textClassName}`}>
           <div className="flex items-center gap-1.5">
             <span
-              className={`font-black tracking-tight text-zinc-900 dark:text-white group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors ${dimensions.fontTitle}`}
+              className={`font-black tracking-tight text-zinc-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors ${dimensions.fontTitle}`}
             >
               Latin King Detailing
             </span>
           </div>
           {subtitle && (
             <span
-              className={`font-medium text-zinc-500 dark:text-zinc-400 tracking-normal ${dimensions.fontSub}`}
+              className={`text-zinc-500 dark:text-zinc-400 font-semibold uppercase tracking-wider ${dimensions.fontSub}`}
             >
               {subtitle}
             </span>
@@ -108,4 +108,3 @@ export function BrandLogo({
     </div>
   );
 }
-

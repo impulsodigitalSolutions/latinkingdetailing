@@ -47,7 +47,7 @@ export function GalleryModal() {
         <button
           type="button"
           onClick={closeGalleryModal}
-          className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors border border-white/10"
+          className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors border border-white/10 cursor-pointer"
           aria-label="Close image viewer"
         >
           <X className="w-5 h-5" />
@@ -67,11 +67,11 @@ export function GalleryModal() {
 
           {/* Bottom badge overlay */}
           <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
-            <span className="px-3 py-1 rounded-full bg-amber-500/90 text-zinc-950 font-bold text-xs uppercase tracking-wider backdrop-blur-sm shadow-md">
+            <span className="px-3 py-1 rounded-full bg-red-600 text-white font-bold text-xs uppercase tracking-wider backdrop-blur-sm shadow-md">
               {item.finish}
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-xs text-zinc-300 border border-white/10">
-              <MapPin className="w-3.5 h-3.5 text-amber-400" />
+              <MapPin className="w-3.5 h-3.5 text-red-400" />
               {item.location}
             </span>
           </div>
@@ -81,7 +81,7 @@ export function GalleryModal() {
         <div className="p-6 sm:p-8 space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-start gap-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-zinc-900 border border-amber-500/40 p-1 flex items-center justify-center shrink-0 shadow-md">
+              <div className="w-12 h-12 rounded-2xl bg-zinc-900 border border-red-500/40 p-1 flex items-center justify-center shrink-0 shadow-md">
                 <img
                   src="/images/logo-dark.png"
                   alt="Latin King Detailing"
@@ -101,48 +101,37 @@ export function GalleryModal() {
                 closeGalleryModal();
                 openQuoteModal(`Finish like ${item.title}`);
               }}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold text-sm transition-all shadow-md shrink-0 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-600/30 transition-all cursor-pointer"
             >
-              <Sparkles className="w-4 h-4" />
-              <span>Get This Finish</span>
-              <ArrowRight className="w-4 h-4" />
+              <Sparkles className="w-4 h-4 text-white" />
+              <span>Get Similar Finish</span>
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-zinc-800 text-sm">
-            <div className="bg-zinc-900/60 p-4 rounded-xl border border-zinc-800/80">
-              <span className="text-xs uppercase font-bold text-zinc-500 block mb-1">
-                Applied Package
-              </span>
-              <span className="text-white font-medium flex items-center gap-2">
-                <Shield className="w-4 h-4 text-amber-400" />
-                {item.package}
-              </span>
-            </div>
-            <div className="bg-zinc-900/60 p-4 rounded-xl border border-zinc-800/80">
-              <span className="text-xs uppercase font-bold text-zinc-500 block mb-1">
-                Workshop Location
-              </span>
-              <span className="text-white font-medium flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-amber-400" />
-                Latin King Detailing, Farnworth, Bolton
-              </span>
-            </div>
-          </div>
+          <p className="text-zinc-300 text-sm sm:text-base leading-relaxed pt-2">
+            {item.imageAlt}
+          </p>
 
-          <div className="flex flex-wrap gap-2 pt-2">
-            {item.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-2.5 py-1 rounded-lg bg-zinc-800/80 text-zinc-300 text-xs font-medium"
-              >
-                #{tag}
+          <div className="pt-4 border-t border-zinc-800 flex flex-wrap items-center justify-between gap-4 text-xs text-zinc-400">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="px-2.5 py-1 rounded-md bg-zinc-800/80 border border-zinc-700/60 font-semibold text-zinc-300">
+                Package: {item.package}
               </span>
-            ))}
+              <span className="px-2.5 py-1 rounded-md bg-zinc-800/80 border border-zinc-700/60 font-semibold text-zinc-300">
+                Service: {item.service}
+              </span>
+              <span className="px-2.5 py-1 rounded-md bg-zinc-800/80 border border-red-500/30 text-red-400 font-semibold">
+                Ceramic Pro 9H Certified
+              </span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-red-500" />
+              <span>Bolton Workshop: 115 Albert Rd, Farnworth (BL4 9EA)</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 }
-

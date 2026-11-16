@@ -19,7 +19,7 @@ export function FaqSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-semibold uppercase tracking-wider mb-3">
             <HelpCircle className="w-3.5 h-3.5" /> Clear Answers
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
@@ -40,7 +40,7 @@ export function FaqSection() {
                 key={item.id}
                 className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? 'border-amber-500/50 bg-white dark:bg-[#1d1e25] shadow-md ring-1 ring-amber-500/20'
+                    ? 'border-red-500/50 bg-white dark:bg-[#1d1e25] shadow-md ring-1 ring-red-500/20'
                     : 'border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-[#1a1b22]/70 hover:border-zinc-300 dark:hover:border-zinc-700'
                 }`}
               >
@@ -55,7 +55,7 @@ export function FaqSection() {
                   </span>
                   <div
                     className={`p-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 transition-transform duration-200 shrink-0 ${
-                      isOpen ? 'rotate-180 text-amber-500 bg-amber-500/10' : ''
+                      isOpen ? 'rotate-180 text-red-500 bg-red-500/10' : ''
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -75,7 +75,7 @@ export function FaqSection() {
         {/* Bottom Helper Bar */}
         <div className="mt-12 p-6 rounded-2xl bg-zinc-100 dark:bg-[#1c1d24] border border-zinc-200 dark:border-white/10 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-500 shrink-0">
+            <div className="w-9 h-9 rounded-xl bg-red-500/15 flex items-center justify-center text-red-500 shrink-0">
               <MessageSquare className="w-4 h-4" />
             </div>
             <div>
@@ -91,7 +91,7 @@ export function FaqSection() {
           <button
             type="button"
             onClick={() => openQuoteModal('FAQ Question')}
-            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold text-xs uppercase tracking-wider transition-all shadow-sm cursor-pointer shrink-0"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm shadow-red-600/30 cursor-pointer shrink-0"
           >
             <span>Ask Our Team</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -101,4 +101,3 @@ export function FaqSection() {
     </section>
   );
 }
-

@@ -21,8 +21,8 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 export function Footer() {
   return (
     <footer className="relative bg-[#101115] text-white border-t border-zinc-800/80 pt-16 pb-28 md:pb-16 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-amber-500/10 blur-[150px] pointer-events-none" />
+      {/* Background crimson glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-red-600/10 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-zinc-800/80">
@@ -46,11 +46,11 @@ export function Footer() {
                 href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 p-2.5 rounded-xl bg-[#181920] border border-white/10 hover:border-amber-500/40 w-full max-w-xs transition-colors group"
+                className="inline-flex items-center gap-3 p-2.5 rounded-xl bg-[#181920] border border-white/10 hover:border-red-500/40 w-full max-w-xs transition-colors group"
               >
                 <GoogleIcon className="w-5 h-5 shrink-0" />
                 <div className="text-xs">
-                  <div className="flex items-center gap-1.5 font-bold text-white group-hover:text-amber-400 transition-colors">
+                  <div className="flex items-center gap-1.5 font-bold text-white group-hover:text-red-400 transition-colors">
                     <span>{SITE_CONFIG.googleRating} Google Rating</span>
                     <StarRating rating={SITE_CONFIG.googleRating} size="w-3 h-3" />
                   </div>
@@ -138,7 +138,7 @@ export function Footer() {
 
           {/* Column 2: Our Services (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-black uppercase tracking-widest text-amber-400">
+            <h4 className="text-xs font-black uppercase tracking-widest text-red-500">
               Our Services
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-zinc-400">
@@ -146,29 +146,29 @@ export function Footer() {
                 <li key={s.id}>
                   <Link
                     href="#services"
-                    className="hover:text-amber-400 transition-colors flex items-center gap-1.5"
+                    className="hover:text-red-400 transition-colors flex items-center gap-1.5"
                   >
                     <span>{s.title}</span>
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="#gallery" className="hover:text-amber-400 transition-colors">
+                <Link href="#gallery" className="hover:text-red-400 transition-colors">
                   Showroom Gallery
                 </Link>
               </li>
               <li>
-                <Link href="#comparison" className="hover:text-amber-400 transition-colors">
+                <Link href="#comparison" className="hover:text-red-400 transition-colors">
                   Protection Matrix
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className="hover:text-amber-400 transition-colors">
+                <Link href="#faq" className="hover:text-red-400 transition-colors">
                   FAQs & Pricing
                 </Link>
               </li>
               <li>
-                <Link href="#blog" className="hover:text-amber-400 transition-colors">
+                <Link href="#blog" className="hover:text-red-400 transition-colors">
                   Advice & Guides
                 </Link>
               </li>
@@ -177,7 +177,7 @@ export function Footer() {
 
           {/* Column 3: Service Areas (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-black uppercase tracking-widest text-amber-400">
+            <h4 className="text-xs font-black uppercase tracking-widest text-red-500">
               Service Areas (24 Towns)
             </h4>
             <div className="flex flex-wrap gap-1.5 text-[11px] text-zinc-400">
@@ -185,7 +185,7 @@ export function Footer() {
                 <Link
                   key={town}
                   href="#locations"
-                  className="px-2 py-0.5 rounded bg-[#181920] border border-white/10 hover:border-amber-500/50 hover:text-amber-400 transition-colors"
+                  className="px-2 py-0.5 rounded bg-[#181920] border border-white/10 hover:border-red-500/50 hover:text-red-400 transition-colors"
                 >
                   {town}
                 </Link>
@@ -195,16 +195,16 @@ export function Footer() {
 
           {/* Column 4: Contact & Locations (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-black uppercase tracking-widest text-amber-400">
+            <h4 className="text-xs font-black uppercase tracking-widest text-red-500">
               Contact & Locations
             </h4>
             <div className="space-y-3 text-xs sm:text-sm text-zinc-300">
               <div>
                 <a
                   href={SITE_CONFIG.phoneHref}
-                  className="flex items-center gap-2 text-white font-bold hover:text-amber-400 transition-colors"
+                  className="flex items-center gap-2 text-white font-bold hover:text-red-400 transition-colors"
                 >
-                  <Phone className="w-4 h-4 text-amber-400" />
+                  <Phone className="w-4 h-4 text-red-500" />
                   <span>{SITE_CONFIG.phone}</span>
                 </a>
               </div>
@@ -224,9 +224,9 @@ export function Footer() {
               <div>
                 <a
                   href={SITE_CONFIG.emailHref}
-                  className="flex items-center gap-2 text-zinc-400 hover:text-amber-400 transition-colors"
+                  className="flex items-center gap-2 text-zinc-400 hover:text-red-400 transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-amber-400" />
+                  <Mail className="w-4 h-4 text-red-500" />
                   <span>{SITE_CONFIG.email}</span>
                 </a>
               </div>
@@ -236,17 +236,17 @@ export function Footer() {
                   href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2 text-zinc-300 hover:text-amber-400 transition-colors group block"
+                  className="flex items-start gap-2 text-zinc-300 hover:text-red-400 transition-colors group block"
                 >
-                  <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                  <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
-                    <span className="font-semibold text-white group-hover:text-amber-400 block">
+                    <span className="font-semibold text-white group-hover:text-red-400 block">
                       Bolton Workshop (HQ):
                     </span>
                     <span className="text-zinc-400 group-hover:text-zinc-300">
                       {SITE_CONFIG.primaryWorkshop.fullAddress}
                     </span>
-                    <span className="text-[11px] text-amber-400 block">
+                    <span className="text-[11px] text-red-400 block">
                       5 mins from M61 Jct 4 · Open in Google Maps ↗
                     </span>
                   </div>
@@ -256,24 +256,24 @@ export function Footer() {
                   href={SITE_CONFIG.secondaryWorkshop.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2 text-zinc-300 hover:text-amber-400 transition-colors group block"
+                  className="flex items-start gap-2 text-zinc-300 hover:text-red-400 transition-colors group block"
                 >
-                  <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                  <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
-                    <span className="font-semibold text-white group-hover:text-amber-400 block">
+                    <span className="font-semibold text-white group-hover:text-red-400 block">
                       Manchester Base:
                     </span>
                     <span className="text-zinc-400 group-hover:text-zinc-300">
                       {SITE_CONFIG.secondaryWorkshop.fullAddress}
                     </span>
-                    <span className="text-[11px] text-amber-400 block">
+                    <span className="text-[11px] text-red-400 block">
                       Flixton, Trafford & Greater Manchester · Open in Maps ↗
                     </span>
                   </div>
                 </a>
 
                 <div className="flex items-center gap-2 text-zinc-300 pt-1">
-                  <Clock className="w-4 h-4 text-amber-400 shrink-0" />
+                  <Clock className="w-4 h-4 text-red-500 shrink-0" />
                   <span>{SITE_CONFIG.openingHours}</span>
                 </div>
               </div>
@@ -337,7 +337,7 @@ export function Footer() {
               href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-[#181920] border border-white/10 hover:border-amber-400/60 flex items-center justify-center text-zinc-400 transition-all hover:scale-110"
+              className="w-8 h-8 rounded-full bg-[#181920] border border-white/10 hover:border-red-500/60 hover:text-red-400 flex items-center justify-center text-zinc-400 transition-all hover:scale-110"
               title="Google Maps Profile"
               aria-label="Google Maps"
             >

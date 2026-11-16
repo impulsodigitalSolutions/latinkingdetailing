@@ -81,24 +81,24 @@ export function TikTokIcon({ className = 'w-5 h-5' }: { className?: string }) {
 
 export function CeramicProMonogram({
   className = 'w-10 h-10',
-  variant = 'gold',
+  variant = 'red',
 }: {
   className?: string;
-  variant?: 'gold' | 'monochrome';
+  variant?: 'red' | 'gold' | 'monochrome';
 }) {
   return (
     <div
       className={`relative inline-flex items-center justify-center font-black tracking-tighter rounded-xl select-none shadow-md overflow-hidden transition-transform duration-300 group-hover:scale-105 ${className}`}
       style={{
         background:
-          variant === 'gold'
-            ? 'linear-gradient(135deg, #18181b 0%, #09090b 100%)'
+          variant === 'red' || variant === 'gold'
+            ? 'linear-gradient(135deg, #1c1d23 0%, #14151a 100%)'
             : 'currentColor',
-        border: '1.5px solid #d4af37',
+        border: '1.5px solid #c21c20',
       }}
     >
-      <div className="absolute top-0 right-0 w-8 h-8 bg-amber-400/20 blur-sm rounded-full -mr-3 -mt-3 pointer-events-none" />
-      <span className="relative z-10 text-xs sm:text-sm font-extrabold tracking-tight bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent">
+      <div className="absolute top-0 right-0 w-8 h-8 bg-red-500/20 blur-sm rounded-full -mr-3 -mt-3 pointer-events-none" />
+      <span className="relative z-10 text-xs sm:text-sm font-extrabold tracking-tight bg-gradient-to-r from-red-400 via-red-500 to-rose-600 bg-clip-text text-transparent">
         CP
       </span>
     </div>
@@ -109,19 +109,22 @@ export function StarRating({
   rating = 5,
   maxStars = 5,
   size = 'w-4 h-4',
+  color = 'text-amber-400',
 }: {
   rating?: number;
   maxStars?: number;
   size?: string;
+  color?: string;
 }) {
   return (
-    <div className="inline-flex items-center gap-0.5 text-amber-400" aria-label={`${rating} out of ${maxStars} stars`}>
+    <div className={`inline-flex items-center gap-0.5 ${color}`} aria-label={`${rating} out of ${maxStars} stars`}>
       {Array.from({ length: maxStars }).map((_, index) => {
         const fillAmount = Math.max(0, Math.min(1, rating - index));
         return (
           <span key={index} className="relative inline-block">
             <svg
-              className={`${size} fill-zinc-300 dark:fill-zinc-700`}
+              className={`${size} text-zinc-300 dark:text-zinc-700`}
+              fill="currentColor"
               viewBox="0 0 20 20"
               aria-hidden="true"
             >
@@ -129,10 +132,15 @@ export function StarRating({
             </svg>
             {fillAmount > 0 && (
               <span
-                className="absolute inset-0 overflow-hidden text-amber-400"
+                className="absolute inset-0 overflow-hidden"
                 style={{ width: `${fillAmount * 100}%` }}
               >
-                <svg className={`${size} fill-amber-400`} viewBox="0 0 20 20" aria-hidden="true">
+                <svg
+                  className={`${size} ${color}`}
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
+                >
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               </span>

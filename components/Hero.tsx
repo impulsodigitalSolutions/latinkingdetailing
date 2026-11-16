@@ -8,7 +8,7 @@ import {
   HERO_TRUST_BADGES,
 } from '@/lib/site-data';
 import { GoogleIcon, StarRating } from './icons/BrandIcons';
-import { ShieldCheck, ArrowRight, Sparkles, CheckCircle2, Shield, Award } from 'lucide-react';
+import { ArrowRight, Sparkles, CheckCircle2, Shield, Award } from 'lucide-react';
 import { useModals } from './ModalContext';
 
 export function Hero() {
@@ -16,15 +16,15 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24">
-      {/* Background radial gold glow effect */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-amber-500/10 dark:bg-amber-500/15 blur-[120px] rounded-full pointer-events-none -z-10" />
+      {/* Background radial crimson glow effect matching crown */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-red-600/10 dark:bg-red-600/15 blur-[120px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Copy & CTAs */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             {/* Top Trust Pill with Logo Crown & Google rating */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 dark:bg-amber-500/15 border border-amber-500/30 text-zinc-900 dark:text-zinc-100 text-xs sm:text-sm font-medium shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 dark:bg-red-500/15 border border-red-500/30 text-zinc-900 dark:text-zinc-100 text-xs sm:text-sm font-medium shadow-sm">
               <div className="w-5 h-4 relative shrink-0">
                 <Image
                   src="/images/logo-crown.png"
@@ -35,7 +35,7 @@ export function Hero() {
               </div>
               <GoogleIcon className="w-4 h-4 shrink-0" />
               <StarRating rating={SITE_CONFIG.googleRating} size="w-3.5 h-3.5" />
-              <span className="font-bold text-amber-600 dark:text-amber-400">
+              <span className="font-bold text-red-600 dark:text-red-400">
                 {SITE_CONFIG.googleRating} Google Rating
               </span>
               <span className="text-zinc-400 dark:text-zinc-500">·</span>
@@ -47,7 +47,7 @@ export function Hero() {
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-black tracking-tight text-zinc-900 dark:text-white leading-[1.12]">
               Bolton's Premier{' '}
-              <span className="bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
                 Ceramic Coating
               </span>{' '}
               & Car Detailing Specialists
@@ -63,16 +63,16 @@ export function Hero() {
               <button
                 type="button"
                 onClick={() => openQuoteModal()}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-500 text-zinc-950 font-black text-sm uppercase tracking-wider shadow-lg shadow-amber-500/25 transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-red-600 via-red-500 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-black text-sm uppercase tracking-wider shadow-lg shadow-red-600/30 transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
               >
-                <Sparkles className="w-4 h-4 text-zinc-950" />
+                <Sparkles className="w-4 h-4 text-white" />
                 <span>Get a Free Quote</span>
-                <ArrowRight className="w-4 h-4 text-zinc-950" />
+                <ArrowRight className="w-4 h-4 text-white" />
               </button>
 
               <Link
                 href="#gallery"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border-2 border-zinc-300 dark:border-zinc-700 hover:border-amber-500 dark:hover:border-amber-400 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm text-zinc-800 dark:text-zinc-200 hover:text-amber-600 dark:hover:text-amber-400 font-bold text-sm tracking-wide transition-all shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border-2 border-zinc-300 dark:border-zinc-700 hover:border-red-500 dark:hover:border-red-500 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm text-zinc-800 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-400 font-bold text-sm tracking-wide transition-all shadow-sm"
               >
                 <span>View Our Work</span>
               </Link>
@@ -86,7 +86,7 @@ export function Hero() {
                     key={idx}
                     className="flex items-center gap-2 p-2 rounded-xl bg-zinc-100/70 dark:bg-[#1c1d24] border border-zinc-200/80 dark:border-white/10"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0" />
                     <span className="text-xs font-semibold text-zinc-800 dark:text-zinc-200">
                       {badge}
                     </span>
@@ -99,8 +99,8 @@ export function Hero() {
           {/* Right Column: High-contrast luxury exotic car showroom showcase card */}
           <div className="lg:col-span-5">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Gold glow framing */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/30 via-amber-400/20 to-amber-600/30 rounded-3xl blur-xl opacity-75 dark:opacity-50" />
+              {/* Crimson glow framing */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-red-600/30 via-red-500/20 to-rose-600/30 rounded-3xl blur-xl opacity-75 dark:opacity-50" />
 
               <div className="relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#1d1e25] shadow-2xl">
                 {/* Visual Image */}
@@ -116,7 +116,7 @@ export function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
                   {/* Top badge with Official Logo mark */}
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-amber-400/40 text-amber-400 text-xs font-bold shadow-lg">
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-red-500/40 text-red-400 text-xs font-bold shadow-lg">
                     <div className="w-5 h-4 relative shrink-0">
                       <Image
                         src="/images/logo-crown.png"
@@ -127,44 +127,44 @@ export function Hero() {
                     </div>
                     <span>Ceramic Pro 9H Certified</span>
                   </div>
-
-                  {/* Bottom Image Overlay Info */}
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-amber-400 uppercase tracking-widest mb-1">
-                      <div className="relative w-4 h-3.5 shrink-0">
-                        <Image
-                          src="/images/logo-crown.png"
-                          alt="Crown"
-                          fill
-                          className="object-contain"
-                        />
-                      </div>
-                      <span>Latin King Detailing Showcase</span>
-                    </div>
-                    <div className="text-lg font-bold">Lamborghini Aventador LP700</div>
-                    <div className="text-xs text-zinc-300">
-                      Multi-Stage Correction + Ceramic Pro 9H Gold Package
-                    </div>
-                  </div>
                 </div>
 
-                {/* Showcase Stats & Badges underneath */}
+                {/* Bottom Image Overlay Info */}
                 <div className="p-5 bg-zinc-50 dark:bg-[#17181f] border-t border-zinc-200 dark:border-white/10">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-red-500 uppercase tracking-widest mb-1">
+                    <div className="relative w-4 h-3.5 shrink-0">
+                      <Image
+                        src="/images/logo-crown.png"
+                        alt="Crown"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <span>Latin King Detailing Showcase</span>
+                  </div>
+                  <div className="text-lg font-bold text-zinc-900 dark:text-white">
+                    Lamborghini Aventador LP700
+                  </div>
+                  <div className="text-xs text-zinc-500 dark:text-zinc-400 mb-4">
+                    Multi-Stage Correction + Ceramic Pro 9H Gold Package
+                  </div>
+
+                  {/* Showcase Stats & Badges underneath */}
                   <div className="grid grid-cols-3 gap-3 text-center">
                     <div className="p-2.5 rounded-xl bg-white dark:bg-[#202129] border border-zinc-200 dark:border-white/10">
-                      <div className="text-amber-500 font-black text-sm sm:text-base">9H</div>
+                      <div className="text-red-500 font-black text-sm sm:text-base">9H</div>
                       <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-semibold uppercase">
                         Hardness
                       </div>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white dark:bg-[#202129] border border-zinc-200 dark:border-white/10">
-                      <div className="text-amber-500 font-black text-sm sm:text-base">&gt;110°</div>
+                      <div className="text-red-500 font-black text-sm sm:text-base">&gt;110°</div>
                       <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-semibold uppercase">
                         Hydrophobic
                       </div>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white dark:bg-[#202129] border border-zinc-200 dark:border-white/10">
-                      <div className="text-amber-500 font-black text-sm sm:text-base">VIN</div>
+                      <div className="text-red-500 font-black text-sm sm:text-base">VIN</div>
                       <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-semibold uppercase">
                         Registered
                       </div>
@@ -173,11 +173,11 @@ export function Hero() {
 
                   <div className="mt-4 pt-3 border-t border-zinc-200 dark:border-zinc-800/80 flex items-center justify-between text-xs text-zinc-600 dark:text-zinc-400">
                     <span className="flex items-center gap-1 font-medium">
-                      <Award className="w-3.5 h-3.5 text-amber-500" />
+                      <Award className="w-3.5 h-3.5 text-red-500" />
                       KAVACA Approved
                     </span>
                     <span className="flex items-center gap-1 font-medium">
-                      <Shield className="w-3.5 h-3.5 text-amber-500" />
+                      <Shield className="w-3.5 h-3.5 text-red-500" />
                       5 Min from M61 J4
                     </span>
                   </div>
