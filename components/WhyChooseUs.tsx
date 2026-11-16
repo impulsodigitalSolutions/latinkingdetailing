@@ -22,10 +22,10 @@ export function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
+          <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
             Why Latin King Detailing: Bolton&apos;s Certified Studio
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
+          <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-[60ch] mx-auto leading-[1.65]">
             We operate to strict manufacturer protocols so your vehicle receives uncompromising, traceable protection with real VIN warranties.
           </p>
         </div>
@@ -43,16 +43,16 @@ export function WhyChooseUs() {
                   <div className="p-3.5 rounded-2xl bg-red-500/10 dark:bg-red-500/15 border border-red-500/20">
                     {getPillarIcon(pillar.iconName)}
                   </div>
-                  <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-zinc-100 dark:bg-workshop-elevated text-zinc-700 dark:text-zinc-200 border border-zinc-200 dark:border-white/10">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-zinc-100 dark:bg-workshop-elevated text-zinc-700 dark:text-zinc-200 border border-zinc-200 dark:border-white/10">
                     {pillar.badge}
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-black text-zinc-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors">
+                <h3 className="font-heading font-semibold text-[1.25rem] leading-[1.3] tracking-[-0.01em] text-zinc-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors">
                   {pillar.title}
                 </h3>
 
-                <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 mt-4 leading-relaxed font-normal">
+                <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-4 leading-[1.65] font-normal max-w-[60ch]">
                   {pillar.description}
                 </p>
               </div>

@@ -25,10 +25,10 @@ export function WorkshopAndGuides() {
             {/* Left Location Info (6 cols) */}
             <div className="p-6 sm:p-10 lg:col-span-6 flex flex-col justify-between">
               <div>
-                <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white tracking-tight">
-                  Visit Us in Farnworth, Bolton & Manchester
+                <h3 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
+                  Visit Us in Farnworth, Bolton &amp; Manchester
                 </h3>
-                <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 mt-2">
+                <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2 max-w-[60ch] leading-[1.65]">
                   {SITE_CONFIG.primaryWorkshop.landmark}. Secure indoor bay with temperature-controlled infrared curing lights and cleanroom detailing conditions.
                 </p>
 
@@ -122,10 +122,10 @@ export function WorkshopAndGuides() {
         {/* Bottom Part: Advice & Guides */}
         <div>
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h3 className="text-3xl sm:text-4xl font-black text-zinc-900 dark:text-white tracking-tight">
-              Bolton Detailing Guides & Protection Advice
+            <h3 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
+              Bolton Detailing Guides &amp; Protection Advice
             </h3>
-            <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2">
+            <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2 max-w-[60ch] mx-auto leading-[1.65]">
               Expert articles and paint protection guides written by certified Ceramic Pro technicians.
             </p>
           </div>
@@ -150,14 +150,14 @@ export function WorkshopAndGuides() {
                     <span className="px-2.5 py-1 rounded-md bg-red-500/10 text-red-600 dark:text-red-400 font-semibold text-xs">
                       {post.category}
                     </span>
-                    <span>{post.readTime}</span>
+                    <span className="font-mono text-xs">{post.readTime}</span>
                   </div>
 
-                  <h4 className="text-lg sm:text-xl font-black text-zinc-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
+                  <h4 className="font-heading font-semibold text-[1.25rem] leading-[1.3] tracking-[-0.01em] text-zinc-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
                     {post.title}
                   </h4>
 
-                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-3 line-clamp-3 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-3 line-clamp-3 leading-[1.65]">
                     {post.excerpt}
                   </p>
                 </div>

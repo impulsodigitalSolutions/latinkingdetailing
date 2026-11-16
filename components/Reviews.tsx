@@ -13,10 +13,10 @@ export function Reviews() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
+            <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
               What Bolton &amp; Manchester Drivers Say
             </h2>
-            <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-3">
+            <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-3 max-w-[60ch] leading-[1.65]">
               Genuine feedback from prestige car owners across Bolton, Farnworth, and Greater Manchester who trust Latin King Detailing.
             </p>
           </div>
@@ -26,11 +26,11 @@ export function Reviews() {
             <div className="p-3 rounded-2xl bg-white dark:bg-workshop-card-subtle border border-zinc-200 dark:border-white/10 shadow-sm flex items-center gap-3">
               <GoogleIcon className="w-6 h-6" />
               <div>
-                <div className="font-extrabold text-sm text-zinc-900 dark:text-white tabular-nums">
-                  4.7 Stars
+                <div className="font-semibold text-sm text-zinc-900 dark:text-white">
+                  <span className="font-mono tabular-nums">4.7</span> Stars
                 </div>
                 <div className="text-[10px] text-zinc-500 dark:text-zinc-400">
-                  15 Google Reviews
+                  <span className="font-mono tabular-nums">15</span> Google Reviews
                 </div>
               </div>
             </div>
@@ -38,11 +38,11 @@ export function Reviews() {
             <div className="p-3 rounded-2xl bg-white dark:bg-workshop-card-subtle border border-zinc-200 dark:border-white/10 shadow-sm flex items-center gap-3">
               <FacebookIcon className="w-6 h-6 text-brand-fb" />
               <div>
-                <div className="font-extrabold text-sm text-zinc-900 dark:text-white tabular-nums">
-                  5.0 Stars
+                <div className="font-semibold text-sm text-zinc-900 dark:text-white">
+                  <span className="font-mono tabular-nums">5.0</span> Stars
                 </div>
                 <div className="text-[10px] text-zinc-500 dark:text-zinc-400">
-                  760+ Followers
+                  <span className="font-mono tabular-nums">760+</span> Followers
                 </div>
               </div>
             </div>
@@ -60,15 +60,15 @@ export function Reviews() {
                 {/* Top reviewer meta & platform */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-red-600 text-white font-black text-sm flex items-center justify-center shadow-sm">
+                    <div className="w-10 h-10 rounded-full bg-red-600 text-white font-mono font-semibold text-sm flex items-center justify-center shadow-sm">
                       {rev.author.charAt(0)}
                     </div>
                     <div>
-                      <div className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-1.5">
+                      <div className="font-heading font-semibold text-sm text-zinc-900 dark:text-white flex items-center gap-1.5">
                         <span>{rev.author}</span>
                         <CheckCircle2 className="w-3.5 h-3.5 text-red-500 shrink-0" />
                       </div>
-                      <div className="text-[11px] text-zinc-500 dark:text-zinc-400">
+                      <div className="font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
                         {rev.vehicle} · {rev.date}
                       </div>
                     </div>

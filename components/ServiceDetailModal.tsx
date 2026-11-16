@@ -73,21 +73,21 @@ export function ServiceDetailModal() {
               />
             </div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/20 border border-red-500/40 text-red-300 text-xs font-semibold">
-              <Sparkles className="w-3.5 h-3.5" /> Bolton Workshop Service Breakdown
+              <Sparkles className="w-3.5 h-3.5" /> Bolton Workshop Service
             </div>
           </div>
 
-          <h2 id="service-modal-title" className="text-2xl sm:text-3xl font-extrabold text-white">
+          <h2 id="service-modal-title" className="font-heading font-semibold text-2xl sm:text-3xl text-white">
             {service.title}
           </h2>
           {service.tagline && (
-            <p className="text-red-400 font-semibold text-xs sm:text-sm mt-1">
+            <p className="font-heading font-medium text-red-400 text-xs sm:text-sm mt-1">
               {service.tagline}
             </p>
           )}
           {service.startingPrice && (
-            <div className="inline-block mt-2.5 px-3 py-1 rounded-lg bg-white/10 text-xs font-bold text-zinc-200 border border-white/10">
-              Service Cost: {service.startingPrice}
+            <div className="inline-block mt-2.5 px-3 py-1 rounded-lg bg-white/10 text-xs font-medium text-zinc-200 border border-white/10">
+              Service Cost: <span className="font-mono tabular-nums">{service.startingPrice}</span>
             </div>
           )}
         </div>
@@ -96,10 +96,10 @@ export function ServiceDetailModal() {
         <div className="p-6 sm:p-8 overflow-y-auto space-y-6 text-zinc-800 dark:text-zinc-200">
           {/* Main Description */}
           <div>
-            <h3 className="text-sm font-bold text-red-600 dark:text-red-500 mb-2">
-              Overview & Protection Scope
+            <h3 className="text-xs font-semibold text-red-600 dark:text-red-500 mb-2">
+              Overview &amp; Protection Scope
             </h3>
-            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-[1.65] max-w-[60ch]">
               {service.fullDesc}
             </p>
           </div>
@@ -253,7 +253,7 @@ export function ServiceDetailModal() {
           {/* If Service has 6-step breakdown */}
           {service.steps && service.steps.length > 0 && (
             <div>
-              <h4 className="text-base font-bold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
+              <h4 className="font-heading font-semibold text-base text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-red-500" />
                 Our 6-Step Precision Process Breakdown
               </h4>
@@ -263,14 +263,14 @@ export function ServiceDetailModal() {
                     key={st.step}
                     className="flex gap-4 p-4 rounded-xl border border-zinc-200 dark:border-workshop-border bg-white dark:bg-workshop-surface"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 font-bold flex items-center justify-center shrink-0 text-sm">
+                    <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 font-mono font-medium flex items-center justify-center shrink-0 text-xs">
                       0{st.step}
                     </div>
                     <div>
-                      <h5 className="font-semibold text-sm text-zinc-900 dark:text-white">
+                      <h5 className="font-heading font-semibold text-sm text-zinc-900 dark:text-white">
                         {st.title}
                       </h5>
-                      <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+                      <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1 leading-[1.65]">
                         {st.desc}
                       </p>
                     </div>
@@ -283,7 +283,7 @@ export function ServiceDetailModal() {
           {/* If Service has Bronze / Silver / Gold tiers */}
           {service.tiers && service.tiers.length > 0 && (
             <div>
-              <h4 className="text-base font-bold text-zinc-900 dark:text-white mb-4">
+              <h4 className="font-heading font-semibold text-base text-zinc-900 dark:text-white mb-4">
                 Available Ceramic Pro 9H Package Tiers
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -298,17 +298,17 @@ export function ServiceDetailModal() {
                   >
                     <div>
                       {tier.name.includes('Silver') && (
-                        <span className="text-xs font-bold text-red-600 dark:text-red-400 bg-red-500/10 px-2.5 py-0.5 rounded-full inline-block mb-2">
+                        <span className="text-xs font-semibold text-red-600 dark:text-red-400 bg-red-500/10 px-2.5 py-0.5 rounded-full inline-block mb-2">
                           Most Popular
                         </span>
                       )}
-                      <h5 className="font-bold text-sm text-zinc-900 dark:text-white">
+                      <h5 className="font-heading font-semibold text-sm text-zinc-900 dark:text-white">
                         {tier.name}
                       </h5>
-                      <div className="text-xs text-red-600 dark:text-red-400 font-semibold mt-1">
+                      <div className="font-mono text-xs text-red-600 dark:text-red-400 font-semibold mt-1">
                         {tier.duration}
                       </div>
-                      <div className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5 mb-3">
+                      <div className="font-mono text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5 mb-3">
                         {tier.layers}
                       </div>
                       <ul className="space-y-1.5 text-[11px] sm:text-xs text-zinc-600 dark:text-zinc-300">

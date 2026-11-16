@@ -89,23 +89,23 @@ export function ServicesDetailView() {
     <div className="pt-8 pb-16 md:pt-12 md:pb-24">
       {/* Services Hero Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-zinc-900 dark:text-white tracking-tight leading-[1.12]">
+        <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
           Professional Automotive Detailing &amp; Ceramic Coating
         </h1>
 
-        <p className="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto mt-5 leading-relaxed font-normal">
+        <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-[60ch] mx-auto mt-5 leading-[1.65] font-normal">
           From our dedicated Farnworth workshop (five minutes from Junction 4 of the M61), Latin King Detailing provides certified Ceramic Pro 9H coatings, multi-stage machine polishing, leather protection, and showroom valets using only professional-grade products.
         </p>
 
         {/* Workshop Quick Badges */}
         <div className="flex flex-wrap items-center justify-center gap-3 mt-6 text-xs text-zinc-500 dark:text-zinc-400">
-          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10">
+          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10 font-medium">
             <ShieldCheck className="w-4 h-4 text-red-500" /> Ceramic Pro 9H Certified
           </span>
-          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10">
+          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10 font-medium">
             <MapPin className="w-4 h-4 text-red-500" /> Farnworth, Bolton (BL4 9EA)
           </span>
-          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10">
+          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10 font-medium">
             <Clock className="w-4 h-4 text-red-500" /> 24/7 Available
           </span>
         </div>
@@ -129,7 +129,7 @@ export function ServicesDetailView() {
         </div>
 
         {/* Quick Anchor Jump Links */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-4 pt-4 border-t border-zinc-200/80 dark:border-zinc-800/80 text-xs">
+        <div className="flex flex-wrap items-center justify-center gap-2 mt-4 pt-4 border-t border-zinc-200/80 dark:border-zinc-800/80 font-mono text-xs">
           <span className="text-zinc-400 font-semibold mr-1">Jump to:</span>
           {SERVICES.map((s, idx) => (
             <a
@@ -163,7 +163,7 @@ export function ServicesDetailView() {
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 pb-6 border-b border-zinc-100 dark:border-zinc-800/80">
                 <div className="flex items-start gap-4">
                   <div className="flex flex-col items-center">
-                    <span className="text-2xl sm:text-3xl font-black text-red-600 dark:text-red-500 font-mono">
+                    <span className="font-mono font-semibold text-2xl sm:text-3xl text-red-600 dark:text-red-500 tabular-nums">
                       {serviceNumber}
                     </span>
                     <div className="w-px h-8 bg-gradient-to-b from-red-500 to-transparent my-1" />
@@ -175,21 +175,21 @@ export function ServicesDetailView() {
                         {getServiceIcon(service.iconName)}
                       </div>
                       {isCeramic && (
-                        <span className="px-2.5 py-0.5 rounded-full bg-red-600 text-white font-bold text-[10px] shadow-xs">
-                          Signature Bolton Specialism
+                        <span className="px-2.5 py-0.5 rounded-full bg-red-600 text-white font-semibold text-[10px] shadow-xs">
+                          Signature 9H Bolton
                         </span>
                       )}
-                      <span className="text-xs font-semibold text-zinc-400 dark:text-zinc-500">
+                      <span className="text-xs font-medium text-zinc-400 dark:text-zinc-500">
                         Latin King Detailing
                       </span>
                     </div>
 
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900 dark:text-white tracking-tight">
+                    <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
                       {service.title}
                     </h2>
 
                     {service.tagline && (
-                      <p className="text-sm sm:text-base font-bold text-red-600 dark:text-red-400 mt-1">
+                      <p className="font-heading font-medium text-sm sm:text-base text-red-600 dark:text-red-400 mt-1">
                         {service.tagline}
                       </p>
                     )}
@@ -199,21 +199,21 @@ export function ServicesDetailView() {
                 {/* Service Cost Badge */}
                 {service.startingPrice && (
                   <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10 shrink-0 md:max-w-xs text-left">
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-red-600 dark:text-red-400 mb-1">
+                    <div className="flex items-center gap-1.5 text-xs font-semibold text-red-600 dark:text-red-400 mb-1">
                       <Tag className="w-3.5 h-3.5" />
                       <span>Service Cost</span>
                     </div>
-                    <div className="text-sm font-extrabold text-zinc-900 dark:text-white">
+                    <div className="font-mono font-semibold text-sm sm:text-base text-zinc-900 dark:text-white tabular-nums">
                       {service.startingPrice}
                     </div>
 
                     {/* Pricing Breakdown if multi-tier */}
                     {Array.isArray(service.pricingDetails) && (
-                      <div className="mt-2.5 pt-2 border-t border-zinc-200 dark:border-zinc-800 space-y-1 text-xs">
+                      <div className="mt-2.5 pt-2 border-t border-zinc-200 dark:border-zinc-800 space-y-1 font-mono text-xs tabular-nums">
                         {service.pricingDetails.map((pd, pdi) => (
                           <div key={pdi} className="flex justify-between text-zinc-600 dark:text-zinc-400">
                             <span>{pd.label}:</span>
-                            <span className="font-semibold text-zinc-900 dark:text-zinc-200">{pd.price}</span>
+                            <span className="font-medium text-zinc-900 dark:text-zinc-200">{pd.price}</span>
                           </div>
                         ))}
                       </div>
@@ -225,10 +225,10 @@ export function ServicesDetailView() {
               {/* Body: Full Verbatim Description */}
               <div className="py-6 space-y-6">
                 <div>
-                  <h3 className="text-xs font-bold text-zinc-400 dark:text-zinc-500 mb-2">
+                  <h3 className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 mb-2">
                     Service Description
                   </h3>
-                  <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
+                  <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 leading-[1.65] font-normal max-w-[60ch]">
                     {service.fullDesc}
                   </p>
                 </div>
@@ -236,11 +236,11 @@ export function ServicesDetailView() {
                 {/* Section: What Is / Extended Explanation */}
                 {service.whatIs && (
                   <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10 space-y-2">
-                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                    <h4 className="font-heading font-semibold text-sm text-zinc-900 dark:text-white flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-red-500" />
                       {service.id === 'ceramic-coating' ? 'What Is Ceramic Coating?' : 'What Interior Coating Does'}
                     </h4>
-                    <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                    <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-[1.65] max-w-[60ch]">
                       {service.whatIs}
                     </p>
                   </div>
@@ -249,7 +249,7 @@ export function ServicesDetailView() {
                 {/* Machine Polishing: Why Choose Machine Polishing? */}
                 {service.whyChoose && service.whyChoose.length > 0 && (
                   <div>
-                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white mb-4">
+                    <h4 className="font-heading font-semibold text-sm text-zinc-900 dark:text-white mb-4">
                       Why Choose Machine Polishing?
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -258,11 +258,11 @@ export function ServicesDetailView() {
                           key={wci}
                           className="p-5 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10"
                         >
-                          <div className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-2 mb-1.5">
+                          <div className="font-heading font-semibold text-sm text-zinc-900 dark:text-white flex items-center gap-2 mb-1.5">
                             <Check className="w-4 h-4 text-red-500 shrink-0" />
                             <span>{item.title}</span>
                           </div>
-                          <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                          <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65]">
                             {item.desc}
                           </p>
                         </div>
@@ -274,7 +274,7 @@ export function ServicesDetailView() {
                 {/* Interior Surfaces We Protect (Leather Service) */}
                 {service.surfacesProtected && service.surfacesProtected.length > 0 && (
                   <div>
-                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white mb-4">
+                    <h4 className="font-heading font-semibold text-sm text-zinc-900 dark:text-white mb-4">
                       Interior Surfaces We Protect
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -283,11 +283,11 @@ export function ServicesDetailView() {
                           key={spi}
                           className="p-4 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10"
                         >
-                          <div className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-2 mb-1">
+                          <div className="font-heading font-semibold text-sm text-zinc-900 dark:text-white flex items-center gap-2 mb-1">
                             <span className="w-2 h-2 rounded-full bg-red-500" />
                             <span>{item.title}</span>
                           </div>
-                          <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                          <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-[1.65]">
                             {item.desc}
                           </p>
                         </div>
@@ -299,7 +299,7 @@ export function ServicesDetailView() {
                 {/* The King's Detail: What's Included */}
                 {service.includedItems && service.includedItems.length > 0 && (
                   <div>
-                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white mb-4">
+                    <h4 className="font-heading font-semibold text-sm text-zinc-900 dark:text-white mb-4">
                       What’s Included in The King’s Detail
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -308,11 +308,11 @@ export function ServicesDetailView() {
                           key={incIdx}
                           className="p-5 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10"
                         >
-                          <div className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-2 mb-2">
+                          <div className="font-heading font-semibold text-sm text-zinc-900 dark:text-white flex items-center gap-2 mb-2">
                             <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0" />
                             <span>{item.title}</span>
                           </div>
-                          <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                          <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65]">
                             {item.desc}
                           </p>
                         </div>
@@ -324,7 +324,7 @@ export function ServicesDetailView() {
                 {/* Sub Services Breakdown (Deep Clean & Engine Bay / Full Valet Options) */}
                 {service.subServices && service.subServices.length > 0 && (
                   <div className="space-y-4">
-                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white">
+                    <h4 className="font-heading font-semibold text-sm text-zinc-900 dark:text-white">
                       Detailed Service Options
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -335,21 +335,21 @@ export function ServicesDetailView() {
                         >
                           <div>
                             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                              <h5 className="font-black text-base text-zinc-900 dark:text-white">
+                              <h5 className="font-heading font-semibold text-base text-zinc-900 dark:text-white">
                                 {sub.title}
                               </h5>
                               {sub.price && (
-                                <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 self-start sm:self-auto">
+                                <span className="font-mono text-xs font-medium tabular-nums px-2.5 py-1 rounded-md bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 self-start sm:self-auto">
                                   {sub.price}
                                 </span>
                               )}
                             </div>
                             {sub.subtitle && (
-                              <div className="text-xs font-semibold text-red-500 mb-2">
+                              <div className="font-mono text-xs font-medium text-red-500 mb-2">
                                 {sub.subtitle}
                               </div>
                             )}
-                            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65]">
                               {sub.desc}
                             </p>
                           </div>
@@ -362,7 +362,7 @@ export function ServicesDetailView() {
                 {/* 6-Step Process Breakdown (Ceramic Coating) */}
                 {service.steps && service.steps.length > 0 && (
                   <div>
-                    <h4 className="text-base font-bold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
+                    <h4 className="font-heading font-semibold text-base text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
                       <ShieldCheck className="w-5 h-5 text-red-500" />
                       Our 6-Step Ceramic Coating Process
                     </h4>
@@ -372,14 +372,14 @@ export function ServicesDetailView() {
                           key={st.step}
                           className="p-4 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10 flex gap-3"
                         >
-                          <div className="w-8 h-8 rounded-xl bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 font-bold flex items-center justify-center shrink-0 text-xs">
+                          <div className="w-8 h-8 rounded-xl bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 font-mono font-medium flex items-center justify-center shrink-0 text-xs">
                             0{st.step}
                           </div>
                           <div>
-                            <h5 className="font-bold text-xs sm:text-sm text-zinc-900 dark:text-white">
+                            <h5 className="font-heading font-semibold text-xs sm:text-sm text-zinc-900 dark:text-white">
                               {st.title}
                             </h5>
-                            <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1 leading-relaxed">
+                            <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1 leading-[1.65]">
                               {st.desc}
                             </p>
                           </div>
@@ -392,7 +392,7 @@ export function ServicesDetailView() {
                 {/* Ceramic Pro Bronze / Silver / Gold Tiers */}
                 {service.tiers && service.tiers.length > 0 && (
                   <div>
-                    <h4 className="text-base font-bold text-zinc-900 dark:text-white mb-4">
+                    <h4 className="font-heading font-semibold text-base text-zinc-900 dark:text-white mb-4">
                       Ceramic Pro 9H Package Tiers (Bolton Workshop)
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -407,17 +407,17 @@ export function ServicesDetailView() {
                         >
                           <div>
                             {tier.name.includes('Silver') && (
-                              <span className="text-[10px] font-bold text-red-600 dark:text-red-400 bg-red-500/10 px-2 py-0.5 rounded-full inline-block mb-2">
+                              <span className="text-[10px] font-semibold text-red-600 dark:text-red-400 bg-red-500/10 px-2 py-0.5 rounded-full inline-block mb-2">
                                 Most Popular Package
                               </span>
                             )}
-                            <h5 className="font-black text-base text-zinc-900 dark:text-white">
+                            <h5 className="font-heading font-semibold text-base text-zinc-900 dark:text-white">
                               {tier.name}
                             </h5>
-                            <div className="text-xs text-red-600 dark:text-red-400 font-semibold mt-1">
+                            <div className="font-mono text-xs text-red-600 dark:text-red-400 font-semibold mt-1">
                               {tier.duration}
                             </div>
-                            <div className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5 mb-3">
+                            <div className="font-mono text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5 mb-3">
                               {tier.layers}
                             </div>
                             <ul className="space-y-1.5 text-xs text-zinc-600 dark:text-zinc-300">

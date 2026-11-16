@@ -76,10 +76,10 @@ export function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
+          <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
             Professional Detailing &amp; Paint Protection
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-300 text-base sm:text-lg mt-4 leading-relaxed font-normal">
+          <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-[60ch] mx-auto leading-[1.65] font-normal">
             Latin King Detailing provides complete paint protection, defect correction, and cabin restoration from our Farnworth studio, using only certified, professional-grade products.
           </p>
 
@@ -164,40 +164,40 @@ export function Services() {
                       <div className="p-3 rounded-2xl bg-red-500/10 dark:bg-red-500/15 border border-red-500/25">
                         {getServiceIcon(service.iconName)}
                       </div>
-                      <span className="text-xs font-bold text-zinc-400 font-mono">
+                      <span className="font-mono text-xs font-medium text-zinc-400">
                         0{sIdx + 1}
                       </span>
                     </div>
 
                     {isCeramic ? (
-                      <span className="px-3 py-1 rounded-full bg-red-600 text-white font-bold text-xs shadow-sm">
-                        Signature Specialism
+                      <span className="px-3 py-1 rounded-full bg-red-600 text-white font-semibold text-xs shadow-sm">
+                        Signature 9H
                       </span>
                     ) : (
                       <span className="text-xs font-medium text-zinc-400 dark:text-zinc-500">
-                        Professional Grade
+                        Pro Grade
                       </span>
                     )}
                   </div>
 
-                  {/* Title & Tagline */}
-                  <h3 className="text-2xl font-black text-zinc-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors">
+                  {/* Title & Tagline - Card H3 spec */}
+                  <h3 className="font-heading font-semibold text-[1.25rem] leading-[1.3] tracking-[-0.01em] text-zinc-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors">
                     {service.title}
                   </h3>
 
                   {service.tagline && (
-                    <div className="text-xs font-semibold text-red-600 dark:text-red-400 mt-1">
+                    <div className="text-xs font-medium text-red-600 dark:text-red-400 mt-1">
                       {service.tagline}
                     </div>
                   )}
 
-                  <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 mt-2 font-normal leading-relaxed">
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-2 max-w-[60ch] font-normal leading-[1.65]">
                     {service.shortDesc}
                   </p>
 
                   {/* Cost Pill */}
                   {service.startingPrice && (
-                    <div className="mt-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 text-xs text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700/60 font-semibold">
+                    <div className="mt-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 font-mono text-xs text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700/60 font-medium tabular-nums">
                       <Tag className="w-3.5 h-3.5 text-red-500 shrink-0" />
                       <span>{service.startingPrice}</span>
                     </div>
@@ -219,20 +219,20 @@ export function Services() {
                   {isCeramic && (
                     <div className="mt-5 p-4 rounded-2xl bg-red-500/5 dark:bg-red-500/10 border border-red-500/20">
                       <div className="flex items-center gap-2 text-xs font-semibold text-red-600 dark:text-red-400 mb-2">
-                        <Layers className="w-4 h-4" /> 6-step precision process and packages
+                        <Layers className="w-4 h-4" /> 6-Step Precision Process &amp; Packages
                       </div>
                       <div className="grid grid-cols-3 gap-2 text-center text-xs">
                         <div className="p-2 bg-white dark:bg-zinc-900 rounded-lg border border-red-500/20">
-                          <span className="block font-bold text-zinc-900 dark:text-white">Bronze</span>
-                          <span className="text-[10px] text-zinc-500 dark:text-zinc-400">2-Year Cover</span>
+                          <span className="block font-heading font-semibold text-zinc-900 dark:text-white">Bronze</span>
+                          <span className="font-mono text-[10px] text-zinc-500 dark:text-zinc-400">2-YR COVER</span>
                         </div>
                         <div className="p-2 bg-white dark:bg-zinc-900 rounded-lg border border-red-500/40 font-semibold shadow-xs">
-                          <span className="block font-bold text-red-500">Silver</span>
-                          <span className="text-[10px] text-zinc-500 dark:text-zinc-400">5-Year 9H</span>
+                          <span className="block font-heading font-semibold text-red-500">Silver</span>
+                          <span className="font-mono text-[10px] text-zinc-500 dark:text-zinc-400">5-YR 9H</span>
                         </div>
                         <div className="p-2 bg-white dark:bg-zinc-900 rounded-lg border border-red-500/20">
-                          <span className="block font-bold text-zinc-900 dark:text-white">Gold</span>
-                          <span className="text-[10px] text-zinc-500 dark:text-zinc-400">Lifetime 9H</span>
+                          <span className="block font-heading font-semibold text-zinc-900 dark:text-white">Gold</span>
+                          <span className="font-mono text-[10px] text-zinc-500 dark:text-zinc-400">LIFETIME 9H</span>
                         </div>
                       </div>
                     </div>
@@ -276,10 +276,10 @@ export function Services() {
         {/* Dedicated Page Hero Banner CTA */}
         <div className="mt-14 p-6 sm:p-10 rounded-3xl bg-workshop-muted text-white border border-red-500/40 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <h3 className="text-2xl sm:text-3xl font-black">
+            <h3 className="font-heading font-semibold text-2xl sm:text-3xl text-white tracking-tight">
               Explore Our Dedicated Services Page
             </h3>
-            <p className="text-sm text-zinc-400 mt-1 max-w-xl">
+            <p className="text-sm text-zinc-400 mt-2 max-w-[60ch] leading-[1.65]">
               View in-depth breakdowns, process steps, vehicle surfaces protected, and complete transparent pricing for all 7 Latin King Detailing packages.
             </p>
           </div>

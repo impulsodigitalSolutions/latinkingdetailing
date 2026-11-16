@@ -44,10 +44,10 @@ export default function LocationsPage() {
             </nav>
 
             <div className="max-w-3xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
+              <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
                 Where We Work: Bolton &amp; Greater Manchester
               </h1>
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
+              <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 max-w-[60ch] leading-[1.65]">
                 Our main climate-controlled facility is located at <strong>115 Albert Rd, Farnworth, Bolton BL4 9EA</strong>, five minutes from Junction 4 of the M61. We also serve clients across 24 towns and boroughs with verified mobile detailing services.
               </p>
             </div>
@@ -64,10 +64,10 @@ export default function LocationsPage() {
               {/* Left Column: Workshop Details & Travel Guide (5 cols) */}
               <div className="lg:col-span-5 space-y-6">
                 <div>
-                  <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white">
+                  <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
                     Farnworth Workshop Hub
                   </h2>
-                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-2">
+                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-2 max-w-[60ch] leading-[1.65]">
                     Conveniently positioned for fast access from the M61, M60, and A666 St Peter&apos;s Way.
                   </p>
                 </div>

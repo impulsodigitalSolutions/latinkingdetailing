@@ -23,10 +23,10 @@ export function Gallery() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl font-black text-zinc-900 dark:text-white tracking-tight">
+            <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
               Recent Transformations: <span className="text-red-600 dark:text-red-500">Bolton Studio</span>
             </h2>
-            <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2">
+            <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2 max-w-[60ch] leading-[1.65]">
               Explore genuine Ceramic Pro 9H applications, paint correction stages, and cabin restorations completed at our Farnworth facility.
             </p>
           </div>
@@ -90,12 +90,12 @@ export function Gallery() {
 
                 {/* Top badges */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 border border-white/10 text-red-400 text-xs font-bold">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 border border-white/10 text-red-400 text-xs font-semibold">
                     <ShieldCheck className="w-3.5 h-3.5 text-red-500" />
                     {item.service}
                   </span>
 
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-red-600 text-white text-xs font-black shadow-md shadow-red-600/30">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-red-600 text-white text-xs font-semibold shadow-md shadow-red-600/30">
                     <Eye className="w-3.5 h-3.5" />
                     Inspect Finish
                   </span>
@@ -103,14 +103,14 @@ export function Gallery() {
 
                 {/* Bottom Overlay Info */}
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <div className="flex items-center gap-1.5 text-xs text-red-400 font-semibold mb-1">
+                  <div className="flex items-center gap-1.5 font-mono text-xs text-red-400 font-medium mb-1">
                     <MapPin className="w-3.5 h-3.5 text-red-500" />
                     {item.location}
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-red-400 transition-colors">
+                  <h3 className="font-heading font-semibold text-[1.25rem] leading-[1.3] tracking-[-0.01em] text-white group-hover:text-red-400 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-zinc-300 line-clamp-1 mt-0.5">
+                  <p className="text-xs text-zinc-300 line-clamp-1 mt-0.5 leading-[1.65]">
                     {item.imageAlt}
                   </p>
                 </div>

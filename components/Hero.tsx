@@ -32,8 +32,8 @@ export function Hero() {
               </div>
               <GoogleIcon className="w-4 h-4 shrink-0" />
               <StarRating rating={SITE_CONFIG.googleRating} size="w-3.5 h-3.5" />
-              <span className="font-semibold text-zinc-900 dark:text-white tabular-nums">
-                {SITE_CONFIG.googleRating} Google Rating
+              <span className="font-semibold text-zinc-900 dark:text-white">
+                <span className="font-mono tabular-nums">{SITE_CONFIG.googleRating}</span> Google Rating
               </span>
               <span className="text-zinc-300 dark:text-zinc-700">|</span>
               <span className="text-zinc-500 dark:text-zinc-400">
@@ -41,13 +41,13 @@ export function Hero() {
               </span>
             </div>
 
-            {/* Main Headline - Solid typography with clean craft accent */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black tracking-tight text-zinc-900 dark:text-white leading-[1.1]">
+            {/* Main Headline - Strict Scale & Tighter Display Tracking */}
+            <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
               Bolton&apos;s Premier Ceramic Coating &amp; Detailing Workshop
             </h1>
 
-            {/* Subheadline (British workshop voice) */}
-            <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            {/* Subheadline - Constrained line length & muted secondary contrast */}
+            <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-[60ch] mx-auto lg:mx-0 leading-[1.65] font-normal">
               Based in Farnworth, five minutes from Junction 4 of the M61. Certified Ceramic Pro 9H installers and KAVACA PPF specialists. We detail vehicles to an uncompromising standard, restoring paintwork depth and locking in multi-year hydrophobic armor.
             </p>
 
@@ -131,7 +131,7 @@ export function Hero() {
                     </div>
                     <span>Latin King Detailing Showcase</span>
                   </div>
-                  <div className="text-lg font-bold text-zinc-900 dark:text-white">
+                  <div className="font-heading font-semibold text-lg text-zinc-900 dark:text-white">
                     Lamborghini Aventador LP700
                   </div>
                   <div className="text-xs text-zinc-500 dark:text-zinc-400 mb-4">
@@ -141,19 +141,19 @@ export function Hero() {
                   {/* Showcase Stats & Badges underneath */}
                   <div className="grid grid-cols-3 gap-3 text-center">
                     <div className="p-2.5 rounded-xl bg-white dark:bg-workshop-surface border border-zinc-200 dark:border-white/10">
-                      <div className="text-red-500 font-black text-sm sm:text-base">9H</div>
+                      <div className="font-mono text-red-500 font-semibold text-sm sm:text-base tabular-nums">9H</div>
                       <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-medium">
                         Hardness
                       </div>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white dark:bg-workshop-surface border border-zinc-200 dark:border-white/10">
-                      <div className="text-red-500 font-black text-sm sm:text-base">&gt;110°</div>
+                      <div className="font-mono text-red-500 font-semibold text-sm sm:text-base tabular-nums">&gt;110°</div>
                       <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-medium">
                         Hydrophobic
                       </div>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white dark:bg-workshop-surface border border-zinc-200 dark:border-white/10">
-                      <div className="text-red-500 font-black text-sm sm:text-base">VIN</div>
+                      <div className="font-mono text-red-500 font-semibold text-sm sm:text-base">VIN</div>
                       <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-medium">
                         Registered
                       </div>

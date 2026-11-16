@@ -163,13 +163,13 @@ export function Navbar() {
                     className="absolute top-full left-0 mt-3 w-88 rounded-3xl bg-white dark:bg-workshop-card-subtle border border-zinc-200 dark:border-white/10 shadow-2xl p-3 z-50"
                   >
                     <div className="px-3 py-2 border-b border-zinc-100 dark:border-zinc-800/80 mb-1 flex items-center justify-between">
-                      <span className="text-[10px] font-bold text-red-600 dark:text-red-500">
+                      <span className="text-[10px] font-semibold text-red-600 dark:text-red-500">
                         7 Certified Detailing Services
                       </span>
                       <Link
                         href="/services"
                         onClick={() => setServicesDropdownOpen(false)}
-                        className="text-[10px] font-bold text-red-600 dark:text-red-400 hover:underline inline-flex items-center gap-0.5"
+                        className="text-[10px] font-semibold text-red-600 dark:text-red-400 hover:underline inline-flex items-center gap-0.5"
                       >
                         <span>Full Menu</span>
                         <ArrowRight className="w-2.5 h-2.5" />
@@ -191,10 +191,10 @@ export function Navbar() {
                             {getServiceIcon(srv.iconName)}
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="text-xs font-bold text-zinc-900 dark:text-white group-hover/item:text-red-600 dark:group-hover/item:text-red-500 transition-colors truncate">
+                            <div className="font-heading font-semibold text-xs text-zinc-900 dark:text-white group-hover/item:text-red-600 dark:group-hover/item:text-red-500 transition-colors truncate">
                               {srv.title}
                             </div>
-                            <div className="text-[10px] text-zinc-500 dark:text-zinc-400 line-clamp-1">
+                            <div className="text-[10px] text-zinc-500 dark:text-zinc-400 line-clamp-1 leading-[1.65]">
                               {srv.tagline || srv.shortDesc}
                             </div>
                           </div>
@@ -209,7 +209,7 @@ export function Navbar() {
                         onClick={() => setServicesDropdownOpen(false)}
                         className="w-full py-2 px-3 rounded-xl bg-red-600/10 hover:bg-red-600 text-red-600 dark:text-red-400 hover:text-white font-bold text-xs flex items-center justify-between transition-colors"
                       >
-                        <span>View Dedicated Services Page</span>
+                        <span>View All Services</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
 

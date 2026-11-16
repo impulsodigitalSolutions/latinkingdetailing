@@ -21,10 +21,10 @@ export function ServiceAreas() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
+          <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
             Serving Bolton &amp; 24 Regional Towns
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
+          <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-[60ch] mx-auto leading-[1.65]">
             Clients bring vehicles to our climate-controlled Farnworth workshop from across 24 Greater Manchester boroughs for certified Ceramic Pro 9H applications.
           </p>
         </div>
@@ -34,7 +34,7 @@ export function ServiceAreas() {
           <div className="lg:col-span-7 bg-white dark:bg-workshop-card-subtle rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-white/10 shadow-md">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
-                <h3 className="text-xl font-extrabold text-zinc-900 dark:text-white">
+                <h3 className="font-heading font-semibold text-[1.25rem] leading-[1.3] tracking-[-0.01em] text-zinc-900 dark:text-white">
                   24 Greater Manchester Locations
                 </h3>
                 <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">

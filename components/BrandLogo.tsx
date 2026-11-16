@@ -102,14 +102,14 @@ export function BrandLogo({
         <div className={`flex flex-col text-left ${textClassName}`}>
           <div className="flex items-center gap-1.5">
             <span
-              className={`font-black tracking-tight ${resolvedTitleClass} group-hover:text-red-500 transition-colors ${dimensions.fontTitle}`}
+              className={`font-heading font-semibold tracking-tight ${resolvedTitleClass} group-hover:text-red-500 transition-colors ${dimensions.fontTitle}`}
             >
               Latin King Detailing
             </span>
           </div>
           {subtitle && (
             <span
-              className={`font-semibold ${resolvedSubClass} ${dimensions.fontSub}`}
+              className={`font-mono text-[10px] sm:text-xs font-medium ${resolvedSubClass}`}
             >
               {subtitle}
             </span>

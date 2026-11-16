@@ -60,10 +60,10 @@ export function QuoteModal() {
                 />
               </div>
               <div>
-                <h2 id="quote-modal-title" className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
+                <h2 id="quote-modal-title" className="font-heading font-semibold text-2xl sm:text-3xl text-zinc-900 dark:text-white tracking-tight">
                   Get Your Vehicle Quote
                 </h2>
-                <p className="text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm mt-1">
+                <p className="text-zinc-600 dark:text-zinc-400 text-xs font-medium mt-1">
                   Bolton Workshop · Ceramic Pro 9H Certified
                 </p>
               </div>

@@ -43,10 +43,10 @@ export default function ComparisonPage() {
             </nav>
 
             <div className="max-w-3xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
+              <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
                 Ceramic Coating vs PPF vs Traditional Wax
               </h1>
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
+              <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 max-w-[60ch] leading-[1.65]">
                 Not all automotive protections are created equal. Understand the differences between nanoceramic quartz bonding, self-healing polyurethane film, and dealership waxes so you make an informed investment for your vehicle.
               </p>
             </div>
@@ -60,10 +60,10 @@ export default function ComparisonPage() {
         <section className="py-16 bg-white dark:bg-workshop-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white">
+              <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
                 Which Protection Strategy Fits Your Driving Habits?
               </h2>
-              <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-2">
+              <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-2 max-w-[60ch] mx-auto leading-[1.65]">
                 Every vehicle and driving routine is unique. Here is how our Bolton detailing specialists recommend choosing:
               </p>
             </div>
@@ -71,20 +71,20 @@ export default function ComparisonPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Ceramic Pro 9H Card */}
               <div className="rounded-3xl border border-red-500/30 bg-red-500/[0.02] dark:bg-workshop-card p-6 sm:p-8 flex flex-col justify-between shadow-lg relative overflow-hidden">
-                <div className="absolute top-0 right-0 px-3 py-1 bg-red-600 text-white font-extrabold text-[10px] rounded-bl-2xl">
+                <div className="absolute top-0 right-0 px-3 py-1 bg-red-600 text-white text-xs font-semibold rounded-bl-2xl">
                   Most Popular
                 </div>
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-red-500/10 text-red-600 dark:text-red-500 flex items-center justify-center mb-6">
                     <ShieldCheck className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-black text-zinc-900 dark:text-white">
+                  <h3 className="font-heading font-semibold text-[1.25rem] leading-[1.3] tracking-[-0.01em] text-zinc-900 dark:text-white">
                     Ceramic Pro 9H
                   </h3>
-                  <div className="text-xs font-bold text-red-600 dark:text-red-400 mb-3">
+                  <div className="text-xs font-medium text-red-600 dark:text-red-400 mb-3">
                     Molecular Nanoceramic Shield
                   </div>
-                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65] mb-6 max-w-[60ch]">
                     Permanently fuses into clear coat pores to create a 9H diamond-hard glass barrier. Eliminates oxidation, blocks UV radiation, sheds road dirt continuously, and prevents wash swirls.
                   </p>
                   <ul className="space-y-2 text-xs text-zinc-700 dark:text-zinc-300 mb-6">
@@ -116,13 +116,13 @@ export default function ComparisonPage() {
                   <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-500 flex items-center justify-center mb-6">
                     <Shield className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-black text-zinc-900 dark:text-white">
+                  <h3 className="font-heading font-semibold text-[1.25rem] leading-[1.3] tracking-[-0.01em] text-zinc-900 dark:text-white">
                     KAVACA PPF
                   </h3>
-                  <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-3">
+                  <div className="text-xs font-medium text-emerald-600 dark:text-emerald-400 mb-3">
                     Self-Healing Stone Chip Armor
                   </div>
-                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65] mb-6 max-w-[60ch]">
                     An 8-mil optically clear polyurethane shield engineered to physically deflect high-speed gravel, road debris, and stone chips on motorways (M61, M60, M62).
                   </p>
                   <ul className="space-y-2 text-xs text-zinc-700 dark:text-zinc-300 mb-6">
@@ -154,13 +154,13 @@ export default function ComparisonPage() {
                   <div className="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-6">
                     <Sparkles className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-black text-zinc-900 dark:text-white">
+                  <h3 className="font-heading font-semibold text-[1.25rem] leading-[1.3] tracking-[-0.01em] text-zinc-900 dark:text-white">
                     The King’s Hybrid Setup
                   </h3>
-                  <div className="text-xs font-bold text-purple-600 dark:text-purple-400 mb-3">
+                  <div className="text-xs font-medium text-purple-600 dark:text-purple-400 mb-3">
                     PPF Front End + Full 9H Body
                   </div>
-                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65] mb-6 max-w-[60ch]">
                     The gold standard for prestige vehicles and supercars. Front bumper, bonnet, and mirrors receive KAVACA PPF stone chip immunity, while the rest of the car is locked in Ceramic Pro 9H gloss.
                   </p>
                   <ul className="space-y-2 text-xs text-zinc-700 dark:text-zinc-300 mb-6">

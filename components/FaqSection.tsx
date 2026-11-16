@@ -20,10 +20,10 @@ export function FaqSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
+          <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
             Frequently Asked Questions
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-3">
+          <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-3 max-w-[60ch] mx-auto leading-[1.65]">
             Answers on Ceramic Pro 9H nanocoatings, paint correction processes, and workshop appointments.
           </p>
         </div>
@@ -48,7 +48,7 @@ export function FaqSection() {
                   className="w-full py-5 px-6 text-left flex items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-bold text-base sm:text-lg text-zinc-900 dark:text-white">
+                  <span className="font-heading font-semibold text-base sm:text-lg text-zinc-900 dark:text-white">
                     {item.question}
                   </span>
                   <div
@@ -61,7 +61,7 @@ export function FaqSection() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed font-normal border-t border-zinc-100 dark:border-zinc-800/60">
+                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-[1.65] font-normal border-t border-zinc-100 dark:border-zinc-800/60 max-w-[60ch]">
                     <p>{item.answer}</p>
                   </div>
                 )}

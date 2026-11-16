@@ -36,13 +36,13 @@ export function StatsBar() {
                   Verified
                 </span>
               </div>
-              <div className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white tracking-tight tabular-nums">
+              <div className="font-mono font-semibold text-2xl sm:text-3xl text-zinc-900 dark:text-white tracking-tight tabular-nums">
                 {stat.value}
               </div>
-              <div className="text-xs sm:text-sm font-bold text-red-600 dark:text-red-500 mt-0.5">
+              <div className="font-heading font-semibold text-xs sm:text-sm text-red-600 dark:text-red-500 mt-0.5">
                 {stat.label}
               </div>
-              <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+              <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-[1.65]">
                 {stat.detail}
               </div>
             </div>

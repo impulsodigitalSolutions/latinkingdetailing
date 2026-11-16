@@ -45,10 +45,10 @@ export default function ReviewsPage() {
 
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
               <div className="max-w-3xl">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
+                <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
                   What Bolton &amp; Manchester Drivers Say
                 </h1>
-                <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
+                <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 max-w-[60ch] leading-[1.65]">
                   Real feedback from prestige car owners, daily commuters, and commercial clients across Bolton, Farnworth, and Greater Manchester who trust Latin King Detailing.
                 </p>
               </div>
@@ -63,12 +63,12 @@ export default function ReviewsPage() {
                 >
                   <GoogleIcon className="w-7 h-7" />
                   <div>
-                    <div className="flex items-center gap-1.5 font-black text-zinc-900 dark:text-white">
-                      <span>4.7 Stars</span>
+                    <div className="flex items-center gap-1.5 font-semibold text-zinc-900 dark:text-white">
+                      <span><span className="font-mono tabular-nums">4.7</span> Stars</span>
                       <StarRating rating={4.7} size="w-3.5 h-3.5" />
                     </div>
                     <div className="text-xs text-zinc-500 dark:text-zinc-400">
-                      15 Verified Google Reviews
+                      <span className="font-mono tabular-nums">15</span> Verified Google Reviews
                     </div>
                   </div>
                 </a>
@@ -81,12 +81,12 @@ export default function ReviewsPage() {
                 >
                   <FacebookIcon className="w-7 h-7 text-brand-fb" />
                   <div>
-                    <div className="flex items-center gap-1.5 font-black text-zinc-900 dark:text-white">
-                      <span>5.0 Stars</span>
+                    <div className="flex items-center gap-1.5 font-semibold text-zinc-900 dark:text-white">
+                      <span><span className="font-mono tabular-nums">5.0</span> Stars</span>
                       <StarRating rating={5.0} size="w-3.5 h-3.5" />
                     </div>
                     <div className="text-xs text-zinc-500 dark:text-zinc-400">
-                      47+ Community Reviews
+                      <span className="font-mono tabular-nums">47+</span> Community Reviews
                     </div>
                   </div>
                 </a>

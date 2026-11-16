@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Space_Grotesk, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { ModalProvider } from '@/components/ModalContext';
@@ -9,14 +9,25 @@ import { GalleryModal } from '@/components/GalleryModal';
 import { FloatingActions } from '@/components/FloatingActions';
 import { SITE_CONFIG } from '@/lib/site-data';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const spaceGrotesk = Space_Grotesk({
+  variable: '--font-heading',
   subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: '--font-sans',
   subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-mono',
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -78,7 +89,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased overflow-x-clip`}
+      className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans h-full antialiased overflow-x-clip`}
     >
       <body className="min-h-full flex flex-col overflow-x-clip bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 selection:bg-red-600 selection:text-white">
         <ThemeProvider

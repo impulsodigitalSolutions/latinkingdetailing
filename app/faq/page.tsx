@@ -44,10 +44,10 @@ export default function FaqPage() {
             </nav>
 
             <div className="max-w-3xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
+              <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
                 Frequently Asked Detailing Questions
               </h1>
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
+              <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 max-w-[60ch] leading-[1.65]">
                 Clear, honest answers about Ceramic Pro 9H coating, paint correction stages, valeting frequency, pricing estimates, and our Farnworth workshop booking process.
               </p>
             </div>
@@ -60,10 +60,10 @@ export default function FaqPage() {
         {/* Instant WhatsApp Guidance Banner */}
         <section className="py-12 bg-zinc-50 dark:bg-workshop-muted/60 border-y border-zinc-200 dark:border-white/5">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl font-black text-zinc-900 dark:text-white mb-2">
+            <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white mb-2">
               Have a Specific Question About Your Car?
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto mb-6">
+            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 max-w-[60ch] mx-auto mb-6 leading-[1.65]">
               Send us a photo of your vehicle&apos;s paintwork or interior on WhatsApp. We&apos;ll give you an honest recommendation and transparent price estimate with zero sales pressure.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">

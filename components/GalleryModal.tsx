@@ -67,10 +67,10 @@ export function GalleryModal() {
 
           {/* Bottom badge overlay */}
           <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
-            <span className="px-3 py-1 rounded-full bg-red-600 text-white font-bold text-xs shadow-md">
+            <span className="px-3 py-1 rounded-full bg-red-600 text-white text-xs font-semibold shadow-md">
               {item.finish}
             </span>
-            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 text-xs text-zinc-300 border border-white/10">
+            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 text-xs text-zinc-300 border border-white/10 font-medium">
               <MapPin className="w-3.5 h-3.5 text-red-400" />
               {item.location}
             </span>
@@ -89,10 +89,10 @@ export function GalleryModal() {
                 />
               </div>
               <div>
-                <h2 id="gallery-modal-title" className="text-2xl sm:text-3xl font-extrabold text-white">
+                <h2 id="gallery-modal-title" className="font-heading font-semibold text-2xl sm:text-3xl text-white">
                   {item.title}
                 </h2>
-                <p className="text-zinc-400 text-sm mt-1">{item.subtitle}</p>
+                <p className="text-zinc-400 text-sm mt-1 max-w-[60ch] leading-[1.65]">{item.subtitle}</p>
               </div>
             </div>
             <button

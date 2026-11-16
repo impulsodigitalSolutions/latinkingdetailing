@@ -25,10 +25,10 @@ export function QuoteSection() {
                 Latin King Detailing · Bolton Workshop
               </div>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
+            <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-white">
               Ready to Protect Your Car?
             </h2>
-            <p className="text-zinc-300 text-base sm:text-lg mt-3 leading-relaxed">
+            <p className="text-zinc-300 text-base sm:text-lg mt-3 max-w-[60ch] leading-[1.65]">
               Get a free, no-obligation quote from Bolton&apos;s Ceramic Pro certified specialists. We&apos;ll recommend the right protection for your vehicle and budget.
             </p>
 

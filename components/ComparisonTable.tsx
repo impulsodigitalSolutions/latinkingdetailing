@@ -12,11 +12,11 @@ export function ComparisonTable() {
   const renderCellContent = (val: string | boolean, isHighlighted = false) => {
     if (typeof val === 'boolean') {
       return val ? (
-        <span className="inline-flex items-center gap-1.5 text-emerald-500 font-bold">
+        <span className="inline-flex items-center gap-1.5 text-emerald-500 font-semibold text-xs">
           <Check className="w-4 h-4 text-emerald-500 shrink-0" /> Included
         </span>
       ) : (
-        <span className="inline-flex items-center gap-1.5 text-zinc-400">
+        <span className="inline-flex items-center gap-1.5 text-zinc-400 text-xs">
           <ShieldAlert className="w-4 h-4 text-zinc-400 shrink-0" /> Optional
         </span>
       );
@@ -27,10 +27,10 @@ export function ComparisonTable() {
     const isPositive = strVal.includes('9H') || strVal.includes('Heavy Physical') || strVal.includes('Permanent') || strVal.includes('100%') || strVal.includes('Instant Heat') || strVal.includes('Maximum');
     
     return (
-      <span className="inline-flex items-center gap-1.5">
+      <span className="inline-flex items-center gap-1.5 font-mono text-xs tabular-nums">
         {isPositive && <Check className="w-4 h-4 text-emerald-500 shrink-0" />}
         {isNegative && <ShieldAlert className="w-4 h-4 text-zinc-400 shrink-0" />}
-        <span className={isHighlighted && !isNegative ? 'text-red-600 dark:text-red-400 font-bold' : ''}>
+        <span className={isHighlighted && !isNegative ? 'text-red-600 dark:text-red-400 font-medium' : ''}>
           {strVal}
         </span>
       </span>
@@ -42,10 +42,10 @@ export function ComparisonTable() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
+          <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
             Ceramic Coating vs PPF vs Traditional Wax
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
+          <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-[60ch] mx-auto leading-[1.65]">
             Not all automotive protections are created equal. Compare how certified Ceramic Pro 9H nanoceramics and KAVACA PPF stack up against traditional dealership waxes.
           </p>
         </div>
@@ -56,23 +56,23 @@ export function ComparisonTable() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-100/70 dark:bg-workshop-row">
-                  <th className="py-5 px-4 sm:px-6 text-xs sm:text-sm font-bold text-zinc-600 dark:text-zinc-400 w-1/4">
-                    Protection criteria
+                  <th className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 w-1/4">
+                    Protection Criteria
                   </th>
-                  <th className="py-5 px-4 sm:px-6 text-xs sm:text-sm font-bold text-red-600 dark:text-red-500 w-1/4 bg-red-500/[0.04]">
+                  <th className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-red-600 dark:text-red-500 w-1/4 bg-red-500/[0.04]">
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-red-500" />
                       <span>Ceramic Pro 9H</span>
                     </div>
                   </th>
-                  <th className="py-5 px-4 sm:px-6 text-xs sm:text-sm font-bold text-zinc-800 dark:text-zinc-200 w-1/4">
+                  <th className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 w-1/4">
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-emerald-500" />
                       <span>KAVACA PPF</span>
                     </div>
                   </th>
-                  <th className="py-5 px-4 sm:px-6 text-xs sm:text-sm font-bold text-zinc-400 w-1/4">
-                    Traditional wax
+                  <th className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-zinc-400 w-1/4">
+                    Traditional Wax
                   </th>
                 </tr>
               </thead>
@@ -82,7 +82,7 @@ export function ComparisonTable() {
                     key={idx}
                     className="hover:bg-zinc-50/80 dark:hover:bg-zinc-800/40 transition-colors"
                   >
-                    <td className="py-4 px-4 sm:px-6 font-bold text-zinc-900 dark:text-white">
+                    <td className="py-4 px-4 sm:px-6 font-heading font-medium text-zinc-900 dark:text-white">
                       {row.feature}
                     </td>
 
