@@ -11,7 +11,7 @@ import { SITE_CONFIG } from '@/lib/site-data';
 export const metadata: Metadata = {
   title: 'Our Detailing & Ceramic Coating Services | Latin King Detailing Bolton',
   description:
-    'Explore our 7 professional car detailing and paint protection services in Bolton: Ceramic Pro 9H Coating, Machine Polishing, Leather Protection, The King’s Detail, Deep Clean & Engine Bay, Full & Mini Valets, and Maintenance Washes.',
+    'Explore our professional car detailing and paint protection services in Bolton: Ceramic Pro 9H Coating, Machine Polishing, Leather Protection, The King’s Detail, Deep Clean & Engine Bay, Full Valet, and Maintenance Washes.',
   openGraph: {
     title: 'Professional Automotive Detailing Services | Latin King Detailing',
     description:

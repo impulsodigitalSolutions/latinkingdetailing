@@ -34,6 +34,7 @@ export function Services() {
         return 'correction';
       case 'the-kings-detail':
       case 'deep-clean-engine-bay':
+      case 'full-valet':
       case 'full-valet-mini-valet':
         return 'valet';
       case 'maintenance-wash':

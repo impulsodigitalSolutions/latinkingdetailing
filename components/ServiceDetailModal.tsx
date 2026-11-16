@@ -191,7 +191,7 @@ export function ServiceDetailModal() {
             </div>
           )}
 
-          {/* Sub Services (Deep Clean + Engine Bay / Full Valet + Mini Valet) */}
+          {/* Sub Services (Deep Clean + Engine Bay / Full Valet Options) */}
           {service.subServices && service.subServices.length > 0 && (
             <div>
               <h4 className="text-sm font-bold text-zinc-900 dark:text-white mb-3">

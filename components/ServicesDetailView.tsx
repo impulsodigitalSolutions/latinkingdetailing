@@ -48,6 +48,7 @@ export function ServicesDetailView() {
         return 'polishing';
       case 'the-kings-detail':
       case 'deep-clean-engine-bay':
+      case 'full-valet':
       case 'full-valet-mini-valet':
         return 'valet';
       case 'maintenance-wash':
@@ -320,7 +321,7 @@ export function ServicesDetailView() {
                   </div>
                 )}
 
-                {/* Sub Services Breakdown (Deep Clean & Engine Bay / Full & Mini Valet) */}
+                {/* Sub Services Breakdown (Deep Clean & Engine Bay / Full Valet Options) */}
                 {service.subServices && service.subServices.length > 0 && (
                   <div className="space-y-4">
                     <h4 className="text-sm font-bold text-zinc-900 dark:text-white">
