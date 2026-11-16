@@ -50,3 +50,4 @@
 - **Body**: 16px minimum for continuous prose, line-height 1.55–1.65.
 - **Technical/Measurements**: Geist Mono for paint thickness (microns $\mu$m), pencil hardness (9H), contact angles ($>110^\circ$), durations, and prices (`From £_____`).
 - **Labels & Tags**: Body font, normal or sentence case, untracked. Avoid tiny uppercase tracked-caps overload.
+

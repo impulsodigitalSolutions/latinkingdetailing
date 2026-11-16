@@ -25,11 +25,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-zinc-800/80">
           {/* Column 1: Brand Info & Verified Social Media (4 cols) */}
           <div className="lg:col-span-4 space-y-5">
-            <Link href="/" className="inline-block group">
+            <Link href="/" className="inline-block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded-xl">
               <BrandLogo
                 size="lg"
                 subtitle="Bolton's Detailing Specialists · Ceramic Pro 9H Certified"
-                textClassName="text-white"
+                titleClassName="text-white group-hover:text-red-400"
+                subtitleClassName="text-zinc-400"
               />
             </Link>
 

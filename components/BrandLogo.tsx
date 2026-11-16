@@ -10,6 +10,8 @@ interface BrandLogoProps {
   className?: string;
   subtitle?: string;
   textClassName?: string;
+  titleClassName?: string;
+  subtitleClassName?: string;
 }
 
 export function BrandLogo({
@@ -19,6 +21,8 @@ export function BrandLogo({
   className = '',
   subtitle = "Bolton's Detailing Specialists",
   textClassName = '',
+  titleClassName = '',
+  subtitleClassName = '',
 }: BrandLogoProps) {
   // Dimensions mapping
   const dimensions = {
@@ -64,6 +68,13 @@ export function BrandLogo({
     );
   }
 
+  const resolvedTitleClass =
+    titleClassName ||
+    (textClassName?.includes('text-white') ? 'text-white' : 'text-zinc-900 dark:text-white');
+  const resolvedSubClass =
+    subtitleClassName ||
+    (textClassName?.includes('text-white') ? 'text-zinc-400' : 'text-zinc-500 dark:text-zinc-400');
+
   return (
     <div className={`inline-flex items-center gap-3 ${className}`}>
       {/* Luxury Logo Emblem Box with crimson red glow */}
@@ -91,14 +102,14 @@ export function BrandLogo({
         <div className={`flex flex-col text-left ${textClassName}`}>
           <div className="flex items-center gap-1.5">
             <span
-              className={`font-black tracking-tight text-zinc-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors ${dimensions.fontTitle}`}
+              className={`font-black tracking-tight ${resolvedTitleClass} group-hover:text-red-500 transition-colors ${dimensions.fontTitle}`}
             >
               Latin King Detailing
             </span>
           </div>
           {subtitle && (
             <span
-              className={`text-zinc-500 dark:text-zinc-400 font-semibold ${dimensions.fontSub}`}
+              className={`font-semibold ${resolvedSubClass} ${dimensions.fontSub}`}
             >
               {subtitle}
             </span>
