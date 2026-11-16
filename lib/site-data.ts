@@ -2,12 +2,22 @@ export interface ServiceItem {
   id: string;
   slug: string;
   title: string;
+  tagline?: string;
   shortDesc: string;
   fullDesc: string;
   iconName: string;
   highlights: string[];
   warranty?: string;
   startingPrice?: string;
+  pricingDetails?: { label: string; price: string }[] | string;
+  ctaText?: string;
+  hookText?: string;
+  whatIs?: string;
+  whyChoose?: { title: string; desc: string }[];
+  surfacesProtected?: { title: string; desc: string }[];
+  includedItems?: { title: string; desc: string }[];
+  subServices?: { title: string; subtitle?: string; desc: string; price?: string }[];
+  recommendation?: string;
   steps?: { step: number; title: string; desc: string }[];
   tiers?: { name: string; duration: string; layers: string; features: string[] }[];
 }
@@ -144,14 +154,14 @@ export const SITE_CONFIG = {
 };
 
 export const NAV_LINKS = [
-  { name: 'Services', href: '#services' },
-  { name: 'Locations', href: '#locations' },
-  { name: 'Gallery', href: '#gallery' },
-  { name: 'Why Us', href: '#why-us' },
-  { name: 'Comparison', href: '#comparison' },
-  { name: 'Reviews', href: '#reviews' },
-  { name: 'FAQ', href: '#faq' },
-  { name: 'Blog', href: '#blog' },
+  { name: 'Services', href: '/services' },
+  { name: 'Locations', href: '/#locations' },
+  { name: 'Gallery', href: '/#gallery' },
+  { name: 'Why Us', href: '/#why-us' },
+  { name: 'Comparison', href: '/#comparison' },
+  { name: 'Reviews', href: '/#reviews' },
+  { name: 'FAQ', href: '/#faq' },
+  { name: 'Blog', href: '/#blog' },
 ];
 
 export const HERO_TRUST_BADGES = [
@@ -227,13 +237,18 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'ceramic-coating',
     slug: 'ceramic-coating',
-    title: 'Ceramic Coating',
-    shortDesc: 'Professional-grade Ceramic Pro 9H coatings for lasting protection and showroom shine.',
+    title: 'Professional Ceramic Coating - 9H Protection',
+    tagline: 'Advanced Molecular Shielding & Lasting Showroom Gloss',
+    startingPrice: 'From £_____ (Final price varies by vehicle size & paintwork condition)',
+    shortDesc: 'Advanced molecular shielding & lasting showroom gloss. Chemically bonds with your clear coat at a molecular level for years of 9H protection.',
     fullDesc:
-      'Ceramic Pro 9H forms a permanent nanoceramic bond to your factory clear coat. Unlike consumer sealants that wash away after a few rainstorms, Ceramic Pro 9H creates a 9H diamond-hard barrier against Bolton road salt, UV rays, bird lime, swirl marks, and acid rain. Your car retains a continuous mirror-like reflection and intense hydrophobic water beading.',
+      'Ceramic coating provides long-lasting protection for your car’s paintwork by creating a durable, invisible shield. Applied by certified specialists at Latin King Detailing in our Farnworth, Bolton workshop, our 9H ceramic coating is not something you simply spray on and wipe off - it chemically bonds with your clear coat at a molecular level for years of protection.',
+    whatIs:
+      'Unlike traditional wax, which sits on top of the paint and washes off within a few weeks, our ceramic coating is a liquid polymer that fuses directly into your paintwork. Once cured, it becomes a semi-permanent part of the surface. Rated at 9H on the pencil hardness scale (the hardest rating achievable), it adds a tough protective layer that resists light wash swirls, UV rays, acid rain, bird droppings, road salt, and everything Greater Manchester weather throws at your car. Its extreme hydrophobic properties make water and grime bead off effortlessly, meaning your car stays cleaner for longer, washes easier, and retains higher resale value.',
     iconName: 'ShieldCheck',
     warranty: 'Up to Lifetime VIN-Registered Ceramic Pro Warranty',
-    startingPrice: 'Tailored by vehicle size',
+    hookText: 'Lock in deep, hydrophobic gloss for years.',
+    ctaText: 'Book a Coating Consultation',
     highlights: [
       'Genuine 9H pencil hardness certified laboratory protection',
       'Extreme hydrophobic contact angle (>110°) for self-cleaning effect',
@@ -245,32 +260,32 @@ export const SERVICES: ServiceItem[] = [
       {
         step: 1,
         title: 'Vehicle Inspection',
-        desc: 'Comprehensive paint depth measurement (PTG gauge) across every panel, identifying factory defects, clear coat thickness, and prior repairs.',
+        desc: "We thoroughly inspect your vehicle's paintwork under specialist lighting to identify swirl marks, scratches, or contamination before beginning.",
       },
       {
         step: 2,
         title: 'Paint Decontamination & Clay Bar',
-        desc: 'Chemical fallout remover dissolves embedded ferrous brake dust and industrial grime, followed by an ultra-fine clay bar treatment for silky smooth paint.',
+        desc: 'Using iron fallout remover and a clay bar, we lift embedded industrial fallout and bonded particles that regular washing cannot shift.',
       },
       {
         step: 3,
-        title: 'Paint Correction',
-        desc: 'Multi-stage machine polishing eliminates swirl marks, scratches, holograms, and oxidation to achieve 90–98%+ optical clarity before coating.',
+        title: 'Paint Correction (If Required)',
+        desc: 'Machine polishing removes swirl marks, water spots, and light scratches. Because ceramic coating locks in whatever is underneath it, pre-coating correction is essential for a flawless finish.',
       },
       {
         step: 4,
         title: 'Surface Preparation',
-        desc: 'Sterilizing isopropyl panel wipe removes all polishing oils and residues, ensuring direct molecular bonding between the clear coat and Ceramic Pro nanostructures.',
+        desc: 'Every panel is wiped down with a specialist panel wipe to strip polishing oils and leave a bare, chemically clean surface for maximum bonding.',
       },
       {
         step: 5,
-        title: 'Ceramic Pro 9H Application',
-        desc: 'Precision hand-application of Ceramic Pro 9H base layers under calibrated detailing LED inspection lamps, followed by Ceramic Pro Top Coat.',
+        title: '9H Ceramic Coating Application',
+        desc: 'Applied panel by panel by the Latin King Detailing team using certified techniques to form a uniform, molecularly bonded protective layer.',
       },
       {
         step: 6,
         title: 'Curing & Final Inspection',
-        desc: 'Short-wave infrared thermal curing permanently cross-links the nanoceramic lattice. Final 360° digital inspection ensures flawless optical finish.',
+        desc: 'Allowed to cure under controlled workshop conditions before undergoing a final inspection under detailing lights prior to handover.',
       },
     ],
     tiers: [
@@ -317,57 +332,250 @@ export const SERVICES: ServiceItem[] = [
     ],
   },
   {
+    id: 'machine-polishing',
+    slug: 'machine-polishing-paint-correction',
+    title: 'Professional Machine Polishing & Paint Correction',
+    tagline: "Restore Depth, Clarity & Your Car's Factory Finish",
+    startingPrice: 'From £____ (Single-Stage / Multi-Stage options available)',
+    shortDesc: "Safely refines your clear coat to eliminate swirl marks, scratches, buffer trails, and dull oxidation to bring back depth, clarity, and mirror-like gloss.",
+    fullDesc:
+      'Everyday driving, automatic car washes, and environmental exposure leave your paintwork covered in swirl marks, light scratches, buffer trails, water spots, and dull oxidation. At Latin King Detailing, our machine polishing service safely refines your clear coat to bring back depth, clarity, and mirror-like gloss.',
+    whyChoose: [
+      {
+        title: 'True Defect Removal',
+        desc: 'Eliminates light scratches, swirl marks, and oxidation rather than temporarily masking them.',
+      },
+      {
+        title: 'Essential Ceramic Prep',
+        desc: 'Smooths and perfects the paint surface, creating the defect-free foundation required before applying wax or ceramic coating.',
+      },
+      {
+        title: 'Lasting Value & Easier Washing',
+        desc: 'Refreshes your car’s appearance, protects against further degradation, and improves resale value.',
+      },
+    ],
+    iconName: 'Sparkles',
+    warranty: 'Flawless Paint Finish Guarantee',
+    hookText: 'Bring tired paintwork back to life.',
+    ctaText: 'Request a Paint Inspection',
+    highlights: [
+      'Eliminates 85–95%+ of wash scratches and swirl marks',
+      'Restores optical depth and crystal clarity to faded paint',
+      'Safe paint depth gauge measurements taken on every panel',
+      'Removes buffer trails, holograms, and oxidation',
+      'Essential foundation prior to 9H ceramic coating',
+    ],
+  },
+  {
+    id: 'leather-coating',
+    slug: 'leather-coating-interior-protection',
+    title: 'Leather Coating & Interior Protection',
+    tagline: 'Guard Your Cabin Against Spills, UV Fade & Daily Wear',
+    startingPrice: 'From £_____',
+    shortDesc: 'Ceramic-grade leather and interior coatings that guard against UV fade, body oil staining, spills, and premature cracking.',
+    fullDesc:
+      'Most people think about protecting the paint, yet interiors take just as much punishment and the cabin is where you sit every day. At our Farnworth, Bolton workshop, Latin King Detailing applies ceramic-grade leather and interior coatings that guard against UV fade, body oil staining, spills, and premature cracking.',
+    whatIs:
+      "Unlike traditional leather conditioners that only moisturise the surface for a few days, our ceramic-grade protection forms an invisible, breathable barrier that lasts for months. It repels liquids before they stain, blocks UV radiation, and resists the abrasion that wears down seats and steering wheels - all while preserving your interior's natural look and feel.",
+    surfacesProtected: [
+      {
+        title: 'Leather Seats',
+        desc: 'Front and rear seat treatment with ceramic-grade protection against dye transfer, spills, and cracking.',
+      },
+      {
+        title: 'Steering Wheel',
+        desc: 'Specialist leather treatment resistant to hand oils and perspiration.',
+      },
+      {
+        title: 'Dashboard & Trim',
+        desc: 'UV-protective shielding for plastics and soft-touch dashboard surfaces.',
+      },
+      {
+        title: 'Door Panels',
+        desc: 'Leather and hard plastic protection on door cards and armrests.',
+      },
+      {
+        title: 'Carpets & Fabric',
+        desc: 'Hydrophobic stain protection for carpets, mats, and cloth seats.',
+      },
+      {
+        title: 'Headlining',
+        desc: 'Gentle cleaning and protective treatment for delicate roof lining materials.',
+      },
+    ],
+    iconName: 'Armchair',
+    warranty: 'Multi-Season Cabin Protection',
+    hookText: 'Keep your cabin looking and feeling factory-fresh.',
+    ctaText: 'Enquire About Interior Protection',
+    highlights: [
+      'Hydrophobic liquid barrier prevents drink and coffee stains',
+      'Resists dye transfer from denim jeans into light leather',
+      'Preserves original satin factory matte texture (no greasy shine)',
+      'Blocks harsh UV radiation preventing leather cracking',
+      'Anti-bacterial and odour-resistant shield',
+    ],
+  },
+  {
+    id: 'the-kings-detail',
+    slug: 'the-kings-detail',
+    title: 'The King’s Detail (Full Interior & Exterior Detailing)',
+    tagline: 'Revive Your Ride: Ultimate Showroom Restoration',
+    startingPrice: 'Small/Medium Car: £_____ | Large/4x4: £_____',
+    pricingDetails: [
+      { label: 'Small / Medium Car', price: '£_____' },
+      { label: 'Large / 4x4 / SUV', price: '£_____' },
+    ],
+    shortDesc: 'Our signature, multi-stage restoration service designed to extract ingrained dirt from every pore and crevice and bring your vehicle back to showroom condition.',
+    fullDesc:
+      'There’s a big difference between a car that’s been washed and a car that’s been detailed. The King’s Detail is the signature, multi-stage restoration service from Latin King Detailing - designed to extract ingrained dirt from every pore and crevice and bring a neglected or daily-driven car back to showroom condition.',
+    includedItems: [
+      {
+        title: 'Exterior Decontamination & Polish',
+        desc: 'Safe two-bucket hand wash, iron fallout removal, clay bar decontamination, and machine polishing to remove swirl marks and restore deep gloss.',
+      },
+      {
+        title: 'Deep Interior Restoration',
+        desc: 'Full extraction of seats, carpets, and boot; pet hair removal; leather cleaning and conditioning; and source-level odour removal (with specialist restoration options available for heavy staining, mould, or smoke damage).',
+      },
+      {
+        title: 'Long-Term Preservation',
+        desc: 'Removes hidden contaminants that degrade surfaces over time, protecting both your car’s aesthetics and resale value.',
+      },
+    ],
+    recommendation:
+      'Recommended every 3–6 months for daily drivers in Greater Manchester, or every 4–6 weeks for high-value and show vehicles.',
+    iconName: 'Award',
+    warranty: 'Signature Latin King Showroom Standard',
+    hookText: 'Give your vehicle the royal treatment.',
+    ctaText: 'Book The King’s Detail',
+    highlights: [
+      'Comprehensive 8+ hour bumper-to-bumper transformation',
+      'Safe 2-bucket wash, wheel barrels, arches & door shuts cleaned',
+      'Full interior hot-water extraction & leather conditioning',
+      'Single-stage machine polish for maximum gloss restoration',
+      'Recommended every 3–6 months for daily drivers',
+    ],
+  },
+  {
+    id: 'deep-clean-engine-bay',
+    slug: 'deep-clean-engine-bay',
+    title: 'Deep Clean & Engine Bay Detailing',
+    tagline: 'Hygienic Cabin Refresh & Under-Bonnet Care',
+    startingPrice: 'Interior & Exterior: From £_____ | Engine Bay: £_____',
+    pricingDetails: [
+      { label: 'Interior & Exterior Deep Clean', price: 'From £_____' },
+      { label: 'Engine Bay Cleaning (Standalone or Add-on)', price: '£_____' },
+    ],
+    shortDesc: 'Hygienic cabin refresh and under-bonnet care. Removes built-up dirt, bacteria, and grime down to the last bolt.',
+    fullDesc:
+      'A comprehensive hygiene and under-bonnet care package designed to eliminate deep-seated contamination, odour-causing bacteria, and engine grease.',
+    subServices: [
+      {
+        title: 'Interior & Exterior Deep Clean',
+        subtitle: 'Hygienic Cabin Refresh',
+        desc: 'A Deep Clean goes far beyond a standard wash - removing built-up dirt, grime, stains, and bacteria from inside and outside your vehicle. We thoroughly refresh carpets, seats, plastics, vents, and hard-to-reach areas to eliminate odours, improve cabin air quality, and protect your interior from premature wear.',
+        price: 'From £_____',
+      },
+      {
+        title: 'Engine Bay Cleaning',
+        subtitle: 'Detailing Down to the Last Bolt',
+        desc: 'A clean engine bay not only looks great - it also contributes to the overall health of your vehicle. Our comprehensive engine bay cleaning removes built-up oil residue, grime, and road debris, helping prevent corrosion, making maintenance checks easier, and keeping your engine in top condition for any journey.',
+        price: '£_____ (Available standalone or as an add-on)',
+      },
+    ],
+    iconName: 'Wrench',
+    warranty: 'Hygienic Cleanliness Guarantee',
+    hookText: 'Refresh your car inside, out, and under the bonnet.',
+    ctaText: 'Schedule a Deep Clean',
+    highlights: [
+      'Anti-bacterial steam cleaning of vents, plastics, and high-touch areas',
+      'Deep carpet & seat shampooing with stain extraction',
+      'Under-bonnet degreasing with electronic component safeguarding',
+      'Satin-finish engine dressing that resists dust accumulation',
+      'Improves cabin air quality and prevents mechanical corrosion',
+    ],
+  },
+  {
+    id: 'full-valet-mini-valet',
+    slug: 'full-valet-mini-valet',
+    title: 'Full Valet & Mini Valet',
+    tagline: 'Professional Care Tailored to Your Schedule',
+    startingPrice: 'Full Valet: From £_____ | Mini Valet: From £_____',
+    pricingDetails: [
+      { label: 'Full Valet (Small/Medium)', price: '£_____' },
+      { label: 'Full Valet (Large/4x4)', price: '£_____' },
+      { label: 'Mini Valet (Small/Medium)', price: '£_____' },
+      { label: 'Mini Valet (Large/4x4)', price: '£_____' },
+    ],
+    shortDesc: 'Choose between an intensive top-to-bottom clean or a swift, professional freshen-up tailored to your vehicle and schedule.',
+    fullDesc:
+      'Tailored car care packages designed to fit your busy schedule — whether you need an intensive top-to-bottom revival for a daily family vehicle or a fast, meticulous freshen-up for a well-maintained car.',
+    subServices: [
+      {
+        title: 'Full Valet',
+        subtitle: 'Immaculate Full Valet, Every Time!',
+        desc: 'Ideal for busy drivers and family cars that see heavy daily use. Our Full Valet provides an intensive, top-to-bottom clean inside and out - leaving your vehicle spotless, sanitised, refreshed, and well presented.',
+        price: 'Small/Medium: £_____ | Large/4x4: £______',
+      },
+      {
+        title: 'Mini Valet',
+        subtitle: "Your Car's Best Mate for a Quick Freshen-Up!",
+        desc: 'A fast, efficient solution for well-maintained cars that don’t accumulate heavy dirt or mess. Focusing on key areas - including a thorough interior vacuum, dashboard and trim cleaning, glass polishing, and a safe exterior wash - it keeps your car looking sharp with minimal fuss.',
+        price: 'Small/Medium: £____ | Large/4x4: £______',
+      },
+    ],
+    iconName: 'Car',
+    warranty: 'Spotless Handover Guarantee',
+    hookText: 'Choose the level of clean that fits your schedule.',
+    ctaText: 'Book Your Valet',
+    highlights: [
+      'Safe pH-neutral hand wash & wheel face cleaning',
+      'Full interior vacuum, dashboard wipe & glass polished inside and out',
+      'Tyres dressed with long-lasting satin finish',
+      'Flexible booking slots for busy drivers in Bolton & Manchester',
+      'Upfront pricing based on vehicle size',
+    ],
+  },
+  {
+    id: 'maintenance-wash',
+    slug: 'maintenance-wash',
+    title: 'Maintenance Wash',
+    tagline: 'Preserve Your Detailing & Ceramic Coating Investment',
+    startingPrice: 'From £______',
+    shortDesc: 'The essential routine step performed every 4–5 weeks to prevent grime build-up and preserve your ceramic coating swirl-free.',
+    fullDesc:
+      'A Maintenance Wash is the essential routine step designed to keep your car looking pristine after a full valet, detail, or ceramic coating. Ideally performed every 4 to 5 weeks at Latin King Detailing, this safe hand-wash prevents the build-up of road grime and contaminants that can dull your finish - preserving the results of previous detailing work and keeping your paintwork swirl-free.',
+    iconName: 'Droplets',
+    warranty: 'Swirl-Free Hand Wash Protocol',
+    hookText: 'Keep that just-detailed shine all year round.',
+    ctaText: 'Book a Maintenance Wash',
+    highlights: [
+      'Pre-wash snow foam dissolves grit before mitts touch paintwork',
+      'Two-bucket wash method with grit guards & plush microfibre mitts',
+      'Non-acidic wheel cleaners safe for ceramic-coated alloys',
+      'Touchless warm air drying & ultra-plush drying towels',
+      'Hydrophobic top-up spray applied to boost water beading',
+    ],
+  },
+  {
     id: 'paint-protection-film',
     slug: 'paint-protection-film',
-    title: 'Paint Protection Film',
+    title: 'KAVACA Paint Protection Film (PPF)',
+    tagline: 'Self-Healing Stone Chip Armor & Optical Clarity',
+    startingPrice: 'Front End & Full Body Available',
     shortDesc: 'KAVACA PPF — the ultimate self-healing barrier against stone chips and road damage.',
     fullDesc:
       'KAVACA Paint Protection Film (PPF) by Ceramic Pro is an optically clear, self-healing aliphatic polyurethane film designed specifically to absorb high-velocity impacts from road debris, gravel, and stone chips. Coated with Ceramic Pro topcoat at the factory, it combines stone-chip physical protection with hydrophobic self-cleaning performance.',
     iconName: 'Shield',
     warranty: 'Up to 10-Year Factory Warranty',
-    startingPrice: 'Front End & Full Body Available',
+    hookText: 'Shield high-impact panels against road damage.',
+    ctaText: 'Enquire About PPF Installation',
     highlights: [
       'Instant self-healing technology — minor scratches vanish with heat',
       'Heavy physical barrier against stone chips, road rash, and key scratches',
       'Computer pre-cut template software for seamless edge wrapping',
       'Factory infused with Ceramic Pro nanoceramic topcoat for extreme gloss',
       'Non-yellowing, UV-stable optical polyurethane formulation',
-    ],
-  },
-  {
-    id: 'car-detailing-valet',
-    slug: 'car-detailing-valet',
-    title: 'Car Detailing & Valet',
-    shortDesc: 'Full interior and exterior detailing packages to restore and maintain your vehicle.',
-    fullDesc:
-      'Our detailing service goes miles beyond conventional valets or drive-through washes. We spend anywhere from 6 to 25+ hours on a single vehicle, systematically treating every crevice, badge, wheel barrel, door shut, and exhaust tip with pH-balanced formulas, soft boar hair brushes, and dual-action rotary polishers.',
-    iconName: 'Sparkles',
-    warranty: 'Workmanship Satisfaction Guarantee',
-    startingPrice: 'Single-Day & Multi-Day Packages',
-    highlights: [
-      'Two-bucket safe wash method with grit guards & warm purified water',
-      'Intensive iron fallout and tar decontamination',
-      'Engine bay detail, degreasing, and satin dressing',
-      'Multi-stage machine polishing removing swirl marks and wash marring',
-      'Wheel arches deep-cleaned and protected',
-    ],
-  },
-  {
-    id: 'leather-interior-protection',
-    slug: 'leather-interior-protection',
-    title: 'Leather & Interior Protection',
-    shortDesc: 'Specialist leather coating and interior protection keeping cabins fresh and conditioned.',
-    fullDesc:
-      'Modern automotive interiors demand specialized ceramic and hydrophobic protection. We clean, disinfect, and condition leather hide, alcantara, and carpets before applying Ceramic Pro Leather and Ceramic Pro Textile coatings. Spilled coffee, muddy water, dye transfer from denim jeans, and UV fading are effortlessly repelled.',
-    iconName: 'Armchair',
-    warranty: 'Multi-Season Cabins Protection',
-    startingPrice: 'Add-on or standalone cabin treatment',
-    highlights: [
-      'Ceramic Pro Leather coating prevents denim dye transfer and crack lines',
-      'Ceramic Pro Textile provides extreme hydrophobic liquid beading on carpets',
-      'Full cabin HEPA anti-bacterial steam cleaning & odour neutralisation',
-      'Preserves original matte OEM leather finish without greasy fake shine',
-      'Deep UV-shield prevents dashboard and upholstery cracking',
     ],
   },
 ];
@@ -621,10 +829,13 @@ export const VEHICLE_SIZES = [
 ];
 
 export const SERVICE_OPTIONS = [
-  'Ceramic Pro 9H Coating (Bronze / Silver / Gold)',
+  'Professional Ceramic Coating - 9H Protection',
+  'Professional Machine Polishing & Paint Correction',
+  'Leather Coating & Interior Protection',
+  'The King’s Detail (Full Interior & Exterior Detailing)',
+  'Deep Clean & Engine Bay Detailing',
+  'Full Valet & Mini Valet',
+  'Maintenance Wash',
   'KAVACA Paint Protection Film (PPF)',
-  'Car Detailing & Full Machine Polish',
-  'Leather & Full Interior Protection',
-  'Multi-Service Complete Protection Package',
 ];
 

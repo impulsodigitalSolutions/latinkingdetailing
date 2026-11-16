@@ -1,6 +1,7 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import Link from 'next/link';
 import { SERVICES, ServiceItem } from '@/lib/site-data';
 import { useModals } from './ModalContext';
 import {
@@ -12,22 +13,60 @@ import {
   ArrowRight,
   Award,
   Layers,
+  Wrench,
+  Car,
+  Droplets,
+  Tag,
+  ExternalLink,
 } from 'lucide-react';
 
 export function Services() {
   const { openServiceModal, openQuoteModal } = useModals();
+  const [filter, setFilter] = useState<'all' | 'coating' | 'correction' | 'valet' | 'maintenance'>('all');
+
+  const getServiceCategory = (id: string) => {
+    switch (id) {
+      case 'ceramic-coating':
+      case 'paint-protection-film':
+      case 'leather-coating':
+        return 'coating';
+      case 'machine-polishing':
+        return 'correction';
+      case 'the-kings-detail':
+      case 'deep-clean-engine-bay':
+      case 'full-valet-mini-valet':
+        return 'valet';
+      case 'maintenance-wash':
+        return 'maintenance';
+      default:
+        return 'all';
+    }
+  };
+
+  const filteredServices = SERVICES.filter((s) => {
+    if (filter === 'all') return true;
+    return getServiceCategory(s.id) === filter;
+  });
 
   const getServiceIcon = (name: string) => {
     switch (name) {
       case 'ShieldCheck':
-        return <ShieldCheck className="w-7 h-7 text-red-500" />;
+        return <ShieldCheck className="w-6 h-6 text-red-500" />;
       case 'Shield':
-        return <Shield className="w-7 h-7 text-red-500" />;
+        return <Shield className="w-6 h-6 text-red-500" />;
       case 'Sparkles':
-        return <Sparkles className="w-7 h-7 text-red-500" />;
+        return <Sparkles className="w-6 h-6 text-red-500" />;
       case 'Armchair':
+        return <Armchair className="w-6 h-6 text-red-500" />;
+      case 'Wrench':
+        return <Wrench className="w-6 h-6 text-red-500" />;
+      case 'Car':
+        return <Car className="w-6 h-6 text-red-500" />;
+      case 'Droplets':
+        return <Droplets className="w-6 h-6 text-red-500" />;
+      case 'Award':
       default:
-        return <Armchair className="w-7 h-7 text-red-500" />;
+        return <Award className="w-6 h-6 text-red-500" />;
     }
   };
 
@@ -35,7 +74,7 @@ export function Services() {
     <section id="services" className="py-16 md:py-24 relative bg-zinc-50/50 dark:bg-[#181920]/60 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-semibold uppercase tracking-wider mb-3">
             <Award className="w-3.5 h-3.5" /> Certified Automotive Care
           </div>
@@ -48,11 +87,70 @@ export function Services() {
           <p className="text-zinc-600 dark:text-zinc-300 text-base sm:text-lg mt-4 leading-relaxed font-normal">
             Latin King Detailing offers a complete range of paint protection and car care services from our Bolton workshop, using only professional-grade products.
           </p>
+
+          {/* Quick Filter Tabs */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
+            <button
+              type="button"
+              onClick={() => setFilter('all')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                filter === 'all'
+                  ? 'bg-red-600 text-white shadow-md'
+                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
+              }`}
+            >
+              All Services
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('coating')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                filter === 'coating'
+                  ? 'bg-red-600 text-white shadow-md'
+                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
+              }`}
+            >
+              Ceramic & PPF
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('correction')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                filter === 'correction'
+                  ? 'bg-red-600 text-white shadow-md'
+                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
+              }`}
+            >
+              Machine Polishing
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('valet')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                filter === 'valet'
+                  ? 'bg-red-600 text-white shadow-md'
+                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
+              }`}
+            >
+              Valeting & Deep Clean
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('maintenance')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                filter === 'maintenance'
+                  ? 'bg-red-600 text-white shadow-md'
+                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
+              }`}
+            >
+              Maintenance Wash
+            </button>
+          </div>
         </div>
 
-        {/* 4 Detailed Service Cards */}
+        {/* Detailed Service Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {SERVICES.map((service: ServiceItem) => {
+          {filteredServices.map((service: ServiceItem, sIdx: number) => {
             const isCeramic = service.id === 'ceramic-coating';
 
             return (
@@ -66,10 +164,16 @@ export function Services() {
               >
                 <div>
                   {/* Top Badges & Icon */}
-                  <div className="flex items-start justify-between gap-4 mb-5">
-                    <div className="p-3.5 rounded-2xl bg-red-500/10 dark:bg-red-500/15 border border-red-500/25 group-hover:scale-105 transition-transform">
-                      {getServiceIcon(service.iconName)}
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-3 rounded-2xl bg-red-500/10 dark:bg-red-500/15 border border-red-500/25 group-hover:scale-105 transition-transform">
+                        {getServiceIcon(service.iconName)}
+                      </div>
+                      <span className="text-xs font-bold text-zinc-400 font-mono">
+                        0{sIdx + 1}
+                      </span>
                     </div>
+
                     {isCeramic ? (
                       <span className="px-3 py-1 rounded-full bg-red-600 text-white font-black text-xs uppercase tracking-wider shadow-sm">
                         Signature Specialism
@@ -81,16 +185,31 @@ export function Services() {
                     )}
                   </div>
 
-                  {/* Title & Short description */}
+                  {/* Title & Tagline */}
                   <h3 className="text-2xl font-black text-zinc-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors">
                     {service.title}
                   </h3>
+
+                  {service.tagline && (
+                    <div className="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider mt-1">
+                      {service.tagline}
+                    </div>
+                  )}
+
                   <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 mt-2 font-normal leading-relaxed">
                     {service.shortDesc}
                   </p>
 
+                  {/* Cost Pill */}
+                  {service.startingPrice && (
+                    <div className="mt-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 text-xs text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700/60 font-semibold">
+                      <Tag className="w-3.5 h-3.5 text-red-500 shrink-0" />
+                      <span>{service.startingPrice}</span>
+                    </div>
+                  )}
+
                   {/* Highlights list */}
-                  <div className="mt-6 pt-6 border-t border-zinc-100 dark:border-zinc-800/80 space-y-2.5">
+                  <div className="mt-5 pt-5 border-t border-zinc-100 dark:border-zinc-800/80 space-y-2">
                     {service.highlights.slice(0, 3).map((hl, idx) => (
                       <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm">
                         <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
@@ -126,22 +245,32 @@ export function Services() {
                 </div>
 
                 {/* Card CTA & Trigger */}
-                <div className="mt-8 pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between gap-3">
-                  <button
-                    type="button"
-                    onClick={() => openServiceModal(service.id)}
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-red-600 dark:text-red-400 hover:text-red-500 group-hover:translate-x-0.5 transition-all cursor-pointer"
-                  >
-                    <span>Learn more</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </button>
+                <div className="mt-8 pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <button
+                      type="button"
+                      onClick={() => openServiceModal(service.id)}
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-red-600 dark:text-red-400 hover:text-red-500 group-hover:translate-x-0.5 transition-all cursor-pointer"
+                    >
+                      <span>Quick Details</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+
+                    <Link
+                      href={`/services#${service.id}`}
+                      className="inline-flex items-center gap-1 text-xs text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                    >
+                      <span>Dedicated Page</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </Link>
+                  </div>
 
                   <button
                     type="button"
                     onClick={() => openQuoteModal(service.title)}
                     className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-900 dark:bg-zinc-800 hover:bg-red-600 dark:hover:bg-red-600 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-sm cursor-pointer"
                   >
-                    <span>Book Service</span>
+                    <span>{service.ctaText || 'Book Service'}</span>
                   </button>
                 </div>
               </div>
@@ -149,24 +278,35 @@ export function Services() {
           })}
         </div>
 
-        {/* Bottom CTA Bar */}
-        <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-[#181921] text-white border border-white/10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Dedicated Page Hero Banner CTA */}
+        <div className="mt-14 p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-[#181921] via-[#15161c] to-[#181921] text-white border border-red-500/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <h3 className="text-xl sm:text-2xl font-bold">
-              Unsure which protection package your vehicle requires?
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-bold uppercase tracking-wider mb-2">
+              <Sparkles className="w-3.5 h-3.5" /> Comprehensive 7-Service Catalog
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-black">
+              Explore Our Dedicated Services Page
             </h3>
             <p className="text-sm text-zinc-400 mt-1 max-w-xl">
-              We inspect paint depth, clear coat health, and daily mileage to recommend the exact package for your vehicle.
+              View in-depth breakdowns, process steps, vehicle surfaces protected, and complete transparent pricing for all 7 Latin King Detailing packages.
             </p>
           </div>
-          <button
-            type="button"
-            onClick={() => openQuoteModal('Tailored Detailing Package')}
-            className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-black text-sm uppercase tracking-wider shadow-lg shadow-red-600/30 shrink-0 cursor-pointer"
-          >
-            <span>Request Specialist Advice</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
+            <Link
+              href="/services"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-black text-sm uppercase tracking-wider shadow-lg shadow-red-600/30 transition-all hover:scale-102"
+            >
+              <span>View All 7 Services</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <button
+              type="button"
+              onClick={() => openQuoteModal('Tailored Detailing Package')}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-zinc-700 hover:border-zinc-500 text-zinc-200 text-sm font-semibold transition-colors cursor-pointer"
+            >
+              <span>Ask a Specialist</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>

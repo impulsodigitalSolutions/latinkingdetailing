@@ -22,6 +22,10 @@ import {
   ExternalLink,
   Layers,
   ArrowRight,
+  Wrench,
+  Car,
+  Droplets,
+  Award,
 } from 'lucide-react';
 import { useModals } from './ModalContext';
 
@@ -60,8 +64,16 @@ export function Navbar() {
       case 'Sparkles':
         return <Sparkles className="w-4 h-4 text-red-500" />;
       case 'Armchair':
-      default:
         return <Armchair className="w-4 h-4 text-red-500" />;
+      case 'Wrench':
+        return <Wrench className="w-4 h-4 text-red-500" />;
+      case 'Car':
+        return <Car className="w-4 h-4 text-red-500" />;
+      case 'Droplets':
+        return <Droplets className="w-4 h-4 text-red-500" />;
+      case 'Award':
+      default:
+        return <Award className="w-4 h-4 text-red-500" />;
     }
   };
 
@@ -134,16 +146,23 @@ export function Navbar() {
                 {servicesDropdownOpen && (
                   <div
                     onMouseLeave={() => setServicesDropdownOpen(false)}
-                    className="absolute top-full left-0 mt-3 w-80 rounded-3xl bg-white dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10 shadow-2xl p-3 z-50 animate-in fade-in zoom-in-95 duration-200"
+                    className="absolute top-full left-0 mt-3 w-88 rounded-3xl bg-white dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10 shadow-2xl p-3 z-50 animate-in fade-in zoom-in-95 duration-200"
                   >
                     <div className="px-3 py-2 border-b border-zinc-100 dark:border-zinc-800/80 mb-1 flex items-center justify-between">
                       <span className="text-[10px] font-bold uppercase tracking-widest text-red-600 dark:text-red-500">
-                        Certified Detailing Services
+                        7 Certified Detailing Services
                       </span>
-                      <span className="text-[10px] text-zinc-400">Bolton Workshop</span>
+                      <Link
+                        href="/services"
+                        onClick={() => setServicesDropdownOpen(false)}
+                        className="text-[10px] font-bold text-red-600 dark:text-red-400 hover:underline inline-flex items-center gap-0.5"
+                      >
+                        <span>Full Menu</span>
+                        <ArrowRight className="w-2.5 h-2.5" />
+                      </Link>
                     </div>
 
-                    <div className="space-y-1">
+                    <div className="space-y-0.5 max-h-[380px] overflow-y-auto pr-1">
                       {SERVICES.map((srv) => (
                         <button
                           key={srv.id}
@@ -152,76 +171,94 @@ export function Navbar() {
                             setServicesDropdownOpen(false);
                             openServiceModal(srv.id);
                           }}
-                          className="w-full text-left p-2.5 rounded-2xl hover:bg-zinc-100 dark:hover:bg-zinc-800/70 transition-colors flex items-start gap-3 group/item cursor-pointer"
+                          className="w-full text-left p-2 rounded-2xl hover:bg-zinc-100 dark:hover:bg-zinc-800/70 transition-colors flex items-start gap-2.5 group/item cursor-pointer"
                         >
                           <div className="p-2 rounded-xl bg-red-500/10 group-hover/item:bg-red-500/20 text-red-600 dark:text-red-500 shrink-0 mt-0.5 transition-colors">
                             {getServiceIcon(srv.iconName)}
                           </div>
-                          <div>
-                            <div className="text-xs font-bold text-zinc-900 dark:text-white group-hover/item:text-red-600 dark:group-hover/item:text-red-500 transition-colors">
+                          <div className="flex-1 min-w-0">
+                            <div className="text-xs font-bold text-zinc-900 dark:text-white group-hover/item:text-red-600 dark:group-hover/item:text-red-500 transition-colors truncate">
                               {srv.title}
                             </div>
-                            <div className="text-[11px] text-zinc-500 dark:text-zinc-400 line-clamp-1 mt-0.5">
-                              {srv.shortDesc}
+                            <div className="text-[10px] text-zinc-500 dark:text-zinc-400 line-clamp-1">
+                              {srv.tagline || srv.shortDesc}
                             </div>
                           </div>
                         </button>
                       ))}
                     </div>
 
-                    <div className="mt-2 pt-2 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between px-2 text-[11px]">
+                    {/* Prominent link to dedicated services page */}
+                    <div className="mt-2 pt-2 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-col gap-1.5">
                       <Link
-                        href="#services"
+                        href="/services"
                         onClick={() => setServicesDropdownOpen(false)}
-                        className="text-red-600 dark:text-red-500 font-bold hover:underline inline-flex items-center gap-1"
+                        className="w-full py-2 px-3 rounded-xl bg-red-600/10 hover:bg-red-600 text-red-600 dark:text-red-400 hover:text-white font-bold text-xs flex items-center justify-between transition-colors"
                       >
-                        <Layers className="w-3.5 h-3.5" />
-                        <span>Compare All Tiers</span>
+                        <span>View Dedicated Services Page</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
 
-                      <Link
-                        href="#comparison"
-                        onClick={() => setServicesDropdownOpen(false)}
-                        className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-                      >
-                        Ceramic vs PPF Matrix
-                      </Link>
+                      <div className="flex items-center justify-between px-2 text-[11px]">
+                        <Link
+                          href="/#comparison"
+                          onClick={() => setServicesDropdownOpen(false)}
+                          className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                        >
+                          Ceramic vs PPF Matrix
+                        </Link>
+                        <Link
+                          href="/#locations"
+                          onClick={() => setServicesDropdownOpen(false)}
+                          className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                        >
+                          24 Bolton Towns
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 )}
               </div>
 
+              {/* Dedicated Services Page Link */}
+              <Link
+                href="/services"
+                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
+              >
+                All Services
+              </Link>
+
               {/* Other streamlined nav links */}
               <Link
-                href="#gallery"
+                href="/#gallery"
                 className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
               >
                 Gallery
               </Link>
 
               <Link
-                href="#comparison"
+                href="/#comparison"
                 className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
               >
                 Comparison
               </Link>
 
               <Link
-                href="#locations"
+                href="/#locations"
                 className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
               >
                 Locations
               </Link>
 
               <Link
-                href="#reviews"
+                href="/#reviews"
                 className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
               >
                 Reviews
               </Link>
 
               <Link
-                href="#faq"
+                href="/#faq"
                 className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
               >
                 FAQ
@@ -321,12 +358,21 @@ export function Navbar() {
                 </button>
               </div>
 
-              {/* Services Section in Drawer */}
+              {/* Dedicated Services Page Link in Drawer */}
               <div className="py-4 border-b border-zinc-100 dark:border-zinc-800/80">
+                <Link
+                  href="/services"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full py-2.5 px-3 rounded-xl bg-red-600/10 hover:bg-red-600 text-red-600 dark:text-red-400 hover:text-white font-bold text-xs flex items-center justify-between transition-colors mb-3"
+                >
+                  <span>Dedicated Services Page (7 Packages)</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+
                 <div className="text-[10px] font-bold uppercase tracking-wider text-red-600 dark:text-red-500 mb-2">
                   Our Detailing Services
                 </div>
-                <div className="space-y-1">
+                <div className="space-y-1 max-h-56 overflow-y-auto pr-1">
                   {SERVICES.map((srv) => (
                     <button
                       key={srv.id}
@@ -337,11 +383,11 @@ export function Navbar() {
                       }}
                       className="w-full text-left py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 flex items-center justify-between"
                     >
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 truncate">
                         {getServiceIcon(srv.iconName)}
-                        <span>{srv.title}</span>
+                        <span className="truncate">{srv.title}</span>
                       </div>
-                      <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
+                      <ArrowRight className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
                     </button>
                   ))}
                 </div>
@@ -350,7 +396,15 @@ export function Navbar() {
               {/* General Navigation Links */}
               <nav className="py-4 space-y-1.5" aria-label="Mobile Navigation">
                 <Link
-                  href="#gallery"
+                  href="/services"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80"
+                >
+                  <span>All Services Page</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
+                </Link>
+                <Link
+                  href="/#gallery"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80"
                 >
@@ -358,7 +412,7 @@ export function Navbar() {
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
-                  href="#comparison"
+                  href="/#comparison"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80"
                 >
@@ -366,7 +420,7 @@ export function Navbar() {
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
-                  href="#locations"
+                  href="/#locations"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80"
                 >
@@ -374,7 +428,7 @@ export function Navbar() {
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
-                  href="#reviews"
+                  href="/#reviews"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80"
                 >
@@ -382,7 +436,7 @@ export function Navbar() {
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
-                  href="#faq"
+                  href="/#faq"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80"
                 >

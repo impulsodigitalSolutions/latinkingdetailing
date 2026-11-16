@@ -141,34 +141,39 @@ export function Footer() {
             <h4 className="text-xs font-black uppercase tracking-widest text-red-500">
               Our Services
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-zinc-400">
+            <ul className="space-y-2 text-xs sm:text-sm text-zinc-400">
               {SERVICES.map((s) => (
                 <li key={s.id}>
                   <Link
-                    href="#services"
+                    href={`/services#${s.id}`}
                     className="hover:text-red-400 transition-colors flex items-center gap-1.5"
                   >
-                    <span>{s.title}</span>
+                    <span className="truncate">{s.title.split(' - ')[0].split(' (')[0]}</span>
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="#gallery" className="hover:text-red-400 transition-colors">
+              <li className="pt-1">
+                <Link href="/services" className="text-red-500 font-bold hover:underline inline-flex items-center gap-1 text-xs">
+                  <span>All 7 Services Page →</span>
+                </Link>
+              </li>
+              <li className="pt-2 border-t border-zinc-800">
+                <Link href="/#gallery" className="hover:text-red-400 transition-colors">
                   Showroom Gallery
                 </Link>
               </li>
               <li>
-                <Link href="#comparison" className="hover:text-red-400 transition-colors">
+                <Link href="/#comparison" className="hover:text-red-400 transition-colors">
                   Protection Matrix
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className="hover:text-red-400 transition-colors">
+                <Link href="/#faq" className="hover:text-red-400 transition-colors">
                   FAQs & Pricing
                 </Link>
               </li>
               <li>
-                <Link href="#blog" className="hover:text-red-400 transition-colors">
+                <Link href="/#blog" className="hover:text-red-400 transition-colors">
                   Advice & Guides
                 </Link>
               </li>
@@ -184,7 +189,7 @@ export function Footer() {
               {SERVICE_AREAS_24.map((town) => (
                 <Link
                   key={town}
-                  href="#locations"
+                  href="/#locations"
                   className="px-2 py-0.5 rounded bg-[#181920] border border-white/10 hover:border-red-500/50 hover:text-red-400 transition-colors"
                 >
                   {town}

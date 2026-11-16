@@ -2,7 +2,19 @@
 
 import React, { useEffect } from 'react';
 import { useModals } from './ModalContext';
-import { X, CheckCircle2, ShieldCheck, ArrowRight, Sparkles } from 'lucide-react';
+import {
+  X,
+  CheckCircle2,
+  ShieldCheck,
+  ArrowRight,
+  Sparkles,
+  Layers,
+  Wrench,
+  Clock,
+  Car,
+  Armchair,
+  Check,
+} from 'lucide-react';
 import { WhatsAppIcon } from './icons/BrandIcons';
 import { SITE_CONFIG } from '@/lib/site-data';
 
@@ -72,13 +84,21 @@ export function ServiceDetailModal() {
           <h2 id="service-modal-title" className="text-2xl sm:text-3xl font-extrabold text-white">
             {service.title}
           </h2>
-          <p className="text-zinc-300 text-sm sm:text-base mt-2 max-w-xl">
-            {service.shortDesc}
-          </p>
+          {service.tagline && (
+            <p className="text-red-400 font-semibold text-xs sm:text-sm mt-1 uppercase tracking-wider">
+              {service.tagline}
+            </p>
+          )}
+          {service.startingPrice && (
+            <div className="inline-block mt-2.5 px-3 py-1 rounded-lg bg-white/10 text-xs font-bold text-zinc-200 border border-white/10">
+              Service Cost: {service.startingPrice}
+            </div>
+          )}
         </div>
 
         {/* Scrollable Body */}
         <div className="p-6 sm:p-8 overflow-y-auto space-y-6 text-zinc-800 dark:text-zinc-200">
+          {/* Main Description */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-red-600 dark:text-red-500 mb-2">
               Overview & Protection Scope
@@ -87,6 +107,137 @@ export function ServiceDetailModal() {
               {service.fullDesc}
             </p>
           </div>
+
+          {/* Section: What Is / Extended Explanation */}
+          {service.whatIs && (
+            <div className="p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 space-y-2">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400">
+                Detailed Technical Overview
+              </h4>
+              <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                {service.whatIs}
+              </p>
+            </div>
+          )}
+
+          {/* Why Choose Machine Polishing / Feature Pillars */}
+          {service.whyChoose && service.whyChoose.length > 0 && (
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3">
+                Why Choose This Service?
+              </h4>
+              <div className="space-y-3">
+                {service.whyChoose.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40"
+                  >
+                    <div className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-2">
+                      <Check className="w-4 h-4 text-red-500" />
+                      <span>{item.title}</span>
+                    </div>
+                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1 pl-6">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Interior Surfaces We Protect */}
+          {service.surfacesProtected && service.surfacesProtected.length > 0 && (
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3">
+                Interior Surfaces We Protect
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {service.surfacesProtected.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="p-3.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40"
+                  >
+                    <div className="font-bold text-xs sm:text-sm text-zinc-900 dark:text-white flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-red-500" />
+                      <span>{item.title}</span>
+                    </div>
+                    <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1 pl-3.5">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Included Items (The King's Detail, etc.) */}
+          {service.includedItems && service.includedItems.length > 0 && (
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3">
+                What’s Included in This Package
+              </h4>
+              <div className="space-y-3">
+                {service.includedItems.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40"
+                  >
+                    <div className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-red-500" />
+                      <span>{item.title}</span>
+                    </div>
+                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1 pl-6">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Sub Services (Deep Clean + Engine Bay / Full Valet + Mini Valet) */}
+          {service.subServices && service.subServices.length > 0 && (
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3">
+                Service Options & Breakdown
+              </h4>
+              <div className="space-y-3">
+                {service.subServices.map((sub, idx) => (
+                  <div
+                    key={idx}
+                    className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+                      <div className="font-bold text-sm text-zinc-900 dark:text-white">
+                        {sub.title}
+                        {sub.subtitle && (
+                          <span className="text-xs font-normal text-red-500 ml-2">
+                            — {sub.subtitle}
+                          </span>
+                        )}
+                      </div>
+                      {sub.price && (
+                        <span className="text-xs font-bold px-2 py-0.5 rounded bg-red-500/10 text-red-600 dark:text-red-400 self-start sm:self-auto">
+                          {sub.price}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+                      {sub.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Recommendation */}
+          {service.recommendation && (
+            <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-800 dark:text-amber-200 text-xs font-medium flex items-center gap-2">
+              <Clock className="w-4 h-4 shrink-0 text-amber-500" />
+              <span>{service.recommendation}</span>
+            </div>
+          )}
 
           {/* Highlights */}
           <div className="bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5">
@@ -178,6 +329,13 @@ export function ServiceDetailModal() {
               </div>
             </div>
           )}
+
+          {/* Hook text */}
+          {service.hookText && (
+            <div className="text-center py-2 text-sm font-bold text-red-600 dark:text-red-400">
+              &ldquo;{service.hookText}&rdquo;
+            </div>
+          )}
         </div>
 
         {/* Footer actions */}
@@ -208,7 +366,7 @@ export function ServiceDetailModal() {
               }}
               className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-red-600 text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-red-600/30 cursor-pointer"
             >
-              <span>Get a Free Quote</span>
+              <span>{service.ctaText || 'Get a Free Quote'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
