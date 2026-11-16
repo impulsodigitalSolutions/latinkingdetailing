@@ -25,14 +25,7 @@ export const metadata: Metadata = {
 
 export default function ComparisonPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-[#14151a] text-[#0f172a] dark:text-[#f3f4f6] relative transition-colors duration-300">
-      {/* Soft ambient background crimson glow */}
-      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-red-600/[0.04] dark:bg-red-600/[0.06] blur-[140px] rounded-full" />
-        <div className="absolute top-[40%] right-0 w-[600px] h-[600px] bg-red-600/[0.02] dark:bg-red-600/[0.04] blur-[150px] rounded-full" />
-        <div className="absolute bottom-[20%] left-0 w-[700px] h-[700px] bg-red-600/[0.02] dark:bg-red-600/[0.04] blur-[150px] rounded-full" />
-      </div>
-
+    <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
       {/* Sticky Floating Capsule Navbar */}
       <Navbar />
 
@@ -50,15 +43,8 @@ export default function ComparisonPage() {
             </nav>
 
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-bold uppercase tracking-wider mb-4">
-                <Layers className="w-3.5 h-3.5" />
-                <span>Automotive Paint Protection Guide</span>
-              </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
-                Ceramic Coating vs PPF vs{' '}
-                <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
-                  Traditional Wax
-                </span>
+                Ceramic Coating vs PPF vs <span className="text-red-600 dark:text-red-500">Traditional Wax</span>
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
                 Not all automotive protections are created equal. Understand the differences between nanoceramic quartz bonding, self-healing polyurethane film, and dealership waxes so you make an informed investment for your vehicle.
@@ -71,7 +57,7 @@ export default function ComparisonPage() {
         <ComparisonTable />
 
         {/* Protection Packages Detailed Breakdown */}
-        <section className="py-16 bg-white dark:bg-[#14151a]">
+        <section className="py-16 bg-white dark:bg-workshop-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white">
@@ -84,8 +70,8 @@ export default function ComparisonPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Ceramic Pro 9H Card */}
-              <div className="rounded-3xl border border-red-500/30 bg-red-500/[0.02] dark:bg-[#1c1d24] p-6 sm:p-8 flex flex-col justify-between shadow-lg relative overflow-hidden">
-                <div className="absolute top-0 right-0 px-3 py-1 bg-red-600 text-white font-extrabold text-[10px] uppercase tracking-wider rounded-bl-2xl">
+              <div className="rounded-3xl border border-red-500/30 bg-red-500/[0.02] dark:bg-workshop-card p-6 sm:p-8 flex flex-col justify-between shadow-lg relative overflow-hidden">
+                <div className="absolute top-0 right-0 px-3 py-1 bg-red-600 text-white font-extrabold text-[10px] rounded-bl-2xl">
                   Most Popular
                 </div>
                 <div>
@@ -99,12 +85,12 @@ export default function ComparisonPage() {
                     Molecular Nanoceramic Shield
                   </div>
                   <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-                    Permanently fuses into clear coat pores to create a 9H diamond-hard glass barrier. Eliminates oxidation, blocks UV radiation, sheds road dirt effortlessly, and prevents wash swirls.
+                    Permanently fuses into clear coat pores to create a 9H diamond-hard glass barrier. Eliminates oxidation, blocks UV radiation, sheds road dirt continuously, and prevents wash swirls.
                   </p>
                   <ul className="space-y-2 text-xs text-zinc-700 dark:text-zinc-300 mb-6">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                      <span>2–5+ Years traceable VIN warranty</span>
+                      <span>2 to 5+ years traceable VIN warranty</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
@@ -125,7 +111,7 @@ export default function ComparisonPage() {
               </div>
 
               {/* KAVACA PPF Card */}
-              <div className="rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#1c1d24] p-6 sm:p-8 flex flex-col justify-between shadow-sm">
+              <div className="rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-workshop-card p-6 sm:p-8 flex flex-col justify-between shadow-sm">
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-500 flex items-center justify-center mb-6">
                     <Shield className="w-6 h-6" />
@@ -163,7 +149,7 @@ export default function ComparisonPage() {
               </div>
 
               {/* Hybrid King Setup Card */}
-              <div className="rounded-3xl border border-purple-500/30 bg-purple-500/[0.02] dark:bg-[#1c1d24] p-6 sm:p-8 flex flex-col justify-between shadow-sm">
+              <div className="rounded-3xl border border-purple-500/30 bg-purple-500/[0.02] dark:bg-workshop-card p-6 sm:p-8 flex flex-col justify-between shadow-sm">
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-6">
                     <Sparkles className="w-6 h-6" />
@@ -184,7 +170,7 @@ export default function ComparisonPage() {
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-purple-500 shrink-0" />
-                      <span>Seamless optical match across all panels</span>
+                      <span>Direct optical match across all panels</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-purple-500 shrink-0" />

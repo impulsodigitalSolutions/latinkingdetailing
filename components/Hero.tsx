@@ -23,9 +23,9 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Copy & CTAs */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            {/* Top Trust Pill with Logo Crown & Google rating */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 dark:bg-red-500/15 border border-red-500/30 text-zinc-900 dark:text-zinc-100 text-xs sm:text-sm font-medium shadow-sm">
-              <div className="w-5 h-4 relative shrink-0">
+            {/* Studio Identity Badge */}
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-zinc-100 text-xs sm:text-sm font-medium">
+              <div className="w-4 h-3.5 relative shrink-0">
                 <Image
                   src="/images/logo-crown.png"
                   alt="Latin King Crown"
@@ -35,56 +35,55 @@ export function Hero() {
               </div>
               <GoogleIcon className="w-4 h-4 shrink-0" />
               <StarRating rating={SITE_CONFIG.googleRating} size="w-3.5 h-3.5" />
-              <span className="font-bold text-red-600 dark:text-red-400">
+              <span className="font-semibold text-zinc-900 dark:text-white">
                 {SITE_CONFIG.googleRating} Google Rating
               </span>
-              <span className="text-zinc-400 dark:text-zinc-500">·</span>
-              <span className="text-zinc-600 dark:text-zinc-300">
-                {SITE_CONFIG.googleReviewCount} Reviews
+              <span className="text-zinc-300 dark:text-zinc-700">|</span>
+              <span className="text-zinc-500 dark:text-zinc-400">
+                Farnworth, Bolton
               </span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-black tracking-tight text-zinc-900 dark:text-white leading-[1.12]">
-              Bolton's Premier{' '}
-              <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
+            {/* Main Headline - Solid typography with clean craft accent */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black tracking-tight text-zinc-900 dark:text-white leading-[1.1]">
+              Bolton&apos;s Premier{' '}
+              <span className="text-red-600 dark:text-red-500">
                 Ceramic Coating
               </span>{' '}
-              & Car Detailing Specialists
+              &amp; Detailing Workshop
             </h1>
 
-            {/* Subheadline (Verbatim from prompt) */}
+            {/* Subheadline (British workshop voice) */}
             <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              We&apos;re Bolton&apos;s car ceramic coating specialists — based in Farnworth, five minutes from junction 4 of the M61. We apply Ceramic Pro 9H, install KAVACA PPF, and detail cars to a standard you won&apos;t get from a drive-through wash. If you want it done properly, you&apos;ve found the right place.
+              Based in Farnworth, five minutes from Junction 4 of the M61. Certified Ceramic Pro 9H installers and KAVACA PPF specialists. We detail vehicles to an uncompromising standard, restoring paintwork depth and locking in multi-year hydrophobic armor.
             </p>
 
             {/* Dual CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
               <button
                 type="button"
                 onClick={() => openQuoteModal()}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-red-600 via-red-500 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-black text-sm uppercase tracking-wider shadow-lg shadow-red-600/30 transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm tracking-wide shadow-md shadow-red-600/20 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
-                <Sparkles className="w-4 h-4 text-white" />
-                <span>Get a Free Quote</span>
+                <span>Request Workshop Quote</span>
                 <ArrowRight className="w-4 h-4 text-white" />
               </button>
 
               <Link
-                href="#gallery"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border-2 border-zinc-300 dark:border-zinc-700 hover:border-red-500 dark:hover:border-red-500 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm text-zinc-800 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-400 font-bold text-sm tracking-wide transition-all shadow-sm"
+                href="/gallery"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 bg-white dark:bg-workshop-card text-zinc-800 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-400 font-semibold text-sm transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
-                <span>View Our Work</span>
+                <span>View Real Portfolio</span>
               </Link>
             </div>
 
             {/* 4 Trust Badges Row */}
-            <div className="pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+            <div className="pt-6 border-t border-zinc-200 dark:border-white/10">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
                 {HERO_TRUST_BADGES.map((badge, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-2 p-2 rounded-xl bg-zinc-100/70 dark:bg-[#1c1d24] border border-zinc-200/80 dark:border-white/10"
+                    className="flex items-center gap-2 p-2.5 rounded-xl bg-zinc-50 dark:bg-workshop-card border border-zinc-200/80 dark:border-white/[0.08]"
                   >
                     <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0" />
                     <span className="text-xs font-semibold text-zinc-800 dark:text-zinc-200">
@@ -99,25 +98,22 @@ export function Hero() {
           {/* Right Column: High-contrast luxury exotic car showroom showcase card */}
           <div className="lg:col-span-5">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Crimson glow framing */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-red-600/30 via-red-500/20 to-rose-600/30 rounded-3xl blur-xl opacity-75 dark:opacity-50" />
-
-              <div className="relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#1d1e25] shadow-2xl">
+              <div className="relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 bg-white dark:bg-workshop-card shadow-xl">
                 {/* Visual Image */}
-                <div className="relative h-72 sm:h-80 w-full overflow-hidden">
+                <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-zinc-900">
                   <Image
                     src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1200&q=80"
-                    alt="Lamborghini Aventador with Ceramic Pro 9H coating — Latin King Detailing Bolton"
+                    alt="Lamborghini Aventador with Ceramic Pro 9H coating, Latin King Detailing Bolton"
                     fill
                     priority
-                    className="object-cover transition-transform duration-700 hover:scale-105"
+                    className="object-cover"
                     sizes="(max-width: 768px) 100vw, 500px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
                   {/* Top badge with Official Logo mark */}
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-red-500/40 text-red-400 text-xs font-bold shadow-lg">
-                    <div className="w-5 h-4 relative shrink-0">
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-red-500/40 text-red-400 text-xs font-semibold shadow-lg">
+                    <div className="w-4 h-3.5 relative shrink-0">
                       <Image
                         src="/images/logo-crown.png"
                         alt="Latin King Crown"
@@ -130,8 +126,8 @@ export function Hero() {
                 </div>
 
                 {/* Bottom Image Overlay Info */}
-                <div className="p-5 bg-zinc-50 dark:bg-[#17181f] border-t border-zinc-200 dark:border-white/10">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-red-500 uppercase tracking-widest mb-1">
+                <div className="p-5 bg-zinc-50 dark:bg-workshop-muted border-t border-zinc-200 dark:border-white/10">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-red-500 mb-1">
                     <div className="relative w-4 h-3.5 shrink-0">
                       <Image
                         src="/images/logo-crown.png"
@@ -151,21 +147,21 @@ export function Hero() {
 
                   {/* Showcase Stats & Badges underneath */}
                   <div className="grid grid-cols-3 gap-3 text-center">
-                    <div className="p-2.5 rounded-xl bg-white dark:bg-[#202129] border border-zinc-200 dark:border-white/10">
+                    <div className="p-2.5 rounded-xl bg-white dark:bg-workshop-surface border border-zinc-200 dark:border-white/10">
                       <div className="text-red-500 font-black text-sm sm:text-base">9H</div>
-                      <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-semibold uppercase">
+                      <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-medium">
                         Hardness
                       </div>
                     </div>
-                    <div className="p-2.5 rounded-xl bg-white dark:bg-[#202129] border border-zinc-200 dark:border-white/10">
+                    <div className="p-2.5 rounded-xl bg-white dark:bg-workshop-surface border border-zinc-200 dark:border-white/10">
                       <div className="text-red-500 font-black text-sm sm:text-base">&gt;110°</div>
-                      <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-semibold uppercase">
+                      <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-medium">
                         Hydrophobic
                       </div>
                     </div>
-                    <div className="p-2.5 rounded-xl bg-white dark:bg-[#202129] border border-zinc-200 dark:border-white/10">
+                    <div className="p-2.5 rounded-xl bg-white dark:bg-workshop-surface border border-zinc-200 dark:border-white/10">
                       <div className="text-red-500 font-black text-sm sm:text-base">VIN</div>
-                      <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-semibold uppercase">
+                      <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-medium">
                         Registered
                       </div>
                     </div>

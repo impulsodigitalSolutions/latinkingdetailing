@@ -42,12 +42,12 @@ export function GalleryModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="gallery-modal-title"
-        className="relative w-full max-w-4xl my-8 bg-[#181920] border border-white/10 rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col text-white transition-all"
+        className="relative w-full max-w-4xl my-8 bg-workshop-muted border border-white/10 rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col text-white transition-colors"
       >
         <button
           type="button"
           onClick={closeGalleryModal}
-          className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors border border-white/10 cursor-pointer"
+          className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors border border-white/10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
           aria-label="Close image viewer"
         >
           <X className="w-5 h-5" />
@@ -67,7 +67,7 @@ export function GalleryModal() {
 
           {/* Bottom badge overlay */}
           <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
-            <span className="px-3 py-1 rounded-full bg-red-600 text-white font-bold text-xs uppercase tracking-wider backdrop-blur-sm shadow-md">
+            <span className="px-3 py-1 rounded-full bg-red-600 text-white font-bold text-xs backdrop-blur-sm shadow-md">
               {item.finish}
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-xs text-zinc-300 border border-white/10">
@@ -101,7 +101,7 @@ export function GalleryModal() {
                 closeGalleryModal();
                 openQuoteModal(`Finish like ${item.title}`);
               }}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-600/30 transition-all cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs shadow-md transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
             >
               <Sparkles className="w-4 h-4 text-white" />
               <span>Get Similar Finish</span>

@@ -8,11 +8,7 @@ import {
   ShieldCheck,
   ArrowRight,
   Sparkles,
-  Layers,
-  Wrench,
   Clock,
-  Car,
-  Armchair,
   Check,
 } from 'lucide-react';
 import { WhatsAppIcon } from './icons/BrandIcons';
@@ -46,7 +42,7 @@ export function ServiceDetailModal() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
       <div
-        className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity"
+        className="fixed inset-0 bg-black/85 transition-opacity"
         onClick={closeServiceModal}
         aria-hidden="true"
       />
@@ -55,28 +51,28 @@ export function ServiceDetailModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="service-modal-title"
-        className="relative w-full max-w-3xl my-8 bg-white dark:bg-[#1a1b22] border border-zinc-200 dark:border-white/10 rounded-3xl shadow-2xl overflow-hidden z-10 max-h-[90vh] flex flex-col transition-all"
+        className="relative w-full max-w-3xl my-8 bg-white dark:bg-workshop-card border border-zinc-200 dark:border-workshop-border rounded-3xl overflow-hidden z-10 max-h-[90vh] flex flex-col"
       >
-        {/* Header gradient banner with Official Logo */}
-        <div className="p-6 sm:p-8 bg-gradient-to-br from-[#1e1f26] to-[#181920] text-white relative border-b border-white/10">
+        {/* Header banner with Official Logo */}
+        <div className="p-6 sm:p-8 bg-workshop-surface text-white relative border-b border-workshop-border">
           <button
             type="button"
             onClick={closeServiceModal}
-            className="absolute top-6 right-6 p-2 rounded-xl text-zinc-400 hover:text-white bg-zinc-800/60 hover:bg-zinc-800 transition-colors cursor-pointer"
+            className="absolute top-6 right-6 p-2 rounded-xl text-zinc-400 hover:text-white bg-zinc-800/60 hover:bg-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 transition-colors cursor-pointer"
             aria-label="Close service modal"
           >
             <X className="w-5 h-5" />
           </button>
 
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 rounded-xl bg-zinc-950 border border-red-500/30 p-1 flex items-center justify-center shrink-0 shadow-md">
+            <div className="w-10 h-10 rounded-xl bg-zinc-950 border border-red-500/30 p-1 flex items-center justify-center shrink-0">
               <img
                 src="/images/logo-dark.png"
                 alt="Latin King Detailing"
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/20 border border-red-500/40 text-red-300 text-xs font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/20 border border-red-500/40 text-red-300 text-xs font-semibold">
               <Sparkles className="w-3.5 h-3.5" /> Bolton Workshop Service Breakdown
             </div>
           </div>
@@ -85,7 +81,7 @@ export function ServiceDetailModal() {
             {service.title}
           </h2>
           {service.tagline && (
-            <p className="text-red-400 font-semibold text-xs sm:text-sm mt-1 uppercase tracking-wider">
+            <p className="text-red-400 font-semibold text-xs sm:text-sm mt-1">
               {service.tagline}
             </p>
           )}
@@ -100,7 +96,7 @@ export function ServiceDetailModal() {
         <div className="p-6 sm:p-8 overflow-y-auto space-y-6 text-zinc-800 dark:text-zinc-200">
           {/* Main Description */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-red-600 dark:text-red-500 mb-2">
+            <h3 className="text-sm font-bold text-red-600 dark:text-red-500 mb-2">
               Overview & Protection Scope
             </h3>
             <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
@@ -110,8 +106,8 @@ export function ServiceDetailModal() {
 
           {/* Section: What Is / Extended Explanation */}
           {service.whatIs && (
-            <div className="p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 space-y-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400">
+            <div className="p-5 rounded-2xl bg-zinc-50 dark:bg-workshop-surface border border-zinc-200 dark:border-workshop-border space-y-2">
+              <h4 className="text-xs font-bold text-red-600 dark:text-red-400">
                 Detailed Technical Overview
               </h4>
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
@@ -123,14 +119,14 @@ export function ServiceDetailModal() {
           {/* Why Choose Machine Polishing / Feature Pillars */}
           {service.whyChoose && service.whyChoose.length > 0 && (
             <div>
-              <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3">
+              <h4 className="text-sm font-bold text-zinc-900 dark:text-white mb-3">
                 Why Choose This Service?
               </h4>
               <div className="space-y-3">
                 {service.whyChoose.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40"
+                    className="p-4 rounded-xl border border-zinc-200 dark:border-workshop-border bg-white dark:bg-workshop-surface"
                   >
                     <div className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-2">
                       <Check className="w-4 h-4 text-red-500" />
@@ -148,14 +144,14 @@ export function ServiceDetailModal() {
           {/* Interior Surfaces We Protect */}
           {service.surfacesProtected && service.surfacesProtected.length > 0 && (
             <div>
-              <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3">
+              <h4 className="text-sm font-bold text-zinc-900 dark:text-white mb-3">
                 Interior Surfaces We Protect
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {service.surfacesProtected.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-3.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40"
+                    className="p-3.5 rounded-xl border border-zinc-200 dark:border-workshop-border bg-white dark:bg-workshop-surface"
                   >
                     <div className="font-bold text-xs sm:text-sm text-zinc-900 dark:text-white flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-red-500" />
@@ -173,14 +169,14 @@ export function ServiceDetailModal() {
           {/* Included Items (The King's Detail, etc.) */}
           {service.includedItems && service.includedItems.length > 0 && (
             <div>
-              <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3">
+              <h4 className="text-sm font-bold text-zinc-900 dark:text-white mb-3">
                 What’s Included in This Package
               </h4>
               <div className="space-y-3">
                 {service.includedItems.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40"
+                    className="p-4 rounded-xl border border-zinc-200 dark:border-workshop-border bg-white dark:bg-workshop-surface"
                   >
                     <div className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-red-500" />
@@ -198,21 +194,21 @@ export function ServiceDetailModal() {
           {/* Sub Services (Deep Clean + Engine Bay / Full Valet + Mini Valet) */}
           {service.subServices && service.subServices.length > 0 && (
             <div>
-              <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3">
+              <h4 className="text-sm font-bold text-zinc-900 dark:text-white mb-3">
                 Service Options & Breakdown
               </h4>
               <div className="space-y-3">
                 {service.subServices.map((sub, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40"
+                    className="p-4 rounded-xl border border-zinc-200 dark:border-workshop-border bg-white dark:bg-workshop-surface"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
                       <div className="font-bold text-sm text-zinc-900 dark:text-white">
                         {sub.title}
                         {sub.subtitle && (
                           <span className="text-xs font-normal text-red-500 ml-2">
-                            — {sub.subtitle}
+                            : {sub.subtitle}
                           </span>
                         )}
                       </div>
@@ -240,8 +236,8 @@ export function ServiceDetailModal() {
           )}
 
           {/* Highlights */}
-          <div className="bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3">
+          <div className="bg-zinc-50 dark:bg-workshop-surface border border-zinc-200 dark:border-workshop-border rounded-2xl p-5">
+            <h4 className="text-xs font-bold text-zinc-900 dark:text-white mb-3">
               Key Features & Certified Guarantee
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
@@ -265,7 +261,7 @@ export function ServiceDetailModal() {
                 {service.steps.map((st) => (
                   <div
                     key={st.step}
-                    className="flex gap-4 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/40"
+                    className="flex gap-4 p-4 rounded-xl border border-zinc-200 dark:border-workshop-border bg-white dark:bg-workshop-surface"
                   >
                     <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 font-bold flex items-center justify-center shrink-0 text-sm">
                       0{st.step}
@@ -296,13 +292,13 @@ export function ServiceDetailModal() {
                     key={tier.name}
                     className={`rounded-2xl p-4 border flex flex-col justify-between ${
                       tier.name.includes('Silver')
-                        ? 'border-red-500/50 bg-red-500/[0.03] dark:bg-red-500/[0.05] shadow-md ring-1 ring-red-500/30'
-                        : 'border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30'
+                        ? 'border-red-500/50 bg-red-500/[0.03] dark:bg-red-500/[0.05] ring-1 ring-red-500/30'
+                        : 'border-zinc-200 dark:border-workshop-border bg-zinc-50/50 dark:bg-workshop-surface'
                     }`}
                   >
                     <div>
                       {tier.name.includes('Silver') && (
-                        <span className="text-[10px] uppercase font-bold tracking-widest text-red-600 dark:text-red-400 bg-red-500/10 px-2 py-0.5 rounded-full inline-block mb-2">
+                        <span className="text-xs font-bold text-red-600 dark:text-red-400 bg-red-500/10 px-2.5 py-0.5 rounded-full inline-block mb-2">
                           Most Popular
                         </span>
                       )}
@@ -339,7 +335,7 @@ export function ServiceDetailModal() {
         </div>
 
         {/* Footer actions */}
-        <div className="p-4 sm:p-6 bg-zinc-100 dark:bg-[#16171d] border-t border-zinc-200 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="p-4 sm:p-6 bg-zinc-100 dark:bg-workshop-row border-t border-zinc-200 dark:border-workshop-border flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="text-xs text-zinc-600 dark:text-zinc-400 text-center sm:text-left">
             <span className="font-semibold text-zinc-900 dark:text-white">
               Based in Farnworth, Bolton
@@ -353,7 +349,7 @@ export function ServiceDetailModal() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-semibold transition-all"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white text-xs sm:text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 transition-colors"
             >
               <WhatsAppIcon className="w-4 h-4" />
               <span>WhatsApp Us</span>
@@ -364,7 +360,7 @@ export function ServiceDetailModal() {
                 closeServiceModal();
                 openQuoteModal(service.title);
               }}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-red-600 text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-red-600/30 cursor-pointer"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 active:bg-red-800 text-white text-xs sm:text-sm font-bold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
             >
               <span>{service.ctaText || 'Get a Free Quote'}</span>
               <ArrowRight className="w-4 h-4" />

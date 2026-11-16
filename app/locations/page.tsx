@@ -26,14 +26,7 @@ export const metadata: Metadata = {
 
 export default function LocationsPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-[#14151a] text-[#0f172a] dark:text-[#f3f4f6] relative transition-colors duration-300">
-      {/* Soft ambient background crimson glow */}
-      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-red-600/[0.04] dark:bg-red-600/[0.06] blur-[140px] rounded-full" />
-        <div className="absolute top-[35%] right-0 w-[600px] h-[600px] bg-red-600/[0.02] dark:bg-red-600/[0.04] blur-[150px] rounded-full" />
-        <div className="absolute bottom-[25%] left-0 w-[700px] h-[700px] bg-red-600/[0.02] dark:bg-red-600/[0.04] blur-[150px] rounded-full" />
-      </div>
-
+    <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
       {/* Sticky Floating Capsule Navbar */}
       <Navbar />
 
@@ -51,18 +44,11 @@ export default function LocationsPage() {
             </nav>
 
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-bold uppercase tracking-wider mb-4">
-                <MapPin className="w-3.5 h-3.5" />
-                <span>Bolton Workshop &amp; Regional Coverage</span>
-              </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
-                Where We Work —{' '}
-                <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
-                  Serving Bolton &amp; Greater Manchester
-                </span>
+                Where We Work: <span className="text-red-600 dark:text-red-500">Bolton &amp; Greater Manchester</span>
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
-                Our main climate-controlled facility is conveniently located at <strong>115 Albert Rd, Farnworth, Bolton BL4 9EA</strong>, just 5 minutes from Junction 4 of the M61. We also serve clients across 24 towns and boroughs with verified mobile detailing services.
+                Our main climate-controlled facility is located at <strong>115 Albert Rd, Farnworth, Bolton BL4 9EA</strong>, five minutes from Junction 4 of the M61. We also serve clients across 24 towns and boroughs with verified mobile detailing services.
               </p>
             </div>
           </div>
@@ -72,15 +58,12 @@ export default function LocationsPage() {
         <ServiceAreas />
 
         {/* Workshop Travel Times & Google Maps Deep Dive */}
-        <section className="py-16 bg-white dark:bg-[#14151a] border-t border-zinc-200 dark:border-white/5">
+        <section className="py-16 bg-white dark:bg-workshop-dark border-t border-zinc-200 dark:border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               {/* Left Column: Workshop Details & Travel Guide (5 cols) */}
               <div className="lg:col-span-5 space-y-6">
                 <div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 text-red-600 dark:text-red-500 text-xs font-bold uppercase tracking-wider mb-3">
-                    <Navigation className="w-3.5 h-3.5" /> Easy Motorway Access
-                  </div>
                   <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white">
                     Farnworth Workshop Hub
                   </h2>
@@ -89,13 +72,13 @@ export default function LocationsPage() {
                   </p>
                 </div>
 
-                <div className="p-6 rounded-3xl bg-zinc-50 dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10 space-y-4">
+                <div className="p-6 rounded-3xl bg-zinc-50 dark:bg-workshop-card-subtle border border-zinc-200 dark:border-white/10 space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="p-2 rounded-xl bg-red-500/10 text-red-600 dark:text-red-500 shrink-0 mt-0.5">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                      <div className="text-xs font-semibold text-zinc-500">
                         Workshop Address
                       </div>
                       <div className="text-sm font-extrabold text-zinc-900 dark:text-white mt-0.5">
@@ -112,7 +95,7 @@ export default function LocationsPage() {
                       <Clock className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                      <div className="text-xs font-semibold text-zinc-500">
                         Operating Hours
                       </div>
                       <div className="text-xs sm:text-sm font-semibold text-zinc-900 dark:text-white mt-0.5">
@@ -126,12 +109,12 @@ export default function LocationsPage() {
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                      <div className="text-xs font-semibold text-zinc-500">
                         Direct Enquiries
                       </div>
                       <a
                         href={SITE_CONFIG.phoneHref}
-                        className="text-sm font-bold text-red-600 dark:text-red-400 hover:underline block mt-0.5"
+                        className="text-sm font-bold text-red-600 dark:text-red-400 hover:underline block mt-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                       >
                         {SITE_CONFIG.phone}
                       </a>
@@ -162,32 +145,32 @@ export default function LocationsPage() {
                 </div>
 
                 {/* Approximate Drive Times */}
-                <div className="p-6 rounded-3xl bg-zinc-50 dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-3">
+                <div className="p-6 rounded-3xl bg-zinc-50 dark:bg-workshop-card-subtle border border-zinc-200 dark:border-white/10">
+                  <h3 className="text-xs font-semibold text-zinc-500 mb-3">
                     Approximate Drive Times to Workshop
                   </h3>
                   <div className="grid grid-cols-2 gap-2 text-xs">
-                    <div className="p-2 rounded-xl bg-white dark:bg-[#252630] border border-zinc-200 dark:border-white/5 flex items-center justify-between">
+                    <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
                       <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Bolton Town</span>
                       <span className="font-bold text-red-600 dark:text-red-400">8 mins</span>
                     </div>
-                    <div className="p-2 rounded-xl bg-white dark:bg-[#252630] border border-zinc-200 dark:border-white/5 flex items-center justify-between">
+                    <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
                       <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Kearsley</span>
                       <span className="font-bold text-red-600 dark:text-red-400">3 mins</span>
                     </div>
-                    <div className="p-2 rounded-xl bg-white dark:bg-[#252630] border border-zinc-200 dark:border-white/5 flex items-center justify-between">
+                    <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
                       <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Manchester</span>
                       <span className="font-bold text-red-600 dark:text-red-400">18 mins</span>
                     </div>
-                    <div className="p-2 rounded-xl bg-white dark:bg-[#252630] border border-zinc-200 dark:border-white/5 flex items-center justify-between">
+                    <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
                       <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Bury / Radcliffe</span>
                       <span className="font-bold text-red-600 dark:text-red-400">14 mins</span>
                     </div>
-                    <div className="p-2 rounded-xl bg-white dark:bg-[#252630] border border-zinc-200 dark:border-white/5 flex items-center justify-between">
+                    <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
                       <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Salford / Eccles</span>
                       <span className="font-bold text-red-600 dark:text-red-400">15 mins</span>
                     </div>
-                    <div className="p-2 rounded-xl bg-white dark:bg-[#252630] border border-zinc-200 dark:border-white/5 flex items-center justify-between">
+                    <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
                       <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Wigan / Chorley</span>
                       <span className="font-bold text-red-600 dark:text-red-400">22 mins</span>
                     </div>
@@ -196,10 +179,10 @@ export default function LocationsPage() {
               </div>
 
               {/* Right Column: Interactive Google Maps Iframe Embed (7 cols) */}
-              <div className="lg:col-span-7 bg-white dark:bg-[#1d1e25] rounded-3xl p-4 sm:p-6 border border-zinc-200 dark:border-white/10 shadow-lg">
+              <div className="lg:col-span-7 bg-white dark:bg-workshop-card-subtle rounded-3xl p-4 sm:p-6 border border-zinc-200 dark:border-white/10 shadow-lg">
                 <div className="flex items-center justify-between mb-4 px-2">
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500 motion-safe:animate-pulse" />
                     <span className="text-xs font-bold text-zinc-900 dark:text-white">
                       Live Workshop Location
                     </span>
@@ -208,7 +191,7 @@ export default function LocationsPage() {
                     href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-bold text-red-600 dark:text-red-400 hover:underline inline-flex items-center gap-1"
+                    className="text-xs font-bold text-red-600 dark:text-red-400 hover:underline inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                   >
                     <span>Full Screen Map</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -226,7 +209,7 @@ export default function LocationsPage() {
                     allowFullScreen={false}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="w-full h-full filter saturate-[1.1] dark:invert-[0.88] dark:hue-rotate-180 transition-all duration-300"
+                    className="w-full h-full filter saturate-[1.1] dark:invert-[0.88] dark:hue-rotate-180 transition-opacity duration-300"
                   />
                 </div>
               </div>

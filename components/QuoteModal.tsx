@@ -33,7 +33,7 @@ export function QuoteModal() {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/75 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
+        className="fixed inset-0 bg-black/75 backdrop-blur-md transition-opacity"
         onClick={closeQuoteModal}
         aria-hidden="true"
       />
@@ -43,10 +43,10 @@ export function QuoteModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="quote-modal-title"
-        className="relative w-full max-w-xl my-8 bg-white dark:bg-[#1a1b22] border border-zinc-200 dark:border-white/10 rounded-3xl shadow-2xl overflow-hidden z-10 transition-all transform animate-in zoom-in-95 duration-200"
+        className="relative w-full max-w-xl my-8 bg-white dark:bg-workshop-card border border-zinc-200 dark:border-white/10 rounded-3xl shadow-2xl overflow-hidden z-10 transition-colors"
       >
         {/* Top red accent line */}
-        <div className="h-1.5 w-full bg-gradient-to-r from-red-500 via-red-600 to-rose-600" />
+        <div className="h-1.5 w-full bg-red-600" />
 
         <div className="p-6 sm:p-8">
           {/* Header with Official Logo */}
@@ -60,21 +60,18 @@ export function QuoteModal() {
                 />
               </div>
               <div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
-                  <Sparkles className="w-3.5 h-3.5" /> Free Detailing & Coating Quote
-                </div>
                 <h2 id="quote-modal-title" className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
                   Get Your Vehicle Quote
                 </h2>
                 <p className="text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm mt-1">
-                  Bolton Workshop · Ceramic Pro 9H Certified · Instant honest pricing
+                  Bolton Workshop · Ceramic Pro 9H Certified
                 </p>
               </div>
             </div>
             <button
               type="button"
               onClick={closeQuoteModal}
-              className="p-2 rounded-xl text-zinc-400 hover:text-zinc-700 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 transition-colors cursor-pointer"
+              className="p-2 rounded-xl text-zinc-400 hover:text-zinc-700 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               aria-label="Close quote modal"
             >
               <X className="w-5 h-5" />

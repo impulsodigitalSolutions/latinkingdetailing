@@ -26,14 +26,7 @@ export const metadata: Metadata = {
 
 export default function FaqPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-[#14151a] text-[#0f172a] dark:text-[#f3f4f6] relative transition-colors duration-300">
-      {/* Soft ambient background crimson glow */}
-      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-red-600/[0.04] dark:bg-red-600/[0.06] blur-[140px] rounded-full" />
-        <div className="absolute top-[35%] right-0 w-[600px] h-[600px] bg-red-600/[0.02] dark:bg-red-600/[0.04] blur-[150px] rounded-full" />
-        <div className="absolute bottom-[25%] left-0 w-[700px] h-[700px] bg-red-600/[0.02] dark:bg-red-600/[0.04] blur-[150px] rounded-full" />
-      </div>
-
+    <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
       {/* Sticky Floating Capsule Navbar */}
       <Navbar />
 
@@ -51,15 +44,8 @@ export default function FaqPage() {
             </nav>
 
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-bold uppercase tracking-wider mb-4">
-                <HelpCircle className="w-3.5 h-3.5" />
-                <span>Knowledge Base &amp; Advice</span>
-              </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
-                Frequently Asked{' '}
-                <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
-                  Detailing Questions
-                </span>
+                Frequently Asked <span className="text-red-600 dark:text-red-500">Detailing Questions</span>
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
                 Clear, honest answers about Ceramic Pro 9H coating, paint correction stages, valeting frequency, pricing estimates, and our Farnworth workshop booking process.
@@ -72,7 +58,7 @@ export default function FaqPage() {
         <FaqSection />
 
         {/* Instant WhatsApp Guidance Banner */}
-        <section className="py-12 bg-zinc-50 dark:bg-[#181920]/60 border-y border-zinc-200 dark:border-white/5">
+        <section className="py-12 bg-zinc-50 dark:bg-workshop-muted/60 border-y border-zinc-200 dark:border-white/5">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-2xl font-black text-zinc-900 dark:text-white mb-2">
               Have a Specific Question About Your Car?
@@ -85,14 +71,14 @@ export default function FaqPage() {
                 href={SITE_CONFIG.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-lg shadow-emerald-600/20"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors shadow-lg shadow-emerald-600/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
               >
                 <WhatsAppIcon className="w-4 h-4" />
                 <span>Chat on WhatsApp (07482 225323)</span>
               </a>
               <a
                 href={SITE_CONFIG.phoneHref}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-900 dark:bg-white/10 hover:bg-zinc-800 dark:hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-900 dark:bg-white/10 hover:bg-zinc-800 dark:hover:bg-white/20 text-white font-bold text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
                 <Phone className="w-4 h-4" />
                 <span>Call Us Direct</span>

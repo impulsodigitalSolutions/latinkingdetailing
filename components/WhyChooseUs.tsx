@@ -22,17 +22,11 @@ export function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5" /> Accountability & Standards
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
-            Why Latin King Detailing —{' '}
-            <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
-              Bolton's Trusted Paint Protection Experts
-            </span>
+            Why Latin King Detailing: <span className="text-red-600 dark:text-red-500">Bolton&apos;s Certified Studio</span>
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
-            We operate to strict manufacturer protocols so your paint receives uncompromising, traceable protection.
+            We operate to strict manufacturer protocols so your vehicle receives uncompromising, traceable protection with real VIN warranties.
           </p>
         </div>
 
@@ -41,15 +35,15 @@ export function WhyChooseUs() {
           {WHY_CHOOSE_US.map((pillar) => (
             <div
               key={pillar.id}
-              className="relative rounded-3xl p-8 bg-white dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10 shadow-md hover:shadow-2xl hover:border-red-500/50 dark:hover:border-red-500/50 transition-all duration-300 flex flex-col justify-between group"
+              className="relative rounded-3xl p-8 bg-white dark:bg-workshop-card border border-zinc-200 dark:border-white/10 shadow-sm hover:border-red-500/50 dark:hover:border-red-500/50 transition-colors duration-200 flex flex-col justify-between group"
             >
               {/* Top Accent Pill */}
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="p-3.5 rounded-2xl bg-red-500/10 dark:bg-red-500/15 border border-red-500/20 group-hover:scale-105 transition-transform">
+                  <div className="p-3.5 rounded-2xl bg-red-500/10 dark:bg-red-500/15 border border-red-500/20">
                     {getPillarIcon(pillar.iconName)}
                   </div>
-                  <span className="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-zinc-100 dark:bg-[#23242d] text-zinc-700 dark:text-zinc-200 border border-zinc-200 dark:border-white/10">
+                  <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-zinc-100 dark:bg-workshop-elevated text-zinc-700 dark:text-zinc-200 border border-zinc-200 dark:border-white/10">
                     {pillar.badge}
                   </span>
                 </div>

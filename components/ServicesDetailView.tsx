@@ -88,27 +88,15 @@ export function ServicesDetailView() {
     <div className="pt-8 pb-16 md:pt-12 md:pb-24">
       {/* Services Hero Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-xs sm:text-sm font-semibold uppercase tracking-wider text-red-600 dark:text-red-400 mb-4 shadow-xs">
-          <div className="w-5 h-4 relative shrink-0">
-            <Image
-              src="/images/logo-crown.png"
-              alt="Crown"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <span>Latin King Detailing · 7 Specialist Services · Bolton Workshop</span>
-        </div>
-
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-zinc-900 dark:text-white tracking-tight leading-[1.15]">
-          Professional Automotive Detailing &{' '}
-          <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
-            Ceramic Coating Services
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-zinc-900 dark:text-white tracking-tight leading-[1.12]">
+          Professional Automotive Detailing &amp;{' '}
+          <span className="text-red-600 dark:text-red-500">
+            Ceramic Coating
           </span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto mt-5 leading-relaxed font-normal">
-          From our dedicated Farnworth workshop (five minutes from junction 4 of the M61), Latin King Detailing provides certified Ceramic Pro 9H coatings, multi-stage machine polishing, leather protection, and showroom valets using only professional-grade products.
+          From our dedicated Farnworth workshop (five minutes from Junction 4 of the M61), Latin King Detailing provides certified Ceramic Pro 9H coatings, multi-stage machine polishing, leather protection, and showroom valets using only professional-grade products.
         </p>
 
         {/* Workshop Quick Badges */}
@@ -131,10 +119,10 @@ export function ServicesDetailView() {
               key={cat.id}
               type="button"
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 activeCategory === cat.id
-                  ? 'bg-red-600 text-white shadow-md shadow-red-600/30 scale-102'
-                  : 'bg-zinc-100 dark:bg-[#1d1e25] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
+                  ? 'bg-red-600 text-white shadow-md'
+                  : 'bg-zinc-100 dark:bg-workshop-card-subtle text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
               }`}
             >
               {cat.label}
@@ -167,10 +155,10 @@ export function ServicesDetailView() {
             <article
               id={service.id}
               key={service.id}
-              className={`scroll-mt-28 rounded-3xl p-6 sm:p-10 md:p-12 border transition-all ${
+              className={`scroll-mt-28 rounded-3xl p-6 sm:p-10 md:p-12 border transition-colors ${
                 isCeramic
-                  ? 'bg-gradient-to-br from-white via-red-500/[0.02] to-red-500/[0.04] dark:from-[#1d1e25] dark:via-[#1a1b22] dark:to-red-500/[0.05] border-red-500/50 shadow-2xl ring-1 ring-red-500/20'
-                  : 'bg-white dark:bg-[#1c1d24] border-zinc-200 dark:border-white/10 shadow-xl'
+                  ? 'bg-gradient-to-br from-white via-red-500/[0.02] to-red-500/[0.04] dark:from-workshop-card-subtle dark:via-workshop-card dark:to-red-500/[0.05] border-red-500/50 shadow-2xl ring-1 ring-red-500/20'
+                  : 'bg-white dark:bg-workshop-card border-zinc-200 dark:border-white/10 shadow-xl'
               }`}
             >
               {/* Header Row: Number + Icon + Title + Pricing Pill */}
@@ -189,7 +177,7 @@ export function ServicesDetailView() {
                         {getServiceIcon(service.iconName)}
                       </div>
                       {isCeramic && (
-                        <span className="px-2.5 py-0.5 rounded-full bg-red-600 text-white font-black text-[10px] uppercase tracking-wider shadow-xs">
+                        <span className="px-2.5 py-0.5 rounded-full bg-red-600 text-white font-bold text-[10px] shadow-xs">
                           Signature Bolton Specialism
                         </span>
                       )}
@@ -212,8 +200,8 @@ export function ServicesDetailView() {
 
                 {/* Service Cost Badge */}
                 {service.startingPrice && (
-                  <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-[#15161c] border border-zinc-200 dark:border-white/10 shrink-0 md:max-w-xs text-left">
-                    <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400 mb-1">
+                  <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10 shrink-0 md:max-w-xs text-left">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-red-600 dark:text-red-400 mb-1">
                       <Tag className="w-3.5 h-3.5" />
                       <span>Service Cost</span>
                     </div>
@@ -239,7 +227,7 @@ export function ServicesDetailView() {
               {/* Body: Full Verbatim Description */}
               <div className="py-6 space-y-6">
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-2">
+                  <h3 className="text-xs font-bold text-zinc-400 dark:text-zinc-500 mb-2">
                     Service Description
                   </h3>
                   <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
@@ -249,7 +237,7 @@ export function ServicesDetailView() {
 
                 {/* Section: What Is / Extended Explanation */}
                 {service.whatIs && (
-                  <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-[#16171d] border border-zinc-200 dark:border-white/10 space-y-2">
+                  <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10 space-y-2">
                     <h4 className="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-red-500" />
                       {service.id === 'ceramic-coating' ? 'What Is Ceramic Coating?' : 'What Interior Coating Does'}
@@ -263,14 +251,14 @@ export function ServicesDetailView() {
                 {/* Machine Polishing: Why Choose Machine Polishing? */}
                 {service.whyChoose && service.whyChoose.length > 0 && (
                   <div>
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-4">
+                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white mb-4">
                       Why Choose Machine Polishing?
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {service.whyChoose.map((item, wci) => (
                         <div
                           key={wci}
-                          className="p-5 rounded-2xl bg-zinc-50 dark:bg-[#16171d] border border-zinc-200 dark:border-white/10"
+                          className="p-5 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10"
                         >
                           <div className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-2 mb-1.5">
                             <Check className="w-4 h-4 text-red-500 shrink-0" />
@@ -288,14 +276,14 @@ export function ServicesDetailView() {
                 {/* Interior Surfaces We Protect (Leather Service) */}
                 {service.surfacesProtected && service.surfacesProtected.length > 0 && (
                   <div>
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-4">
+                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white mb-4">
                       Interior Surfaces We Protect
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                       {service.surfacesProtected.map((item, spi) => (
                         <div
                           key={spi}
-                          className="p-4 rounded-2xl bg-zinc-50 dark:bg-[#16171d] border border-zinc-200 dark:border-white/10"
+                          className="p-4 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10"
                         >
                           <div className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-2 mb-1">
                             <span className="w-2 h-2 rounded-full bg-red-500" />
@@ -313,14 +301,14 @@ export function ServicesDetailView() {
                 {/* The King's Detail: What's Included */}
                 {service.includedItems && service.includedItems.length > 0 && (
                   <div>
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-4">
+                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white mb-4">
                       What’s Included in The King’s Detail
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {service.includedItems.map((item, incIdx) => (
                         <div
                           key={incIdx}
-                          className="p-5 rounded-2xl bg-zinc-50 dark:bg-[#16171d] border border-zinc-200 dark:border-white/10"
+                          className="p-5 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10"
                         >
                           <div className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-2 mb-2">
                             <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0" />
@@ -338,14 +326,14 @@ export function ServicesDetailView() {
                 {/* Sub Services Breakdown (Deep Clean & Engine Bay / Full & Mini Valet) */}
                 {service.subServices && service.subServices.length > 0 && (
                   <div className="space-y-4">
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">
+                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white">
                       Detailed Service Options
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {service.subServices.map((sub, ssi) => (
                         <div
                           key={ssi}
-                          className="p-5 rounded-2xl bg-zinc-50 dark:bg-[#16171d] border border-zinc-200 dark:border-white/10 flex flex-col justify-between"
+                          className="p-5 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10 flex flex-col justify-between"
                         >
                           <div>
                             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
@@ -384,7 +372,7 @@ export function ServicesDetailView() {
                       {service.steps.map((st) => (
                         <div
                           key={st.step}
-                          className="p-4 rounded-2xl bg-zinc-50 dark:bg-[#16171d] border border-zinc-200 dark:border-white/10 flex gap-3"
+                          className="p-4 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10 flex gap-3"
                         >
                           <div className="w-8 h-8 rounded-xl bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 font-bold flex items-center justify-center shrink-0 text-xs">
                             0{st.step}
@@ -421,7 +409,7 @@ export function ServicesDetailView() {
                         >
                           <div>
                             {tier.name.includes('Silver') && (
-                              <span className="text-[10px] uppercase font-bold tracking-widest text-red-600 dark:text-red-400 bg-red-500/10 px-2 py-0.5 rounded-full inline-block mb-2">
+                              <span className="text-[10px] font-bold text-red-600 dark:text-red-400 bg-red-500/10 px-2 py-0.5 rounded-full inline-block mb-2">
                                 Most Popular Package
                               </span>
                             )}
@@ -437,7 +425,7 @@ export function ServicesDetailView() {
                             <ul className="space-y-1.5 text-xs text-zinc-600 dark:text-zinc-300">
                               {tier.features.map((feat, fi) => (
                                 <li key={fi} className="flex items-start gap-1.5">
-                                  <span className="text-red-500">✓</span>
+                                  <Check className="w-3.5 h-3.5 text-red-500 shrink-0 mt-0.5" />
                                   <span>{feat}</span>
                                 </li>
                               ))}
@@ -458,8 +446,8 @@ export function ServicesDetailView() {
                 )}
 
                 {/* Highlights Checklist Row */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-zinc-50/50 dark:bg-[#15161c]/80 border border-zinc-200/80 dark:border-white/5">
-                  <div className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-3">
+                <div className="p-4 sm:p-5 rounded-2xl bg-zinc-50/50 dark:bg-workshop-row/80 border border-zinc-200/80 dark:border-white/5">
+                  <div className="text-xs font-bold text-zinc-400 mb-3">
                     Certified Highlights & Standards:
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-xs">
@@ -493,7 +481,7 @@ export function ServicesDetailView() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm"
+                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
                     title="WhatsApp Latin King Detailing"
                   >
                     <WhatsAppIcon className="w-4 h-4" />
@@ -503,7 +491,7 @@ export function ServicesDetailView() {
                   <button
                     type="button"
                     onClick={() => openQuoteModal(service.title)}
-                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-red-600 via-red-500 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-black text-xs uppercase tracking-wider shadow-md shadow-red-600/30 transition-all hover:scale-[1.02] cursor-pointer"
+                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                   >
                     <span>{service.ctaText || 'Get a Free Quote'}</span>
                     <ArrowRight className="w-4 h-4" />

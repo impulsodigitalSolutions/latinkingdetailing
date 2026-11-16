@@ -25,14 +25,7 @@ export const metadata: Metadata = {
 
 export default function GalleryPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-[#14151a] text-[#0f172a] dark:text-[#f3f4f6] relative transition-colors duration-300">
-      {/* Soft ambient background crimson glow */}
-      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-red-600/[0.04] dark:bg-red-600/[0.06] blur-[140px] rounded-full" />
-        <div className="absolute top-[35%] right-0 w-[600px] h-[600px] bg-red-600/[0.02] dark:bg-red-600/[0.04] blur-[150px] rounded-full" />
-        <div className="absolute bottom-[25%] left-0 w-[700px] h-[700px] bg-red-600/[0.02] dark:bg-red-600/[0.04] blur-[150px] rounded-full" />
-      </div>
-
+    <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
       {/* Sticky Floating Capsule Navbar */}
       <Navbar />
 
@@ -50,15 +43,8 @@ export default function GalleryPage() {
             </nav>
 
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-bold uppercase tracking-wider mb-4">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Bolton Workshop Showcase</span>
-              </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
-                Showroom Detailing &amp;{' '}
-                <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
-                  Transformation Gallery
-                </span>
+                Showroom Detailing &amp; <span className="text-red-600 dark:text-red-500">Transformations</span>
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
                 Every vehicle featured here was detailed and protected inside our dedicated Farnworth workshop. From high-gloss 9H nanoceramic shielding to defect-free machine paint correction, browse real results from Greater Manchester owners.
@@ -87,12 +73,12 @@ export default function GalleryPage() {
         <Gallery />
 
         {/* Workshop Quality Standards Callout */}
-        <section className="py-12 bg-zinc-50 dark:bg-[#181920]/60 border-y border-zinc-200 dark:border-white/5">
+        <section className="py-12 bg-zinc-50 dark:bg-workshop-muted/60 border-y border-zinc-200 dark:border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-6 rounded-3xl bg-white dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10 shadow-sm">
-                <div className="w-10 h-10 rounded-2xl bg-red-500/10 text-red-600 dark:text-red-500 flex items-center justify-center font-bold text-sm mb-4">
-                  01
+              <div className="p-6 rounded-3xl bg-white dark:bg-workshop-card border border-zinc-200 dark:border-white/10 shadow-sm">
+                <div className="text-xs font-bold text-red-600 dark:text-red-500 mb-2">
+                  Standard 01
                 </div>
                 <h3 className="text-base font-extrabold text-zinc-900 dark:text-white mb-2">
                   Specialist Hexagon Studio Lighting
@@ -102,9 +88,9 @@ export default function GalleryPage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-3xl bg-white dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10 shadow-sm">
-                <div className="w-10 h-10 rounded-2xl bg-red-500/10 text-red-600 dark:text-red-500 flex items-center justify-center font-bold text-sm mb-4">
-                  02
+              <div className="p-6 rounded-3xl bg-white dark:bg-workshop-card border border-zinc-200 dark:border-white/10 shadow-sm">
+                <div className="text-xs font-bold text-red-600 dark:text-red-500 mb-2">
+                  Standard 02
                 </div>
                 <h3 className="text-base font-extrabold text-zinc-900 dark:text-white mb-2">
                   Digital Paint Depth Gauge Audits
@@ -114,9 +100,9 @@ export default function GalleryPage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-3xl bg-white dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10 shadow-sm">
-                <div className="w-10 h-10 rounded-2xl bg-red-500/10 text-red-600 dark:text-red-500 flex items-center justify-center font-bold text-sm mb-4">
-                  03
+              <div className="p-6 rounded-3xl bg-white dark:bg-workshop-card border border-zinc-200 dark:border-white/10 shadow-sm">
+                <div className="text-xs font-bold text-red-600 dark:text-red-500 mb-2">
+                  Standard 03
                 </div>
                 <h3 className="text-base font-extrabold text-zinc-900 dark:text-white mb-2">
                   Dust-Controlled Ceramic Bays

@@ -23,17 +23,11 @@ export function Gallery() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-semibold uppercase tracking-wider mb-3">
-              <Sparkles className="w-3.5 h-3.5" /> Showroom Precision
-            </div>
             <h2 className="text-3xl sm:text-4xl font-black text-zinc-900 dark:text-white tracking-tight">
-              Recent Work —{' '}
-              <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
-                Bolton Workshop
-              </span>
+              Recent Transformations: <span className="text-red-600 dark:text-red-500">Bolton Studio</span>
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2">
-              Explore our recent Ceramic Pro 9H applications and multi-stage paint restorations carried out at our Farnworth facility.
+              Explore genuine Ceramic Pro 9H applications, paint correction stages, and cabin restorations completed at our Farnworth facility.
             </p>
           </div>
 
@@ -42,10 +36,10 @@ export function Gallery() {
             <button
               type="button"
               onClick={() => setFilter('all')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'all'
-                  ? 'bg-red-600 text-white shadow-md'
-                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
+                  ? 'bg-red-600 text-white shadow-sm'
+                  : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
               }`}
             >
               All Vehicles
@@ -53,10 +47,10 @@ export function Gallery() {
             <button
               type="button"
               onClick={() => setFilter('ceramic')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'ceramic'
-                  ? 'bg-red-600 text-white shadow-md'
-                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
+                  ? 'bg-red-600 text-white shadow-sm'
+                  : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
               }`}
             >
               Ceramic Pro 9H
@@ -64,10 +58,10 @@ export function Gallery() {
             <button
               type="button"
               onClick={() => setFilter('correction')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'correction'
-                  ? 'bg-red-600 text-white shadow-md'
-                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
+                  ? 'bg-red-600 text-white shadow-sm'
+                  : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
               }`}
             >
               Paint Correction
@@ -81,18 +75,18 @@ export function Gallery() {
             <div
               key={item.id}
               onClick={() => openGalleryModal(item)}
-              className="group relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#1d1e25] shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
+              className="group relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 bg-white dark:bg-workshop-card-subtle shadow-md hover:shadow-2xl transition-colors duration-150 cursor-pointer flex flex-col justify-between"
             >
               {/* Image Viewport */}
-              <div className="relative h-64 sm:h-72 md:h-80 w-full overflow-hidden bg-[#15161c]">
+              <div className="relative h-64 sm:h-72 md:h-80 w-full overflow-hidden bg-workshop-row">
                 <Image
                   src={item.imageUrl}
                   alt={item.imageAlt}
                   fill
                   sizes="(max-width: 768px) 100vw, 600px"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#15161c]/90 via-[#15161c]/20 to-black/30 group-hover:opacity-85 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-workshop-row/90 via-workshop-row/20 to-black/30 group-hover:opacity-85 transition-opacity" />
 
                 {/* Top badges */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
@@ -123,7 +117,7 @@ export function Gallery() {
               </div>
 
               {/* Bottom Card Footer */}
-              <div className="p-4 sm:p-5 bg-zinc-50 dark:bg-[#181920] border-t border-zinc-200 dark:border-white/10 flex items-center justify-between text-xs">
+              <div className="p-4 sm:p-5 bg-zinc-50 dark:bg-workshop-muted border-t border-zinc-200 dark:border-white/10 flex items-center justify-between text-xs">
                 <div>
                   <div className="font-bold text-zinc-800 dark:text-zinc-200">
                     {item.package}
@@ -135,7 +129,7 @@ export function Gallery() {
 
                 <div className="inline-flex items-center gap-1 font-bold text-zinc-900 dark:text-white group-hover:text-red-500 transition-colors">
                   <span>View Details</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </div>
               </div>
             </div>
@@ -146,7 +140,7 @@ export function Gallery() {
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-red-600/20"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-md shadow-red-600/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
           >
             <span>Explore Dedicated Gallery Page</span>
             <ArrowRight className="w-4 h-4" />
@@ -154,7 +148,7 @@ export function Gallery() {
           <button
             type="button"
             onClick={() => openQuoteModal('Finish from Bolton Gallery')}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 bg-white dark:bg-[#1d1e25] text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 font-bold text-xs uppercase tracking-wider shadow-sm transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 bg-white dark:bg-workshop-card-subtle text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 font-bold text-xs transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
           >
             <span>Book Your Transformation</span>
             <ArrowRight className="w-4 h-4 text-red-500" />

@@ -11,10 +11,7 @@ export function QuoteSection() {
     <section id="quote" className="py-16 md:py-24 relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Pre-Footer CTA Banner */}
-        <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-[#1d1e26] via-[#16171d] to-[#1d1e26] text-white border border-red-500/30 shadow-2xl relative overflow-hidden mb-16">
-          {/* Subtle crimson glow */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
-
+        <div className="rounded-3xl p-8 sm:p-12 bg-workshop-card text-white border border-red-500/30 shadow-2xl relative overflow-hidden mb-16">
           <div className="relative z-10 max-w-3xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 rounded-2xl bg-zinc-950 border border-red-500/40 p-1 flex items-center justify-center shrink-0 shadow-md">
@@ -24,8 +21,8 @@ export function QuoteSection() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/20 border border-red-500/40 text-red-300 text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" /> Fast Response & Free Estimates
+              <div className="text-zinc-300 text-xs font-semibold">
+                Latin King Detailing · Bolton Workshop
               </div>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
@@ -40,7 +37,7 @@ export function QuoteSection() {
                 href={SITE_CONFIG.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm uppercase tracking-wider transition-all shadow-md"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-colors shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
               >
                 <WhatsAppIcon className="w-4 h-4" />
                 <span>WhatsApp Us Directly</span>
@@ -48,7 +45,7 @@ export function QuoteSection() {
 
               <a
                 href={SITE_CONFIG.phoneHref}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-sm uppercase tracking-wider transition-colors border border-zinc-700"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-sm transition-colors border border-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
                 <Phone className="w-4 h-4 text-red-400" />
                 <span>Call {SITE_CONFIG.phone}</span>
@@ -60,12 +57,9 @@ export function QuoteSection() {
         {/* Embedded Interactive Quote Form Container */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left: Form */}
-          <div className="lg:col-span-7 bg-white dark:bg-[#1d1e25] rounded-3xl p-6 sm:p-10 border border-zinc-200 dark:border-white/10 shadow-xl">
+          <div className="lg:col-span-7 bg-white dark:bg-workshop-card-subtle rounded-3xl p-6 sm:p-10 border border-zinc-200 dark:border-white/10 shadow-xl">
             <div className="mb-6 flex items-start justify-between gap-4">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400">
-                  Direct Price Calculator
-                </span>
                 <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white mt-1">
                   Request a Custom Quote
                 </h3>
@@ -87,7 +81,7 @@ export function QuoteSection() {
 
           {/* Right: Why Quote With Us Trust Summary */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white dark:bg-[#1d1e25] rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-white/10 shadow-md space-y-5">
+            <div className="bg-white dark:bg-workshop-card-subtle rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-white/10 shadow-md space-y-5">
               <h4 className="text-lg font-bold text-zinc-900 dark:text-white flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-red-500" />
                 What Happens Next?

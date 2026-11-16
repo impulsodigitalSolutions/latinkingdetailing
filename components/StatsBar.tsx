@@ -20,19 +20,19 @@ export function StatsBar() {
   };
 
   return (
-    <section className="relative py-8 border-y border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-[#181920]/60">
+    <section className="relative py-8 border-y border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-workshop-muted/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {STATS.map((stat, idx) => (
             <div
               key={idx}
-              className="relative group p-5 rounded-2xl bg-white dark:bg-[#1d1e25] border border-zinc-200/80 dark:border-white/10 shadow-sm hover:shadow-md hover:border-red-500/40 dark:hover:border-red-500/40 transition-all duration-300"
+              className="relative group p-5 rounded-2xl bg-white dark:bg-workshop-card border border-zinc-200/80 dark:border-white/10 shadow-sm hover:border-red-500/40 dark:hover:border-red-500/40 transition-colors duration-200"
             >
               <div className="flex items-start justify-between mb-2">
                 <div className="p-2.5 rounded-xl bg-red-500/10 dark:bg-red-500/15 border border-red-500/20">
                   {getIcon(idx)}
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+                <span className="text-xs text-zinc-400 dark:text-zinc-500 font-medium">
                   Verified
                 </span>
               </div>

@@ -20,10 +20,7 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="relative bg-[#101115] text-white border-t border-zinc-800/80 pt-16 pb-28 md:pb-16 overflow-hidden">
-      {/* Background crimson glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-red-600/10 blur-[150px] pointer-events-none" />
-
+    <footer className="relative bg-workshop-sunken text-white border-t border-zinc-800/80 pt-16 pb-28 md:pb-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-zinc-800/80">
           {/* Column 1: Brand Info & Verified Social Media (4 cols) */}
@@ -46,7 +43,7 @@ export function Footer() {
                 href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 p-2.5 rounded-xl bg-[#181920] border border-white/10 hover:border-red-500/40 w-full max-w-xs transition-colors group"
+                className="inline-flex items-center gap-3 p-2.5 rounded-xl bg-workshop-muted border border-white/10 hover:border-red-500/40 w-full max-w-xs transition-colors group"
               >
                 <GoogleIcon className="w-5 h-5 shrink-0" />
                 <div className="text-xs">
@@ -64,9 +61,9 @@ export function Footer() {
                 href="https://www.facebook.com/latinkingdetailing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 p-2.5 rounded-xl bg-[#181920] border border-white/10 hover:border-blue-500/40 w-full max-w-xs transition-colors group"
+                className="inline-flex items-center gap-3 p-2.5 rounded-xl bg-workshop-muted border border-white/10 hover:border-blue-500/40 w-full max-w-xs transition-colors group"
               >
-                <FacebookIcon className="w-5 h-5 text-[#1877F2] shrink-0" />
+                <FacebookIcon className="w-5 h-5 text-brand-fb shrink-0" />
                 <div className="text-xs">
                   <div className="flex items-center gap-1.5 font-bold text-white group-hover:text-blue-400 transition-colors">
                     <span>5.0 Facebook Rating</span>
@@ -79,10 +76,10 @@ export function Footer() {
               </a>
             </div>
 
-            {/* Verified Social Media Accounts (Extracted from latinkingdetailing.co.uk) */}
+            {/* Verified Social Media Accounts */}
             <div className="pt-2">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-zinc-400 block mb-2.5">
-                Official Social Channels
+              <span className="text-xs font-semibold text-zinc-400 block mb-2.5">
+                Official Channels
               </span>
               <div className="flex flex-wrap items-center gap-2">
                 {/* Instagram */}
@@ -90,10 +87,10 @@ export function Footer() {
                   href="https://www.instagram.com/latin_king_detailing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#181920] border border-white/10 hover:border-pink-500/60 hover:bg-gradient-to-r hover:from-purple-900/30 hover:to-pink-900/30 text-zinc-300 hover:text-white transition-all text-xs font-semibold group shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-workshop-muted border border-white/10 hover:border-zinc-500 text-zinc-300 hover:text-white transition-colors text-xs font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                   title="Follow Latin King Detailing on Instagram (@latin_king_detailing)"
                 >
-                  <InstagramIcon className="w-4 h-4 text-pink-400 group-hover:scale-110 transition-transform" />
+                  <InstagramIcon className="w-4 h-4 text-pink-400" />
                   <span>@latin_king_detailing</span>
                 </a>
 
@@ -102,10 +99,10 @@ export function Footer() {
                   href="https://www.tiktok.com/@latinkingdetailing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#181920] border border-white/10 hover:border-cyan-500/60 hover:bg-cyan-950/30 text-zinc-300 hover:text-white transition-all text-xs font-semibold group shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-workshop-muted border border-white/10 hover:border-zinc-500 text-zinc-300 hover:text-white transition-colors text-xs font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                   title="Watch Latin King Detailing on TikTok (@latinkingdetailing)"
                 >
-                  <TikTokIcon className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+                  <TikTokIcon className="w-4 h-4 text-cyan-400" />
                   <span>@latinkingdetailing</span>
                 </a>
 
@@ -114,10 +111,10 @@ export function Footer() {
                   href="https://www.facebook.com/latinkingdetailing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#181920] border border-white/10 hover:border-blue-500/60 hover:bg-blue-950/30 text-zinc-300 hover:text-white transition-all text-xs font-semibold group shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-workshop-muted border border-white/10 hover:border-zinc-500 text-zinc-300 hover:text-white transition-colors text-xs font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                   title="Like Latin King Detailing on Facebook"
                 >
-                  <FacebookIcon className="w-4 h-4 text-[#1877F2] group-hover:scale-110 transition-transform" />
+                  <FacebookIcon className="w-4 h-4 text-brand-fb" />
                   <span>Facebook</span>
                 </a>
 
@@ -126,10 +123,10 @@ export function Footer() {
                   href={SITE_CONFIG.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#181920] border border-white/10 hover:border-emerald-500/60 hover:bg-emerald-950/30 text-zinc-300 hover:text-white transition-all text-xs font-semibold group shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-workshop-muted border border-white/10 hover:border-emerald-500/60 text-zinc-300 hover:text-white transition-colors text-xs font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                   title="Chat on WhatsApp (07482 225323)"
                 >
-                  <WhatsAppIcon className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
+                  <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
                   <span>WhatsApp</span>
                 </a>
               </div>
@@ -138,7 +135,7 @@ export function Footer() {
 
           {/* Column 2: Our Services (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-black uppercase tracking-widest text-red-500">
+            <h4 className="text-xs font-bold text-red-500">
               Our Services
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-zinc-400">
@@ -154,7 +151,7 @@ export function Footer() {
               ))}
               <li className="pt-1">
                 <Link href="/services" className="text-red-500 font-bold hover:underline inline-flex items-center gap-1 text-xs">
-                  <span>All 7 Services Page →</span>
+                  <span>All 7 Services Menu</span>
                 </Link>
               </li>
               <li className="pt-2 border-t border-zinc-800">
@@ -179,12 +176,12 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/faq" className="hover:text-red-400 transition-colors">
-                  FAQs & Pricing
+                  FAQs &amp; Pricing
                 </Link>
               </li>
               <li>
                 <Link href="/#blog" className="hover:text-red-400 transition-colors">
-                  Advice & Guides
+                  Advice &amp; Guides
                 </Link>
               </li>
             </ul>
@@ -192,7 +189,7 @@ export function Footer() {
 
           {/* Column 3: Service Areas (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-black uppercase tracking-widest text-red-500">
+            <h4 className="text-xs font-bold text-red-500">
               Service Areas (24 Towns)
             </h4>
             <div className="flex flex-wrap gap-1.5 text-[11px] text-zinc-400">
@@ -200,7 +197,7 @@ export function Footer() {
                 <Link
                   key={town}
                   href="/locations"
-                  className="px-2 py-0.5 rounded bg-[#181920] border border-white/10 hover:border-red-500/50 hover:text-red-400 transition-colors"
+                  className="px-2 py-0.5 rounded bg-workshop-muted border border-white/10 hover:border-red-500/50 hover:text-red-400 transition-colors"
                 >
                   {town}
                 </Link>
@@ -210,7 +207,7 @@ export function Footer() {
 
           {/* Column 4: Contact & Locations (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-black uppercase tracking-widest text-red-500">
+            <h4 className="text-xs font-bold text-red-500">
               Contact & Locations
             </h4>
             <div className="space-y-3 text-xs sm:text-sm text-zinc-300">
@@ -253,7 +250,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-start gap-2 text-zinc-300 hover:text-red-400 transition-colors group block"
                 >
-                  <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                  <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-semibold text-white group-hover:text-red-400 block">
                       Bolton Workshop (HQ):
@@ -273,7 +270,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-start gap-2 text-zinc-300 hover:text-red-400 transition-colors group block"
                 >
-                  <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                  <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-semibold text-white group-hover:text-red-400 block">
                       Manchester Base:
@@ -308,7 +305,7 @@ export function Footer() {
               href="https://www.instagram.com/latin_king_detailing"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-[#181920] border border-white/10 hover:border-pink-500/60 hover:text-pink-400 flex items-center justify-center text-zinc-400 transition-all hover:scale-110"
+              className="w-8 h-8 rounded-full bg-workshop-muted border border-white/10 hover:border-pink-500/60 hover:text-pink-400 flex items-center justify-center text-zinc-400 transition-colors"
               title="Instagram: @latin_king_detailing"
               aria-label="Instagram @latin_king_detailing"
             >
@@ -319,7 +316,7 @@ export function Footer() {
               href="https://www.tiktok.com/@latinkingdetailing"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-[#181920] border border-white/10 hover:border-cyan-400/60 hover:text-cyan-400 flex items-center justify-center text-zinc-400 transition-all hover:scale-110"
+              className="w-8 h-8 rounded-full bg-workshop-muted border border-white/10 hover:border-cyan-400/60 hover:text-cyan-400 flex items-center justify-center text-zinc-400 transition-colors"
               title="TikTok: @latinkingdetailing"
               aria-label="TikTok @latinkingdetailing"
             >
@@ -330,18 +327,18 @@ export function Footer() {
               href="https://www.facebook.com/latinkingdetailing"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-[#181920] border border-white/10 hover:border-blue-500/60 hover:text-blue-400 flex items-center justify-center text-zinc-400 transition-all hover:scale-110"
+              className="w-8 h-8 rounded-full bg-workshop-muted border border-white/10 hover:border-blue-500/60 hover:text-blue-400 flex items-center justify-center text-zinc-400 transition-colors"
               title="Facebook: @latinkingdetailing"
               aria-label="Facebook @latinkingdetailing"
             >
-              <FacebookIcon className="w-4 h-4 text-[#1877F2]" />
+              <FacebookIcon className="w-4 h-4 text-brand-fb" />
             </a>
 
             <a
               href={SITE_CONFIG.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-[#181920] border border-white/10 hover:border-emerald-500/60 hover:text-emerald-400 flex items-center justify-center text-zinc-400 transition-all hover:scale-110"
+              className="w-8 h-8 rounded-full bg-workshop-muted border border-white/10 hover:border-emerald-500/60 hover:text-emerald-400 flex items-center justify-center text-zinc-400 transition-colors"
               title="WhatsApp: 07482 225323"
               aria-label="WhatsApp"
             >
@@ -352,7 +349,7 @@ export function Footer() {
               href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-[#181920] border border-white/10 hover:border-red-500/60 hover:text-red-400 flex items-center justify-center text-zinc-400 transition-all hover:scale-110"
+              className="w-8 h-8 rounded-full bg-workshop-muted border border-white/10 hover:border-red-500/60 hover:text-red-400 flex items-center justify-center text-zinc-400 transition-colors"
               title="Google Maps Profile"
               aria-label="Google Maps"
             >

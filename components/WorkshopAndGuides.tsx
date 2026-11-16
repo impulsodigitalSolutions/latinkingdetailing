@@ -8,30 +8,23 @@ import {
   Navigation,
   Phone,
   Clock,
-  BookOpen,
   ArrowRight,
   ExternalLink,
-  ShieldCheck,
-  Calendar,
   X,
 } from 'lucide-react';
-import { WhatsAppIcon } from './icons/BrandIcons';
 
 export function WorkshopAndGuides() {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   return (
-    <section id="blog" className="py-16 md:py-24 relative bg-zinc-50/50 dark:bg-[#181920]/60 scroll-mt-20">
+    <section id="blog" className="py-16 md:py-24 relative bg-zinc-50/50 dark:bg-workshop-muted/60 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Part: Visit Us in Farnworth, Bolton & Manchester Base */}
         <div className="mb-20">
-          <div className="rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#1d1e25] shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+          <div className="rounded-3xl border border-zinc-200 dark:border-workshop-border bg-white dark:bg-workshop-card-subtle overflow-hidden grid grid-cols-1 lg:grid-cols-12">
             {/* Left Location Info (6 cols) */}
             <div className="p-6 sm:p-10 lg:col-span-6 flex flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-semibold uppercase tracking-wider mb-4">
-                  <MapPin className="w-3.5 h-3.5" /> Workshop Facilities
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white tracking-tight">
                   Visit Us in Farnworth, Bolton & Manchester
                 </h3>
@@ -45,12 +38,12 @@ export function WorkshopAndGuides() {
                     href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-start gap-3 p-3.5 rounded-2xl bg-zinc-50 dark:bg-[#16171d] border border-zinc-200 dark:border-white/10 hover:border-red-500/50 hover:bg-red-500/5 transition-all group"
+                    className="flex items-start gap-3 p-3.5 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-workshop-border hover:border-red-500/50 hover:bg-red-500/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 transition-colors group"
                   >
-                    <MapPin className="w-5 h-5 text-red-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                    <MapPin className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                     <div>
                       <div className="font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
-                        <span>{SITE_CONFIG.brandName} — Bolton Workshop (HQ)</span>
+                        <span>{SITE_CONFIG.brandName}: Bolton Workshop (HQ)</span>
                         <ExternalLink className="w-3.5 h-3.5 text-zinc-400 group-hover:text-red-500" />
                       </div>
                       <div className="text-zinc-600 dark:text-zinc-400">
@@ -67,12 +60,12 @@ export function WorkshopAndGuides() {
                     href={SITE_CONFIG.secondaryWorkshop.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-start gap-3 p-3.5 rounded-2xl bg-zinc-50 dark:bg-[#16171d] border border-zinc-200 dark:border-white/10 hover:border-red-500/50 hover:bg-red-500/5 transition-all group"
+                    className="flex items-start gap-3 p-3.5 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-workshop-border hover:border-red-500/50 hover:bg-red-500/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 transition-colors group"
                   >
-                    <MapPin className="w-5 h-5 text-red-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                    <MapPin className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                     <div>
                       <div className="font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
-                        <span>Manchester Base — Flixton</span>
+                        <span>Manchester Base: Flixton</span>
                         <ExternalLink className="w-3.5 h-3.5 text-zinc-400 group-hover:text-red-500" />
                       </div>
                       <div className="text-zinc-600 dark:text-zinc-400">
@@ -85,7 +78,7 @@ export function WorkshopAndGuides() {
                   </a>
 
                   {/* Opening Hours */}
-                  <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-zinc-50 dark:bg-[#16171d] border border-zinc-200 dark:border-white/10">
+                  <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-workshop-border">
                     <Clock className="w-5 h-5 text-red-500 shrink-0" />
                     <div>
                       <div className="font-bold text-zinc-900 dark:text-white">Opening Hours</div>
@@ -98,12 +91,12 @@ export function WorkshopAndGuides() {
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-800/80 flex flex-wrap items-center gap-3">
+              <div className="mt-8 pt-6 border-t border-zinc-200 dark:border-workshop-border flex flex-wrap items-center gap-3">
                 <a
                   href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-red-600/30 transition-all"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 transition-colors"
                 >
                   <Navigation className="w-4 h-4" />
                   <span>Get Directions</span>
@@ -111,7 +104,7 @@ export function WorkshopAndGuides() {
 
                 <a
                   href={SITE_CONFIG.phoneHref}
-                  className="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 text-zinc-800 dark:text-zinc-200 font-bold text-xs uppercase tracking-wider transition-colors"
+                  className="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 active:bg-zinc-100 dark:active:bg-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 transition-colors"
                 >
                   <Phone className="w-4 h-4 text-red-500" />
                   <span>Call {SITE_CONFIG.phone}</span>
@@ -129,14 +122,8 @@ export function WorkshopAndGuides() {
         {/* Bottom Part: Advice & Guides */}
         <div>
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-semibold uppercase tracking-wider mb-3">
-              <BookOpen className="w-3.5 h-3.5" /> Detailing Knowledge
-            </div>
             <h3 className="text-3xl sm:text-4xl font-black text-zinc-900 dark:text-white tracking-tight">
-              Advice & Guides —{' '}
-              <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
-                Bolton Detailing Insights
-              </span>
+              Bolton Detailing Guides & Protection Advice
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2">
               Expert articles and paint protection guides written by certified Ceramic Pro technicians.
@@ -148,11 +135,19 @@ export function WorkshopAndGuides() {
               <div
                 key={post.id}
                 onClick={() => setSelectedPost(post)}
-                className="rounded-3xl p-6 sm:p-8 bg-white dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10 shadow-md hover:shadow-xl hover:border-red-500/40 dark:hover:border-red-500/40 transition-all duration-300 flex flex-col justify-between cursor-pointer group"
+                className="rounded-3xl p-6 sm:p-8 bg-white dark:bg-workshop-card-subtle border border-zinc-200 dark:border-workshop-border hover:border-red-500/40 dark:hover:border-red-500/40 transition-colors duration-200 flex flex-col justify-between cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                tabIndex={0}
+                role="button"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedPost(post);
+                  }
+                }}
               >
                 <div>
                   <div className="flex items-center justify-between text-xs text-zinc-400 mb-4">
-                    <span className="px-2.5 py-1 rounded-md bg-red-500/10 text-red-600 dark:text-red-400 font-bold uppercase tracking-wider text-[10px]">
+                    <span className="px-2.5 py-1 rounded-md bg-red-500/10 text-red-600 dark:text-red-400 font-semibold text-xs">
                       {post.category}
                     </span>
                     <span>{post.readTime}</span>
@@ -167,9 +162,9 @@ export function WorkshopAndGuides() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
+                <div className="mt-6 pt-4 border-t border-zinc-100 dark:border-workshop-border flex items-center justify-between text-xs font-bold text-red-600 dark:text-red-400">
                   <span>Read Guide</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 motion-safe:transition-transform motion-safe:group-hover:translate-x-1" />
                 </div>
               </div>
             ))}
@@ -181,7 +176,7 @@ export function WorkshopAndGuides() {
       {selectedPost && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
           <div
-            className="fixed inset-0 bg-black/75 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/85"
             onClick={() => setSelectedPost(null)}
             aria-hidden="true"
           />
@@ -190,21 +185,21 @@ export function WorkshopAndGuides() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="guide-modal-title"
-            className="relative w-full max-w-2xl my-8 bg-white dark:bg-[#1a1b22] border border-zinc-200 dark:border-white/10 rounded-3xl shadow-2xl overflow-hidden z-10 max-h-[85vh] flex flex-col"
+            className="relative w-full max-w-2xl my-8 bg-white dark:bg-workshop-card border border-zinc-200 dark:border-workshop-border rounded-3xl overflow-hidden z-10 max-h-[85vh] flex flex-col"
           >
-            <div className="p-6 sm:p-8 border-b border-zinc-200 dark:border-zinc-800 flex items-start justify-between">
+            <div className="p-6 sm:p-8 border-b border-zinc-200 dark:border-workshop-border flex items-start justify-between">
               <div>
-                <span className="px-3 py-1 rounded-full bg-red-500/20 text-red-600 dark:text-red-400 font-bold text-xs uppercase tracking-wider">
-                  {selectedPost.category} · {selectedPost.readTime}
-                </span>
-                <h3 id="guide-modal-title" className="text-2xl font-black text-zinc-900 dark:text-white mt-3">
+                <h2 id="guide-modal-title" className="text-2xl font-black text-zinc-900 dark:text-white">
                   {selectedPost.title}
-                </h3>
+                </h2>
+                <p className="text-xs text-red-600 dark:text-red-400 font-semibold mt-1">
+                  {selectedPost.category} · {selectedPost.readTime}
+                </p>
               </div>
               <button
                 type="button"
                 onClick={() => setSelectedPost(null)}
-                className="p-2 rounded-xl text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer"
+                className="p-2 rounded-xl text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 active:bg-zinc-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                 aria-label="Close guide modal"
               >
                 <X className="w-5 h-5" />
@@ -217,14 +212,14 @@ export function WorkshopAndGuides() {
               ))}
             </div>
 
-            <div className="p-4 sm:p-6 bg-zinc-50 dark:bg-[#16171d] border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-xs">
+            <div className="p-4 sm:p-6 bg-zinc-50 dark:bg-workshop-row border-t border-zinc-200 dark:border-workshop-border flex items-center justify-between text-xs">
               <span className="text-zinc-500">
                 Latin King Detailing · Ceramic Pro 9H Certified
               </span>
               <button
                 type="button"
                 onClick={() => setSelectedPost(null)}
-                className="px-4 py-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold cursor-pointer shadow-md shadow-red-600/30"
+                className="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
                 Done Reading
               </button>

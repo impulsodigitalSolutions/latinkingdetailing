@@ -64,7 +64,7 @@ Looking forward to hearing from your Bolton workshop team!`;
 
   if (isSubmitted) {
     return (
-      <div className="p-6 sm:p-8 text-center bg-[#1d1e25] rounded-2xl border border-red-500/30 text-white shadow-xl">
+      <div className="p-6 sm:p-8 text-center bg-workshop-card rounded-2xl border border-red-500/30 text-white shadow-xl">
         <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-500/20 flex items-center justify-center text-red-400">
           <CheckCircle2 className="w-10 h-10" />
         </div>
@@ -96,7 +96,7 @@ Looking forward to hearing from your Bolton workshop team!`;
             href={generateWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-lg"
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-colors shadow-lg"
           >
             <WhatsAppIcon className="w-5 h-5" />
             <span>Chat Instantly on WhatsApp</span>
@@ -104,7 +104,7 @@ Looking forward to hearing from your Bolton workshop team!`;
           <button
             type="button"
             onClick={() => setIsSubmitted(false)}
-            className="px-5 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium transition-all cursor-pointer"
+            className="px-5 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium transition-colors cursor-pointer"
           >
             Submit Another Request
           </button>
@@ -117,8 +117,8 @@ Looking forward to hearing from your Bolton workshop team!`;
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5">
-            Your Full Name *
+          <label className="block text-xs font-medium text-zinc-700 dark:text-zinc-300 mb-1.5">
+            Your full name *
           </label>
           <input
             type="text"
@@ -126,13 +126,13 @@ Looking forward to hearing from your Bolton workshop team!`;
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             placeholder="e.g. James Taylor"
-            className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/10 bg-white dark:bg-[#16171d] text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500/50 text-sm transition-all"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/10 bg-white dark:bg-workshop-row text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500/50 text-sm transition-colors"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5">
-            Contact Number *
+          <label className="block text-xs font-medium text-zinc-700 dark:text-zinc-300 mb-1.5">
+            Contact number *
           </label>
           <input
             type="tel"
@@ -140,15 +140,15 @@ Looking forward to hearing from your Bolton workshop team!`;
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="e.g. 07482 225323"
-            className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/10 bg-white dark:bg-[#16171d] text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500/50 text-sm transition-all"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/10 bg-white dark:bg-workshop-row text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500/50 text-sm transition-colors"
           />
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5">
-            Vehicle Make & Model *
+          <label className="block text-xs font-medium text-zinc-700 dark:text-zinc-300 mb-1.5">
+            Vehicle make & model *
           </label>
           <input
             type="text"
@@ -156,21 +156,21 @@ Looking forward to hearing from your Bolton workshop team!`;
             value={vehicleMakeModel}
             onChange={(e) => setVehicleMakeModel(e.target.value)}
             placeholder="e.g. BMW M4 / Porsche 911"
-            className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/10 bg-white dark:bg-[#16171d] text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500/50 text-sm transition-all"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/10 bg-white dark:bg-workshop-row text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500/50 text-sm transition-colors"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5">
-            Desired Service
+          <label className="block text-xs font-medium text-zinc-700 dark:text-zinc-300 mb-1.5">
+            Desired service
           </label>
           <select
             value={service}
             onChange={(e) => setService(e.target.value)}
-            className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/10 bg-white dark:bg-[#16171d] text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-red-500/50 text-sm transition-all"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/10 bg-white dark:bg-workshop-row text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-red-500/50 text-sm transition-colors"
           >
             {SERVICE_OPTIONS.map((opt) => (
-              <option key={opt} value={opt} className="bg-white dark:bg-[#1c1d25]">
+              <option key={opt} value={opt} className="bg-white dark:bg-workshop-card">
                 {opt}
               </option>
             ))}
@@ -180,8 +180,8 @@ Looking forward to hearing from your Bolton workshop team!`;
 
       {/* Vehicle Size Selector */}
       <div>
-        <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-2">
-          Vehicle Category / Size
+        <label className="block text-xs font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+          Vehicle category and size
         </label>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
           {VEHICLE_SIZES.map((size) => (
@@ -189,10 +189,10 @@ Looking forward to hearing from your Bolton workshop team!`;
               key={size.id}
               type="button"
               onClick={() => setVehicleSize(size.id)}
-              className={`p-2.5 rounded-xl text-left border transition-all cursor-pointer ${
+              className={`p-2.5 rounded-xl text-left border transition-colors cursor-pointer ${
                 vehicleSize === size.id
                   ? 'border-red-600 bg-red-600 text-white shadow-md'
-                  : 'border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-[#181920] text-zinc-800 dark:text-zinc-200 hover:border-zinc-400'
+                  : 'border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-workshop-muted text-zinc-800 dark:text-zinc-200 hover:border-zinc-400'
               }`}
             >
               <div className="text-xs font-bold leading-tight">{size.name}</div>
@@ -204,15 +204,15 @@ Looking forward to hearing from your Bolton workshop team!`;
 
       {/* Additional Notes */}
       <div>
-        <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5">
-          Paint Condition & Notes (Optional)
+        <label className="block text-xs font-medium text-zinc-700 dark:text-zinc-300 mb-1.5">
+          Paint condition & notes (optional)
         </label>
         <textarea
           rows={isModal ? 2 : 3}
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           placeholder="e.g. Swirl marks, stone chips on bonnet, want Ceramic Pro Silver 5-year coating..."
-          className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/10 bg-white dark:bg-[#16171d] text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500/50 text-sm transition-all"
+          className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/10 bg-white dark:bg-workshop-row text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500/50 text-sm transition-colors"
         />
       </div>
 
@@ -221,10 +221,10 @@ Looking forward to hearing from your Bolton workshop team!`;
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-red-600 via-red-500 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-red-600/30 transition-all hover:scale-[1.01] active:scale-95 disabled:opacity-50 cursor-pointer"
+          className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm transition-colors disabled:opacity-50 cursor-pointer"
         >
           {isSubmitting ? (
-            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full motion-safe:animate-spin" />
           ) : (
             <>
               <Sparkles className="w-4 h-4 text-white" />
@@ -237,7 +237,7 @@ Looking forward to hearing from your Bolton workshop team!`;
 
       <div className="flex items-center justify-center gap-2 text-[11px] text-zinc-500 dark:text-zinc-400 text-center pt-1">
         <ShieldCheck className="w-3.5 h-3.5 text-red-500" />
-        <span>No obligation · Ceramic Pro 9H Certified Warranty · Response in 15 mins</span>
+        <span>No obligation · Ceramic Pro 9H Certified Warranty (15-min response)</span>
       </div>
     </form>
   );

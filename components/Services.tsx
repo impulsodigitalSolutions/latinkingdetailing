@@ -71,21 +71,15 @@ export function Services() {
   };
 
   return (
-    <section id="services" className="py-16 md:py-24 relative bg-zinc-50/50 dark:bg-[#181920]/60 scroll-mt-20">
+    <section id="services" className="py-16 md:py-24 relative bg-zinc-50/50 dark:bg-workshop-muted/60 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Award className="w-3.5 h-3.5" /> Certified Automotive Care
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
-            What We Offer —{' '}
-            <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
-              Professional Car Protection & Detailing Services
-            </span>
+            Professional Detailing &amp; <span className="text-red-600 dark:text-red-500">Paint Protection</span>
           </h2>
           <p className="text-zinc-600 dark:text-zinc-300 text-base sm:text-lg mt-4 leading-relaxed font-normal">
-            Latin King Detailing offers a complete range of paint protection and car care services from our Bolton workshop, using only professional-grade products.
+            Latin King Detailing provides complete paint protection, defect correction, and cabin restoration from our Farnworth studio, using only certified, professional-grade products.
           </p>
 
           {/* Quick Filter Tabs */}
@@ -93,10 +87,10 @@ export function Services() {
             <button
               type="button"
               onClick={() => setFilter('all')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'all'
                   ? 'bg-red-600 text-white shadow-md'
-                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
+                  : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
               }`}
             >
               All Services
@@ -104,10 +98,10 @@ export function Services() {
             <button
               type="button"
               onClick={() => setFilter('coating')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'coating'
                   ? 'bg-red-600 text-white shadow-md'
-                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
+                  : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
               }`}
             >
               Ceramic & PPF
@@ -115,10 +109,10 @@ export function Services() {
             <button
               type="button"
               onClick={() => setFilter('correction')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'correction'
                   ? 'bg-red-600 text-white shadow-md'
-                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
+                  : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
               }`}
             >
               Machine Polishing
@@ -126,10 +120,10 @@ export function Services() {
             <button
               type="button"
               onClick={() => setFilter('valet')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'valet'
                   ? 'bg-red-600 text-white shadow-md'
-                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
+                  : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
               }`}
             >
               Valeting & Deep Clean
@@ -137,10 +131,10 @@ export function Services() {
             <button
               type="button"
               onClick={() => setFilter('maintenance')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'maintenance'
                   ? 'bg-red-600 text-white shadow-md'
-                  : 'bg-zinc-100 dark:bg-[#202129] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
+                  : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
               }`}
             >
               Maintenance Wash
@@ -156,17 +150,17 @@ export function Services() {
             return (
               <div
                 key={service.id}
-                className={`group relative rounded-3xl p-6 sm:p-8 border transition-all duration-300 flex flex-col justify-between ${
+                className={`group relative rounded-3xl p-6 sm:p-8 border transition-colors duration-200 flex flex-col justify-between ${
                   isCeramic
-                    ? 'bg-gradient-to-br from-white via-red-500/[0.02] to-red-500/[0.05] dark:from-[#1d1e25] dark:via-[#1f2028] dark:to-red-500/[0.05] border-red-500/50 shadow-lg ring-1 ring-red-500/20'
-                    : 'bg-white dark:bg-[#1d1e25] border-zinc-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-red-500/40'
+                    ? 'bg-gradient-to-br from-white via-red-500/[0.02] to-red-500/[0.05] dark:from-workshop-card-subtle dark:via-workshop-card dark:to-red-500/[0.05] border-red-500/50 shadow-lg ring-1 ring-red-500/20'
+                    : 'bg-white dark:bg-workshop-card-subtle border-zinc-200 dark:border-white/10 shadow-sm hover:border-red-500/40'
                 }`}
               >
                 <div>
                   {/* Top Badges & Icon */}
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="p-3 rounded-2xl bg-red-500/10 dark:bg-red-500/15 border border-red-500/25 group-hover:scale-105 transition-transform">
+                      <div className="p-3 rounded-2xl bg-red-500/10 dark:bg-red-500/15 border border-red-500/25">
                         {getServiceIcon(service.iconName)}
                       </div>
                       <span className="text-xs font-bold text-zinc-400 font-mono">
@@ -175,11 +169,11 @@ export function Services() {
                     </div>
 
                     {isCeramic ? (
-                      <span className="px-3 py-1 rounded-full bg-red-600 text-white font-black text-xs uppercase tracking-wider shadow-sm">
+                      <span className="px-3 py-1 rounded-full bg-red-600 text-white font-bold text-xs shadow-sm">
                         Signature Specialism
                       </span>
                     ) : (
-                      <span className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider">
+                      <span className="text-xs font-medium text-zinc-400 dark:text-zinc-500">
                         Professional Grade
                       </span>
                     )}
@@ -191,7 +185,7 @@ export function Services() {
                   </h3>
 
                   {service.tagline && (
-                    <div className="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider mt-1">
+                    <div className="text-xs font-semibold text-red-600 dark:text-red-400 mt-1">
                       {service.tagline}
                     </div>
                   )}
@@ -223,8 +217,8 @@ export function Services() {
                   {/* If Ceramic Coating, highlight the 6-step breakdown & Tiers preview */}
                   {isCeramic && (
                     <div className="mt-5 p-4 rounded-2xl bg-red-500/5 dark:bg-red-500/10 border border-red-500/20">
-                      <div className="flex items-center gap-2 text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider mb-2">
-                        <Layers className="w-4 h-4" /> 6-Step Precision Process & Packages
+                      <div className="flex items-center gap-2 text-xs font-semibold text-red-600 dark:text-red-400 mb-2">
+                        <Layers className="w-4 h-4" /> 6-step precision process and packages
                       </div>
                       <div className="grid grid-cols-3 gap-2 text-center text-xs">
                         <div className="p-2 bg-white dark:bg-zinc-900 rounded-lg border border-red-500/20">
@@ -250,15 +244,15 @@ export function Services() {
                     <button
                       type="button"
                       onClick={() => openServiceModal(service.id)}
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-red-600 dark:text-red-400 hover:text-red-500 group-hover:translate-x-0.5 transition-all cursor-pointer"
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-red-600 dark:text-red-400 hover:text-red-500 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                     >
                       <span>Quick Details</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      <ArrowRight className="w-4 h-4" />
                     </button>
 
                     <Link
                       href={`/services#${service.id}`}
-                      className="inline-flex items-center gap-1 text-xs text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                      className="inline-flex items-center gap-1 text-xs text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                     >
                       <span>Dedicated Page</span>
                       <ExternalLink className="w-3 h-3" />
@@ -268,7 +262,7 @@ export function Services() {
                   <button
                     type="button"
                     onClick={() => openQuoteModal(service.title)}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-900 dark:bg-zinc-800 hover:bg-red-600 dark:hover:bg-red-600 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-sm cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-900 dark:bg-zinc-800 hover:bg-red-600 dark:hover:bg-red-600 text-white font-bold text-xs transition-colors shadow-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                   >
                     <span>{service.ctaText || 'Book Service'}</span>
                   </button>
@@ -279,11 +273,8 @@ export function Services() {
         </div>
 
         {/* Dedicated Page Hero Banner CTA */}
-        <div className="mt-14 p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-[#181921] via-[#15161c] to-[#181921] text-white border border-red-500/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-14 p-6 sm:p-10 rounded-3xl bg-workshop-muted text-white border border-red-500/40 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-bold uppercase tracking-wider mb-2">
-              <Sparkles className="w-3.5 h-3.5" /> Comprehensive 7-Service Catalog
-            </div>
             <h3 className="text-2xl sm:text-3xl font-black">
               Explore Our Dedicated Services Page
             </h3>
@@ -294,7 +285,7 @@ export function Services() {
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
             <Link
               href="/services"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-black text-sm uppercase tracking-wider shadow-lg shadow-red-600/30 transition-all hover:scale-102"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
             >
               <span>View All 7 Services</span>
               <ArrowRight className="w-4 h-4" />
@@ -302,7 +293,7 @@ export function Services() {
             <button
               type="button"
               onClick={() => openQuoteModal('Tailored Detailing Package')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-zinc-700 hover:border-zinc-500 text-zinc-200 text-sm font-semibold transition-colors cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-zinc-700 hover:border-zinc-500 text-zinc-200 text-sm font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
             >
               <span>Ask a Specialist</span>
             </button>

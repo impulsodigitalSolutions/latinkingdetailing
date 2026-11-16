@@ -87,12 +87,12 @@ export function Navbar() {
   return (
     <>
       {/* Floating Capsule/Pill Navbar Wrapper */}
-      <div className="sticky top-3 sm:top-5 z-40 w-full px-3 sm:px-6 pointer-events-none transition-all duration-300">
+      <div className="sticky top-3 sm:top-5 z-40 w-full px-3 sm:px-6 pointer-events-none transition-colors duration-150">
         <header
-          className={`pointer-events-auto max-w-6xl mx-auto rounded-full border transition-all duration-300 px-4 sm:px-6 py-2 sm:py-2.5 ${
+          className={`pointer-events-auto max-w-6xl mx-auto rounded-full border transition-colors duration-150 px-4 sm:px-6 py-2 sm:py-2.5 ${
             isScrolled
-              ? 'bg-white/92 dark:bg-[#1c1d24]/92 backdrop-blur-xl border-zinc-300/80 dark:border-white/10 shadow-xl shadow-black/10 dark:shadow-black/30'
-              : 'bg-white/80 dark:bg-[#1a1b22]/85 backdrop-blur-lg border-zinc-200/80 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-black/20'
+              ? 'bg-white/92 dark:bg-workshop-card/92 backdrop-blur-xl border-zinc-300/80 dark:border-white/10 shadow-xl shadow-black/10 dark:shadow-black/30'
+              : 'bg-white/80 dark:bg-workshop-card/85 backdrop-blur-lg border-zinc-200/80 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-black/20'
           }`}
         >
           <div className="flex items-center justify-between gap-2 sm:gap-4">
@@ -109,7 +109,7 @@ export function Navbar() {
                   alt="Latin King Detailing"
                   width={140}
                   height={108}
-                  className="h-9 sm:h-11 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+                  className="h-9 sm:h-11 md:h-12 w-auto object-contain"
                   priority
                 />
               </div>
@@ -120,7 +120,7 @@ export function Navbar() {
                   alt="Latin King Detailing"
                   width={140}
                   height={108}
-                  className="h-9 sm:h-11 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+                  className="h-9 sm:h-11 md:h-12 w-auto object-contain"
                   priority
                 />
               </div>
@@ -133,10 +133,10 @@ export function Navbar() {
                 <div className="flex items-center">
                   <Link
                     href="/services"
-                    className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                    className={`px-3 py-1.5 rounded-full text-xs transition-colors duration-150 ${
                       isCurrent('/services')
-                        ? 'text-red-600 dark:text-red-400 bg-red-500/15 font-black ring-1 ring-red-500/30'
-                        : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
+                        ? 'text-red-600 dark:text-red-400 bg-red-500/10 dark:bg-red-500/15 font-semibold ring-1 ring-red-500/20'
+                        : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 font-medium'
                     }`}
                   >
                     <span>Services</span>
@@ -149,7 +149,7 @@ export function Navbar() {
                     aria-label="Toggle Services Dropdown"
                   >
                     <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                      className={`w-3.5 h-3.5 motion-safe:transition-transform duration-200 ${
                         servicesDropdownOpen ? 'rotate-180 text-red-500' : 'text-zinc-400'
                       }`}
                     />
@@ -160,10 +160,10 @@ export function Navbar() {
                 {servicesDropdownOpen && (
                   <div
                     onMouseLeave={() => setServicesDropdownOpen(false)}
-                    className="absolute top-full left-0 mt-3 w-88 rounded-3xl bg-white dark:bg-[#1d1e25] border border-zinc-200 dark:border-white/10 shadow-2xl p-3 z-50 animate-in fade-in zoom-in-95 duration-200"
+                    className="absolute top-full left-0 mt-3 w-88 rounded-3xl bg-white dark:bg-workshop-card-subtle border border-zinc-200 dark:border-white/10 shadow-2xl p-3 z-50"
                   >
                     <div className="px-3 py-2 border-b border-zinc-100 dark:border-zinc-800/80 mb-1 flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-red-600 dark:text-red-500">
+                      <span className="text-[10px] font-bold text-red-600 dark:text-red-500">
                         7 Certified Detailing Services
                       </span>
                       <Link
@@ -237,10 +237,10 @@ export function Navbar() {
               {/* Dedicated Gallery Page Link */}
               <Link
                 href="/gallery"
-                className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                className={`px-3 py-1.5 rounded-full text-xs transition-colors duration-150 ${
                   isCurrent('/gallery')
-                    ? 'text-red-600 dark:text-red-400 bg-red-500/15 font-black ring-1 ring-red-500/30'
-                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
+                    ? 'text-red-600 dark:text-red-400 bg-red-500/10 dark:bg-red-500/15 font-semibold ring-1 ring-red-500/20'
+                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 font-medium'
                 }`}
               >
                 Gallery
@@ -249,10 +249,10 @@ export function Navbar() {
               {/* Dedicated Comparison Page Link */}
               <Link
                 href="/comparison"
-                className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                className={`px-3 py-1.5 rounded-full text-xs transition-colors duration-150 ${
                   isCurrent('/comparison')
-                    ? 'text-red-600 dark:text-red-400 bg-red-500/15 font-black ring-1 ring-red-500/30'
-                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
+                    ? 'text-red-600 dark:text-red-400 bg-red-500/10 dark:bg-red-500/15 font-semibold ring-1 ring-red-500/20'
+                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 font-medium'
                 }`}
               >
                 Comparison
@@ -261,10 +261,10 @@ export function Navbar() {
               {/* Dedicated Locations Page Link */}
               <Link
                 href="/locations"
-                className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                className={`px-3 py-1.5 rounded-full text-xs transition-colors duration-150 ${
                   isCurrent('/locations')
-                    ? 'text-red-600 dark:text-red-400 bg-red-500/15 font-black ring-1 ring-red-500/30'
-                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
+                    ? 'text-red-600 dark:text-red-400 bg-red-500/10 dark:bg-red-500/15 font-semibold ring-1 ring-red-500/20'
+                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 font-medium'
                 }`}
               >
                 Locations
@@ -273,10 +273,10 @@ export function Navbar() {
               {/* Dedicated Reviews Page Link */}
               <Link
                 href="/reviews"
-                className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                className={`px-3 py-1.5 rounded-full text-xs transition-colors duration-150 ${
                   isCurrent('/reviews')
-                    ? 'text-red-600 dark:text-red-400 bg-red-500/15 font-black ring-1 ring-red-500/30'
-                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
+                    ? 'text-red-600 dark:text-red-400 bg-red-500/10 dark:bg-red-500/15 font-semibold ring-1 ring-red-500/20'
+                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 font-medium'
                 }`}
               >
                 Reviews
@@ -285,10 +285,10 @@ export function Navbar() {
               {/* Dedicated FAQ Page Link */}
               <Link
                 href="/faq"
-                className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                className={`px-3 py-1.5 rounded-full text-xs transition-colors duration-150 ${
                   isCurrent('/faq')
-                    ? 'text-red-600 dark:text-red-400 bg-red-500/15 font-black ring-1 ring-red-500/30'
-                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
+                    ? 'text-red-600 dark:text-red-400 bg-red-500/10 dark:bg-red-500/15 font-semibold ring-1 ring-red-500/20'
+                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 font-medium'
                 }`}
               >
                 FAQ
@@ -313,7 +313,7 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => openQuoteModal()}
-                className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-gradient-to-r from-red-600 via-red-500 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-black text-xs uppercase tracking-wider shadow-md shadow-red-600/25 hover:shadow-red-600/40 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 cursor-pointer"
               >
                 <Sparkles className="w-3.5 h-3.5 text-white" />
                 <span className="whitespace-nowrap">Get Quote</span>
@@ -347,7 +347,7 @@ export function Navbar() {
           />
 
           {/* Drawer content */}
-          <div className="fixed inset-y-0 right-0 max-w-sm w-full bg-white dark:bg-[#181920] shadow-2xl border-l border-zinc-200 dark:border-zinc-800 p-6 flex flex-col justify-between overflow-y-auto animate-in slide-in-from-right duration-200">
+          <div className="fixed inset-y-0 right-0 max-w-sm w-full bg-white dark:bg-workshop-muted shadow-2xl border-l border-zinc-200 dark:border-zinc-800 p-6 flex flex-col justify-between overflow-y-auto">
             <div>
               {/* Header with Full Logo */}
               <div className="flex items-center justify-between pb-5 border-b border-zinc-200 dark:border-zinc-800">
@@ -399,7 +399,7 @@ export function Navbar() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
-                <div className="text-[10px] font-bold uppercase tracking-wider text-red-600 dark:text-red-500 mb-2">
+                <div className="text-[10px] font-bold text-red-600 dark:text-red-500 mb-2">
                   Our Detailing Services
                 </div>
                 <div className="space-y-1 max-h-56 overflow-y-auto pr-1">
@@ -541,7 +541,7 @@ export function Navbar() {
                   setMobileMenuOpen(false);
                   openQuoteModal();
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-gradient-to-r from-red-600 via-red-500 to-rose-600 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-red-600/30"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
                 <Sparkles className="w-4 h-4" />
                 <span>Get a Free Quote</span>

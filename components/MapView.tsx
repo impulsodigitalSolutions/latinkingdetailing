@@ -47,17 +47,17 @@ export function MapView() {
   const current = locations[activeLocation];
 
   return (
-    <div className="relative w-full rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 shadow-2xl bg-zinc-100 dark:bg-[#181920] flex flex-col">
+    <div className="relative w-full rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 shadow-2xl bg-zinc-100 dark:bg-workshop-muted flex flex-col">
       {/* Top Location Switcher Tabs */}
-      <div className="p-3 sm:p-4 bg-white/95 dark:bg-[#1c1d25]/95 backdrop-blur-md border-b border-zinc-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-3 z-20">
+      <div className="p-3 sm:p-4 bg-white/95 dark:bg-workshop-card/95 backdrop-blur-md border-b border-zinc-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-3 z-20">
         <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={() => setActiveLocation('bolton')}
-            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
+            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-colors cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
               activeLocation === 'bolton'
-                ? 'bg-red-600 text-white shadow-md shadow-red-600/30 scale-102'
-                : 'bg-zinc-100 dark:bg-[#252630] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
+                ? 'bg-red-600 text-white shadow-md'
+                : 'bg-zinc-100 dark:bg-workshop-panel text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
             }`}
           >
             <MapPin className="w-3.5 h-3.5" />
@@ -67,10 +67,10 @@ export function MapView() {
           <button
             type="button"
             onClick={() => setActiveLocation('manchester')}
-            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
+            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-colors cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
               activeLocation === 'manchester'
-                ? 'bg-red-600 text-white shadow-md shadow-red-600/30 scale-102'
-                : 'bg-zinc-100 dark:bg-[#252630] text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
+                ? 'bg-red-600 text-white shadow-md'
+                : 'bg-zinc-100 dark:bg-workshop-panel text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
             }`}
           >
             <MapPin className="w-3.5 h-3.5" />
@@ -89,7 +89,7 @@ export function MapView() {
       </div>
 
       {/* Map Viewport Area */}
-      <div className="relative w-full h-[400px] sm:h-[480px] bg-zinc-200 dark:bg-[#15161c]">
+      <div className="relative w-full h-[400px] sm:h-[480px] bg-zinc-200 dark:bg-workshop-row">
         {/* Google Maps Iframe */}
         <iframe
           key={current.id}
@@ -105,7 +105,7 @@ export function MapView() {
         />
 
         {/* Floating Google Maps Style Card Overlay */}
-        <div className="absolute top-4 left-4 z-10 max-w-[280px] sm:max-w-xs rounded-2xl bg-white/95 dark:bg-[#1c1d25]/95 backdrop-blur-md p-4 shadow-2xl border border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white">
+        <div className="absolute top-4 left-4 z-10 max-w-[280px] sm:max-w-xs rounded-2xl bg-white/95 dark:bg-workshop-card/95 backdrop-blur-md p-4 shadow-2xl border border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white">
           <div className="flex items-start justify-between gap-2">
             <div>
               <div className="font-extrabold text-sm sm:text-base leading-tight">
@@ -125,7 +125,7 @@ export function MapView() {
               href={current.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs shadow-md shadow-red-600/25 transition-all"
+              className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
             >
               <ExternalLink className="w-3.5 h-3.5" />
               <span>Open in Maps</span>

@@ -68,7 +68,7 @@ export function BrandLogo({
     <div className={`inline-flex items-center gap-3 ${className}`}>
       {/* Luxury Logo Emblem Box with crimson red glow */}
       <div
-        className={`relative ${dimensions.box} rounded-xl bg-[#181920] p-1 flex items-center justify-center border border-red-600/40 shadow-md shrink-0 overflow-hidden group-hover:scale-105 transition-transform duration-300`}
+        className={`relative ${dimensions.box} rounded-xl bg-workshop-muted p-1 flex items-center justify-center border border-red-600/40 shadow-md shrink-0 overflow-hidden`}
         style={{
           boxShadow: '0 0 15px -3px rgba(194, 28, 32, 0.35)',
         }}
@@ -82,7 +82,7 @@ export function BrandLogo({
           alt="Latin King Detailing Emblem"
           width={dimensions.imgW}
           height={dimensions.imgH}
-          className="object-contain relative z-10 transition-transform duration-300"
+          className="object-contain relative z-10"
           priority
         />
       </div>
@@ -98,7 +98,7 @@ export function BrandLogo({
           </div>
           {subtitle && (
             <span
-              className={`text-zinc-500 dark:text-zinc-400 font-semibold uppercase tracking-wider ${dimensions.fontSub}`}
+              className={`text-zinc-500 dark:text-zinc-400 font-semibold ${dimensions.fontSub}`}
             >
               {subtitle}
             </span>

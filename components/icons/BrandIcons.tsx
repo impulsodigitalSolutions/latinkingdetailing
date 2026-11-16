@@ -88,17 +88,10 @@ export function CeramicProMonogram({
 }) {
   return (
     <div
-      className={`relative inline-flex items-center justify-center font-black tracking-tighter rounded-xl select-none shadow-md overflow-hidden transition-transform duration-300 group-hover:scale-105 ${className}`}
-      style={{
-        background:
-          variant === 'red' || variant === 'gold'
-            ? 'linear-gradient(135deg, #1c1d23 0%, #14151a 100%)'
-            : 'currentColor',
-        border: '1.5px solid #c21c20',
-      }}
+      className={`relative inline-flex items-center justify-center font-black tracking-tighter rounded-xl select-none shadow-md overflow-hidden bg-workshop-card border border-red-600/50 ${className}`}
     >
       <div className="absolute top-0 right-0 w-8 h-8 bg-red-500/20 blur-sm rounded-full -mr-3 -mt-3 pointer-events-none" />
-      <span className="relative z-10 text-xs sm:text-sm font-extrabold tracking-tight bg-gradient-to-r from-red-400 via-red-500 to-rose-600 bg-clip-text text-transparent">
+      <span className="relative z-10 text-xs sm:text-sm font-extrabold tracking-tight text-red-500">
         CP
       </span>
     </div>

@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${SITE_CONFIG.brandName} — ${SITE_CONFIG.tagline} | Ceramic Pro 9H Certified`,
+  title: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline} | Ceramic Pro 9H Certified`,
   description:
     "Bolton's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & KAVACA PPF Approved based in Farnworth, Bolton. 5 minutes from M61 junction 4. Call 07482 225323.",
   keywords: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_GB',
     url: 'https://ceramicpromanchester.com',
-    title: `${SITE_CONFIG.brandName} — ${SITE_CONFIG.tagline}`,
+    title: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline}`,
     description:
       "Bolton's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & KAVACA PPF Approved. Based in Farnworth, 5 minutes from M61 Jct 4.",
     siteName: SITE_CONFIG.brandName,
@@ -48,13 +48,13 @@ export const metadata: Metadata = {
         url: 'https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1200&q=80',
         width: 1200,
         height: 630,
-        alt: `${SITE_CONFIG.brandName} — Ceramic Pro 9H Supercar Detailing`,
+        alt: `${SITE_CONFIG.brandName} · Ceramic Pro 9H Supercar Detailing`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_CONFIG.brandName} — ${SITE_CONFIG.tagline}`,
+    title: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline}`,
     description:
       "Bolton's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & KAVACA PPF Approved.",
   },
@@ -78,9 +78,9 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased overflow-x-clip`}
     >
-      <body className="min-h-full flex flex-col bg-white dark:bg-[#14151a] text-[#0f172a] dark:text-[#f3f4f6] selection:bg-red-600 selection:text-white">
+      <body className="min-h-full flex flex-col overflow-x-clip bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 selection:bg-red-600 selection:text-white">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

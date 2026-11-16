@@ -17,27 +17,21 @@ export function ServiceAreas() {
   );
 
   return (
-    <section id="locations" className="py-16 md:py-24 relative bg-zinc-50/50 dark:bg-[#181920]/60 scroll-mt-20">
+    <section id="locations" className="py-16 md:py-24 relative bg-zinc-50/50 dark:bg-workshop-muted/60 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-500 text-xs font-semibold uppercase tracking-wider mb-3">
-            <MapPin className="w-3.5 h-3.5" /> Regional Coverage
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
-            Where We Work —{' '}
-            <span className="bg-gradient-to-r from-red-600 via-rose-500 to-red-600 bg-clip-text text-transparent">
-              Serving Bolton & Greater Manchester
-            </span>
+            Serving Bolton &amp; <span className="text-red-600 dark:text-red-500">24 Regional Towns</span>
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
-            Customers bring their vehicles to our dedicated Farnworth workshop from across 24 towns and boroughs for certified Ceramic Pro 9H applications.
+            Clients bring vehicles to our climate-controlled Farnworth workshop from across 24 Greater Manchester boroughs for certified Ceramic Pro 9H applications.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: 24 Service Areas Pill Cloud */}
-          <div className="lg:col-span-7 bg-white dark:bg-[#1d1e25] rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-white/10 shadow-md">
+          <div className="lg:col-span-7 bg-white dark:bg-workshop-card-subtle rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-white/10 shadow-md">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
                 <h3 className="text-xl font-extrabold text-zinc-900 dark:text-white">
@@ -56,7 +50,7 @@ export function ServiceAreas() {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Filter your town..."
-                  className="w-full pl-9 pr-3 py-1.5 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-[#252630] text-xs text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500/50"
+                  className="w-full pl-9 pr-3 py-1.5 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-workshop-panel text-xs text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500/50"
                 />
               </div>
             </div>
@@ -77,12 +71,12 @@ export function ServiceAreas() {
                         openQuoteModal(`Service in / near ${town}`);
                       }
                     }}
-                    className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                    className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                       isSelected
-                        ? 'bg-red-600 text-white shadow-md scale-105'
+                        ? 'bg-red-600 text-white shadow-md'
                         : isBoltonOrFarnworth
                         ? 'bg-red-500/15 border border-red-500/40 text-red-700 dark:text-red-300 hover:bg-red-500/25'
-                        : 'bg-zinc-100 dark:bg-[#22232c] text-zinc-700 dark:text-zinc-200 border border-zinc-200/80 dark:border-white/10 hover:border-red-400/50 hover:text-red-500'
+                        : 'bg-zinc-100 dark:bg-workshop-elevated text-zinc-700 dark:text-zinc-200 border border-zinc-200/80 dark:border-white/10 hover:border-red-400/50 hover:text-red-500'
                     }`}
                   >
                     <MapPin className="w-3.5 h-3.5 opacity-70 shrink-0" />
@@ -105,26 +99,26 @@ export function ServiceAreas() {
               <div className="flex items-center gap-3">
                 <Link
                   href="/locations"
-                  className="font-bold text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 hover:underline"
+                  className="font-bold text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                 >
-                  Map &amp; Workshop Directions →
+                  Map &amp; Workshop Directions
                 </Link>
                 <button
                   type="button"
                   onClick={() => openQuoteModal('Greater Manchester Service')}
-                  className="font-bold text-red-600 dark:text-red-400 hover:underline cursor-pointer"
+                  className="font-bold text-red-600 dark:text-red-400 hover:underline cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                 >
-                  Book Inspection →
+                  Book Inspection
                 </button>
               </div>
             </div>
           </div>
 
           {/* Right Column: Trusted Network Partner Card */}
-          <div className="lg:col-span-5 bg-white dark:bg-[#1d1e25] rounded-3xl p-6 sm:p-8 border-2 border-red-500/40 dark:border-red-500/30 shadow-xl shadow-red-500/10">
+          <div className="lg:col-span-5 bg-white dark:bg-workshop-card-subtle rounded-3xl p-6 sm:p-8 border-2 border-red-500/40 dark:border-red-500/30 shadow-xl shadow-red-500/10">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400 dark:text-zinc-500">
-                Network & Partner Workshop
+              <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500">
+                Network &amp; Partner Workshop
               </span>
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200">
                 Manchester South
@@ -154,7 +148,7 @@ export function ServiceAreas() {
               {TRUSTED_PARTNER.description}
             </p>
 
-            <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-[#181920] border border-zinc-200 dark:border-white/10 space-y-2 mb-6">
+            <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-workshop-muted border border-zinc-200 dark:border-white/10 space-y-2 mb-6">
               <div className="text-xs font-bold text-zinc-900 dark:text-white">
                 Specialisms & Standards:
               </div>
@@ -175,7 +169,7 @@ export function ServiceAreas() {
                 href={SITE_CONFIG.secondaryWorkshop.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-1.5 py-3 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-red-600/30"
+                className="flex-1 inline-flex items-center justify-center gap-1.5 py-3 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
                 <MapPin className="w-3.5 h-3.5" />
                 <span>Manchester Directions</span>

@@ -15,7 +15,7 @@ export function ThemeToggle({ className = '' }: { className?: string }) {
   if (!mounted) {
     return (
       <div
-        className={`w-9 h-9 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100/50 dark:bg-zinc-900/50 animate-pulse ${className}`}
+        className={`w-9 h-9 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100/50 dark:bg-zinc-900/50 motion-safe:animate-pulse ${className}`}
         aria-hidden="true"
       />
     );
@@ -28,22 +28,22 @@ export function ThemeToggle({ className = '' }: { className?: string }) {
     <button
       type="button"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className={`relative inline-flex items-center justify-center w-9 h-9 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:text-red-600 dark:hover:text-red-400 hover:border-red-500/50 dark:hover:border-red-500/50 transition-all duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500/50 shrink-0 cursor-pointer ${className}`}
+      className={`relative inline-flex items-center justify-center w-9 h-9 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:text-red-600 dark:hover:text-red-400 hover:border-red-500/50 dark:hover:border-red-500/50 transition-colors duration-150 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 shrink-0 cursor-pointer ${className}`}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
       title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
     >
       <Sun
-        className={`w-4 h-4 transition-all duration-300 ${
+        className={`w-4 h-4 transition-opacity duration-200 ${
           isDark
-            ? 'rotate-90 scale-0 opacity-0 absolute'
-            : 'rotate-0 scale-100 opacity-100 text-red-600'
+            ? 'opacity-0 pointer-events-none absolute'
+            : 'opacity-100 text-red-600'
         }`}
       />
       <Moon
-        className={`w-4 h-4 transition-all duration-300 ${
+        className={`w-4 h-4 transition-opacity duration-200 ${
           isDark
-            ? 'rotate-0 scale-100 opacity-100 text-red-400'
-            : '-rotate-90 scale-0 opacity-0 absolute'
+            ? 'opacity-100 text-red-400'
+            : 'opacity-0 pointer-events-none absolute'
         }`}
       />
     </button>
