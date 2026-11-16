@@ -155,13 +155,11 @@ export const SITE_CONFIG = {
 
 export const NAV_LINKS = [
   { name: 'Services', href: '/services' },
-  { name: 'Locations', href: '/#locations' },
-  { name: 'Gallery', href: '/#gallery' },
-  { name: 'Why Us', href: '/#why-us' },
-  { name: 'Comparison', href: '/#comparison' },
-  { name: 'Reviews', href: '/#reviews' },
-  { name: 'FAQ', href: '/#faq' },
-  { name: 'Blog', href: '/#blog' },
+  { name: 'Gallery', href: '/gallery' },
+  { name: 'Comparison', href: '/comparison' },
+  { name: 'Locations', href: '/locations' },
+  { name: 'Reviews', href: '/reviews' },
+  { name: 'FAQ', href: '/faq' },
 ];
 
 export const HERO_TRUST_BADGES = [

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { SERVICE_AREAS_24, TRUSTED_PARTNER, SITE_CONFIG } from '@/lib/site-data';
 import { MapPin, Search, Star, ShieldCheck, Phone, CheckCircle2, Sparkles } from 'lucide-react';
 import { WhatsAppIcon } from './icons/BrandIcons';
@@ -101,13 +102,21 @@ export function ServiceAreas() {
                 <CheckCircle2 className="w-4 h-4 text-red-500" />
                 Workshop is 5 minutes from junction 4 of the M61
               </span>
-              <button
-                type="button"
-                onClick={() => openQuoteModal('Greater Manchester Service')}
-                className="font-bold text-red-600 dark:text-red-400 hover:underline cursor-pointer"
-              >
-                Book Inspection →
-              </button>
+              <div className="flex items-center gap-3">
+                <Link
+                  href="/locations"
+                  className="font-bold text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 hover:underline"
+                >
+                  Map &amp; Workshop Directions →
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => openQuoteModal('Greater Manchester Service')}
+                  className="font-bold text-red-600 dark:text-red-400 hover:underline cursor-pointer"
+                >
+                  Book Inspection →
+                </button>
+              </div>
             </div>
           </div>
 

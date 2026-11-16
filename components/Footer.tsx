@@ -158,17 +158,27 @@ export function Footer() {
                 </Link>
               </li>
               <li className="pt-2 border-t border-zinc-800">
-                <Link href="/#gallery" className="hover:text-red-400 transition-colors">
+                <Link href="/gallery" className="hover:text-red-400 transition-colors">
                   Showroom Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/#comparison" className="hover:text-red-400 transition-colors">
+                <Link href="/comparison" className="hover:text-red-400 transition-colors">
                   Protection Matrix
                 </Link>
               </li>
               <li>
-                <Link href="/#faq" className="hover:text-red-400 transition-colors">
+                <Link href="/locations" className="hover:text-red-400 transition-colors">
+                  24 Regional Locations
+                </Link>
+              </li>
+              <li>
+                <Link href="/reviews" className="hover:text-red-400 transition-colors">
+                  Customer Reviews
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="hover:text-red-400 transition-colors">
                   FAQs & Pricing
                 </Link>
               </li>
@@ -189,7 +199,7 @@ export function Footer() {
               {SERVICE_AREAS_24.map((town) => (
                 <Link
                   key={town}
-                  href="/#locations"
+                  href="/locations"
                   className="px-2 py-0.5 rounded bg-[#181920] border border-white/10 hover:border-red-500/50 hover:text-red-400 transition-colors"
                 >
                   {town}

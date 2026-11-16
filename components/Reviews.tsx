@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { REVIEWS, SITE_CONFIG } from '@/lib/site-data';
 import { GoogleIcon, FacebookIcon, StarRating } from './icons/BrandIcons';
 import { CheckCircle2, Quote, ExternalLink, Sparkles } from 'lucide-react';
@@ -126,6 +127,16 @@ export function Reviews() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Dedicated Reviews Page Link */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/reviews"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 bg-white dark:bg-[#1d1e25] text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 font-bold text-xs uppercase tracking-wider shadow-sm transition-all"
+          >
+            <span>Read All Verified Customer Reviews &amp; Testimonials →</span>
+          </Link>
         </div>
       </div>
     </section>

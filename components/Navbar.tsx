@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import {
   SITE_CONFIG,
   SERVICES,
@@ -30,11 +31,17 @@ import {
 import { useModals } from './ModalContext';
 
 export function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { openQuoteModal, openServiceModal } = useModals();
+
+  const isCurrent = (path: string) => {
+    if (path === '/') return pathname === '/';
+    return pathname === path || pathname.startsWith(`${path}/`);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,28 +126,35 @@ export function Navbar() {
               </div>
             </Link>
 
-            {/* Center: Streamlined Nav Links with Services Dropdown */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
-              {/* Clubbed Services Dropdown */}
+            {/* Center: Streamlined Nav Links with Dedicated Route Navigation & Smooth Active Pill */}
+            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5" aria-label="Main Navigation">
+              {/* Services Item with Quick Popover */}
               <div className="relative" ref={dropdownRef}>
-                <button
-                  type="button"
-                  onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                  onMouseEnter={() => setServicesDropdownOpen(true)}
-                  className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
-                    servicesDropdownOpen
-                      ? 'text-red-600 dark:text-red-500 bg-red-500/10'
-                      : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
-                  }`}
-                  aria-expanded={servicesDropdownOpen}
-                >
-                  <span>Services</span>
-                  <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                      servicesDropdownOpen ? 'rotate-180 text-red-500' : 'text-zinc-400'
+                <div className="flex items-center">
+                  <Link
+                    href="/services"
+                    className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                      isCurrent('/services')
+                        ? 'text-red-600 dark:text-red-400 bg-red-500/15 font-black ring-1 ring-red-500/30'
+                        : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
                     }`}
-                  />
-                </button>
+                  >
+                    <span>Services</span>
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                    onMouseEnter={() => setServicesDropdownOpen(true)}
+                    className="p-1 rounded-full text-zinc-400 hover:text-red-500 hover:bg-zinc-100/60 dark:hover:bg-zinc-800/60 transition-colors -ml-1 cursor-pointer"
+                    aria-label="Toggle Services Dropdown"
+                  >
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                        servicesDropdownOpen ? 'rotate-180 text-red-500' : 'text-zinc-400'
+                      }`}
+                    />
+                  </button>
+                </div>
 
                 {/* Dropdown Menu Popover */}
                 {servicesDropdownOpen && (
@@ -201,14 +215,14 @@ export function Navbar() {
 
                       <div className="flex items-center justify-between px-2 text-[11px]">
                         <Link
-                          href="/#comparison"
+                          href="/comparison"
                           onClick={() => setServicesDropdownOpen(false)}
                           className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                         >
                           Ceramic vs PPF Matrix
                         </Link>
                         <Link
-                          href="/#locations"
+                          href="/locations"
                           onClick={() => setServicesDropdownOpen(false)}
                           className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                         >
@@ -220,46 +234,62 @@ export function Navbar() {
                 )}
               </div>
 
-              {/* Dedicated Services Page Link */}
+              {/* Dedicated Gallery Page Link */}
               <Link
-                href="/services"
-                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
-              >
-                All Services
-              </Link>
-
-              {/* Other streamlined nav links */}
-              <Link
-                href="/#gallery"
-                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
+                href="/gallery"
+                className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                  isCurrent('/gallery')
+                    ? 'text-red-600 dark:text-red-400 bg-red-500/15 font-black ring-1 ring-red-500/30'
+                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
+                }`}
               >
                 Gallery
               </Link>
 
+              {/* Dedicated Comparison Page Link */}
               <Link
-                href="/#comparison"
-                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
+                href="/comparison"
+                className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                  isCurrent('/comparison')
+                    ? 'text-red-600 dark:text-red-400 bg-red-500/15 font-black ring-1 ring-red-500/30'
+                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
+                }`}
               >
                 Comparison
               </Link>
 
+              {/* Dedicated Locations Page Link */}
               <Link
-                href="/#locations"
-                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
+                href="/locations"
+                className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                  isCurrent('/locations')
+                    ? 'text-red-600 dark:text-red-400 bg-red-500/15 font-black ring-1 ring-red-500/30'
+                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
+                }`}
               >
                 Locations
               </Link>
 
+              {/* Dedicated Reviews Page Link */}
               <Link
-                href="/#reviews"
-                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
+                href="/reviews"
+                className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                  isCurrent('/reviews')
+                    ? 'text-red-600 dark:text-red-400 bg-red-500/15 font-black ring-1 ring-red-500/30'
+                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
+                }`}
               >
                 Reviews
               </Link>
 
+              {/* Dedicated FAQ Page Link */}
               <Link
-                href="/#faq"
-                className="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-all"
+                href="/faq"
+                className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                  isCurrent('/faq')
+                    ? 'text-red-600 dark:text-red-400 bg-red-500/15 font-black ring-1 ring-red-500/30'
+                    : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60'
+                }`}
               >
                 FAQ
               </Link>
@@ -393,52 +423,88 @@ export function Navbar() {
                 </div>
               </div>
 
-              {/* General Navigation Links */}
+              {/* General Navigation Links to Dedicated Pages */}
               <nav className="py-4 space-y-1.5" aria-label="Mobile Navigation">
                 <Link
-                  href="/services"
+                  href="/"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80"
+                  className={`flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold transition-colors ${
+                    isCurrent('/')
+                      ? 'bg-red-500/10 text-red-600 dark:text-red-400 font-bold'
+                      : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
+                  }`}
                 >
-                  <span>All Services Page</span>
+                  <span>Home</span>
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
-                  href="/#gallery"
+                  href="/services"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80"
+                  className={`flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold transition-colors ${
+                    isCurrent('/services')
+                      ? 'bg-red-500/10 text-red-600 dark:text-red-400 font-bold'
+                      : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
+                  }`}
+                >
+                  <span>All 7 Services Page</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
+                </Link>
+                <Link
+                  href="/gallery"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold transition-colors ${
+                    isCurrent('/gallery')
+                      ? 'bg-red-500/10 text-red-600 dark:text-red-400 font-bold'
+                      : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
+                  }`}
                 >
                   <span>Recent Work Gallery</span>
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
-                  href="/#comparison"
+                  href="/comparison"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80"
+                  className={`flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold transition-colors ${
+                    isCurrent('/comparison')
+                      ? 'bg-red-500/10 text-red-600 dark:text-red-400 font-bold'
+                      : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
+                  }`}
                 >
                   <span>Ceramic vs PPF Matrix</span>
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
-                  href="/#locations"
+                  href="/locations"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80"
+                  className={`flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold transition-colors ${
+                    isCurrent('/locations')
+                      ? 'bg-red-500/10 text-red-600 dark:text-red-400 font-bold'
+                      : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
+                  }`}
                 >
                   <span>24 Greater Manchester Locations</span>
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
-                  href="/#reviews"
+                  href="/reviews"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80"
+                  className={`flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold transition-colors ${
+                    isCurrent('/reviews')
+                      ? 'bg-red-500/10 text-red-600 dark:text-red-400 font-bold'
+                      : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
+                  }`}
                 >
                   <span>Customer Reviews (4.7★)</span>
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
-                  href="/#faq"
+                  href="/faq"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80"
+                  className={`flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold transition-colors ${
+                    isCurrent('/faq')
+                      ? 'bg-red-500/10 text-red-600 dark:text-red-400 font-bold'
+                      : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
+                  }`}
                 >
                   <span>FAQs & Pricing</span>
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />

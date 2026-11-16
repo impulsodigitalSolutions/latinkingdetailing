@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { COMPARISON_TABLE, SITE_CONFIG } from '@/lib/site-data';
 import { useModals } from './ModalContext';
 import { Sparkles, ArrowRight, MessageSquare } from 'lucide-react';
@@ -103,12 +104,19 @@ export function ComparisonTable() {
                 Traditional wax wears off in weeks. Ceramic Pro creates a permanent ceramic glass bond that lasts up to a lifetime.
               </p>
             </div>
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+              <Link
+                href="/comparison"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-red-600/10 hover:bg-red-600 border border-red-500/30 text-red-400 hover:text-white text-xs font-bold transition-colors"
+              >
+                <span>Full Protection Guide</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
               <a
                 href={SITE_CONFIG.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-zinc-700 hover:border-red-500 text-zinc-200 hover:text-red-400 text-xs font-semibold transition-colors"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-zinc-700 hover:border-red-500 text-zinc-200 hover:text-red-400 text-xs font-semibold transition-colors"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
                 <span>Need Advice?</span>

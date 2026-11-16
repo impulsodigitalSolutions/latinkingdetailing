@@ -35,7 +35,7 @@ export default function ServicesPage() {
       {/* Sticky Floating Capsule Navbar */}
       <Navbar />
 
-      <main className="flex-1">
+      <main className="flex-1 page-transition">
         {/* Dedicated Services Deep Dive Component */}
         <ServicesDetailView />
 
@@ -54,3 +54,4 @@ export default function ServicesPage() {
     </div>
   );
 }
+

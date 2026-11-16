@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { GALLERY_ITEMS, GalleryItem } from '@/lib/site-data';
 import { useModals } from './ModalContext';
@@ -142,13 +143,20 @@ export function Gallery() {
         </div>
 
         {/* View Full Gallery CTA */}
-        <div className="mt-12 text-center">
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <Link
+            href="/gallery"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-red-600/20"
+          >
+            <span>Explore Dedicated Gallery Page</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
           <button
             type="button"
             onClick={() => openQuoteModal('Finish from Bolton Gallery')}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 bg-white dark:bg-[#1d1e25] text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 font-bold text-sm shadow-sm transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 bg-white dark:bg-[#1d1e25] text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 font-bold text-xs uppercase tracking-wider shadow-sm transition-all cursor-pointer"
           >
-            <span>Book Your Vehicle Into Our Bolton Workshop</span>
+            <span>Book Your Transformation</span>
             <ArrowRight className="w-4 h-4 text-red-500" />
           </button>
         </div>

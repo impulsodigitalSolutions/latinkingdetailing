@@ -26,7 +26,7 @@ export default function Home() {
       {/* Sticky Floating Glassmorphic Navbar */}
       <Navbar />
 
-      <main className="flex-1">
+      <main className="flex-1 page-transition">
         {/* Hero Section */}
         <Hero />
 

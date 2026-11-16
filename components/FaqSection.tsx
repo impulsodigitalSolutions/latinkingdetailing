@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { FAQ_ITEMS, SITE_CONFIG } from '@/lib/site-data';
 import { ChevronDown, HelpCircle, MessageSquare, ArrowRight } from 'lucide-react';
 import { useModals } from './ModalContext';
@@ -88,14 +89,23 @@ export function FaqSection() {
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={() => openQuoteModal('FAQ Question')}
-            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm shadow-red-600/30 cursor-pointer shrink-0"
-          >
-            <span>Ask Our Team</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+            <Link
+              href="/faq"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 text-zinc-800 dark:text-zinc-200 text-xs font-bold transition-colors"
+            >
+              <span>Full FAQ Page</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <button
+              type="button"
+              onClick={() => openQuoteModal('FAQ Question')}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-red-600 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm shadow-red-600/30 cursor-pointer shrink-0"
+            >
+              <span>Ask Our Team</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
