@@ -22,7 +22,7 @@ export function ServiceAreas() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
-            Serving Bolton &amp; <span className="text-red-600 dark:text-red-500">24 Regional Towns</span>
+            Serving Bolton &amp; 24 Regional Towns
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
             Clients bring vehicles to our climate-controlled Farnworth workshop from across 24 Greater Manchester boroughs for certified Ceramic Pro 9H applications.

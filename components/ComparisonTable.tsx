@@ -43,7 +43,7 @@ export function ComparisonTable() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
-            Ceramic Coating vs PPF vs <span className="text-red-600 dark:text-red-500">Traditional Wax</span>
+            Ceramic Coating vs PPF vs Traditional Wax
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
             Not all automotive protections are created equal. Compare how certified Ceramic Pro 9H nanoceramics and KAVACA PPF stack up against traditional dealership waxes.
@@ -51,7 +51,7 @@ export function ComparisonTable() {
         </div>
 
         {/* Responsive Table Container */}
-        <div className="rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-workshop-card-subtle shadow-xl overflow-hidden">
+        <div className="rounded-3xl border border-zinc-200 dark:border-workshop-border bg-white dark:bg-workshop-card-subtle overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
@@ -119,7 +119,7 @@ export function ComparisonTable() {
             <div className="flex flex-wrap items-center gap-2.5 shrink-0">
               <Link
                 href="/comparison"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-red-600/10 hover:bg-red-600 border border-red-500/30 text-red-400 hover:text-white text-xs font-bold transition-colors"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-red-600/10 hover:bg-red-600 active:scale-[0.98] border border-red-500/30 text-red-400 hover:text-white text-xs font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
                 <span>Full Protection Guide</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -128,7 +128,7 @@ export function ComparisonTable() {
                 href={SITE_CONFIG.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-zinc-700 hover:border-red-500 text-zinc-200 hover:text-red-400 text-xs font-semibold transition-colors"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-zinc-700 hover:border-red-500 active:scale-[0.98] text-zinc-200 hover:text-red-400 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
                 <span>Need Advice?</span>

@@ -14,7 +14,7 @@ export function Reviews() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
-              What Bolton &amp; Manchester <span className="text-red-600 dark:text-red-500">Drivers Say</span>
+              What Bolton &amp; Manchester Drivers Say
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-3">
               Genuine feedback from prestige car owners across Bolton, Farnworth, and Greater Manchester who trust Latin King Detailing.
@@ -26,7 +26,7 @@ export function Reviews() {
             <div className="p-3 rounded-2xl bg-white dark:bg-workshop-card-subtle border border-zinc-200 dark:border-white/10 shadow-sm flex items-center gap-3">
               <GoogleIcon className="w-6 h-6" />
               <div>
-                <div className="font-extrabold text-sm text-zinc-900 dark:text-white">
+                <div className="font-extrabold text-sm text-zinc-900 dark:text-white tabular-nums">
                   4.7 Stars
                 </div>
                 <div className="text-[10px] text-zinc-500 dark:text-zinc-400">
@@ -38,7 +38,7 @@ export function Reviews() {
             <div className="p-3 rounded-2xl bg-white dark:bg-workshop-card-subtle border border-zinc-200 dark:border-white/10 shadow-sm flex items-center gap-3">
               <FacebookIcon className="w-6 h-6 text-brand-fb" />
               <div>
-                <div className="font-extrabold text-sm text-zinc-900 dark:text-white">
+                <div className="font-extrabold text-sm text-zinc-900 dark:text-white tabular-nums">
                   5.0 Stars
                 </div>
                 <div className="text-[10px] text-zinc-500 dark:text-zinc-400">
@@ -126,7 +126,7 @@ export function Reviews() {
         <div className="mt-12 text-center">
           <Link
             href="/reviews"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 bg-white dark:bg-workshop-card-subtle text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 font-bold text-xs transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 active:scale-[0.98] bg-white dark:bg-workshop-card-subtle text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 font-bold text-xs transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
           >
             <span>Read All Verified Customer Reviews &amp; Testimonials</span>
             <ArrowRight className="w-3.5 h-3.5" />

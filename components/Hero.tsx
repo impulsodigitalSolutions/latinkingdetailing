@@ -16,9 +16,6 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24">
-      {/* Background radial crimson glow effect matching crown */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-red-600/10 dark:bg-red-600/15 blur-[120px] rounded-full pointer-events-none -z-10" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Copy & CTAs */}
@@ -35,7 +32,7 @@ export function Hero() {
               </div>
               <GoogleIcon className="w-4 h-4 shrink-0" />
               <StarRating rating={SITE_CONFIG.googleRating} size="w-3.5 h-3.5" />
-              <span className="font-semibold text-zinc-900 dark:text-white">
+              <span className="font-semibold text-zinc-900 dark:text-white tabular-nums">
                 {SITE_CONFIG.googleRating} Google Rating
               </span>
               <span className="text-zinc-300 dark:text-zinc-700">|</span>
@@ -46,11 +43,7 @@ export function Hero() {
 
             {/* Main Headline - Solid typography with clean craft accent */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black tracking-tight text-zinc-900 dark:text-white leading-[1.1]">
-              Bolton&apos;s Premier{' '}
-              <span className="text-red-600 dark:text-red-500">
-                Ceramic Coating
-              </span>{' '}
-              &amp; Detailing Workshop
+              Bolton&apos;s Premier Ceramic Coating &amp; Detailing Workshop
             </h1>
 
             {/* Subheadline (British workshop voice) */}
@@ -63,7 +56,7 @@ export function Hero() {
               <button
                 type="button"
                 onClick={() => openQuoteModal()}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm tracking-wide shadow-md shadow-red-600/20 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 active:scale-[0.98] text-white font-bold text-sm tracking-wide shadow-md shadow-red-600/20 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
                 <span>Request Workshop Quote</span>
                 <ArrowRight className="w-4 h-4 text-white" />
@@ -71,7 +64,7 @@ export function Hero() {
 
               <Link
                 href="/gallery"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 bg-white dark:bg-workshop-card text-zinc-800 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-400 font-semibold text-sm transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 active:scale-[0.98] bg-white dark:bg-workshop-card text-zinc-800 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-400 font-semibold text-sm transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
                 <span>View Real Portfolio</span>
               </Link>
@@ -112,7 +105,7 @@ export function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
                   {/* Top badge with Official Logo mark */}
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-red-500/40 text-red-400 text-xs font-semibold shadow-lg">
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/85 border border-red-500/40 text-red-400 text-xs font-semibold shadow-lg">
                     <div className="w-4 h-3.5 relative shrink-0">
                       <Image
                         src="/images/logo-crown.png"

@@ -49,12 +49,12 @@ export function MapView() {
   return (
     <div className="relative w-full rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 shadow-2xl bg-zinc-100 dark:bg-workshop-muted flex flex-col">
       {/* Top Location Switcher Tabs */}
-      <div className="p-3 sm:p-4 bg-white/95 dark:bg-workshop-card/95 backdrop-blur-md border-b border-zinc-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-3 z-20">
+      <div className="p-3 sm:p-4 bg-white dark:bg-workshop-card border-b border-zinc-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-3 z-20">
         <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={() => setActiveLocation('bolton')}
-            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-colors cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
+            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-colors active:scale-[0.98] cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
               activeLocation === 'bolton'
                 ? 'bg-red-600 text-white shadow-md'
                 : 'bg-zinc-100 dark:bg-workshop-panel text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
@@ -67,14 +67,14 @@ export function MapView() {
           <button
             type="button"
             onClick={() => setActiveLocation('manchester')}
-            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-colors cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
+            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-colors active:scale-[0.98] cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
               activeLocation === 'manchester'
                 ? 'bg-red-600 text-white shadow-md'
                 : 'bg-zinc-100 dark:bg-workshop-panel text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
             }`}
           >
             <MapPin className="w-3.5 h-3.5" />
-            <span>Manchester (426 Flixton Rd)</span>
+            <span>Manchester Base (Flixton)</span>
           </button>
         </div>
 

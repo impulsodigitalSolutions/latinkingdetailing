@@ -76,7 +76,7 @@ export function Services() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
-            Professional Detailing &amp; <span className="text-red-600 dark:text-red-500">Paint Protection</span>
+            Professional Detailing &amp; Paint Protection
           </h2>
           <p className="text-zinc-600 dark:text-zinc-300 text-base sm:text-lg mt-4 leading-relaxed font-normal">
             Latin King Detailing provides complete paint protection, defect correction, and cabin restoration from our Farnworth studio, using only certified, professional-grade products.
@@ -87,7 +87,7 @@ export function Services() {
             <button
               type="button"
               onClick={() => setFilter('all')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors active:scale-[0.98] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'all'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
@@ -98,7 +98,7 @@ export function Services() {
             <button
               type="button"
               onClick={() => setFilter('coating')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors active:scale-[0.98] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'coating'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
@@ -109,7 +109,7 @@ export function Services() {
             <button
               type="button"
               onClick={() => setFilter('correction')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors active:scale-[0.98] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'correction'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
@@ -120,7 +120,7 @@ export function Services() {
             <button
               type="button"
               onClick={() => setFilter('valet')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors active:scale-[0.98] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'valet'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
@@ -131,7 +131,7 @@ export function Services() {
             <button
               type="button"
               onClick={() => setFilter('maintenance')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors active:scale-[0.98] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 filter === 'maintenance'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'

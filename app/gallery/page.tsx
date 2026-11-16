@@ -44,7 +44,7 @@ export default function GalleryPage() {
 
             <div className="max-w-3xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
-                Showroom Detailing &amp; <span className="text-red-600 dark:text-red-500">Transformations</span>
+                Showroom Detailing &amp; Transformations
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
                 Every vehicle featured here was detailed and protected inside our dedicated Farnworth workshop. From high-gloss 9H nanoceramic shielding to defect-free machine paint correction, browse real results from Greater Manchester owners.

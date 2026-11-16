@@ -33,7 +33,7 @@ export function QuoteModal() {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/75 backdrop-blur-md transition-opacity"
+        className="fixed inset-0 bg-black/85 transition-opacity"
         onClick={closeQuoteModal}
         aria-hidden="true"
       />

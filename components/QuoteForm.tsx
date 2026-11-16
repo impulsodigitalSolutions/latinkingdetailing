@@ -189,7 +189,7 @@ Looking forward to hearing from your Bolton workshop team!`;
               key={size.id}
               type="button"
               onClick={() => setVehicleSize(size.id)}
-              className={`p-2.5 rounded-xl text-left border transition-colors cursor-pointer ${
+              className={`p-2.5 rounded-xl text-left border transition-colors active:scale-[0.98] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 vehicleSize === size.id
                   ? 'border-red-600 bg-red-600 text-white shadow-md'
                   : 'border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-workshop-muted text-zinc-800 dark:text-zinc-200 hover:border-zinc-400'
@@ -212,7 +212,7 @@ Looking forward to hearing from your Bolton workshop team!`;
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           placeholder="e.g. Swirl marks, stone chips on bonnet, want Ceramic Pro Silver 5-year coating..."
-          className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/10 bg-white dark:bg-workshop-row text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500/50 text-sm transition-colors"
+          className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-white/10 bg-white dark:bg-workshop-row text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 text-sm transition-colors"
         />
       </div>
 
@@ -221,7 +221,7 @@ Looking forward to hearing from your Bolton workshop team!`;
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm transition-colors disabled:opacity-50 cursor-pointer"
+          className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-red-600 hover:bg-red-500 active:scale-[0.98] text-white font-bold text-sm transition-colors disabled:opacity-50 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
         >
           {isSubmitting ? (
             <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full motion-safe:animate-spin" />

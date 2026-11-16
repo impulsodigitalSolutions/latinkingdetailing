@@ -91,8 +91,8 @@ export function Navbar() {
         <header
           className={`pointer-events-auto max-w-6xl mx-auto rounded-full border transition-colors duration-150 px-4 sm:px-6 py-2 sm:py-2.5 ${
             isScrolled
-              ? 'bg-white/92 dark:bg-workshop-card/92 backdrop-blur-xl border-zinc-300/80 dark:border-white/10 shadow-xl shadow-black/10 dark:shadow-black/30'
-              : 'bg-white/80 dark:bg-workshop-card/85 backdrop-blur-lg border-zinc-200/80 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-black/20'
+              ? 'bg-white/95 dark:bg-workshop-card border-zinc-300 dark:border-workshop-border shadow-md'
+              : 'bg-white/90 dark:bg-workshop-card/95 border-zinc-200 dark:border-workshop-border shadow-sm'
           }`}
         >
           <div className="flex items-center justify-between gap-2 sm:gap-4">
@@ -341,7 +341,7 @@ export function Navbar() {
         <div className="fixed inset-0 z-50 lg:hidden">
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-black/80 transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />

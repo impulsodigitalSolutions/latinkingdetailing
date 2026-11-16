@@ -12,11 +12,11 @@ export function FloatingActions() {
   return (
     <div className="fixed bottom-4 left-0 right-0 z-40 px-3 sm:px-4 pointer-events-none">
       <div className="max-w-xl mx-auto pointer-events-auto">
-        <div className="p-2 sm:p-2.5 rounded-2xl bg-zinc-950/92 dark:bg-workshop-muted/95 backdrop-blur-lg border border-red-500/30 shadow-2xl flex items-center justify-between gap-2 text-white">
+        <div className="p-2 sm:p-2.5 rounded-2xl bg-zinc-950 dark:bg-workshop-muted border border-red-500/30 flex items-center justify-between gap-2 text-white">
           {/* Quick Call */}
           <a
             href={SITE_CONFIG.phoneHref}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-zinc-800/90 hover:bg-zinc-700 text-zinc-100 font-bold text-xs transition-colors shrink-0"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 active:scale-[0.98] text-zinc-100 font-bold text-xs transition-colors shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
             title="Call Bolton Workshop"
           >
             <Phone className="w-3.5 h-3.5 text-red-400" />
@@ -29,7 +29,7 @@ export function FloatingActions() {
             href={SITE_CONFIG.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors shadow-md shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-[0.98] text-white font-bold text-xs transition-colors shadow-md shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
             title="Chat on WhatsApp"
           >
             <WhatsAppIcon className="w-3.5 h-3.5" />
@@ -40,7 +40,7 @@ export function FloatingActions() {
           <button
             type="button"
             onClick={() => openQuoteModal()}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-md shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-red-600 hover:bg-red-500 active:scale-[0.98] text-white font-bold text-xs transition-colors shadow-md shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
           >
             <Sparkles className="w-3.5 h-3.5 text-white" />
             <span>Book Now</span>

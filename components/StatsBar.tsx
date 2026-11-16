@@ -36,7 +36,7 @@ export function StatsBar() {
                   Verified
                 </span>
               </div>
-              <div className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white tracking-tight">
+              <div className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white tracking-tight tabular-nums">
                 {stat.value}
               </div>
               <div className="text-xs sm:text-sm font-bold text-red-600 dark:text-red-500 mt-0.5">

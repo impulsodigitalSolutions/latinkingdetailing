@@ -45,7 +45,7 @@ export default function FaqPage() {
 
             <div className="max-w-3xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
-                Frequently Asked <span className="text-red-600 dark:text-red-500">Detailing Questions</span>
+                Frequently Asked Detailing Questions
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
                 Clear, honest answers about Ceramic Pro 9H coating, paint correction stages, valeting frequency, pricing estimates, and our Farnworth workshop booking process.

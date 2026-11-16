@@ -46,7 +46,7 @@ export default function ReviewsPage() {
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
               <div className="max-w-3xl">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
-                  What Bolton &amp; Manchester <span className="text-red-600 dark:text-red-500">Drivers Say</span>
+                  What Bolton &amp; Manchester Drivers Say
                 </h1>
                 <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
                   Real feedback from prestige car owners, daily commuters, and commercial clients across Bolton, Farnworth, and Greater Manchester who trust Latin King Detailing.

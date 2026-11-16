@@ -44,7 +44,7 @@ export default function ComparisonPage() {
 
             <div className="max-w-3xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight leading-tight">
-                Ceramic Coating vs PPF vs <span className="text-red-600 dark:text-red-500">Traditional Wax</span>
+                Ceramic Coating vs PPF vs Traditional Wax
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
                 Not all automotive protections are created equal. Understand the differences between nanoceramic quartz bonding, self-healing polyurethane film, and dealership waxes so you make an informed investment for your vehicle.

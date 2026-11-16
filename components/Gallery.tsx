@@ -90,7 +90,7 @@ export function Gallery() {
 
                 {/* Top badges */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-red-400 text-xs font-bold">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 border border-white/10 text-red-400 text-xs font-bold">
                     <ShieldCheck className="w-3.5 h-3.5 text-red-500" />
                     {item.service}
                   </span>

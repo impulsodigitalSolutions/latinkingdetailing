@@ -89,10 +89,7 @@ export function ServicesDetailView() {
       {/* Services Hero Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-zinc-900 dark:text-white tracking-tight leading-[1.12]">
-          Professional Automotive Detailing &amp;{' '}
-          <span className="text-red-600 dark:text-red-500">
-            Ceramic Coating
-          </span>
+          Professional Automotive Detailing &amp; Ceramic Coating
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto mt-5 leading-relaxed font-normal">
@@ -119,7 +116,7 @@ export function ServicesDetailView() {
               key={cat.id}
               type="button"
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-colors active:scale-[0.98] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                 activeCategory === cat.id
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-zinc-100 dark:bg-workshop-card-subtle text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'

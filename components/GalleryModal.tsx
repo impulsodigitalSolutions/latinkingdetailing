@@ -33,7 +33,7 @@ export function GalleryModal() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
       <div
-        className="fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity"
+        className="fixed inset-0 bg-black/90 transition-opacity"
         onClick={closeGalleryModal}
         aria-hidden="true"
       />
@@ -67,10 +67,10 @@ export function GalleryModal() {
 
           {/* Bottom badge overlay */}
           <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
-            <span className="px-3 py-1 rounded-full bg-red-600 text-white font-bold text-xs backdrop-blur-sm shadow-md">
+            <span className="px-3 py-1 rounded-full bg-red-600 text-white font-bold text-xs shadow-md">
               {item.finish}
             </span>
-            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-xs text-zinc-300 border border-white/10">
+            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 text-xs text-zinc-300 border border-white/10">
               <MapPin className="w-3.5 h-3.5 text-red-400" />
               {item.location}
             </span>

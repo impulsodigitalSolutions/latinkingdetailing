@@ -37,7 +37,7 @@ export function QuoteSection() {
                 href={SITE_CONFIG.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-colors shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-[0.98] text-white font-bold text-sm transition-colors shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
               >
                 <WhatsAppIcon className="w-4 h-4" />
                 <span>WhatsApp Us Directly</span>
@@ -45,7 +45,7 @@ export function QuoteSection() {
 
               <a
                 href={SITE_CONFIG.phoneHref}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-sm transition-colors border border-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 active:scale-[0.98] text-white font-bold text-sm transition-colors border border-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
                 <Phone className="w-4 h-4 text-red-400" />
                 <span>Call {SITE_CONFIG.phone}</span>
