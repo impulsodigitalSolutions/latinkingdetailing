@@ -37,18 +37,18 @@ export function Hero() {
               </span>
               <span className="text-zinc-300 dark:text-zinc-700">|</span>
               <span className="text-zinc-500 dark:text-zinc-400">
-                Farnworth, Bolton
+                Farnworth, Manchester
               </span>
             </div>
 
             {/* Main Headline - Strict Scale & Tighter Display Tracking */}
             <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
-              Bolton&apos;s Premier Ceramic Coating &amp; Detailing Workshop
+              Manchester&apos;s Premier Ceramic Coating &amp;, Paint Correction  Detailing Workshop
             </h1>
 
             {/* Subheadline - Constrained line length & muted secondary contrast */}
             <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-[60ch] mx-auto lg:mx-0 leading-[1.65] font-normal">
-              Based in Farnworth, five minutes from Junction 4 of the M61. Certified Ceramic Pro 9H installers and KAVACA PPF specialists. We detail vehicles to an uncompromising standard, restoring paintwork depth and locking in multi-year hydrophobic armor.
+              Get expert interior and exterior car detailing, paint correction and ceramic coating in Manchester. Based in Urmston, Latin King Detailing brings professional vehicle detailing and protection directly to you..
             </p>
 
             {/* Dual CTAs */}
@@ -96,7 +96,7 @@ export function Hero() {
                 <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-zinc-900">
                   <Image
                     src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1200&q=80"
-                    alt="Lamborghini Aventador with Ceramic Pro 9H coating, Latin King Detailing Bolton"
+                    alt="Lamborghini Aventador with Ceramic Pro 9H coating, Latin King Detailing Manchester"
                     fill
                     priority
                     className="object-cover"
@@ -153,7 +153,7 @@ export function Hero() {
                       </div>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white dark:bg-workshop-surface border border-zinc-200 dark:border-white/10">
-                      <div className="font-mono text-red-500 font-semibold text-sm sm:text-base">VIN</div>
+                      <div className="text-red-500 font-semibold text-sm sm:text-base">VIN</div>
                       <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-medium">
                         Registered
                       </div>
@@ -163,7 +163,7 @@ export function Hero() {
                   <div className="mt-4 pt-3 border-t border-zinc-200 dark:border-zinc-800/80 flex items-center justify-between text-xs text-zinc-600 dark:text-zinc-400">
                     <span className="flex items-center gap-1 font-medium">
                       <Award className="w-3.5 h-3.5 text-red-500" />
-                      KAVACA Approved
+                      9H Certified Installer
                     </span>
                     <span className="flex items-center gap-1 font-medium">
                       <Shield className="w-3.5 h-3.5 text-red-500" />

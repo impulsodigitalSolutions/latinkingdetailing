@@ -31,7 +31,7 @@ export function ServicesDetailView() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
   const categories = [
-    { id: 'all', label: 'All 7 Services' },
+    { id: 'all', label: 'All 6 Services' },
     { id: 'coating', label: 'Coating & Protection' },
     { id: 'polishing', label: 'Machine Polishing' },
     { id: 'valet', label: 'Restoration & Valet' },
@@ -42,7 +42,6 @@ export function ServicesDetailView() {
     switch (id) {
       case 'ceramic-coating':
       case 'leather-coating':
-      case 'paint-protection-film':
         return 'coating';
       case 'machine-polishing':
         return 'polishing';
@@ -103,7 +102,7 @@ export function ServicesDetailView() {
             <ShieldCheck className="w-4 h-4 text-red-500" /> Ceramic Pro 9H Certified
           </span>
           <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10 font-medium">
-            <MapPin className="w-4 h-4 text-red-500" /> Farnworth, Bolton (BL4 9EA)
+            <MapPin className="w-4 h-4 text-red-500" /> Farnworth, Manchester (BL4 9EA)
           </span>
           <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10 font-medium">
             <Clock className="w-4 h-4 text-red-500" /> 24/7 Available
@@ -129,7 +128,7 @@ export function ServicesDetailView() {
         </div>
 
         {/* Quick Anchor Jump Links */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-4 pt-4 border-t border-zinc-200/80 dark:border-zinc-800/80 font-mono text-xs">
+        <div className="flex flex-wrap items-center justify-center gap-2 mt-4 pt-4 border-t border-zinc-200/80 dark:border-zinc-800/80 text-xs">
           <span className="text-zinc-400 font-semibold mr-1">Jump to:</span>
           {SERVICES.map((s, idx) => (
             <a
@@ -137,7 +136,8 @@ export function ServicesDetailView() {
               href={`#${s.id}`}
               className="px-2.5 py-1 rounded-md bg-zinc-100/70 dark:bg-zinc-800/50 hover:bg-red-500/10 hover:text-red-500 text-zinc-600 dark:text-zinc-400 transition-colors"
             >
-              0{idx + 1}. {s.title.split(' - ')[0].split(' (')[0]}
+              <span className="font-mono text-zinc-400 dark:text-zinc-500 mr-1">0{idx + 1}.</span>
+              <span>{s.title.split(' - ')[0].split(' (')[0]}</span>
             </a>
           ))}
         </div>
@@ -176,7 +176,7 @@ export function ServicesDetailView() {
                       </div>
                       {isCeramic && (
                         <span className="px-2.5 py-0.5 rounded-full bg-red-600 text-white font-semibold text-[10px] shadow-xs">
-                          Signature 9H Bolton
+                          Signature 9H Manchester
                         </span>
                       )}
                       <span className="text-xs font-medium text-zinc-400 dark:text-zinc-500">
@@ -393,7 +393,7 @@ export function ServicesDetailView() {
                 {service.tiers && service.tiers.length > 0 && (
                   <div>
                     <h4 className="font-heading font-semibold text-base text-zinc-900 dark:text-white mb-4">
-                      Ceramic Pro 9H Package Tiers (Bolton Workshop)
+                      Ceramic Pro 9H Package Tiers (Manchester Workshop)
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {service.tiers.map((tier) => (
@@ -468,7 +468,7 @@ export function ServicesDetailView() {
                     </div>
                   )}
                   <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
-                    115 Albert Rd, Farnworth, Bolton · Available 24/7
+                    115 Albert Rd, Farnworth, Manchester · Available 24/7
                   </div>
                 </div>
 

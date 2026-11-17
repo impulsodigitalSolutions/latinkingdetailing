@@ -73,7 +73,7 @@ export function ServiceDetailModal() {
               />
             </div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/20 border border-red-500/40 text-red-300 text-xs font-semibold">
-              <Sparkles className="w-3.5 h-3.5" /> Bolton Workshop Service
+              <Sparkles className="w-3.5 h-3.5" /> Manchester Workshop Service
             </div>
           </div>
 
@@ -338,7 +338,7 @@ export function ServiceDetailModal() {
         <div className="p-4 sm:p-6 bg-zinc-100 dark:bg-workshop-row border-t border-zinc-200 dark:border-workshop-border flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="text-xs text-zinc-600 dark:text-zinc-400 text-center sm:text-left">
             <span className="font-semibold text-zinc-900 dark:text-white">
-              Based in Farnworth, Bolton
+              Based in Farnworth, Manchester
             </span>{' '}
             · Five mins from M61 Jct 4
           </div>

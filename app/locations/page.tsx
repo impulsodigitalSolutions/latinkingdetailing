@@ -11,13 +11,13 @@ import { SITE_CONFIG, SERVICE_AREAS_24 } from '@/lib/site-data';
 import { WhatsAppIcon } from '@/components/icons/BrandIcons';
 
 export const metadata: Metadata = {
-  title: 'Areas We Serve in Bolton & Greater Manchester | Latin King Detailing',
+  title: 'Areas We Serve in Manchester & Greater Manchester | Latin King Detailing',
   description:
-    'Latin King Detailing serves drivers across 24 towns in Bolton and Greater Manchester. Workshop located at 115 Albert Rd, Farnworth, Bolton BL4 9EA (M61 Junction 4). Mobile detailing also available.',
+    'Latin King Detailing serves drivers across 24 towns in Manchester and Greater Manchester. Workshop located at 115 Albert Rd, Farnworth, Manchester BL4 9EA (M61 Junction 4). Mobile detailing also available.',
   openGraph: {
-    title: 'Bolton & Greater Manchester Detailing Service Areas | Latin King Detailing',
+    title: 'Manchester & Greater Manchester Detailing Service Areas | Latin King Detailing',
     description:
-      'Climate-controlled workshop in Farnworth, Bolton. Ceramic Pro 9H coating, paint correction, and valeting for 24 towns across Greater Manchester.',
+      'Climate-controlled workshop in Farnworth, Manchester. Ceramic Pro 9H coating, paint correction, and valeting for 24 towns across Greater Manchester.',
     url: 'https://ceramicpromanchester.com/locations',
     siteName: 'Latin King Detailing',
     type: 'website',
@@ -45,10 +45,10 @@ export default function LocationsPage() {
 
             <div className="max-w-3xl">
               <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
-                Where We Work: Bolton &amp; Greater Manchester
+                Where We Work: Manchester &amp; Greater Manchester
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 max-w-[60ch] leading-[1.65]">
-                Our main climate-controlled facility is located at <strong>115 Albert Rd, Farnworth, Bolton BL4 9EA</strong>, five minutes from Junction 4 of the M61. We also serve clients across 24 towns and boroughs with verified mobile detailing services.
+                Our main climate-controlled facility is located at <strong>115 Albert Rd, Farnworth, Manchester BL4 9EA</strong>, five minutes from Junction 4 of the M61. We also serve clients across 24 towns and boroughs with verified mobile detailing services.
               </p>
             </div>
           </div>
@@ -151,7 +151,7 @@ export default function LocationsPage() {
                   </h3>
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
-                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Bolton Town</span>
+                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Manchester Town</span>
                       <span className="font-bold text-red-600 dark:text-red-400">8 mins</span>
                     </div>
                     <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
@@ -201,8 +201,8 @@ export default function LocationsPage() {
                 {/* Embedded Responsive Google Map */}
                 <div className="relative w-full h-[450px] sm:h-[500px] rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-inner">
                   <iframe
-                    title="Latin King Detailing Bolton Workshop Location"
-                    src="https://maps.google.com/maps?q=115%20Albert%20Rd,%20Farnworth,%20Bolton%20BL4%209EA&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    title="Latin King Detailing Manchester Workshop Location"
+                    src="https://maps.google.com/maps?q=115%20Albert%20Rd,%20Farnworth,%20Manchester%20BL4%209EA&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

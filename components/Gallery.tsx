@@ -24,7 +24,7 @@ export function Gallery() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
             <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
-              Recent Transformations: <span className="text-red-600 dark:text-red-500">Bolton Studio</span>
+              Recent Transformations: <span className="text-red-600 dark:text-red-500">Manchester Studio</span>
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2 max-w-[60ch] leading-[1.65]">
               Explore genuine Ceramic Pro 9H applications, paint correction stages, and cabin restorations completed at our Farnworth facility.
@@ -147,7 +147,7 @@ export function Gallery() {
           </Link>
           <button
             type="button"
-            onClick={() => openQuoteModal('Finish from Bolton Gallery')}
+            onClick={() => openQuoteModal('Finish from Manchester Gallery')}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 bg-white dark:bg-workshop-card-subtle text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 font-bold text-xs transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
           >
             <span>Book Your Transformation</span>

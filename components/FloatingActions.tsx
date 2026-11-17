@@ -17,7 +17,7 @@ export function FloatingActions() {
           <a
             href={SITE_CONFIG.phoneHref}
             className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 active:scale-[0.98] text-zinc-100 font-bold text-xs transition-colors shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
-            title="Call Bolton Workshop"
+            title="Call Manchester Workshop"
           >
             <Phone className="w-3.5 h-3.5 text-red-400" />
             <span className="hidden xs:inline">Call Us</span>

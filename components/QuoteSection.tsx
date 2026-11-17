@@ -22,14 +22,14 @@ export function QuoteSection() {
                 />
               </div>
               <div className="text-zinc-300 text-xs font-semibold">
-                Latin King Detailing · Bolton Workshop
+                Latin King Detailing · Manchester Workshop
               </div>
             </div>
             <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-white">
               Ready to Protect Your Car?
             </h2>
             <p className="text-zinc-300 text-base sm:text-lg mt-3 max-w-[60ch] leading-[1.65]">
-              Get a free, no-obligation quote from Bolton&apos;s Ceramic Pro certified specialists. We&apos;ll recommend the right protection for your vehicle and budget.
+              Get a free, no-obligation quote from Manchester&apos;s Ceramic Pro certified specialists. We&apos;ll recommend the right protection for your vehicle and budget.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 mt-8">
@@ -138,7 +138,7 @@ export function QuoteSection() {
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-red-500 shrink-0" />
-                  <span>Workshop: 115 Albert Rd, Farnworth, Bolton BL4 9EA</span>
+                  <span>Workshop: 115 Albert Rd, Farnworth, Manchester BL4 9EA</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-red-500 shrink-0" />

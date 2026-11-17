@@ -127,7 +127,7 @@ export function GalleryModal() {
 
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-red-500" />
-              <span>Bolton Workshop: 115 Albert Rd, Farnworth (BL4 9EA)</span>
+              <span>Manchester Workshop: 115 Albert Rd, Farnworth (BL4 9EA)</span>
             </div>
           </div>
         </div>

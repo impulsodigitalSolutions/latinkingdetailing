@@ -23,7 +23,7 @@ export function WhyChooseUs() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
-            Why Latin King Detailing: Bolton&apos;s Certified Studio
+            Why Latin King Detailing: Manchester&apos;s Certified Studio
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-[60ch] mx-auto leading-[1.65]">
             We operate to strict manufacturer protocols so your vehicle receives uncompromising, traceable protection with real VIN warranties.

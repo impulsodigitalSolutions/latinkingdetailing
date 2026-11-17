@@ -10,13 +10,13 @@ import { Sparkles, ArrowRight, ShieldCheck, CheckCircle2, ChevronRight, Eye } fr
 import { SITE_CONFIG } from '@/lib/site-data';
 
 export const metadata: Metadata = {
-  title: 'Showroom Detailing & Ceramic Coating Gallery | Latin King Detailing Bolton',
+  title: 'Showroom Detailing & Ceramic Coating Gallery | Latin King Detailing Manchester',
   description:
-    'Explore our portfolio of Ceramic Pro 9H ceramic coatings, multi-stage paint corrections, and deep interior valets completed at our Farnworth, Bolton workshop.',
+    'Explore our portfolio of Ceramic Pro 9H ceramic coatings, multi-stage paint corrections, and deep interior valets completed at our Farnworth, Manchester workshop.',
   openGraph: {
     title: 'Showroom Detailing & Ceramic Coating Gallery | Latin King Detailing',
     description:
-      'Genuine customer vehicle transformations from Bolton and Greater Manchester. Supercars, daily drivers, and prestige restorations.',
+      'Genuine customer vehicle transformations from Manchester and Greater Manchester. Supercars, daily drivers, and prestige restorations.',
     url: 'https://ceramicpromanchester.com/gallery',
     siteName: 'Latin King Detailing',
     type: 'website',

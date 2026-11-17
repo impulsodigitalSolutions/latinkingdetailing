@@ -33,16 +33,16 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline} | Ceramic Pro 9H Certified`,
   description:
-    "Bolton's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & KAVACA PPF Approved based in Farnworth, Bolton. 5 minutes from M61 junction 4. Call 07482 225323.",
+    "Manchester's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & Paint Correction Specialist based in Farnworth, Manchester. 5 minutes from M61 junction 4. Call 07482 225323.",
   keywords: [
-    'Ceramic Coating Bolton',
-    'Car Detailing Bolton',
+    'Ceramic Coating Manchester',
+    'Car Detailing Manchester',
     'Ceramic Pro Manchester',
-    'KAVACA PPF Bolton',
+    'Paint Correction Manchester',
     'Latin King Detailing',
-    'Paint Protection Film Greater Manchester',
     'Car Detailing Farnworth',
-    'Paint Correction Bolton',
+    'Machine Polishing Manchester',
+    'Bolton Car Detailing',
   ],
   authors: [{ name: SITE_CONFIG.brandName }],
   creator: SITE_CONFIG.brandName,
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     url: 'https://ceramicpromanchester.com',
     title: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline}`,
     description:
-      "Bolton's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & KAVACA PPF Approved. Based in Farnworth, 5 minutes from M61 Jct 4.",
+      "Manchester's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & Paint Correction Specialist. Based in Farnworth, 5 minutes from M61 Jct 4.",
     siteName: SITE_CONFIG.brandName,
     images: [
       {
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline}`,
     description:
-      "Bolton's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & KAVACA PPF Approved.",
+      "Manchester's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & Paint Correction Specialist.",
   },
   robots: {
     index: true,

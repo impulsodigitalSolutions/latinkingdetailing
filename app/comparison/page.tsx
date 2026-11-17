@@ -10,13 +10,13 @@ import { Sparkles, Shield, ShieldCheck, ChevronRight, CheckCircle2, XCircle, Arr
 import { SITE_CONFIG } from '@/lib/site-data';
 
 export const metadata: Metadata = {
-  title: 'Ceramic Coating vs PPF vs Wax | Protection Comparison Matrix | Latin King Detailing Bolton',
+  title: 'Ceramic Coating vs Dealership Sealant vs Wax | Latin King Detailing Manchester',
   description:
-    'Compare Ceramic Pro 9H nanoceramic coating, KAVACA self-healing Paint Protection Film (PPF), and traditional carnauba waxes. Learn which protection suits your driving habits in Greater Manchester.',
+    'Compare Ceramic Pro 9H nanoceramic coating, dealership paint protection sealants, and traditional carnauba waxes. Learn why true molecular bonding outperforms dealership add-ons.',
   openGraph: {
-    title: 'Ceramic Coating vs PPF vs Wax Comparison | Latin King Detailing',
+    title: 'Ceramic Coating vs Dealership Sealant vs Wax | Latin King Detailing',
     description:
-      'Detailed automotive paint protection matrix. Scratch resistance, stone chip defense, self-healing surfaces, and lifespan comparisons.',
+      'Detailed automotive paint protection matrix. Scratch resistance, chemical immunity, water beading, and lifespan comparisons.',
     url: 'https://ceramicpromanchester.com/comparison',
     siteName: 'Latin King Detailing',
     type: 'website',
@@ -44,10 +44,10 @@ export default function ComparisonPage() {
 
             <div className="max-w-3xl">
               <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
-                Ceramic Coating vs PPF vs Traditional Wax
+                Ceramic Coating vs Dealership Sealant vs Wax
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 max-w-[60ch] leading-[1.65]">
-                Not all automotive protections are created equal. Understand the differences between nanoceramic quartz bonding, self-healing polyurethane film, and dealership waxes so you make an informed investment for your vehicle.
+                Not all automotive paint protections are created equal. Understand the differences between nanoceramic molecular bonding, quick-wipe dealership sealants, and traditional waxes so you make an informed investment for your vehicle.
               </p>
             </div>
           </div>
@@ -61,10 +61,10 @@ export default function ComparisonPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
-                Which Protection Strategy Fits Your Driving Habits?
+                Which Detailing Service Fits Your Car?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-2 max-w-[60ch] mx-auto leading-[1.65]">
-                Every vehicle and driving routine is unique. Here is how our Bolton detailing specialists recommend choosing:
+                Every vehicle and driving routine is unique. Here is how our Farnworth workshop specialists recommend choosing:
               </p>
             </div>
 
@@ -82,7 +82,7 @@ export default function ComparisonPage() {
                     Ceramic Pro 9H
                   </h3>
                   <div className="text-xs font-medium text-red-600 dark:text-red-400 mb-3">
-                    Molecular Nanoceramic Shield
+                    Molecular Nanoceramic Shield · From <span className="font-mono font-medium">£200</span>
                   </div>
                   <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65] mb-6 max-w-[60ch]">
                     Permanently fuses into clear coat pores to create a 9H diamond-hard glass barrier. Eliminates oxidation, blocks UV radiation, sheds road dirt continuously, and prevents wash swirls.
@@ -90,7 +90,7 @@ export default function ComparisonPage() {
                   <ul className="space-y-2 text-xs text-zinc-700 dark:text-zinc-300 mb-6">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                      <span>2 to 5+ years traceable VIN warranty</span>
+                      <span>2 to 5+ years verifiable protection</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
@@ -98,7 +98,7 @@ export default function ComparisonPage() {
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                      <span>Ideal for daily commuters &amp; family cars</span>
+                      <span>Ideal for daily commuters &amp; prized cars</span>
                     </li>
                   </ul>
                 </div>
@@ -110,79 +110,79 @@ export default function ComparisonPage() {
                 </Link>
               </div>
 
-              {/* KAVACA PPF Card */}
+              {/* Machine Polishing Card */}
               <div className="rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-workshop-card p-6 sm:p-8 flex flex-col justify-between shadow-sm">
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-500 flex items-center justify-center mb-6">
-                    <Shield className="w-6 h-6" />
-                  </div>
-                  <h3 className="font-heading font-semibold text-[1.25rem] leading-[1.3] tracking-[-0.01em] text-zinc-900 dark:text-white">
-                    KAVACA PPF
-                  </h3>
-                  <div className="text-xs font-medium text-emerald-600 dark:text-emerald-400 mb-3">
-                    Self-Healing Stone Chip Armor
-                  </div>
-                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65] mb-6 max-w-[60ch]">
-                    An 8-mil optically clear polyurethane shield engineered to physically deflect high-speed gravel, road debris, and stone chips on motorways (M61, M60, M62).
-                  </p>
-                  <ul className="space-y-2 text-xs text-zinc-700 dark:text-zinc-300 mb-6">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                      <span>Instant solar/engine heat scratch healing</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                      <span>Up to 10-year factory warranty against yellowing</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                      <span>Essential for high-mileage &amp; performance cars</span>
-                    </li>
-                  </ul>
-                </div>
-                <Link
-                  href="/services#paint-protection-film"
-                  className="w-full py-2.5 px-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-white/10 dark:hover:bg-white/20 text-white font-bold text-xs text-center transition-colors"
-                >
-                  Explore KAVACA PPF
-                </Link>
-              </div>
-
-              {/* Hybrid King Setup Card */}
-              <div className="rounded-3xl border border-purple-500/30 bg-purple-500/[0.02] dark:bg-workshop-card p-6 sm:p-8 flex flex-col justify-between shadow-sm">
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-500 flex items-center justify-center mb-6">
                     <Sparkles className="w-6 h-6" />
                   </div>
                   <h3 className="font-heading font-semibold text-[1.25rem] leading-[1.3] tracking-[-0.01em] text-zinc-900 dark:text-white">
-                    The King’s Hybrid Setup
+                    Paint Correction
                   </h3>
-                  <div className="text-xs font-medium text-purple-600 dark:text-purple-400 mb-3">
-                    PPF Front End + Full 9H Body
+                  <div className="text-xs font-medium text-amber-600 dark:text-amber-400 mb-3">
+                    Machine Polishing · From <span className="font-mono font-medium">£250</span>
                   </div>
                   <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65] mb-6 max-w-[60ch]">
-                    The gold standard for prestige vehicles and supercars. Front bumper, bonnet, and mirrors receive KAVACA PPF stone chip immunity, while the rest of the car is locked in Ceramic Pro 9H gloss.
+                    Safely refines your clear coat using single or multi-stage rotary polishing to eliminate swirl marks, light scratches, buffer trails, and dull road oxidation.
                   </p>
                   <ul className="space-y-2 text-xs text-zinc-700 dark:text-zinc-300 mb-6">
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-purple-500 shrink-0" />
-                      <span>Total physical &amp; chemical defense</span>
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                      <span>True permanent defect elimination</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-purple-500 shrink-0" />
-                      <span>Direct optical match across all panels</span>
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                      <span>Essential defect-free foundation for coating</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-purple-500 shrink-0" />
-                      <span>Maximum resale value preservation</span>
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                      <span>Restores deep factory mirror reflections</span>
                     </li>
                   </ul>
                 </div>
                 <Link
-                  href="/services"
-                  className="w-full py-2.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs text-center transition-colors shadow-md"
+                  href="/services#machine-polishing"
+                  className="w-full py-2.5 px-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-white/10 dark:hover:bg-white/20 text-white font-bold text-xs text-center transition-colors"
                 >
-                  View All Detailing Packages
+                  Explore Paint Correction
+                </Link>
+              </div>
+
+              {/* The King's Detail Card */}
+              <div className="rounded-3xl border border-red-500/30 bg-red-500/[0.02] dark:bg-workshop-card p-6 sm:p-8 flex flex-col justify-between shadow-sm">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-red-500/10 text-red-600 dark:text-red-400 flex items-center justify-center mb-6">
+                    <Layers className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-heading font-semibold text-[1.25rem] leading-[1.3] tracking-[-0.01em] text-zinc-900 dark:text-white">
+                    The King’s Detail
+                  </h3>
+                  <div className="text-xs font-medium text-red-600 dark:text-red-400 mb-3">
+                    Full Restoration · From <span className="font-mono font-medium">£180</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65] mb-6 max-w-[60ch]">
+                    Our signature multi-stage interior and exterior restoration. Safe two-bucket wash, iron fallout decontam, machine polish, and wet upholstery extraction down to every stitch.
+                  </p>
+                  <ul className="space-y-2 text-xs text-zinc-700 dark:text-zinc-300 mb-6">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0" />
+                      <span>Full exterior decontam &amp; gloss polish</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0" />
+                      <span>Deep wet carpet &amp; upholstery extraction</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0" />
+                      <span>Source-level interior odour elimination</span>
+                    </li>
+                  </ul>
+                </div>
+                <Link
+                  href="/services#the-kings-detail"
+                  className="w-full py-2.5 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs text-center transition-colors shadow-md"
+                >
+                  Explore The King’s Detail
                 </Link>
               </div>
             </div>

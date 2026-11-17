@@ -64,7 +64,7 @@ export function QuoteModal() {
                   Get Your Vehicle Quote
                 </h2>
                 <p className="text-zinc-600 dark:text-zinc-400 text-xs font-medium mt-1">
-                  Bolton Workshop · Ceramic Pro 9H Certified
+                  Manchester Workshop · Ceramic Pro 9H Certified
                 </p>
               </div>
             </div>
@@ -94,7 +94,7 @@ export function QuoteModal() {
               className="flex items-center gap-1 hover:text-red-500 transition-colors"
             >
               <MapPin className="w-3.5 h-3.5 text-red-500" />
-              <span>115 Albert Rd, Farnworth, Bolton BL4 9EA</span>
+              <span>115 Albert Rd, Farnworth, Manchester BL4 9EA</span>
             </a>
 
             <a

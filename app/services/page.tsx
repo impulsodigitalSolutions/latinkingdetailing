@@ -9,13 +9,13 @@ import { ServicesDetailView } from '@/components/ServicesDetailView';
 import { SITE_CONFIG } from '@/lib/site-data';
 
 export const metadata: Metadata = {
-  title: 'Our Detailing & Ceramic Coating Services | Latin King Detailing Bolton',
+  title: 'Our Detailing & Ceramic Coating Services | Latin King Detailing Manchester',
   description:
-    'Explore our professional car detailing and paint protection services in Bolton: Ceramic Pro 9H Coating, Machine Polishing, Leather Protection, The King’s Detail, Deep Clean & Engine Bay, Full Valet, and Maintenance Washes.',
+    'Explore our professional car detailing and paint protection services in Manchester: Ceramic Pro 9H Coating, Machine Polishing, Leather Protection, The King’s Detail, Deep Clean & Engine Bay, Full Valet, and Maintenance Washes.',
   openGraph: {
     title: 'Professional Automotive Detailing Services | Latin King Detailing',
     description:
-      'Certified Ceramic Pro 9H installer and KAVACA PPF specialist based in Farnworth, Bolton. Transparent pricing, multi-stage machine polishing, and showroom restorations.',
+      'Certified Ceramic Pro 9H installer and paint correction specialist based in Farnworth, Manchester. Transparent pricing, multi-stage machine polishing, and showroom restorations.',
     url: 'https://ceramicpromanchester.com/services',
     siteName: 'Latin King Detailing',
     type: 'website',
@@ -35,7 +35,7 @@ export default function ServicesPage() {
         {/* Protection Matrix Component */}
         <ComparisonTable />
 
-        {/* Bolton Workshop Facilities & Directions */}
+        {/* Manchester Workshop Facilities & Directions */}
         <WorkshopAndGuides />
 
         {/* Quote Request Section */}

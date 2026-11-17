@@ -164,7 +164,7 @@ export function Navbar() {
                   >
                     <div className="px-3 py-2 border-b border-zinc-100 dark:border-zinc-800/80 mb-1 flex items-center justify-between">
                       <span className="text-[10px] font-semibold text-red-600 dark:text-red-500">
-                        7 Certified Detailing Services
+                        6 Certified Detailing Services
                       </span>
                       <Link
                         href="/services"
@@ -219,14 +219,14 @@ export function Navbar() {
                           onClick={() => setServicesDropdownOpen(false)}
                           className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                         >
-                          Ceramic vs PPF Matrix
+                          Protection Matrix
                         </Link>
                         <Link
                           href="/locations"
                           onClick={() => setServicesDropdownOpen(false)}
                           className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                         >
-                          24 Bolton Towns
+                          24 Manchester Towns
                         </Link>
                       </div>
                     </div>
@@ -446,7 +446,7 @@ export function Navbar() {
                       : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
                   }`}
                 >
-                  <span>All 7 Services Page</span>
+                  <span>All 6 Services Page</span>
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
@@ -470,7 +470,7 @@ export function Navbar() {
                       : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
                   }`}
                 >
-                  <span>Ceramic vs PPF Matrix</span>
+                  <span>Protection Matrix</span>
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link

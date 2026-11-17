@@ -28,14 +28,14 @@ export function Footer() {
             <Link href="/" className="inline-block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded-xl">
               <BrandLogo
                 size="lg"
-                subtitle="Bolton's Detailing Specialists · Ceramic Pro 9H Certified"
+                subtitle="Manchester's Detailing Specialists · Ceramic Pro 9H Certified"
                 titleClassName="text-white group-hover:text-red-400"
                 subtitleClassName="text-zinc-400"
               />
             </Link>
 
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed max-w-sm">
-              Bolton&apos;s certified Ceramic Pro 9H installer and KAVACA PPF specialist. Professional automotive detailing, multi-stage machine polishing, and permanent nanoceramic paint protection.
+              Manchester&apos;s certified Ceramic Pro 9H installer and paint correction specialist. Professional automotive detailing, multi-stage machine polishing, and permanent nanoceramic paint protection.
             </p>
 
             {/* Social Proof Badges */}
@@ -152,7 +152,7 @@ export function Footer() {
               ))}
               <li className="pt-1">
                 <Link href="/services" className="text-red-500 font-bold hover:underline inline-flex items-center gap-1 text-xs">
-                  <span>All 7 Services Menu</span>
+                  <span>All 6 Services Menu</span>
                 </Link>
               </li>
               <li className="pt-2 border-t border-zinc-800">
@@ -254,7 +254,7 @@ export function Footer() {
                   <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-semibold text-white group-hover:text-red-400 block">
-                      Bolton Workshop (HQ):
+                      Manchester Workshop (HQ):
                     </span>
                     <span className="text-zinc-400 group-hover:text-zinc-300">
                       {SITE_CONFIG.primaryWorkshop.fullAddress}
@@ -366,7 +366,7 @@ export function Footer() {
               Sitemap
             </Link>
             <span className="flex items-center gap-1 text-zinc-400">
-              Bolton & Manchester, UK
+              Manchester & Manchester, UK
             </span>
           </div>
         </div>

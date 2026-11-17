@@ -11,13 +11,13 @@ import { SITE_CONFIG } from '@/lib/site-data';
 import { WhatsAppIcon } from '@/components/icons/BrandIcons';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions | Latin King Detailing Bolton',
+  title: 'Frequently Asked Questions | Latin King Detailing Manchester',
   description:
-    'Find answers to common questions about Ceramic Pro 9H coating, paint correction stages, valeting packages, pricing estimates, and booking into our Bolton workshop.',
+    'Find answers to common questions about Ceramic Pro 9H coating, paint correction stages, valeting packages, pricing estimates, and booking into our Manchester workshop.',
   openGraph: {
     title: 'Detailing FAQs & Answers | Latin King Detailing',
     description:
-      'Clear, honest answers about ceramic coatings, paint correction, warranty terms, and car care from certified Bolton specialists.',
+      'Clear, honest answers about ceramic coatings, paint correction, warranty terms, and car care from certified Manchester specialists.',
     url: 'https://ceramicpromanchester.com/faq',
     siteName: 'Latin King Detailing',
     type: 'website',

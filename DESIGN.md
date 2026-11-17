@@ -1,9 +1,9 @@
 # Latin King Detailing · Design Truth (DESIGN.md)
-*Standardized Anti-AI-Slop System for Latin King Detailing (Bolton, UK) · Governed by Hallmark principles*
+*Standardized Anti-AI-Slop System for Latin King Detailing (Manchester, UK) · Governed by Hallmark principles*
 
 ## 1. Identity & Philosophy
 - **Brand**: Latin King Detailing
-- **Workshop**: 115 Albert Road, Farnworth, Bolton BL4 9EA (5 minutes from M61 Junction 4)
+- **Workshop**: 115 Albert Road, Farnworth, Manchester BL4 9EA (5 minutes from M61 Junction 4)
 - **Specialisms**: Ceramic Pro 9H Certified Installer, KAVACA Self-Healing PPF Approved, Multi-Stage Machine Polishing & Paint Correction
 - **Voice**: Authentic British automotive craftsmanship. Direct, precise, knowledgeable, unpretentious. Speaks the language of dual-action rotary polishers, micron clear-coat depth readings, chemical nanoceramic bonding, and harsh Lancashire winter resilience (road salt, motorway gravel, acid rain).
 
@@ -14,7 +14,7 @@
 - **No Floating Blurry Orbs (Gate 29)**: No giant blurred colored blobs (`blur-[140px]`) floating aimlessly in backgrounds. Visual hierarchy is achieved through tactile materials, crisp hairlines, and elevation by lightness.
 - **No Cards Inside Cards (Gate 4)**: Maintain single-layer containment.
 - **No Template Punctuation (Gate 63)**: Never glue `→` to label strings or use artificial middle-dot-joined metadata chains.
-- **No Invented Metrics (Gate 46a)**: Only real, verifiable facts: 15 verified Google reviews (4.7★), 47+ Facebook reviews (5.0★), Ceramic Pro certified VIN warranty, £5M public liability insurance, genuine Bolton workshop location.
+- **No Invented Metrics (Gate 46a)**: Only real, verifiable facts: 15 verified Google reviews (4.7★), 47+ Facebook reviews (5.0★), Ceramic Pro certified VIN warranty, £5M public liability insurance, genuine Manchester workshop location.
 - **Viewport Discipline (Gate 34 & 44b)**: `overflow-x: clip` on `html` and `body`. Hero fits comfortably at 1280x800 without forced scrolling.
 
 ## 3. Surface & Color Tokens

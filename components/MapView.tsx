@@ -5,7 +5,7 @@ import { SITE_CONFIG } from '@/lib/site-data';
 import { MapPin, Navigation, ExternalLink, ShieldCheck, Clock } from 'lucide-react';
 
 interface LocationData {
-  id: 'bolton' | 'manchester';
+  id: 'Manchester' | 'manchester';
   name: string;
   shortTitle: string;
   address: string;
@@ -16,19 +16,19 @@ interface LocationData {
 }
 
 export function MapView() {
-  const [activeLocation, setActiveLocation] = useState<'bolton' | 'manchester'>('bolton');
+  const [activeLocation, setActiveLocation] = useState<'Manchester' | 'manchester'>('Manchester');
 
-  const locations: Record<'bolton' | 'manchester', LocationData> = {
-    bolton: {
-      id: 'bolton',
-      name: 'Bolton Workshop (Headquarters)',
+  const locations: Record<'Manchester' | 'manchester', LocationData> = {
+    Manchester: {
+      id: 'Manchester',
+      name: 'Manchester Workshop (Headquarters)',
       shortTitle: '115 Albert Rd',
-      address: '115 Albert Rd, Farnworth, Bolton BL4 9EA, UK',
+      address: '115 Albert Rd, Farnworth, Manchester BL4 9EA, UK',
       postcode: 'BL4 9EA',
       landmark: 'Five minutes from junction 4 of the M61',
       mapsUrl: SITE_CONFIG.primaryWorkshop.googleMapsUrl,
       embedUrl:
-        'https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s115+Albert+Road,+Farnworth,+Bolton+BL4+9EA!6i14!3m1!1sen!5m1!1sen',
+        'https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s115+Albert+Road,+Farnworth,+Manchester+BL4+9EA!6i14!3m1!1sen!5m1!1sen',
     },
     manchester: {
       id: 'manchester',
@@ -53,15 +53,15 @@ export function MapView() {
         <div className="flex items-center gap-2">
           <button
             type="button"
-            onClick={() => setActiveLocation('bolton')}
+            onClick={() => setActiveLocation('Manchester')}
             className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-colors active:scale-[0.98] cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
-              activeLocation === 'bolton'
+              activeLocation === 'Manchester'
                 ? 'bg-red-600 text-white shadow-md'
                 : 'bg-zinc-100 dark:bg-workshop-panel text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white'
             }`}
           >
             <MapPin className="w-3.5 h-3.5" />
-            <span>Bolton Workshop (HQ)</span>
+            <span>Manchester Workshop (HQ)</span>
           </button>
 
           <button

@@ -27,7 +27,6 @@ export function Services() {
   const getServiceCategory = (id: string) => {
     switch (id) {
       case 'ceramic-coating':
-      case 'paint-protection-film':
       case 'leather-coating':
         return 'coating';
       case 'machine-polishing':
@@ -105,7 +104,7 @@ export function Services() {
                   : 'bg-zinc-100 dark:bg-workshop-surface text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
               }`}
             >
-              Ceramic & PPF
+              Ceramic &amp; Leather
             </button>
             <button
               type="button"
@@ -280,7 +279,7 @@ export function Services() {
               Explore Our Dedicated Services Page
             </h3>
             <p className="text-sm text-zinc-400 mt-2 max-w-[60ch] leading-[1.65]">
-              View in-depth breakdowns, process steps, vehicle surfaces protected, and complete transparent pricing for all 7 Latin King Detailing packages.
+              View in-depth breakdowns, process steps, vehicle surfaces protected, and complete transparent pricing for all 6 Latin King Detailing packages.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
@@ -288,7 +287,7 @@ export function Services() {
               href="/services"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
             >
-              <span>View All 7 Services</span>
+              <span>View All 6 Services</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <button

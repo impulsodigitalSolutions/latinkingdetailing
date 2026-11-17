@@ -43,10 +43,10 @@ export function ComparisonTable() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
-            Ceramic Coating vs PPF vs Traditional Wax
+            Ceramic Coating vs Dealership Sealant vs Wax
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-[60ch] mx-auto leading-[1.65]">
-            Not all automotive protections are created equal. Compare how certified Ceramic Pro 9H nanoceramics and KAVACA PPF stack up against traditional dealership waxes.
+            Not all automotive protections are created equal. Compare how certified Ceramic Pro 9H nanoceramics stack up against dealership polymer sealants and traditional waxes.
           </p>
         </div>
 
@@ -67,8 +67,8 @@ export function ComparisonTable() {
                   </th>
                   <th className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 w-1/4">
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                      <span>KAVACA PPF</span>
+                      <span className="w-2 h-2 rounded-full bg-amber-500" />
+                      <span>Dealership Sealant</span>
                     </div>
                   </th>
                   <th className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-zinc-400 w-1/4">
@@ -91,9 +91,9 @@ export function ComparisonTable() {
                       {renderCellContent(row.ceramic, true)}
                     </td>
 
-                    {/* PPF column */}
+                    {/* Dealership Sealant column */}
                     <td className="py-4 px-4 sm:px-6 font-semibold text-zinc-800 dark:text-zinc-200">
-                      {renderCellContent(row.ppf, false)}
+                      {renderCellContent(row.dealership, false)}
                     </td>
 
                     {/* Wax column */}

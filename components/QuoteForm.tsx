@@ -57,7 +57,7 @@ export function QuoteForm({ initialService = '', onSuccess, isModal = false }: Q
 • Phone: ${phone || 'Not provided'}
 ${notes ? `• Notes: ${notes}` : ''}
 
-Looking forward to hearing from your Bolton workshop team!`;
+Looking forward to hearing from your Manchester workshop team!`;
 
     return `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
   };
@@ -71,7 +71,7 @@ Looking forward to hearing from your Bolton workshop team!`;
         <h3 className="text-2xl font-bold text-white mb-2">Quote Request Received!</h3>
         <p className="text-zinc-300 text-sm max-w-md mx-auto mb-6">
           Thank you, <span className="font-semibold text-red-400">{fullName || 'there'}</span>.
-          Our Ceramic Pro certified technicians at the Bolton workshop will review your{' '}
+          Our Ceramic Pro certified technicians at the Manchester workshop will review your{' '}
           <span className="font-semibold text-white">{vehicleMakeModel || 'vehicle'}</span> and respond
           within 15 minutes.
         </p>
@@ -87,7 +87,7 @@ Looking forward to hearing from your Bolton workshop team!`;
           </div>
           <div className="flex justify-between">
             <span className="text-zinc-400">Workshop:</span>
-            <span className="font-medium text-white">115 Albert Rd, Bolton (BL4 9EA)</span>
+            <span className="font-medium text-white">115 Albert Rd, Manchester (BL4 9EA)</span>
           </div>
         </div>
 

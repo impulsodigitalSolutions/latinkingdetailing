@@ -19,7 +19,7 @@ export function BrandLogo({
   showText = true,
   variant = 'badge',
   className = '',
-  subtitle = "Bolton's Detailing Specialists",
+  subtitle = "Manchester's Detailing Specialists",
   textClassName = '',
   titleClassName = '',
   subtitleClassName = '',

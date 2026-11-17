@@ -19,21 +19,21 @@ export function WorkshopAndGuides() {
   return (
     <section id="blog" className="py-16 md:py-24 relative bg-zinc-50/50 dark:bg-workshop-muted/60 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Part: Visit Us in Farnworth, Bolton & Manchester Base */}
+        {/* Top Part: Visit Us in Farnworth, Manchester & Manchester Base */}
         <div className="mb-20">
           <div className="rounded-3xl border border-zinc-200 dark:border-workshop-border bg-white dark:bg-workshop-card-subtle overflow-hidden grid grid-cols-1 lg:grid-cols-12">
             {/* Left Location Info (6 cols) */}
             <div className="p-6 sm:p-10 lg:col-span-6 flex flex-col justify-between">
               <div>
                 <h3 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
-                  Visit Us in Farnworth, Bolton &amp; Manchester
+                  Visit Us in Farnworth, Manchester &amp; Manchester
                 </h3>
                 <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2 max-w-[60ch] leading-[1.65]">
                   {SITE_CONFIG.primaryWorkshop.landmark}. Secure indoor bay with temperature-controlled infrared curing lights and cleanroom detailing conditions.
                 </p>
 
                 <div className="mt-6 space-y-3 text-xs sm:text-sm">
-                  {/* Bolton Workshop Primary */}
+                  {/* Manchester Workshop Primary */}
                   <a
                     href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
                     target="_blank"
@@ -43,7 +43,7 @@ export function WorkshopAndGuides() {
                     <MapPin className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                     <div>
                       <div className="font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
-                        <span>{SITE_CONFIG.brandName}: Bolton Workshop (HQ)</span>
+                        <span>{SITE_CONFIG.brandName}: Manchester Workshop (HQ)</span>
                         <ExternalLink className="w-3.5 h-3.5 text-zinc-400 group-hover:text-red-500" />
                       </div>
                       <div className="text-zinc-600 dark:text-zinc-400">
@@ -123,7 +123,7 @@ export function WorkshopAndGuides() {
         <div>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h3 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
-              Bolton Detailing Guides &amp; Protection Advice
+              Manchester Detailing Guides &amp; Protection Advice
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2 max-w-[60ch] mx-auto leading-[1.65]">
               Expert articles and paint protection guides written by certified Ceramic Pro technicians.

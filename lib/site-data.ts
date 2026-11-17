@@ -36,7 +36,7 @@ export interface ReviewItem {
 export interface ComparisonRow {
   feature: string;
   ceramic: string | boolean;
-  ppf: string | boolean;
+  dealership: string | boolean;
   wax: string | boolean;
   notes?: string;
 }
@@ -71,7 +71,7 @@ export const SITE_CONFIG = {
   brandName: 'Latin King Detailing',
   shortName: 'Latin King',
   monogram: 'CP',
-  tagline: "Bolton's Detailing Specialists",
+  tagline: "Manchester's Detailing Specialists",
   domain: 'ceramicpromanchester.com',
   phone: '07482 225323',
   phoneHref: 'tel:07482225323',
@@ -82,12 +82,12 @@ export const SITE_CONFIG = {
   
   // Addresses
   primaryWorkshop: {
-    title: 'Bolton Workshop (Headquarters)',
+    title: 'Manchester Workshop (Headquarters)',
     street: '115 Albert Road',
     town: 'Farnworth',
-    city: 'Bolton',
+    city: 'Manchester',
     postcode: 'BL4 9EA',
-    fullAddress: '115 Albert Road, Farnworth, Bolton, BL4 9EA',
+    fullAddress: '115 Albert Road, Farnworth, Manchester, BL4 9EA',
     landmark: 'Based in Farnworth, five minutes from junction 4 of the M61',
     googleMapsUrl: 'https://maps.app.goo.gl/RSrD8Gekfi83PCmx9',
   },
@@ -147,7 +147,7 @@ export const SITE_CONFIG = {
   
   certifications: [
     { title: 'Ceramic Pro 9H Certified Installer', subtitle: 'Official Factory Accredited' },
-    { title: 'KAVACA PPF Approved', subtitle: 'Self-Healing Shield Specialist' },
+    { title: 'Paint Correction Specialist', subtitle: 'Multi-Stage Defect Removal' },
     { title: 'Fully Insured', subtitle: '£5M Public & Vehicle Liability' },
     { title: 'Professional Grade Products', subtitle: 'Zero Consumer-Grade Dilution' },
   ],
@@ -165,29 +165,29 @@ export const NAV_LINKS = [
 export const HERO_TRUST_BADGES = [
   'Ceramic Pro Certified',
   'Fully Insured',
-  "Bolton's Local Specialists",
-  'KAVACA PPF Approved',
+  "Manchester's Local Specialists",
+  'Paint Correction Specialist',
 ];
 
 export const STATS = [
   { value: '4.7★', label: 'Google Rating', detail: '15 Verified 5-Star Reviews' },
-  { value: '15+', label: 'Happy Customers', detail: 'Across Bolton & Greater Manchester' },
+  { value: '15+', label: 'Happy Customers', detail: 'Across Manchester & Greater Manchester' },
   { value: 'Ceramic Pro', label: 'Certified Installer', detail: 'Factory-backed VIN Warranty' },
-  { value: 'KAVACA', label: 'PPF Approved', detail: 'Self-Healing Stone Chip Defense' },
+  { value: '9H', label: 'Ceramic Certified', detail: 'Molecular Paint Shield' },
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'lambo-aventador',
     title: 'Lamborghini Aventador',
-    subtitle: 'Ceramic Pro 9H Gold Package · Bolton Workshop',
+    subtitle: 'Ceramic Pro 9H Gold Package · Manchester Workshop',
     vehicle: 'Lamborghini Aventador LP700-4',
-    location: 'Bolton, Greater Manchester',
+    location: 'Manchester, Greater Manchester',
     service: 'Ceramic Coating 9H',
     package: 'Ceramic Pro 9H Multi-Layer Gold Package',
     finish: 'Mirror Reflection Glass Finish',
     imageUrl: 'https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1400&q=80',
-    imageAlt: 'Lamborghini Aventador ceramic coating, Latin King Detailing, Bolton, Greater Manchester',
+    imageAlt: 'Lamborghini Aventador ceramic coating, Latin King Detailing, Manchester, Greater Manchester',
     tags: ['Ceramic Pro 9H', 'Paint Correction', 'Supercar'],
   },
   {
@@ -195,38 +195,38 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Ferrari 360 Modena',
     subtitle: 'Multi-stage Paint Correction & Detailing · Farnworth Workshop',
     vehicle: 'Ferrari 360 Modena Rosso Corsa',
-    location: 'Farnworth, Bolton',
+    location: 'Farnworth, Manchester',
     service: 'Detailing & 9H Coating',
     package: 'Stage 2 Paint Correction + Ceramic Pro Top Coat',
     finish: 'Rosso Corsa Mirror Gloss',
     imageUrl: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80',
-    imageAlt: 'Ferrari 360 Modena detailing, Latin King Detailing, Farnworth, Bolton',
+    imageAlt: 'Ferrari 360 Modena detailing, Latin King Detailing, Farnworth, Manchester',
     tags: ['Paint Correction', 'Exotic Detailing', 'Rosso Corsa'],
   },
   {
     id: 'bentley-gtc',
     title: 'Bentley Continental GTC',
-    subtitle: 'Ceramic Pro 9H Coating & Leather Protection · Bolton Workshop',
+    subtitle: 'Ceramic Pro 9H Coating & Leather Protection · Manchester Workshop',
     vehicle: 'Bentley Continental GT Convertible',
-    location: 'Bolton Workshop',
+    location: 'Manchester Workshop',
     service: 'Ceramic Pro 9H & Leather',
     package: 'Full Exterior 9H + Interior Hydrophobic Shield',
     finish: 'Deep Diamond Gloss',
     imageUrl: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1400&q=80',
-    imageAlt: 'Bentley Continental GTC Ceramic Pro 9H coating, Bolton workshop',
+    imageAlt: 'Bentley Continental GTC Ceramic Pro 9H coating, Manchester workshop',
     tags: ['Ceramic Pro 9H', 'Leather Protection', 'Luxury Grand Tourer'],
   },
   {
     id: 'bmw-m5',
     title: 'BMW M5 F10',
-    subtitle: 'Mirror-Gloss Ceramic Coating, Latin King Detailing, Bolton',
+    subtitle: 'Mirror-Gloss Ceramic Coating, Latin King Detailing, Manchester',
     vehicle: 'BMW M5 F10 V8 Twin-Turbo',
-    location: 'Bolton Workshop',
+    location: 'Manchester Workshop',
     service: 'Ceramic Coating 9H',
     package: 'Stage 1 Machine Polish + Ceramic Pro 9H Silver Package',
     finish: 'Deep Obsidian Mirror Gloss',
     imageUrl: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1400&q=80',
-    imageAlt: 'BMW M5 F10 mirror-gloss ceramic coating, Latin King Detailing, Bolton',
+    imageAlt: 'BMW M5 F10 mirror-gloss ceramic coating, Latin King Detailing, Manchester',
     tags: ['Ceramic Pro 9H', 'Stage 1 Polish', 'Performance Sedan'],
   },
 ];
@@ -240,7 +240,7 @@ export const SERVICES: ServiceItem[] = [
     startingPrice: 'From £200 (Final price varies by vehicle size & paintwork condition)',
     shortDesc: 'Advanced molecular shielding & lasting showroom gloss. Chemically bonds with your clear coat at a molecular level for years of 9H protection.',
     fullDesc:
-      'Ceramic coating provides long-lasting protection for your car’s paintwork by creating a durable, invisible shield. Applied by certified specialists at Latin King Detailing in our Farnworth, Bolton workshop, our 9H ceramic coating is not something you simply spray on and wipe off - it chemically bonds with your clear coat at a molecular level for years of protection.',
+      'Ceramic coating provides long-lasting protection for your car’s paintwork by creating a durable, invisible shield. Applied by certified specialists at Latin King Detailing in our Farnworth, Manchester workshop, our 9H ceramic coating is not something you simply spray on and wipe off - it chemically bonds with your clear coat at a molecular level for years of protection.',
     whatIs:
       'Unlike traditional wax, which sits on top of the paint and washes off within a few weeks, our ceramic coating is a liquid polymer that fuses directly into your paintwork. Once cured, it becomes a semi-permanent part of the surface. Rated at 9H on the pencil hardness scale (the hardest rating achievable), it adds a tough protective layer that resists light wash swirls, UV rays, acid rain, bird droppings, road salt, and everything Greater Manchester weather throws at your car. Its extreme hydrophobic properties make water and grime bead off effortlessly, meaning your car stays cleaner for longer, washes easier, and retains higher resale value.',
     iconName: 'ShieldCheck',
@@ -372,7 +372,7 @@ export const SERVICES: ServiceItem[] = [
     startingPrice: 'From £130',
     shortDesc: 'Ceramic-grade leather and interior coatings that guard against UV fade, body oil staining, spills, and premature cracking.',
     fullDesc:
-      'Most people think about protecting the paint, yet interiors take just as much punishment and the cabin is where you sit every day. At our Farnworth, Bolton workshop, Latin King Detailing applies ceramic-grade leather and interior coatings that guard against UV fade, body oil staining, spills, and premature cracking.',
+      'Most people think about protecting the paint, yet interiors take just as much punishment and the cabin is where you sit every day. At our Farnworth, Manchester workshop, Latin King Detailing applies ceramic-grade leather and interior coatings that guard against UV fade, body oil staining, spills, and premature cracking.',
     whatIs:
       "Unlike traditional leather conditioners that only moisturise the surface for a few days, our ceramic-grade protection forms an invisible, breathable barrier that lasts for months. It repels liquids before they stain, blocks UV radiation, and resists the abrasion that wears down seats and steering wheels - all while preserving your interior's natural look and feel.",
     surfacesProtected: [
@@ -528,7 +528,7 @@ export const SERVICES: ServiceItem[] = [
       'Safe pH-neutral hand wash & wheel face cleaning',
       'Full interior vacuum, dashboard wipe & glass polished inside and out',
       'Tyres dressed with long-lasting satin finish',
-      'Flexible booking slots for busy drivers in Bolton & Manchester',
+      'Flexible booking slots for busy drivers in Manchester & Manchester',
       'Clear, honest pricing based on vehicle size',
     ],
   },
@@ -553,27 +553,6 @@ export const SERVICES: ServiceItem[] = [
       'Hydrophobic top-up spray applied to boost water beading',
     ],
   },
-  {
-    id: 'paint-protection-film',
-    slug: 'paint-protection-film',
-    title: 'KAVACA Paint Protection Film (PPF)',
-    tagline: 'Self-Healing Stone Chip Armor & Optical Clarity',
-    startingPrice: 'Front End & Full Body Available',
-    shortDesc: 'KAVACA PPF: the ultimate self-healing barrier against stone chips and road damage.',
-    fullDesc:
-      'KAVACA Paint Protection Film (PPF) by Ceramic Pro is an optically clear, self-healing aliphatic polyurethane film designed specifically to absorb high-velocity impacts from road debris, gravel, and stone chips. Coated with Ceramic Pro topcoat at the factory, it combines stone-chip physical protection with hydrophobic self-cleaning performance.',
-    iconName: 'Shield',
-    warranty: 'Up to 10-Year Factory Warranty',
-    hookText: 'Shield high-impact panels against road damage.',
-    ctaText: 'Enquire About PPF Installation',
-    highlights: [
-      'Instant self-healing technology: minor scratches vanish with heat',
-      'Heavy physical barrier against stone chips, road rash, and key scratches',
-      'Computer pre-cut template software for seamless edge wrapping',
-      'Factory infused with Ceramic Pro nanoceramic topcoat for extreme gloss',
-      'Non-yellowing, UV-stable optical polyurethane formulation',
-    ],
-  },
 ];
 
 export const WHY_CHOOSE_US = [
@@ -589,15 +568,15 @@ export const WHY_CHOOSE_US = [
     id: 'professional-products',
     title: 'Professional Products Only',
     description:
-      "Ceramic Pro 9H and KAVACA PPF are the products used on Lamborghinis, Bentleys, and McLarens. We don't stock consumer-grade alternatives: what goes on your car is exactly the same as what goes on the cars in our gallery.",
+      "Ceramic Pro 9H is the product used on Lamborghinis, Bentleys, and McLarens. We don't stock consumer-grade alternatives: what goes on your car is exactly the same as what goes on the cars in our gallery.",
     badge: 'Zero Dilution Guarantee',
     iconName: 'ShieldAlert',
   },
   {
-    id: 'local-bolton-specialists',
-    title: 'Local Bolton Specialists',
+    id: 'local-Manchester-specialists',
+    title: 'Local Manchester Specialists',
     description:
-      "Our workshop is in Farnworth, five minutes from the M61 at junction 4. Our customers drive from across Greater Manchester because they know what they're getting. We understand what Bolton roads and winters do to paintwork, and we know how to protect against it.",
+      "Our workshop is in Farnworth, five minutes from the M61 at junction 4. Our customers drive from across Greater Manchester because they know what they're getting. We understand what Manchester roads and winters do to paintwork, and we know how to protect against it.",
     badge: 'M61 Junction 4 · Farnworth',
     iconName: 'MapPin',
   },
@@ -607,56 +586,56 @@ export const COMPARISON_TABLE: ComparisonRow[] = [
   {
     feature: 'Paint hardness protection',
     ceramic: '9H Diamond Hardness',
-    ppf: 'Heavy Physical Shield',
+    dealership: 'Soft Polymer Sealant (~3H)',
     wax: 'None (Soft Organic Film)',
     notes: 'Ceramic Pro 9H permanently bonds and hardens clear coat.',
   },
   {
-    feature: 'Self-healing surface',
-    ceramic: 'Rigid Nano Coating',
-    ppf: 'Instant Heat Self-Healing',
-    wax: 'No Self-Healing',
-    notes: 'KAVACA PPF heals swirl marks automatically under engine or solar heat.',
+    feature: 'Bonding mechanism',
+    ceramic: 'Molecular Chemical Quartz Fusion',
+    dealership: 'Temporary Surface Cling',
+    wax: 'Surface Sits / Wipes Off',
+    notes: 'Ceramic Pro becomes a permanent extension of your clear coat.',
   },
   {
-    feature: 'Scratch resistance',
+    feature: 'Scratch & swirl resistance',
     ceramic: 'High Micro-Scratch & Swirl Resistance',
-    ppf: 'Maximum Impact & Gouge Defense',
-    wax: 'Minimal / Negligible',
+    dealership: 'Low / Negligible',
+    wax: 'Minimal / None',
     notes: 'Significantly prevents wash marring and fine scratches.',
   },
   {
     feature: 'UV & oxidation protection',
     ceramic: 'Permanent Chemical UV Blocker',
-    ppf: '100% Optical UV Rejection',
+    dealership: 'Degrades in 2–3 Months',
     wax: 'Partial (Fades in 2–4 Weeks)',
     notes: 'Stops clear coat peeling, chalking, and paint fading under sun exposure.',
   },
   {
-    feature: 'Hydrophobic effect',
-    ceramic: 'Permanent Self-Cleaning Beading',
-    ppf: 'Hydrophobic Ceramic Infused Topcoat',
-    wax: 'Temporary (Washes away rapidly)',
+    feature: 'Hydrophobic contact angle',
+    ceramic: 'Extreme >110° Self-Cleaning',
+    dealership: '85° Initial (Fades quickly)',
+    wax: '75° (Drops within weeks)',
     notes: 'Water beads at >110° contact angle, carrying dirt away with it.',
   },
   {
-    feature: 'Stone chip protection',
-    ceramic: 'Chemical & Micro-scratch Only',
-    ppf: 'Physical High-Velocity Barrier',
-    wax: 'Zero Protection',
-    notes: 'PPF absorbs direct motorway stone chips and gravel blast.',
+    feature: 'Chemical & road salt defense',
+    ceramic: 'pH 2 to pH 12 Chemical Barrier',
+    dealership: 'Stripped by Traffic Film Removers',
+    wax: 'Strips on First Alkaline Wash',
+    notes: 'Resists acid rain, bird lime, road salt, and harsh winter grime.',
   },
   {
     feature: 'Deep gloss enhancement',
     ceramic: 'Mirror Glass Optical Reflection',
-    ppf: 'Ultra-Clear Deep Finish',
+    dealership: 'Moderate Synthetic Shine',
     wax: 'Short-term Warm Glow',
     notes: 'Ceramic Pro 9H yields the highest recorded optical reflection index.',
   },
   {
     feature: 'Longevity & Durability',
     ceramic: '2–5+ Years (VIN Registered)',
-    ppf: '7–10 Years (Factory Warranty)',
+    dealership: '3–6 Months Maximum',
     wax: '1–3 Months (Frequent Reapplication)',
     notes: 'Wax wears off in weeks; Ceramic Pro stays bonded for years.',
   },
@@ -693,13 +672,13 @@ export const REVIEWS: ReviewItem[] = [
     date: 'November 2024',
     vehicle: 'Range Rover Sport',
     content:
-      'Third time using Latin King Detailing for my cars. Consistent quality every time. The ceramic coating on my Range Rover has held up perfectly through two winters now. Highly recommend to anyone in Bolton or Manchester.',
+      'Third time using Latin King Detailing for my cars. Consistent quality every time. The ceramic coating on my Range Rover has held up perfectly through two winters now. Highly recommend to anyone in Manchester or Manchester.',
     verified: true,
   },
 ];
 
 export const SERVICE_AREAS_24 = [
-  'Bolton',
+  'Manchester',
   'Farnworth',
   'Horwich',
   'Westhoughton',
@@ -732,15 +711,15 @@ export const TRUSTED_PARTNER = {
   rating: '5.0 ★',
   reviews: '47+ reviews',
   description:
-    'Mobile car detailing, paint correction, ceramic coating, and PPF delivered to your door across Manchester, Salford, Stretford, Sale, Altrincham, and 15+ Greater Manchester locations.',
-  tags: ['Mobile Valeting', 'Paint Correction', 'Ceramic Coating', 'PPF'],
+    'Mobile car detailing, paint correction, ceramic coating, and interior protection delivered to your door across Manchester, Salford, Stretford, Sale, Altrincham, and 15+ Greater Manchester locations.',
+  tags: ['Mobile Valeting', 'Paint Correction', 'Ceramic Coating', 'Interior Protection'],
   phone: '07482 225323',
 };
 
 export const FAQ_ITEMS = [
   {
     id: 'faq-1',
-    question: 'How much does ceramic coating cost in Bolton?',
+    question: 'How much does ceramic coating cost in Manchester?',
     answer:
       "Prices depend on your car's size and the package you want: entry-level starts from competitive rates on a compact car, and a full Ceramic Pro 9H application on an SUV or prestige vehicle will be more. The best thing to do is drop us a message with your make and model. We'll come straight back with an honest quote, no pressure.",
   },
@@ -758,18 +737,18 @@ export const FAQ_ITEMS = [
   },
   {
     id: 'faq-4',
-    question: 'Do you offer paint protection film (PPF) in Bolton?',
+    question: 'Why choose Ceramic Pro 9H over dealership paint protection?',
     answer:
-      "Yes, we install KAVACA PPF, the self-healing paint protection film from the Ceramic Pro brand. It goes on clear, stays clear, physically protects against stone chips, and it's removable if you ever sell the car. We can cover just the high-impact zones or the full vehicle. Give us a call and we'll explain what makes sense for your car.",
+      "Dealerships typically apply quick polymer sealants (such as Supagard or Diamondbrite) that simply sit on top of the paint and wash away after a few months. Ceramic Pro 9H is a certified liquid polymer that chemically fuses with your clear coat at a molecular level, creating a permanent 9H hard glass barrier backed by a traceable VIN warranty.",
   },
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'ceramic-vs-wax',
-    slug: 'ceramic-coating-vs-wax-bolton-drivers',
+    slug: 'ceramic-coating-vs-wax-Manchester-drivers',
     category: 'Ceramic Coating',
-    title: 'Ceramic Coating vs Wax: What Bolton Drivers Should Know',
+    title: 'Ceramic Coating vs Wax: What Manchester Drivers Should Know',
     excerpt:
       'Is ceramic coating really worth the investment over traditional wax? We break down the differences every Greater Manchester driver should understand.',
     readTime: '4 min read',
@@ -778,7 +757,7 @@ export const BLOG_POSTS: BlogPost[] = [
     content: [
       'For decades, traditional carnauba wax was the gold standard for protecting automotive paint. While wax produces an admirable warm glow, it sits solely on top of your clear coat as a soft organic residue that dissolves within 4 to 8 weeks, especially under persistent UK rain and winter road salt.',
       'Ceramic Pro 9H functions through an entirely different scientific mechanism: nanoceramic chemical bonding. It integrates into the microscopic pores of your clear coat, transforming into a diamond-hard, glass-like quartz matrix.',
-      'For drivers commuting across Bolton, the M61, and Greater Manchester, the practical benefits are massive: road grime rinses away effortlessly, brake dust fails to bake into alloy rims, and bird droppings cannot etch the paint before you have a chance to wash the car.',
+      'For drivers commuting across Manchester, the M61, and Greater Manchester, the practical benefits are massive: road grime rinses away effortlessly, brake dust fails to bake into alloy rims, and bird droppings cannot etch the paint before you have a chance to wash the car.',
     ],
   },
   {
@@ -799,20 +778,19 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 'ppf-vs-ceramic',
-    slug: 'ppf-vs-ceramic-coating-which-protection',
-    category: 'PPF',
-    title: 'PPF vs Ceramic Coating: Which Protection Does Your Car Need?',
+    id: 'paint-correction-guide',
+    slug: 'why-paint-correction-is-essential-before-ceramic-coating',
+    category: 'Paint Correction',
+    title: 'Why Paint Correction is Essential Before Ceramic Coating',
     excerpt:
-      'Both protect your car, but they work very differently. We explain which is right for your vehicle and budget.',
-    readTime: '6 min read',
+      'Ceramic coating locks in whatever is underneath it. We explain why pre-coating machine polishing is crucial for a flawless finish.',
+    readTime: '4 min read',
     date: 'December 2024',
     author: 'Latin King Detailing Team',
     content: [
-      'One of the most frequent questions we receive at our Bolton workshop is: "Should I get Ceramic Pro 9H or KAVACA PPF?" The answer depends on your driving habits and budget.',
-      'Ceramic Coating is a chemical shield: it creates a permanent liquid glass layer that prevents chemical etching, UV fading, oxidation, and micro-swirls while offering extreme gloss and easy maintenance.',
-      'PPF (Paint Protection Film) is a physical armor: an 8-mil thick polyurethane membrane specifically built to absorb gravel, highway debris, and stone chips that would otherwise chip bare paint.',
-      'The Ultimate Hybrid Package: For optimum protection, we install KAVACA PPF on high-impact zones (front bumper, bonnet, front wings, wing mirrors) and coat the entire vehicle with Ceramic Pro 9H. You get stone chip immunity upfront and showroom gloss everywhere.',
+      'A common misconception among car owners is that ceramic coating will hide or fill existing scratches and swirl marks. In reality, because ceramic coating acts as an ultra-clear optical glass layer, it actually magnifies and locks in any defect present in your clear coat.',
+      'This is why Latin King Detailing always performs multi-stage paint decontamination and machine polishing before applying Ceramic Pro 9H. Using dual-action and rotary polishers with diminishing abrasives, we refine the clear coat to eliminate buffer trails, wash swirls, and oxidation.',
+      'Once the surface is chemically cleaned with panel wipe to strip all polishing oils, the 9H coating can form a flawless molecular bond directly to pristine, mirror-like clear coat.',
     ],
   },
 ];
@@ -832,6 +810,5 @@ export const SERVICE_OPTIONS = [
   'Deep Clean & Engine Bay Detailing',
   'Professional Full Valet',
   'Maintenance Wash',
-  'KAVACA Paint Protection Film (PPF)',
 ];
 
