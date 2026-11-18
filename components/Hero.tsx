@@ -95,11 +95,11 @@ export function Hero() {
                 {/* Visual Image */}
                 <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-zinc-900">
                   <Image
-                    src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1200&q=80"
-                    alt="Lamborghini Aventador with Ceramic Pro 9H coating, Latin King Detailing Manchester"
+                    src="/images/hero-showcase.jpg"
+                    alt="BMW 3 Series M-Sport with professional ceramic coating gloss, Latin King Detailing Manchester"
                     fill
                     priority
-                    className="object-cover"
+                    className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, 500px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
@@ -132,10 +132,10 @@ export function Hero() {
                     <span>Latin King Detailing Showcase</span>
                   </div>
                   <div className="font-heading font-semibold text-lg text-zinc-900 dark:text-white">
-                    Lamborghini Aventador LP700
+                    BMW 3 Series M-Sport
                   </div>
                   <div className="text-xs text-zinc-500 dark:text-zinc-400 mb-4">
-                    Multi-Stage Correction + Ceramic Pro 9H Gold Package
+                    Paint Correction &amp; Multi-Year Nanoceramic Shield
                   </div>
 
                   {/* Showcase Stats & Badges underneath */}
@@ -153,9 +153,9 @@ export function Hero() {
                       </div>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white dark:bg-workshop-surface border border-zinc-200 dark:border-white/10">
-                      <div className="text-red-500 font-semibold text-sm sm:text-base">VIN</div>
+                      <div className="text-red-500 font-semibold text-sm sm:text-base">100%</div>
                       <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-medium">
-                        Registered
+                        Genuine Work
                       </div>
                     </div>
                   </div>
@@ -167,7 +167,7 @@ export function Hero() {
                     </span>
                     <span className="flex items-center gap-1 font-medium">
                       <Shield className="w-3.5 h-3.5 text-red-500" />
-                      5 Min from M61 J4
+                      Urmston &amp; Manchester Base
                     </span>
                   </div>
                 </div>
