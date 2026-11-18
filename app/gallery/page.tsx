@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Gallery } from '@/components/Gallery';
-import { WorkshopAndGuides } from '@/components/WorkshopAndGuides';
-import { QuoteSection } from '@/components/QuoteSection';
 import { Sparkles, ArrowRight, ShieldCheck, CheckCircle2, ChevronRight, Eye } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/site-data';
 
@@ -114,12 +112,6 @@ export default function GalleryPage() {
             </div>
           </div>
         </section>
-
-        {/* Workshop Directions & Location Info */}
-        <WorkshopAndGuides />
-
-        {/* Quote Request & Booking Form */}
-        <QuoteSection />
       </main>
 
       {/* Footer */}

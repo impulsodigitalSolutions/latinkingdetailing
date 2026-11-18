@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ServiceAreas } from '@/components/ServiceAreas';
-import { WorkshopAndGuides } from '@/components/WorkshopAndGuides';
-import { QuoteSection } from '@/components/QuoteSection';
 import { MapPin, Navigation, Phone, Clock, ChevronRight, ShieldCheck, CheckCircle2, Car, ExternalLink } from 'lucide-react';
 import { SITE_CONFIG, SERVICE_AREAS_24 } from '@/lib/site-data';
 import { WhatsAppIcon } from '@/components/icons/BrandIcons';
@@ -216,12 +214,6 @@ export default function LocationsPage() {
             </div>
           </div>
         </section>
-
-        {/* Workshop Facilities & Guides */}
-        <WorkshopAndGuides />
-
-        {/* Quote Request Form */}
-        <QuoteSection />
       </main>
 
       {/* Footer */}

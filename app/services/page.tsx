@@ -2,9 +2,6 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
-import { ComparisonTable } from '@/components/ComparisonTable';
-import { QuoteSection } from '@/components/QuoteSection';
-import { WorkshopAndGuides } from '@/components/WorkshopAndGuides';
 import { ServicesDetailView } from '@/components/ServicesDetailView';
 import { SITE_CONFIG } from '@/lib/site-data';
 
@@ -31,15 +28,6 @@ export default function ServicesPage() {
       <main className="flex-1 page-transition">
         {/* Dedicated Services Deep Dive Component */}
         <ServicesDetailView />
-
-        {/* Protection Matrix Component */}
-        <ComparisonTable />
-
-        {/* Manchester Workshop Facilities & Directions */}
-        <WorkshopAndGuides />
-
-        {/* Quote Request Section */}
-        <QuoteSection />
       </main>
 
       {/* Footer */}

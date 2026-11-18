@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { FaqSection } from '@/components/FaqSection';
-import { WorkshopAndGuides } from '@/components/WorkshopAndGuides';
-import { QuoteSection } from '@/components/QuoteSection';
 import { HelpCircle, ChevronRight, Phone, MessageSquare, Sparkles } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/site-data';
 import { WhatsAppIcon } from '@/components/icons/BrandIcons';
@@ -86,12 +84,6 @@ export default function FaqPage() {
             </div>
           </div>
         </section>
-
-        {/* Workshop Facilities & Guides */}
-        <WorkshopAndGuides />
-
-        {/* Quote Request Form */}
-        <QuoteSection />
       </main>
 
       {/* Footer */}

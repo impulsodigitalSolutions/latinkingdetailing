@@ -10,8 +10,6 @@ import { ComparisonTable } from '@/components/ComparisonTable';
 import { Reviews } from '@/components/Reviews';
 import { ServiceAreas } from '@/components/ServiceAreas';
 import { FaqSection } from '@/components/FaqSection';
-import { WorkshopAndGuides } from '@/components/WorkshopAndGuides';
-import { QuoteSection } from '@/components/QuoteSection';
 import { Footer } from '@/components/Footer';
 
 export default function Home() {
@@ -44,12 +42,6 @@ export default function Home() {
 
         {/* Interactive FAQ Accordion */}
         <FaqSection />
-
-        {/* Workshop Location & Advice Guides */}
-        <WorkshopAndGuides />
-
-        {/* Quote Request & CTA Section */}
-        <QuoteSection />
       </main>
 
       {/* Comprehensive Footer */}

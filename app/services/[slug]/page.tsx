@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
-import { QuoteSection } from '@/components/QuoteSection';
-import { WorkshopAndGuides } from '@/components/WorkshopAndGuides';
 import { SERVICES, SITE_CONFIG, getServiceBySlug, ServiceItem } from '@/lib/site-data';
 import { WORKSHOP_GALLERY_IMAGES } from '@/lib/gallery-data';
 import {
@@ -477,10 +475,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     </div>
                     <div className="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-800">
                       <a
-                        href="#quote-section"
+                        href={SITE_CONFIG.whatsappHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 dark:text-red-400 hover:text-red-500 transition-colors"
                       >
-                        <span>Request {sub.title}</span>
+                        <span>Inquire About {sub.title}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </a>
                     </div>
@@ -583,14 +583,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </div>
           </div>
         </section>
-
-        {/* Workshop Directions & Location */}
-        <WorkshopAndGuides />
-
-        {/* Dedicated Booking / Quote Section */}
-        <div id="quote-section">
-          <QuoteSection initialService={service.title} />
-        </div>
       </main>
 
       <Footer />

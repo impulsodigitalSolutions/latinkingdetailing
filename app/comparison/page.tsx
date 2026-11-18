@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ComparisonTable } from '@/components/ComparisonTable';
-import { WorkshopAndGuides } from '@/components/WorkshopAndGuides';
-import { QuoteSection } from '@/components/QuoteSection';
 import { Sparkles, Shield, ShieldCheck, ChevronRight, CheckCircle2, XCircle, ArrowRight, Layers } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/site-data';
 
@@ -188,12 +186,6 @@ export default function ComparisonPage() {
             </div>
           </div>
         </section>
-
-        {/* Workshop Directions & Location */}
-        <WorkshopAndGuides />
-
-        {/* Quote Request Form */}
-        <QuoteSection />
       </main>
 
       {/* Footer */}

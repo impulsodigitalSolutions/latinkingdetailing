@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Reviews } from '@/components/Reviews';
-import { WorkshopAndGuides } from '@/components/WorkshopAndGuides';
-import { QuoteSection } from '@/components/QuoteSection';
 import { GoogleIcon, FacebookIcon, StarRating } from '@/components/icons/BrandIcons';
 import { CheckCircle2, ChevronRight, Star, ExternalLink, Sparkles, MessageSquare } from 'lucide-react';
 import { SITE_CONFIG, REVIEWS } from '@/lib/site-data';
@@ -119,12 +117,6 @@ export default function ReviewsPage() {
             </a>
           </div>
         </section>
-
-        {/* Workshop Facilities & Guides */}
-        <WorkshopAndGuides />
-
-        {/* Quote Request Form */}
-        <QuoteSection />
       </main>
 
       {/* Footer */}

@@ -66,7 +66,7 @@ export function Hero() {
                 href="/gallery"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 active:scale-[0.98] bg-white dark:bg-workshop-card text-zinc-800 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-400 font-semibold text-sm transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
-                <span>View Real Portfolio</span>
+                <span>View Gallery</span>
               </Link>
             </div>
 

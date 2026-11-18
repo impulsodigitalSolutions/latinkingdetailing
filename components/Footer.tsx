@@ -180,11 +180,6 @@ export function Footer() {
                   FAQs &amp; Pricing
                 </Link>
               </li>
-              <li>
-                <Link href="/#blog" className="hover:text-red-400 transition-colors">
-                  Advice &amp; Guides
-                </Link>
-              </li>
             </ul>
           </div>
 

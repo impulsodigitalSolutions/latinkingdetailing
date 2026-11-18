@@ -4,8 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
-import { QuoteSection } from '@/components/QuoteSection';
-import { WorkshopAndGuides } from '@/components/WorkshopAndGuides';
 import { SITE_CONFIG } from '@/lib/site-data';
 import {
   ChevronRight,
@@ -163,10 +161,12 @@ export default function AboutPage() {
 
                 <div className="pt-2 flex flex-wrap items-center gap-3">
                   <a
-                    href="#quote-section"
+                    href={SITE_CONFIG.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-md"
                   >
-                    <span>Request a Free Quote</span>
+                    <span>Chat on WhatsApp</span>
                     <ArrowRight className="w-4 h-4" />
                   </a>
                   <a
@@ -302,10 +302,12 @@ export default function AboutPage() {
                 </p>
                 <div className="flex flex-wrap items-center gap-4">
                   <a
-                    href="#quote-section"
+                    href={SITE_CONFIG.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-md"
                   >
-                    <span>Get Your Custom Quote</span>
+                    <span>Message on WhatsApp</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                   <Link
@@ -319,14 +321,6 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-
-        {/* Workshop Directions & Location */}
-        <WorkshopAndGuides />
-
-        {/* Quote Form Section */}
-        <div id="quote-section">
-          <QuoteSection />
-        </div>
       </main>
 
       <Footer />
