@@ -5,13 +5,13 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Reviews } from '@/components/Reviews';
 import { GoogleIcon, FacebookIcon, StarRating } from '@/components/icons/BrandIcons';
-import { CheckCircle2, ChevronRight, Star, ExternalLink, Sparkles, MessageSquare } from 'lucide-react';
+import { CheckCircle2, ChevronRight, Star, ExternalLink, Sparkles, PenSquare, MapPin } from 'lucide-react';
 import { SITE_CONFIG, REVIEWS } from '@/lib/site-data';
 
 export const metadata: Metadata = {
   title: 'Customer Reviews & Ratings | Latin King Detailing Manchester',
   description:
-    'Read verified customer reviews for Latin King Detailing in Urmston, Flixton, and Greater Manchester. 5★ Google rating and 5.0★ Facebook rating from prestige and daily car owners.',
+    'Read verified customer reviews for Latin King Detailing in Urmston, Flixton, and Greater Manchester. 5.0★ Google rating with 60+ verified reviews from prestige and daily car owners.',
   openGraph: {
     title: 'Customer Reviews & Testimonials | Latin King Detailing',
     description:
@@ -62,11 +62,11 @@ export default function ReviewsPage() {
                   <GoogleIcon className="w-7 h-7" />
                   <div>
                     <div className="flex items-center gap-1.5 font-semibold text-zinc-900 dark:text-white">
-                      <span><span className="font-mono tabular-nums">4.7</span> Stars</span>
-                      <StarRating rating={4.7} size="w-3.5 h-3.5" />
+                      <span><span className="font-mono tabular-nums">5.0</span> Stars</span>
+                      <StarRating rating={5.0} size="w-3.5 h-3.5" />
                     </div>
                     <div className="text-xs text-zinc-500 dark:text-zinc-400">
-                      <span className="font-mono tabular-nums">15</span> Verified Google Reviews
+                      <span className="font-mono tabular-nums">60+</span> Verified Google Reviews
                     </div>
                   </div>
                 </a>
@@ -84,7 +84,7 @@ export default function ReviewsPage() {
                       <StarRating rating={5.0} size="w-3.5 h-3.5" />
                     </div>
                     <div className="text-xs text-zinc-500 dark:text-zinc-400">
-                      <span className="font-mono tabular-nums">47+</span> Community Reviews
+                      <span className="font-mono tabular-nums">760+</span> Followers
                     </div>
                   </div>
                 </a>
@@ -94,27 +94,40 @@ export default function ReviewsPage() {
         </section>
 
         {/* Primary Interactive Reviews Component */}
-        <Reviews />
+        <Reviews limit={100} showHeading={false} showViewAll={false} />
 
         {/* Call to Action: Leave a Review */}
-        <section className="py-12 bg-zinc-50 dark:bg-workshop-muted/60 border-y border-zinc-200 dark:border-white/5">
+        <section className="py-14 bg-zinc-50 dark:bg-workshop-muted/60 border-y border-zinc-200 dark:border-white/5">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl font-black text-zinc-900 dark:text-white mb-2">
+            <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.25rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white mb-3">
               Had Your Car Detailed by Latin King Detailing?
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto mb-6">
-              Your feedback helps other Manchester drivers make informed choices about protecting their vehicles. Share your experience on Google.
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto mb-8 leading-[1.65]">
+              Your feedback helps other Manchester drivers make informed choices about protecting their vehicles. Share your direct experience on Google.
             </p>
-            <a
-              href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-lg shadow-red-600/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
-            >
-              <GoogleIcon className="w-4 h-4" />
-              <span>Leave a Review on Google Maps</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a
+                href={SITE_CONFIG.googleReviewLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-lg shadow-red-600/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+              >
+                <PenSquare className="w-4 h-4" />
+                <span>Leave a Review on Google Maps</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+
+              <a
+                href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 bg-white dark:bg-workshop-card-subtle text-zinc-900 dark:text-white font-bold text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+              >
+                <MapPin className="w-4 h-4 text-red-600" />
+                <span>View Google Business Profile</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
         </section>
       </main>

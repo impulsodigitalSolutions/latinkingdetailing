@@ -25,6 +25,8 @@ export interface ServiceItem {
 export interface ReviewItem {
   id: string;
   author: string;
+  badge?: string;
+  authorUrl?: string;
   platform: 'Google' | 'Facebook';
   rating: number;
   date: string;
@@ -80,6 +82,9 @@ export const SITE_CONFIG = {
   email: 'latinkingdetailing@outlook.com',
   emailHref: 'mailto:latinkingdetailing@outlook.com',
   
+  // Official Google Business & Review Direct Links
+  googleReviewLink: 'https://share.google/QwZ9Qocnk8HTxxcdJ',
+  
   // Address (Only this location as per https://www.latinkingdetailing.co.uk/contact-us/)
   address: {
     title: 'Latin King Detailing',
@@ -90,7 +95,7 @@ export const SITE_CONFIG = {
     fullAddress: '426 Flixton Road, Flixton, Urmston, Manchester, M41 6QT, UK',
     landmark: 'Flixton, Urmston, Trafford & Greater Manchester',
     googleMapsUrl:
-      'https://www.google.com/maps/place/426,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+UK/@53.452941,-2.6560487,65090m/data=!3m1!1e3!4m5!3m4!1s0x487babe5b1a8f27f:0x4d06e32ed64ee7f4!8m2!3d53.4447194!4d-2.3843237?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
+      'https://www.google.com/maps/dir//Latin+king+detailing,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+United+Kingdom/@28.5780075,77.3439278,4865m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0xaf6cc52e3dc8dc1d:0xf85f8acd81c952a3!2m2!1d-2.3843237!2d53.4447194?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
   },
   primaryWorkshop: {
     title: 'Latin King Detailing',
@@ -101,7 +106,7 @@ export const SITE_CONFIG = {
     fullAddress: '426 Flixton Road, Flixton, Urmston, Manchester, M41 6QT, UK',
     landmark: 'Flixton, Urmston, Trafford & Greater Manchester',
     googleMapsUrl:
-      'https://www.google.com/maps/place/426,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+UK/@53.452941,-2.6560487,65090m/data=!3m1!1e3!4m5!3m4!1s0x487babe5b1a8f27f:0x4d06e32ed64ee7f4!8m2!3d53.4447194!4d-2.3843237?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
+      'https://www.google.com/maps/dir//Latin+king+detailing,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+United+Kingdom/@28.5780075,77.3439278,4865m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0xaf6cc52e3dc8dc1d:0xf85f8acd81c952a3!2m2!1d-2.3843237!2d53.4447194?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
   },
   secondaryWorkshop: {
     title: 'Latin King Detailing',
@@ -112,14 +117,14 @@ export const SITE_CONFIG = {
     fullAddress: '426 Flixton Road, Flixton, Urmston, Manchester, M41 6QT, UK',
     landmark: 'Flixton, Urmston, Trafford & Greater Manchester',
     googleMapsUrl:
-      'https://www.google.com/maps/place/426,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+UK/@53.452941,-2.6560487,65090m/data=!3m1!1e3!4m5!3m4!1s0x487babe5b1a8f27f:0x4d06e32ed64ee7f4!8m2!3d53.4447194!4d-2.3843237?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
+      'https://www.google.com/maps/dir//Latin+king+detailing,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+United+Kingdom/@28.5780075,77.3439278,4865m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0xaf6cc52e3dc8dc1d:0xf85f8acd81c952a3!2m2!1d-2.3843237!2d53.4447194?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
   },
   
   openingHours: 'Available 24/7 (Monday – Sunday: 24 Hours)',
   
   // Social Proof & Verified Social Media IDs (Extracted from https://www.latinkingdetailing.co.uk/)
-  googleRating:5,
-  googleReviewCount: 15,
+  googleRating: 5.0,
+  googleReviewCount: 60,
   facebookRating: 5.0,
   facebookFollowers: '760+',
 
@@ -151,8 +156,8 @@ export const SITE_CONFIG = {
     },
     {
       name: 'Google Maps',
-      handle: '5★ (15 Reviews)',
-      url: 'https://maps.app.goo.gl/RSrD8Gekfi83PCmx9',
+      handle: '5.0★ (60+ Reviews)',
+      url: 'https://www.google.com/maps/dir//Latin+king+detailing,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+United+Kingdom/@28.5780075,77.3439278,4865m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0xaf6cc52e3dc8dc1d:0xf85f8acd81c952a3!2m2!1d-2.3843237!2d53.4447194?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
       icon: 'Google',
     },
   ],
@@ -182,8 +187,8 @@ export const HERO_TRUST_BADGES = [
 ];
 
 export const STATS = [
-  { value: '5★', label: 'Google Rating', detail: '15 Verified 5-Star Reviews' },
-  { value: '15+', label: 'Happy Customers', detail: 'Across Manchester & Greater Manchester' },
+  { value: '5.0★', label: 'Google Rating', detail: '60+ Verified 5-Star Reviews' },
+  { value: '60+', label: 'Happy Customers', detail: 'Across Urmston, Flixton & Manchester' },
   { value: 'Ceramic Pro', label: 'Certified Installer', detail: 'Factory-backed VIN Warranty' },
   { value: '9H', label: 'Ceramic Certified', detail: 'Molecular Paint Shield' },
 ];
@@ -655,36 +660,211 @@ export const COMPARISON_TABLE: ComparisonRow[] = [
 
 export const REVIEWS: ReviewItem[] = [
   {
-    id: 'review-1',
-    author: 'James T.',
+    id: 'rev-melissa-gough',
+    author: 'Melissa Gough',
+    badge: '3 reviews · 3 photos',
+    authorUrl: 'https://www.google.com/maps/contrib/114743662854576058400/reviews?hl=en-IN',
     platform: 'Google',
     rating: 5,
-    date: 'March 2025',
-    vehicle: 'BMW 5 Series',
+    date: '2 weeks ago',
+    vehicle: 'Seat Stain Removal',
     content:
-      'Had my BMW 5 Series coated with Ceramic Pro 9H. The finish is incredible: water just rolls straight off. Brilliant service from start to finish and the team really knows their stuff. Worth every penny.',
+      'I honestly cannot recommend this company enough! I had paint on my car seat and thought there was no chance of getting it out, but they worked an absolute miracle!',
     verified: true,
   },
   {
-    id: 'review-2',
-    author: 'Sarah M.',
+    id: 'rev-doc-chiu',
+    author: 'Doc Chiu',
+    badge: '7 reviews · 4 photos',
+    authorUrl: 'https://www.google.com/maps/contrib/104438741332203912025/reviews?hl=en-IN',
     platform: 'Google',
     rating: 5,
-    date: 'January 2025',
-    vehicle: 'Audi Q5',
+    date: '2 weeks ago',
+    vehicle: 'Ceramic Coating & Detailing',
     content:
-      'Brought my Audi Q5 in for a full detail and paint protection film on the front end. Absolutely delighted with the results. The car looks better than when it came out of the showroom. Will definitely be back.',
+      'Very good communication. Clear pricing and was able to fit me in at short notice. New car ceramic coating with prewash and detailing. Interior cleaned and also protection applied.',
     verified: true,
   },
   {
-    id: 'review-3',
-    author: 'Dave R.',
-    platform: 'Facebook',
+    id: 'rev-abbie-camotta',
+    author: 'Abbie Camotta',
+    badge: '3 reviews',
+    authorUrl: 'https://www.google.com/maps/contrib/114670881653393441514/reviews?hl=en-IN',
+    platform: 'Google',
     rating: 5,
-    date: 'November 2024',
+    date: 'a week ago',
+    vehicle: 'Full Interior & Exterior TLC',
+    content:
+      'Absolutely fantastic service from start to finish! My car was in desperate need of some serious TLC (and that’s putting it mildly). The transformation came out incredible, inside and out!',
+    verified: true,
+  },
+  {
+    id: 'rev-andrew-smith',
+    author: 'Andrew Smith',
+    badge: 'Local Guide · 33 reviews · 1 photo',
+    authorUrl: 'https://www.google.com/maps/contrib/103480131869191376339/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: '2 weeks ago',
     vehicle: 'Range Rover Sport',
     content:
-      'Third time using Latin King Detailing for my cars. Consistent quality every time. The ceramic coating on my Range Rover has held up perfectly through two winters now. Highly recommend to anyone in Manchester or Manchester.',
+      'Super fella and an amazing job on my Range Rover Sport, the car looked absolutely stunning and a credit to Latin King Detailing.',
+    verified: true,
+  },
+  {
+    id: 'rev-peter-jones',
+    author: 'Peter Jones',
+    badge: '5 reviews · 4 photos',
+    authorUrl: 'https://www.google.com/maps/contrib/112234392761050263246/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: '3 months ago',
+    vehicle: 'Paint Correction & Ceramic Coating',
+    content:
+      'Delighted with the fantastic work that has been done with my car. The paint correction and ceramic coating has made a huge difference. They are professional and really have an eye for detail. I would highly recommend.',
+    verified: true,
+  },
+  {
+    id: 'rev-arron-mcrae',
+    author: 'Arron McRae',
+    badge: '7 reviews · 4 photos',
+    authorUrl: 'https://www.google.com/maps/contrib/108238728920887308956/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: 'a week ago',
+    vehicle: 'Full Detail & Polish',
+    content:
+      'Excellent service from start to finish. Never seen my car look so good. Will definitely be using this company again.',
+    verified: true,
+  },
+  {
+    id: 'rev-matthew-orton',
+    author: 'Matthew Orton',
+    badge: 'Local Guide · 32 reviews · 10 photos',
+    authorUrl: 'https://www.google.com/maps/contrib/113364103199913563950/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: 'a month ago',
+    vehicle: 'VW Tiguan',
+    content:
+      'I used Latin King detailing for my VW Tiguan, it was extremely simple to organise, good communication, and really convenient with it being a mobile service. He gave my Tiguan that fresh, new-car feeling again!',
+    verified: true,
+  },
+  {
+    id: 'rev-dave-bird',
+    author: 'Dave Bird',
+    badge: '1 review',
+    authorUrl: 'https://www.google.com/maps/contrib/112162912591713606469/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: '2 months ago',
+    vehicle: 'Camper Van Transformation',
+    content:
+      'Absolutely brilliant job on my camper van! The finish is spot on and it looks fantastic. The attention to detail and quality of workmanship really shows, and the van has been transformed. Really pleased with the result and couldn’t fault it.',
+    verified: true,
+  },
+  {
+    id: 'rev-holy-g',
+    author: 'Holy G',
+    badge: '4 reviews',
+    authorUrl: 'https://www.google.com/maps/contrib/110761931500299770720/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: 'a week ago',
+    vehicle: 'Mobile Engine Bay Clean',
+    content:
+      'Amazing service, quick and affordable, they come to you no hussle and takes less than expected for an engine bay clean. I do recommend as my engine never looked the way it does now!',
+    verified: true,
+  },
+  {
+    id: 'rev-gordon-wight',
+    author: 'Gordon Wight',
+    badge: '2 reviews · 2 photos',
+    authorUrl: 'https://www.google.com/maps/contrib/110679432303816867939/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: 'a month ago',
+    vehicle: 'Stage 1 Polish & Ceramic Coating',
+    content:
+      'Huge thanks to Albert @ Latin King for bringing my car back to life. Stage 1 polish and a ceramic coating has left the paintwork looking better than new, the colour really pops now.',
+    verified: true,
+  },
+  {
+    id: 'rev-jenny-wong',
+    author: 'Jenny Wong',
+    badge: '3 reviews · 9 photos',
+    authorUrl: 'https://www.google.com/maps/contrib/107242332779533282685/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: '9 months ago',
+    vehicle: 'Full Valet & Interior Detail',
+    content:
+      'Fantastic service from start to finish! I was recommended by a friend and honestly, it did not disappoint. My car came back feeling (and smelling!) like a brand-new car. The attention to detail was next level—clearly a lot of care and pride went into the valet. Couldn’t be happier. 10/10 👌',
+    verified: true,
+  },
+  {
+    id: 'rev-felix-daniel',
+    author: 'Felix Daniel Borges Olmo',
+    badge: '2 reviews',
+    authorUrl: 'https://www.google.com/maps/contrib/105168450789641580462/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: '9 months ago',
+    vehicle: 'Full Mobile Detailing',
+    content:
+      'Best mobile car detailing experience I’ve had. They showed up on time, brought everything they needed, and completely transformed my car inside and out. The paint was shining, the interior smelled amazing, and every little detail was handled.',
+    verified: true,
+  },
+  {
+    id: 'rev-dominick-noone',
+    author: 'Dominick Noone',
+    badge: '3 reviews',
+    authorUrl: 'https://www.google.com/maps/contrib/108443750088027236729/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: '7 months ago',
+    vehicle: 'Commercial Van Deep Clean',
+    content:
+      'Alberto did a first rate job and the level of finish far exceeded our expectations. We run a dog walking business and we are in and out of fields and mud all year round. Our vehicle was in a sorry state. Alberto spent six hours on the job and only left when our vehicle was spotless inside and out. Great job Latin King.',
+    verified: true,
+  },
+  {
+    id: 'rev-lauren-caulfield',
+    author: 'Lauren Caulfield-Lock',
+    badge: '1 review',
+    authorUrl: 'https://www.google.com/maps/contrib/111197878023983342295/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: '2 weeks ago',
+    vehicle: 'Emergency Engine Oil Clean',
+    content:
+      'Thank you so much for coming helping us out at such a short notice with an oil leak all over the engine, was very professional and cleaned to a high standard.',
+    verified: true,
+  },
+  {
+    id: 'rev-clare-drewery',
+    author: 'Clare Drewery',
+    badge: '2 reviews',
+    authorUrl: 'https://www.google.com/maps/contrib/104091174951449232040/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: '2 months ago',
+    vehicle: 'Same-Day Urgent Valet',
+    content:
+      'Called Latin King Detailing as needed an urgent same day valet for my bosses car. Luckily Albert had the availability and turned up an hour later and done a fantastic job, was very professional and went above and beyond.',
+    verified: true,
+  },
+  {
+    id: 'rev-jojo',
+    author: 'Jo Jo',
+    badge: 'Local Guide · 17 reviews · 35 photos',
+    authorUrl: 'https://www.google.com/maps/contrib/100811023372842200896/reviews?hl=en-IN',
+    platform: 'Google',
+    rating: 5,
+    date: '8 months ago',
+    vehicle: 'Gloss Machine Polish',
+    content:
+      'I love my car again! It\'s so shiny! I am really, really pleased with the attention to detail and would confidently recommend to my friends and family!',
     verified: true,
   },
 ];

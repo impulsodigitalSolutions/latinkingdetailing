@@ -176,6 +176,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <a
+                  href={SITE_CONFIG.googleReviewLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-red-300 transition-colors inline-flex items-center gap-1 text-red-400 font-medium"
+                >
+                  <span>Write a Google Review ↗</span>
+                </a>
+              </li>
+              <li>
                 <Link href="/faq" className="hover:text-red-400 transition-colors">
                   FAQs &amp; Pricing
                 </Link>
