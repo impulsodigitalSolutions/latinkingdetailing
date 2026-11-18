@@ -199,9 +199,9 @@ export function Footer() {
               Service Areas (24 Towns)
             </h4>
             <div className="flex flex-wrap gap-1.5 text-[11px] text-zinc-400">
-              {SERVICE_AREAS_24.map((town) => (
+              {SERVICE_AREAS_24.map((town, idx) => (
                 <Link
-                  key={town}
+                  key={`${town}-${idx}`}
                   href="/locations"
                   className="px-2 py-0.5 rounded bg-workshop-muted border border-white/10 hover:border-red-500/50 hover:text-red-400 transition-colors"
                 >

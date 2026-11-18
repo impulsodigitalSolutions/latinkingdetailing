@@ -57,13 +57,13 @@ export function ServiceAreas() {
 
             {/* Pill Cloud */}
             <div className="flex flex-wrap gap-2.5">
-              {filteredAreas.map((town) => {
+              {filteredAreas.map((town, idx) => {
                 const isSelected = selectedTown === town;
                 const isManchesterOrUrmston = town === 'Manchester' || town === 'Urmston' || town === 'Flixton';
 
                 return (
                   <button
-                    key={town}
+                    key={`${town}-${idx}`}
                     type="button"
                     onClick={() => {
                       setSelectedTown(isSelected ? null : town);
