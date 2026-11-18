@@ -143,7 +143,7 @@ export function Footer() {
               {SERVICES.map((s) => (
                 <li key={s.id}>
                   <Link
-                    href={`/services#${s.id}`}
+                    href={`/services/${s.slug}`}
                     className="hover:text-red-400 transition-colors flex items-center gap-1.5"
                   >
                     <span className="truncate">{s.title.split(' - ')[0].split(' (')[0]}</span>

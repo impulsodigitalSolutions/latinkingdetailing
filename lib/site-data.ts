@@ -70,37 +70,37 @@ export interface GalleryItem {
 export const SITE_CONFIG = {
   brandName: 'Latin King Detailing',
   shortName: 'Latin King',
-  monogram: 'CP',
-  tagline: "Manchester's Detailing Specialists",
-  domain: 'ceramicpromanchester.com',
+  monogram: 'LK',
+  tagline: "Manchester's Mobile & Studio Detailing Specialists",
+  domain: 'latinkingdetailing.co.uk',
   phone: '07482 225323',
   phoneHref: 'tel:07482225323',
   whatsappNumber: '447482225323',
   whatsappHref: 'https://wa.me/447482225323',
-  email: 'info@ceramicpromanchester.com',
-  emailHref: 'mailto:info@ceramicpromanchester.com',
+  email: 'latinkingdetailing@outlook.com',
+  emailHref: 'mailto:latinkingdetailing@outlook.com',
   
-  // Addresses
+  // Addresses (HQ in Flixton as registered on latinkingdetailing.co.uk + Studio in Farnworth)
   primaryWorkshop: {
-    title: 'Manchester Workshop (Headquarters)',
-    street: '115 Albert Road',
-    town: 'Farnworth',
-    city: 'Manchester',
-    postcode: 'BL4 9EA',
-    fullAddress: '115 Albert Road, Farnworth, Manchester, BL4 9EA',
-    landmark: 'Based in Farnworth, five minutes from junction 4 of the M61',
-    googleMapsUrl: 'https://maps.app.goo.gl/RSrD8Gekfi83PCmx9',
-  },
-  secondaryWorkshop: {
-    title: 'Manchester Base',
+    title: 'Latin King Detailing HQ (Flixton)',
     street: '426 Flixton Road',
     town: 'Flixton',
     city: 'Manchester',
     postcode: 'M41 6QT',
     fullAddress: '426 Flixton Road, Flixton, M41 6QT, Manchester, UK',
-    landmark: 'Flixton Rd, serving Urmston, Trafford & Greater Manchester',
+    landmark: 'Serving Flixton, Urmston, Trafford, Bolton & Greater Manchester',
     googleMapsUrl:
       'https://www.google.com/maps/search/?api=1&query=426+Flixton+Road,+Flixton,+M41+6QT,+Manchester,+UK',
+  },
+  secondaryWorkshop: {
+    title: 'Detailing Studio (Farnworth)',
+    street: '115 Albert Road',
+    town: 'Farnworth',
+    city: 'Manchester',
+    postcode: 'BL4 9EA',
+    fullAddress: '115 Albert Road, Farnworth, Bolton/Manchester, BL4 9EA',
+    landmark: 'Dedicated detailing studio 5 minutes from junction 4 of the M61',
+    googleMapsUrl: 'https://maps.app.goo.gl/RSrD8Gekfi83PCmx9',
   },
   
   openingHours: 'Available 24/7 (Monday – Sunday: 24 Hours)',
@@ -331,7 +331,7 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: 'machine-polishing',
-    slug: 'machine-polishing-paint-correction',
+    slug: 'machine-polishing',
     title: 'Professional Machine Polishing & Paint Correction',
     tagline: "Restore Depth, Clarity & Your Car's Factory Finish",
     startingPrice: 'From £250 (Single-Stage & Multi-Stage options available)',
@@ -366,7 +366,7 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: 'leather-coating',
-    slug: 'leather-coating-interior-protection',
+    slug: 'leather-coating',
     title: 'Leather Coating & Interior Protection',
     tagline: 'Guard Your Cabin Against Spills, UV Fade & Daily Wear',
     startingPrice: 'From £130',
@@ -811,4 +811,21 @@ export const SERVICE_OPTIONS = [
   'Professional Full Valet',
   'Maintenance Wash',
 ];
+
+/**
+ * Returns a service item by its configurable URL slug or ID
+ */
+export function getServiceBySlug(slug: string): ServiceItem | undefined {
+  const normalized = slug?.toLowerCase();
+  return SERVICES.find((s) => s.slug.toLowerCase() === normalized || s.id.toLowerCase() === normalized);
+}
+
+/**
+ * Returns the top 4 flagship services for the homepage showcase
+ */
+export function getTopServices(): ServiceItem[] {
+  const topSlugs = ['ceramic-coating', 'machine-polishing', 'the-kings-detail', 'deep-clean-engine-bay'];
+  return SERVICES.filter((s) => topSlugs.includes(s.slug || s.id)).slice(0, 4);
+}
+
 

@@ -43,7 +43,7 @@ export function Hero() {
 
             {/* Main Headline - Strict Scale & Tighter Display Tracking */}
             <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
-              Manchester&apos;s Premier Ceramic Coating &amp;, Paint Correction  Detailing Workshop
+              Manchester&apos;s Premier Ceramic Coating &amp; Detailing Workshop
             </h1>
 
             {/* Subheadline - Constrained line length & muted secondary contrast */}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { StatsBar } from '@/components/StatsBar';
-import { Gallery } from '@/components/Gallery';
+import { GalleryCarousel } from '@/components/GalleryCarousel';
 import { Services } from '@/components/Services';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
 import { ComparisonTable } from '@/components/ComparisonTable';
@@ -23,14 +23,11 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
 
-        {/* Key Metrics & Trust Bar */}
-        <StatsBar />
+        {/* Recent Work Gallery Infinite Carousel */}
+        <GalleryCarousel />
 
-        {/* Recent Work Gallery */}
-        <Gallery />
-
-        {/* Core Services Section */}
-        <Services />
+        {/* Top 4 Flagship Services Section */}
+        <Services limit={4} />
 
         {/* Why Choose Us */}
         <WhyChooseUs />

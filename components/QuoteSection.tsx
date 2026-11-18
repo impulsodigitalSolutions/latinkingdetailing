@@ -6,7 +6,11 @@ import { QuoteForm } from './QuoteForm';
 import { Sparkles, ShieldCheck, MapPin, Phone, Clock, Award } from 'lucide-react';
 import { WhatsAppIcon } from './icons/BrandIcons';
 
-export function QuoteSection() {
+interface QuoteSectionProps {
+  initialService?: string;
+}
+
+export function QuoteSection({ initialService }: QuoteSectionProps = {}) {
   return (
     <section id="quote" className="py-16 md:py-24 relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,7 +80,7 @@ export function QuoteSection() {
               </div>
             </div>
 
-            <QuoteForm isModal={false} />
+            <QuoteForm isModal={false} initialService={initialService} />
           </div>
 
           {/* Right: Why Quote With Us Trust Summary */}

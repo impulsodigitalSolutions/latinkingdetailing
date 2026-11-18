@@ -178,13 +178,10 @@ export function Navbar() {
 
                     <div className="space-y-0.5 max-h-[380px] overflow-y-auto pr-1">
                       {SERVICES.map((srv) => (
-                        <button
+                        <Link
                           key={srv.id}
-                          type="button"
-                          onClick={() => {
-                            setServicesDropdownOpen(false);
-                            openServiceModal(srv.id);
-                          }}
+                          href={`/services/${srv.slug}`}
+                          onClick={() => setServicesDropdownOpen(false)}
                           className="w-full text-left p-2 rounded-2xl hover:bg-zinc-100 dark:hover:bg-zinc-800/70 transition-colors flex items-start gap-2.5 group/item cursor-pointer"
                         >
                           <div className="p-2 rounded-xl bg-red-500/10 group-hover/item:bg-red-500/20 text-red-600 dark:text-red-500 shrink-0 mt-0.5 transition-colors">
@@ -198,7 +195,7 @@ export function Navbar() {
                               {srv.tagline || srv.shortDesc}
                             </div>
                           </div>
-                        </button>
+                        </Link>
                       ))}
                     </div>
 
@@ -404,13 +401,10 @@ export function Navbar() {
                 </div>
                 <div className="space-y-1 max-h-56 overflow-y-auto pr-1">
                   {SERVICES.map((srv) => (
-                    <button
+                    <Link
                       key={srv.id}
-                      type="button"
-                      onClick={() => {
-                        setMobileMenuOpen(false);
-                        openServiceModal(srv.id);
-                      }}
+                      href={`/services/${srv.slug}`}
+                      onClick={() => setMobileMenuOpen(false)}
                       className="w-full text-left py-2 px-2.5 rounded-xl text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 flex items-center justify-between"
                     >
                       <div className="flex items-center gap-2 truncate">
@@ -418,7 +412,7 @@ export function Navbar() {
                         <span className="truncate">{srv.title}</span>
                       </div>
                       <ArrowRight className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
-                    </button>
+                    </Link>
                   ))}
                 </div>
               </div>

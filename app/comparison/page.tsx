@@ -103,7 +103,7 @@ export default function ComparisonPage() {
                   </ul>
                 </div>
                 <Link
-                  href="/services#ceramic-coating"
+                  href="/services/ceramic-coating"
                   className="w-full py-2.5 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs text-center transition-colors shadow-md"
                 >
                   Explore 9H Ceramic Coating
@@ -141,7 +141,7 @@ export default function ComparisonPage() {
                   </ul>
                 </div>
                 <Link
-                  href="/services#machine-polishing"
+                  href="/services/machine-polishing"
                   className="w-full py-2.5 px-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-white/10 dark:hover:bg-white/20 text-white font-bold text-xs text-center transition-colors"
                 >
                   Explore Paint Correction
@@ -179,7 +179,7 @@ export default function ComparisonPage() {
                   </ul>
                 </div>
                 <Link
-                  href="/services#the-kings-detail"
+                  href="/services/the-kings-detail"
                   className="w-full py-2.5 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs text-center transition-colors shadow-md"
                 >
                   Explore The King’s Detail
