@@ -33,10 +33,11 @@ export function Hero() {
               <GoogleIcon className="w-4 h-4 shrink-0" />
               <StarRating rating={SITE_CONFIG.googleRating} size="w-3.5 h-3.5" />
               <span className="font-semibold text-zinc-900 dark:text-white">
+                <span className="font-mono tabular-nums">{SITE_CONFIG.googleRating}</span> Google Rating
               </span>
               <span className="text-zinc-300 dark:text-zinc-700">|</span>
               <span className="text-zinc-500 dark:text-zinc-400">
-                Urmston &amp; Flixton, Manchester
+                Farnworth, Manchester
               </span>
             </div>
 
@@ -62,10 +63,10 @@ export function Hero() {
               </button>
 
               <Link
-                href="/gallery"
+                href="/our-work"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-zinc-300 dark:border-white/10 hover:border-red-500 dark:hover:border-red-500 active:scale-[0.98] bg-white dark:bg-workshop-card text-zinc-800 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-400 font-semibold text-sm transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
-                <span>View Gallery</span>
+                <span>Explore Our Work</span>
               </Link>
             </div>
 

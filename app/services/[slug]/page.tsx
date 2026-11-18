@@ -505,7 +505,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </div>
 
               <Link
-                href="/gallery"
+                href="/our-work"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 dark:text-red-400 hover:underline shrink-0"
               >
                 <span>View All 71 Workshop Photos</span>

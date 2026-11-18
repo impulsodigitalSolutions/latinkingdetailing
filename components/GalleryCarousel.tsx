@@ -87,10 +87,10 @@ export function GalleryCarousel() {
             </p>
           </div>
 
-          {/* External Link to Dedicated Gallery */}
+          {/* External Link to Dedicated Our Work Page */}
           <div>
             <Link
-              href="/gallery"
+              href="/our-work"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-100 dark:bg-workshop-surface hover:bg-red-600 hover:text-white dark:hover:bg-red-600 text-zinc-800 dark:text-zinc-200 text-xs font-bold transition-colors border border-zinc-200 dark:border-white/10"
             >
               <span>Explore Our Work</span>
@@ -201,9 +201,9 @@ export function GalleryCarousel() {
             ))}
           </div>
 
-          {/* Explore Our Work Button leading to Gallery */}
+          {/* Explore Our Work Button */}
           <Link
-            href="/gallery"
+            href="/our-work"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs tracking-wide shadow-md shadow-red-600/20 transition-colors"
           >
             <span>Explore Our Work (All 71 Transformations)</span>

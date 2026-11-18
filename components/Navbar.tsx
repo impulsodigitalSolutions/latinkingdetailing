@@ -231,16 +231,16 @@ export function Navbar() {
                 )}
               </div>
 
-              {/* Dedicated Gallery Page Link */}
+              {/* Dedicated Our Work Page Link */}
               <Link
-                href="/gallery"
+                href="/our-work"
                 className={`px-3 py-1.5 rounded-full text-xs transition-colors duration-150 ${
-                  isCurrent('/gallery')
+                  isCurrent('/our-work')
                     ? 'text-red-600 dark:text-red-400 bg-red-500/10 dark:bg-red-500/15 font-semibold ring-1 ring-red-500/20'
                     : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 font-medium'
                 }`}
               >
-                Gallery
+                Our Work
               </Link>
 
               {/* Dedicated About Us Page Link */}
@@ -444,15 +444,15 @@ export function Navbar() {
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
-                  href="/gallery"
+                  href="/our-work"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold transition-colors ${
-                    isCurrent('/gallery')
+                    isCurrent('/our-work')
                       ? 'bg-red-500/10 text-red-600 dark:text-red-400 font-bold'
                       : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
                   }`}
                 >
-                  <span>Recent Work Gallery</span>
+                  <span>Our Work</span>
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link

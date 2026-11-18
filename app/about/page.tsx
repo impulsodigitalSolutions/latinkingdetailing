@@ -311,7 +311,7 @@ export default function AboutPage() {
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                   <Link
-                    href="/gallery"
+                    href="/our-work"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/20 transition-colors"
                   >
                     <span>Explore Our 71 Transformations</span>

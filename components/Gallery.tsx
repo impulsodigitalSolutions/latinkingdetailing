@@ -199,10 +199,10 @@ export function Gallery({ initialLimit, showExploreAllButton = false }: GalleryP
         {showExploreAllButton && (
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
-              href="/gallery"
+              href="/our-work"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-md shadow-red-600/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
             >
-              <span>Explore Dedicated Gallery Page</span>
+              <span>Explore Our Work Portfolio</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <button

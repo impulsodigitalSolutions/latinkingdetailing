@@ -156,8 +156,8 @@ export function Footer() {
                 </Link>
               </li>
               <li className="pt-2 border-t border-zinc-800">
-                <Link href="/gallery" className="hover:text-red-400 transition-colors">
-                  Showroom Gallery
+                <Link href="/our-work" className="hover:text-red-400 transition-colors">
+                  Our Work
                 </Link>
               </li>
               <li>

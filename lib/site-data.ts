@@ -172,7 +172,7 @@ export const SITE_CONFIG = {
 
 export const NAV_LINKS = [
   { name: 'Services', href: '/services' },
-  { name: 'Gallery', href: '/gallery' },
+  { name: 'Our Work', href: '/our-work' },
   { name: 'Comparison', href: '/comparison' },
   { name: 'Locations', href: '/locations' },
   { name: 'Reviews', href: '/reviews' },
