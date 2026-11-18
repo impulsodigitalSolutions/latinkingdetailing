@@ -161,8 +161,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/comparison" className="hover:text-red-400 transition-colors">
-                  Protection Matrix
+                <Link href="/about" className="hover:text-red-400 transition-colors">
+                  About Latin King Detailing
                 </Link>
               </li>
               <li>

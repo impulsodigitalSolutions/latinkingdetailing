@@ -4,6 +4,7 @@ import { Hero } from '@/components/Hero';
 import { StatsBar } from '@/components/StatsBar';
 import { GalleryCarousel } from '@/components/GalleryCarousel';
 import { Services } from '@/components/Services';
+import { AboutStorySection } from '@/components/AboutStorySection';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
 import { ComparisonTable } from '@/components/ComparisonTable';
 import { Reviews } from '@/components/Reviews';
@@ -29,11 +30,11 @@ export default function Home() {
         {/* Top 4 Flagship Services Section */}
         <Services limit={4} />
 
-        {/* Why Choose Us */}
-        <WhyChooseUs />
+        {/* Founder Story & Passion for Car Detailing */}
+        <AboutStorySection />
 
-        {/* Interactive Comparison Table */}
-        <ComparisonTable />
+        {/* Why Choose Us & 4 Core Specialisms */}
+        <WhyChooseUs />
 
         {/* Customer Reviews */}
         <Reviews />

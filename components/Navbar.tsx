@@ -212,11 +212,11 @@ export function Navbar() {
 
                       <div className="flex items-center justify-between px-2 text-[11px]">
                         <Link
-                          href="/comparison"
+                          href="/about"
                           onClick={() => setServicesDropdownOpen(false)}
                           className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                         >
-                          Protection Matrix
+                          About Latin King
                         </Link>
                         <Link
                           href="/locations"
@@ -243,16 +243,16 @@ export function Navbar() {
                 Gallery
               </Link>
 
-              {/* Dedicated Comparison Page Link */}
+              {/* Dedicated About Us Page Link */}
               <Link
-                href="/comparison"
+                href="/about"
                 className={`px-3 py-1.5 rounded-full text-xs transition-colors duration-150 ${
-                  isCurrent('/comparison')
+                  isCurrent('/about')
                     ? 'text-red-600 dark:text-red-400 bg-red-500/10 dark:bg-red-500/15 font-semibold ring-1 ring-red-500/20'
                     : 'text-zinc-700 dark:text-zinc-200 hover:text-red-600 dark:hover:text-red-500 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 font-medium'
                 }`}
               >
-                Comparison
+                About Us
               </Link>
 
               {/* Dedicated Locations Page Link */}
@@ -456,15 +456,15 @@ export function Navbar() {
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
-                  href="/comparison"
+                  href="/about"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between py-2 px-2.5 rounded-xl text-xs font-semibold transition-colors ${
-                    isCurrent('/comparison')
+                    isCurrent('/about')
                       ? 'bg-red-500/10 text-red-600 dark:text-red-400 font-bold'
                       : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
                   }`}
                 >
-                  <span>Protection Matrix</span>
+                  <span>About Us (Our Story)</span>
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
