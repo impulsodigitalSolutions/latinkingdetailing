@@ -11,12 +11,12 @@ import { WhatsAppIcon } from '@/components/icons/BrandIcons';
 export const metadata: Metadata = {
   title: 'Areas We Serve in Manchester & Greater Manchester | Latin King Detailing',
   description:
-    'Latin King Detailing serves drivers across 24 towns in Manchester and Greater Manchester. Workshop located at 115 Albert Rd, Farnworth, Manchester BL4 9EA (M61 Junction 4). Mobile detailing also available.',
+    'Latin King Detailing serves drivers across 24 towns in Manchester and Greater Manchester. Based at 426 Flixton Road, Flixton, Urmston, Manchester M41 6QT. Mobile detailing also available.',
   openGraph: {
     title: 'Manchester & Greater Manchester Detailing Service Areas | Latin King Detailing',
     description:
-      'Climate-controlled workshop in Farnworth, Manchester. Ceramic Pro 9H coating, paint correction, and valeting for 24 towns across Greater Manchester.',
-    url: 'https://ceramicpromanchester.com/locations',
+      'Professional automotive detailing in Flixton, Urmston, and Greater Manchester. Ceramic Pro 9H coating, paint correction, and valeting for 24 towns across Greater Manchester.',
+    url: 'https://latinkingdetailing.co.uk/locations',
     siteName: 'Latin King Detailing',
     type: 'website',
   },
@@ -46,7 +46,7 @@ export default function LocationsPage() {
                 Where We Work: Manchester &amp; Greater Manchester
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 max-w-[60ch] leading-[1.65]">
-                Our main climate-controlled facility is located at <strong>115 Albert Rd, Farnworth, Manchester BL4 9EA</strong>, five minutes from Junction 4 of the M61. We also serve clients across 24 towns and boroughs with verified mobile detailing services.
+                Our base is located at <strong>426 Flixton Road, Flixton, Urmston, Manchester M41 6QT</strong>. We provide expert mobile detailing directly to your home or workplace across 24 towns and boroughs in Greater Manchester.
               </p>
             </div>
           </div>
@@ -63,10 +63,10 @@ export default function LocationsPage() {
               <div className="lg:col-span-5 space-y-6">
                 <div>
                   <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
-                    Farnworth Workshop Hub
+                    Latin King Detailing Base
                   </h2>
                   <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-2 max-w-[60ch] leading-[1.65]">
-                    Conveniently positioned for fast access from the M61, M60, and A666 St Peter&apos;s Way.
+                    Conveniently positioned in Flixton and Urmston, serving Greater Manchester with fully mobile and studio detailing.
                   </p>
                 </div>
 
@@ -199,8 +199,8 @@ export default function LocationsPage() {
                 {/* Embedded Responsive Google Map */}
                 <div className="relative w-full h-[450px] sm:h-[500px] rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-inner">
                   <iframe
-                    title="Latin King Detailing Manchester Workshop Location"
-                    src="https://maps.google.com/maps?q=115%20Albert%20Rd,%20Farnworth,%20Manchester%20BL4%209EA&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    title="Latin King Detailing Manchester Base Location"
+                    src="https://maps.google.com/maps?q=426%20Flixton%20Road,%20Flixton,%20Urmston,%20Manchester%20M41%206QT&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

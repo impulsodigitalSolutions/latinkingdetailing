@@ -93,7 +93,7 @@ export function ServicesDetailView() {
         </h1>
 
         <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-[60ch] mx-auto mt-5 leading-[1.65] font-normal">
-          From our dedicated Farnworth workshop (five minutes from Junction 4 of the M61), Latin King Detailing provides certified Ceramic Pro 9H coatings, multi-stage machine polishing, leather protection, and showroom valets using only professional-grade products.
+          From our base at 426 Flixton Road in Urmston and our fully mobile detailing van across Manchester, Latin King Detailing provides certified Ceramic Pro 9H coatings, multi-stage machine polishing, leather protection, and showroom valets using only professional-grade products.
         </p>
 
         {/* Workshop Quick Badges */}
@@ -102,7 +102,7 @@ export function ServicesDetailView() {
             <ShieldCheck className="w-4 h-4 text-red-500" /> Ceramic Pro 9H Certified
           </span>
           <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10 font-medium">
-            <MapPin className="w-4 h-4 text-red-500" /> Farnworth, Manchester (BL4 9EA)
+            <MapPin className="w-4 h-4 text-red-500" /> Flixton &amp; Urmston, Manchester
           </span>
           <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10 font-medium">
             <Clock className="w-4 h-4 text-red-500" /> 24/7 Available
@@ -468,7 +468,7 @@ export function ServicesDetailView() {
                     </div>
                   )}
                   <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
-                    115 Albert Rd, Farnworth, Manchester · Available 24/7
+                    426 Flixton Road, Flixton, Urmston, Manchester · Available 24/7
                   </div>
                 </div>
 

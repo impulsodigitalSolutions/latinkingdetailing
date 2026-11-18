@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = `${service.title} | Latin King Detailing Manchester`;
-  const description = `${service.shortDesc} Certified Ceramic Pro 9H installer and detailing specialists based in Flixton & Farnworth, Manchester. ${service.startingPrice}. Call 07482 225323.`;
+  const description = `${service.shortDesc} Certified Ceramic Pro 9H installer and detailing specialists based at 426 Flixton Road, Urmston, Manchester. ${service.startingPrice}. Call 07482 225323.`;
 
   return {
     title,
@@ -128,7 +128,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         addressCountry: 'GB',
       },
     },
-    areaServed: ['Manchester', 'Flixton', 'Urmston', 'Farnworth', 'Bolton', 'Trafford'],
+    areaServed: ['Manchester', 'Flixton', 'Urmston', 'Trafford', 'Bolton', 'Salford'],
     offers: {
       '@type': 'Offer',
       priceDescription: service.startingPrice,
@@ -308,7 +308,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   Our 6-Step Ceramic Coating Process
                 </h2>
                 <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65]">
-                  Applied panel by panel inside our controlled Farnworth workshop under specialized high-CRI inspection lighting.
+                  Applied panel by panel with precision equipment under specialized high-CRI inspection lighting.
                 </p>
               </div>
 
@@ -500,7 +500,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   Real Customer Results
                 </h2>
                 <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1 leading-[1.65]">
-                  Authentic transformations completed inside our Farnworth studio and across Manchester mobile jobs.
+                  Authentic transformations completed for our Manchester customers and mobile jobs.
                 </p>
               </div>
 

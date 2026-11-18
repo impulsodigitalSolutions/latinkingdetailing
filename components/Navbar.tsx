@@ -488,7 +488,7 @@ export function Navbar() {
                       : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
                   }`}
                 >
-                  <span>Customer Reviews (4.7★)</span>
+                  <span>Customer Reviews (5★)</span>
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link
@@ -516,9 +516,9 @@ export function Navbar() {
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-red-500 shrink-0" />
                     <div>
-                      <div className="font-bold">Workshop Directions</div>
+                      <div className="font-bold">Directions &amp; Location</div>
                       <div className="text-[10px] text-zinc-500 dark:text-zinc-400">
-                        115 Albert Rd, Farnworth (BL4 9EA)
+                        426 Flixton Rd, Urmston (M41 6QT)
                       </div>
                     </div>
                   </div>

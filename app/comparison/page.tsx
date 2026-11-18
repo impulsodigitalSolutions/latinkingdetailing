@@ -62,7 +62,7 @@ export default function ComparisonPage() {
                 Which Detailing Service Fits Your Car?
               </h2>
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-2 max-w-[60ch] mx-auto leading-[1.65]">
-                Every vehicle and driving routine is unique. Here is how our Farnworth workshop specialists recommend choosing:
+                Every vehicle and driving routine is unique. Here is how our detailing specialists recommend choosing:
               </p>
             </div>
 

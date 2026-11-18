@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: 'About Us | Latin King Detailing - Manchester Detailing Specialists',
   description:
-    'Founded out of a true passion for cars and perfection. Professional mobile detailing across Urmston, Flixton, and Greater Manchester, plus our dedicated Farnworth studio.',
+    'Founded out of a true passion for cars and perfection. Professional mobile detailing across Urmston, Flixton, and Greater Manchester, based at 426 Flixton Road.',
   alternates: {
     canonical: 'https://latinkingdetailing.co.uk/about',
   },

@@ -14,10 +14,10 @@ export function Reviews() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
-              What Manchester &amp; Manchester Drivers Say
+              What Manchester Drivers Say
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-3 max-w-[60ch] leading-[1.65]">
-              Genuine feedback from prestige car owners across Manchester, Farnworth, and Greater Manchester who trust Latin King Detailing.
+              Genuine feedback from prestige car owners across Urmston, Flixton, and Greater Manchester who trust Latin King Detailing.
             </p>
           </div>
 

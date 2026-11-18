@@ -33,11 +33,10 @@ export function Hero() {
               <GoogleIcon className="w-4 h-4 shrink-0" />
               <StarRating rating={SITE_CONFIG.googleRating} size="w-3.5 h-3.5" />
               <span className="font-semibold text-zinc-900 dark:text-white">
-                <span className="font-mono tabular-nums">{SITE_CONFIG.googleRating}</span> Google Rating
               </span>
               <span className="text-zinc-300 dark:text-zinc-700">|</span>
               <span className="text-zinc-500 dark:text-zinc-400">
-                Farnworth, Manchester
+                Urmston &amp; Flixton, Manchester
               </span>
             </div>
 

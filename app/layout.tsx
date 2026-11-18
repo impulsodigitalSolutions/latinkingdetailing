@@ -33,26 +33,27 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline} | Ceramic Pro 9H Certified`,
   description:
-    "Manchester's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & Paint Correction Specialist based in Farnworth, Manchester. 5 minutes from M61 junction 4. Call 07482 225323.",
+    "Manchester's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & Paint Correction Specialist based at 426 Flixton Road, Urmston, Manchester. Call 07482 225323.",
   keywords: [
     'Ceramic Coating Manchester',
     'Car Detailing Manchester',
     'Ceramic Pro Manchester',
     'Paint Correction Manchester',
     'Latin King Detailing',
-    'Car Detailing Farnworth',
+    'Car Detailing Urmston',
+    'Car Detailing Flixton',
+    'Mobile Detailing Manchester',
     'Machine Polishing Manchester',
-    'Bolton Car Detailing',
   ],
   authors: [{ name: SITE_CONFIG.brandName }],
   creator: SITE_CONFIG.brandName,
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://ceramicpromanchester.com',
+    url: 'https://latinkingdetailing.co.uk',
     title: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline}`,
     description:
-      "Manchester's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & Paint Correction Specialist. Based in Farnworth, 5 minutes from M61 Jct 4.",
+      "Manchester's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & Paint Correction Specialist. Based at 426 Flixton Road, Urmston, Manchester.",
     siteName: SITE_CONFIG.brandName,
     images: [
       {

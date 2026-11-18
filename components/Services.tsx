@@ -86,7 +86,7 @@ export function Services({ limit }: ServicesProps) {
             Professional Detailing &amp; Paint Protection
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-[60ch] mx-auto leading-[1.65] font-normal">
-            Latin King Detailing provides complete paint protection, defect correction, and cabin restoration with mobile units and our dedicated Farnworth studio.
+            Latin King Detailing provides complete paint protection, defect correction, and cabin restoration with mobile units and our dedicated Urmston base.
           </p>
 
           {/* Quick Filter Tabs (Only shown on full catalog view) */}
@@ -246,7 +246,7 @@ export function Services({ limit }: ServicesProps) {
                       href={`/services/${service.slug}`}
                       className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-red-600 dark:text-red-400 hover:text-red-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                     >
-                      <span>Explore Service &amp; SEO Guide</span>
+                      <span>Explore Services</span>
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>

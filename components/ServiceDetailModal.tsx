@@ -338,9 +338,9 @@ export function ServiceDetailModal() {
         <div className="p-4 sm:p-6 bg-zinc-100 dark:bg-workshop-row border-t border-zinc-200 dark:border-workshop-border flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="text-xs text-zinc-600 dark:text-zinc-400 text-center sm:text-left">
             <span className="font-semibold text-zinc-900 dark:text-white">
-              Based in Farnworth, Manchester
+              426 Flixton Road, Urmston
             </span>{' '}
-            · Five mins from M61 Jct 4
+            · Manchester (M41 6QT)
           </div>
           <div className="flex w-full sm:w-auto gap-3">
             <a

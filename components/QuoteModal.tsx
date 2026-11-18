@@ -94,7 +94,7 @@ export function QuoteModal() {
               className="flex items-center gap-1 hover:text-red-500 transition-colors"
             >
               <MapPin className="w-3.5 h-3.5 text-red-500" />
-              <span>115 Albert Rd, Farnworth, Manchester BL4 9EA</span>
+              <span>426 Flixton Road, Flixton, Urmston, Manchester M41 6QT</span>
             </a>
 
             <a

@@ -19,14 +19,14 @@ export function WorkshopAndGuides() {
   return (
     <section id="blog" className="py-16 md:py-24 relative bg-zinc-50/50 dark:bg-workshop-muted/60 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Part: Visit Us in Farnworth, Manchester & Manchester Base */}
+        {/* Top Part: Visit Latin King Detailing Base */}
         <div className="mb-20">
           <div className="rounded-3xl border border-zinc-200 dark:border-workshop-border bg-white dark:bg-workshop-card-subtle overflow-hidden grid grid-cols-1 lg:grid-cols-12">
             {/* Left Location Info (6 cols) */}
             <div className="p-6 sm:p-10 lg:col-span-6 flex flex-col justify-between">
               <div>
                 <h3 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
-                  Visit Us in Farnworth, Manchester &amp; Manchester
+                  Visit Latin King Detailing in Manchester
                 </h3>
                 <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2 max-w-[60ch] leading-[1.65]">
                   {SITE_CONFIG.primaryWorkshop.landmark}. Secure indoor bay with temperature-controlled infrared curing lights and cleanroom detailing conditions.

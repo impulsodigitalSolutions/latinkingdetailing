@@ -25,7 +25,7 @@ export function ServiceAreas() {
             Serving Manchester &amp; 24 Regional Towns
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-[60ch] mx-auto leading-[1.65]">
-            Clients bring vehicles to our climate-controlled Farnworth workshop from across 24 Greater Manchester boroughs for certified Ceramic Pro 9H applications.
+            Latin King Detailing provides mobile detailing across 24 Greater Manchester boroughs alongside our base at 426 Flixton Road.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export function ServiceAreas() {
             <div className="flex flex-wrap gap-2.5">
               {filteredAreas.map((town) => {
                 const isSelected = selectedTown === town;
-                const isManchesterOrFarnworth = town === 'Manchester' || town === 'Farnworth';
+                const isManchesterOrUrmston = town === 'Manchester' || town === 'Urmston' || town === 'Flixton';
 
                 return (
                   <button
@@ -74,16 +74,16 @@ export function ServiceAreas() {
                     className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                       isSelected
                         ? 'bg-red-600 text-white shadow-md'
-                        : isManchesterOrFarnworth
+                        : isManchesterOrUrmston
                         ? 'bg-red-500/15 border border-red-500/40 text-red-700 dark:text-red-300 hover:bg-red-500/25'
                         : 'bg-zinc-100 dark:bg-workshop-elevated text-zinc-700 dark:text-zinc-200 border border-zinc-200/80 dark:border-white/10 hover:border-red-400/50 hover:text-red-500'
                     }`}
                   >
                     <MapPin className="w-3.5 h-3.5 opacity-70 shrink-0" />
                     <span>{town}</span>
-                    {isManchesterOrFarnworth && (
+                    {isManchesterOrUrmston && (
                       <span className="text-[10px] font-bold px-1 rounded bg-red-500/20 text-red-800 dark:text-red-200">
-                        Workshop
+                        HQ Base
                       </span>
                     )}
                   </button>

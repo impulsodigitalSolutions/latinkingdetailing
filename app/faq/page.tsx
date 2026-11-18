@@ -46,7 +46,7 @@ export default function FaqPage() {
                 Frequently Asked Detailing Questions
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 max-w-[60ch] leading-[1.65]">
-                Clear, honest answers about Ceramic Pro 9H coating, paint correction stages, valeting frequency, pricing estimates, and our Farnworth workshop booking process.
+                Clear, honest answers about Ceramic Pro 9H coating, paint correction stages, valeting frequency, pricing estimates, and our Manchester mobile and base booking process.
               </p>
             </div>
           </div>

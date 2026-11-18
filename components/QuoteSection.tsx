@@ -129,7 +129,7 @@ export function QuoteSection({ initialService }: QuoteSectionProps = {}) {
                       Flexible Workshop Slot
                     </div>
                     <div className="text-zinc-600 dark:text-zinc-400 mt-0.5">
-                      Choose a convenient drop-off day at our Farnworth facility (5 mins from M61 J4).
+                      Choose a convenient mobile visit or drop-off day at 426 Flixton Road.
                     </div>
                   </div>
                 </div>
@@ -142,7 +142,7 @@ export function QuoteSection({ initialService }: QuoteSectionProps = {}) {
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-red-500 shrink-0" />
-                  <span>Workshop: 115 Albert Rd, Farnworth, Manchester BL4 9EA</span>
+                  <span>Latin King Detailing: 426 Flixton Road, Flixton, Urmston, Manchester M41 6QT</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-red-500 shrink-0" />

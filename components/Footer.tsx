@@ -249,33 +249,13 @@ export function Footer() {
                   <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-semibold text-white group-hover:text-red-400 block">
-                      Manchester Workshop (HQ):
+                      Latin King Detailing:
                     </span>
-                    <span className="text-zinc-400 group-hover:text-zinc-300">
+                    <span className="text-zinc-400 group-hover:text-zinc-300 block">
                       {SITE_CONFIG.primaryWorkshop.fullAddress}
                     </span>
-                    <span className="text-[11px] text-red-400 block">
-                      5 mins from M61 Jct 4 · Open in Google Maps ↗
-                    </span>
-                  </div>
-                </a>
-
-                <a
-                  href={SITE_CONFIG.secondaryWorkshop.googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-2 text-zinc-300 hover:text-red-400 transition-colors group block"
-                >
-                  <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-semibold text-white group-hover:text-red-400 block">
-                      Manchester Base:
-                    </span>
-                    <span className="text-zinc-400 group-hover:text-zinc-300">
-                      {SITE_CONFIG.secondaryWorkshop.fullAddress}
-                    </span>
-                    <span className="text-[11px] text-red-400 block">
-                      Flixton, Trafford & Greater Manchester · Open in Maps ↗
+                    <span className="text-[11px] text-red-400 block mt-0.5">
+                      Flixton &amp; Urmston, Manchester · Open in Google Maps ↗
                     </span>
                   </div>
                 </a>

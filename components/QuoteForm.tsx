@@ -86,8 +86,8 @@ Looking forward to hearing from your Manchester workshop team!`;
             <span className="font-medium text-red-400">{service}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-zinc-400">Workshop:</span>
-            <span className="font-medium text-white">115 Albert Rd, Manchester (BL4 9EA)</span>
+            <span className="text-zinc-400">Location:</span>
+            <span className="font-medium text-white">426 Flixton Road, Urmston (M41 6QT)</span>
           </div>
         </div>
 

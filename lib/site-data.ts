@@ -80,33 +80,45 @@ export const SITE_CONFIG = {
   email: 'latinkingdetailing@outlook.com',
   emailHref: 'mailto:latinkingdetailing@outlook.com',
   
-  // Addresses (HQ in Flixton as registered on latinkingdetailing.co.uk + Studio in Farnworth)
-  primaryWorkshop: {
-    title: 'Latin King Detailing HQ (Flixton)',
+  // Address (Only this location as per https://www.latinkingdetailing.co.uk/contact-us/)
+  address: {
+    title: 'Latin King Detailing',
     street: '426 Flixton Road',
-    town: 'Flixton',
+    town: 'Flixton, Urmston',
     city: 'Manchester',
     postcode: 'M41 6QT',
-    fullAddress: '426 Flixton Road, Flixton, M41 6QT, Manchester, UK',
-    landmark: 'Serving Flixton, Urmston, Trafford, Bolton & Greater Manchester',
+    fullAddress: '426 Flixton Road, Flixton, Urmston, Manchester, M41 6QT, UK',
+    landmark: 'Flixton, Urmston, Trafford & Greater Manchester',
     googleMapsUrl:
-      'https://www.google.com/maps/search/?api=1&query=426+Flixton+Road,+Flixton,+M41+6QT,+Manchester,+UK',
+      'https://www.google.com/maps/place/426,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+UK/@53.452941,-2.6560487,65090m/data=!3m1!1e3!4m5!3m4!1s0x487babe5b1a8f27f:0x4d06e32ed64ee7f4!8m2!3d53.4447194!4d-2.3843237?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
+  },
+  primaryWorkshop: {
+    title: 'Latin King Detailing',
+    street: '426 Flixton Road',
+    town: 'Flixton, Urmston',
+    city: 'Manchester',
+    postcode: 'M41 6QT',
+    fullAddress: '426 Flixton Road, Flixton, Urmston, Manchester, M41 6QT, UK',
+    landmark: 'Flixton, Urmston, Trafford & Greater Manchester',
+    googleMapsUrl:
+      'https://www.google.com/maps/place/426,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+UK/@53.452941,-2.6560487,65090m/data=!3m1!1e3!4m5!3m4!1s0x487babe5b1a8f27f:0x4d06e32ed64ee7f4!8m2!3d53.4447194!4d-2.3843237?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
   },
   secondaryWorkshop: {
-    title: 'Detailing Studio (Farnworth)',
-    street: '115 Albert Road',
-    town: 'Farnworth',
+    title: 'Latin King Detailing',
+    street: '426 Flixton Road',
+    town: 'Flixton, Urmston',
     city: 'Manchester',
-    postcode: 'BL4 9EA',
-    fullAddress: '115 Albert Road, Farnworth, Bolton/Manchester, BL4 9EA',
-    landmark: 'Dedicated detailing studio 5 minutes from junction 4 of the M61',
-    googleMapsUrl: 'https://maps.app.goo.gl/RSrD8Gekfi83PCmx9',
+    postcode: 'M41 6QT',
+    fullAddress: '426 Flixton Road, Flixton, Urmston, Manchester, M41 6QT, UK',
+    landmark: 'Flixton, Urmston, Trafford & Greater Manchester',
+    googleMapsUrl:
+      'https://www.google.com/maps/place/426,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+UK/@53.452941,-2.6560487,65090m/data=!3m1!1e3!4m5!3m4!1s0x487babe5b1a8f27f:0x4d06e32ed64ee7f4!8m2!3d53.4447194!4d-2.3843237?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
   },
   
   openingHours: 'Available 24/7 (Monday – Sunday: 24 Hours)',
   
   // Social Proof & Verified Social Media IDs (Extracted from https://www.latinkingdetailing.co.uk/)
-  googleRating: 4.7,
+  googleRating:5,
   googleReviewCount: 15,
   facebookRating: 5.0,
   facebookFollowers: '760+',
@@ -139,7 +151,7 @@ export const SITE_CONFIG = {
     },
     {
       name: 'Google Maps',
-      handle: '4.7★ (15 Reviews)',
+      handle: '5★ (15 Reviews)',
       url: 'https://maps.app.goo.gl/RSrD8Gekfi83PCmx9',
       icon: 'Google',
     },
@@ -170,7 +182,7 @@ export const HERO_TRUST_BADGES = [
 ];
 
 export const STATS = [
-  { value: '4.7★', label: 'Google Rating', detail: '15 Verified 5-Star Reviews' },
+  { value: '5★', label: 'Google Rating', detail: '15 Verified 5-Star Reviews' },
   { value: '15+', label: 'Happy Customers', detail: 'Across Manchester & Greater Manchester' },
   { value: 'Ceramic Pro', label: 'Certified Installer', detail: 'Factory-backed VIN Warranty' },
   { value: '9H', label: 'Ceramic Certified', detail: 'Molecular Paint Shield' },
@@ -193,14 +205,14 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'ferrari-360',
     title: 'Ferrari 360 Modena',
-    subtitle: 'Multi-stage Paint Correction & Detailing · Farnworth Workshop',
+    subtitle: 'Multi-stage Paint Correction & Detailing · Urmston Base',
     vehicle: 'Ferrari 360 Modena Rosso Corsa',
-    location: 'Farnworth, Manchester',
+    location: 'Urmston, Manchester',
     service: 'Detailing & 9H Coating',
     package: 'Stage 2 Paint Correction + Ceramic Pro Top Coat',
     finish: 'Rosso Corsa Mirror Gloss',
     imageUrl: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80',
-    imageAlt: 'Ferrari 360 Modena detailing, Latin King Detailing, Farnworth, Manchester',
+    imageAlt: 'Ferrari 360 Modena detailing, Latin King Detailing, Manchester',
     tags: ['Paint Correction', 'Exotic Detailing', 'Rosso Corsa'],
   },
   {
@@ -240,7 +252,7 @@ export const SERVICES: ServiceItem[] = [
     startingPrice: 'From £200 (Final price varies by vehicle size & paintwork condition)',
     shortDesc: 'Advanced molecular shielding & lasting showroom gloss. Chemically bonds with your clear coat at a molecular level for years of 9H protection.',
     fullDesc:
-      'Ceramic coating provides long-lasting protection for your car’s paintwork by creating a durable, invisible shield. Applied by certified specialists at Latin King Detailing in our Farnworth, Manchester workshop, our 9H ceramic coating is not something you simply spray on and wipe off - it chemically bonds with your clear coat at a molecular level for years of protection.',
+      'Ceramic coating provides long-lasting protection for your car’s paintwork by creating a durable, invisible shield. Applied by certified specialists at Latin King Detailing at our Urmston base or via our mobile detailing service, our 9H ceramic coating is not something you simply spray on and wipe off - it chemically bonds with your clear coat at a molecular level for years of protection.',
     whatIs:
       'Unlike traditional wax, which sits on top of the paint and washes off within a few weeks, our ceramic coating is a liquid polymer that fuses directly into your paintwork. Once cured, it becomes a semi-permanent part of the surface. Rated at 9H on the pencil hardness scale (the hardest rating achievable), it adds a tough protective layer that resists light wash swirls, UV rays, acid rain, bird droppings, road salt, and everything Greater Manchester weather throws at your car. Its extreme hydrophobic properties make water and grime bead off effortlessly, meaning your car stays cleaner for longer, washes easier, and retains higher resale value.',
     iconName: 'ShieldCheck',
@@ -372,7 +384,7 @@ export const SERVICES: ServiceItem[] = [
     startingPrice: 'From £130',
     shortDesc: 'Ceramic-grade leather and interior coatings that guard against UV fade, body oil staining, spills, and premature cracking.',
     fullDesc:
-      'Most people think about protecting the paint, yet interiors take just as much punishment and the cabin is where you sit every day. At our Farnworth, Manchester workshop, Latin King Detailing applies ceramic-grade leather and interior coatings that guard against UV fade, body oil staining, spills, and premature cracking.',
+      'Most people think about protecting the paint, yet interiors take just as much punishment and the cabin is where you sit every day. Latin King Detailing applies ceramic-grade leather and interior coatings that guard against UV fade, body oil staining, spills, and premature cracking.',
     whatIs:
       "Unlike traditional leather conditioners that only moisturise the surface for a few days, our ceramic-grade protection forms an invisible, breathable barrier that lasts for months. It repels liquids before they stain, blocks UV radiation, and resists the abrasion that wears down seats and steering wheels - all while preserving your interior's natural look and feel.",
     surfacesProtected: [
@@ -576,8 +588,8 @@ export const WHY_CHOOSE_US = [
     id: 'local-Manchester-specialists',
     title: 'Local Manchester Specialists',
     description:
-      "Our workshop is in Farnworth, five minutes from the M61 at junction 4. Our customers drive from across Greater Manchester because they know what they're getting. We understand what Manchester roads and winters do to paintwork, and we know how to protect against it.",
-    badge: 'M61 Junction 4 · Farnworth',
+      "Based at 426 Flixton Road in Urmston, Manchester, Latin King Detailing brings high-calibre detailing directly to you, alongside our dedicated workshop bay. We understand what UK weather and Manchester roads do to paintwork, and we know how to protect against it.",
+    badge: 'Urmston & Greater Manchester',
     iconName: 'MapPin',
   },
 ];
@@ -679,7 +691,9 @@ export const REVIEWS: ReviewItem[] = [
 
 export const SERVICE_AREAS_24 = [
   'Manchester',
-  'Farnworth',
+  'Urmston',
+  'Flixton',
+  'Trafford',
   'Horwich',
   'Westhoughton',
   'Kearsley',
@@ -774,7 +788,7 @@ export const BLOG_POSTS: BlogPost[] = [
       'Ceramic Pro 9H delivers extraordinary hydrophobicity, but maximizing its 2 to 5-year warranty requires simple, consistent aftercare.',
       '1. Safe Wash Routine: Always adhere to the two-bucket wash technique with grit guards. Use high-lubricity pH-neutral car shampoo, and never take your vehicle through automated nylon brush car washes.',
       '2. Road Salt Neutralization: In winter months, rinse underbodies and lower sills frequently with warm purified water or touchless pre-wash foam to remove corrosive magnesium chloride grit.',
-      '3. Annual Decontamination Check: Bring your vehicle into our Farnworth workshop once a year for an inspection wash and Ceramic Pro booster spray to unclog the nano pores and maintain maximum contact angles.',
+      '3. Annual Decontamination Check: Book an annual inspection wash and Ceramic Pro booster spray to unclog the nano pores and maintain maximum contact angles.',
     ],
   },
   {

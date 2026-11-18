@@ -11,12 +11,12 @@ import { SITE_CONFIG, REVIEWS } from '@/lib/site-data';
 export const metadata: Metadata = {
   title: 'Customer Reviews & Ratings | Latin King Detailing Manchester',
   description:
-    'Read verified customer reviews for Latin King Detailing in Farnworth, Manchester. 4.7★ Google rating and 5.0★ Facebook rating from prestige and daily car owners across Greater Manchester.',
+    'Read verified customer reviews for Latin King Detailing in Urmston, Flixton, and Greater Manchester. 5★ Google rating and 5.0★ Facebook rating from prestige and daily car owners.',
   openGraph: {
     title: 'Customer Reviews & Testimonials | Latin King Detailing',
     description:
       'Verified customer ratings and testimonials for Ceramic Pro 9H coating, paint correction, and valeting services in Manchester.',
-    url: 'https://ceramicpromanchester.com/reviews',
+    url: 'https://latinkingdetailing.co.uk/reviews',
     siteName: 'Latin King Detailing',
     type: 'website',
   },
@@ -44,10 +44,10 @@ export default function ReviewsPage() {
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
               <div className="max-w-3xl">
                 <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
-                  What Manchester &amp; Manchester Drivers Say
+                  What Manchester Drivers Say
                 </h1>
                 <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 max-w-[60ch] leading-[1.65]">
-                  Real feedback from prestige car owners, daily commuters, and commercial clients across Manchester, Farnworth, and Greater Manchester who trust Latin King Detailing.
+                  Real feedback from prestige car owners, daily commuters, and commercial clients across Urmston, Flixton, and Greater Manchester who trust Latin King Detailing.
                 </p>
               </div>
 

@@ -84,7 +84,7 @@ export function AboutStorySection() {
                   Manchester HQ
                 </div>
                 <div className="text-[11px] text-zinc-500 dark:text-zinc-400">
-                  + Farnworth Studio
+                  + Fully Mobile
                 </div>
               </div>
 

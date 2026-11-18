@@ -21,26 +21,25 @@ export function MapView() {
   const locations: Record<'Manchester' | 'manchester', LocationData> = {
     Manchester: {
       id: 'Manchester',
-      name: 'Manchester Workshop (Headquarters)',
-      shortTitle: '115 Albert Rd',
-      address: '115 Albert Rd, Farnworth, Manchester BL4 9EA, UK',
-      postcode: 'BL4 9EA',
-      landmark: 'Five minutes from junction 4 of the M61',
+      name: 'Latin King Detailing HQ',
+      shortTitle: '426 Flixton Rd',
+      address: '426 Flixton Road, Flixton, Urmston, Manchester M41 6QT, UK',
+      postcode: 'M41 6QT',
+      landmark: 'Serving Urmston, Flixton, Trafford & Greater Manchester',
       mapsUrl: SITE_CONFIG.primaryWorkshop.googleMapsUrl,
       embedUrl:
-        'https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s115+Albert+Road,+Farnworth,+Manchester+BL4+9EA!6i14!3m1!1sen!5m1!1sen',
+        'https://maps.google.com/maps?q=426%20Flixton%20Road,%20Flixton,%20Urmston,%20Manchester%20M41%206QT&t=&z=15&ie=UTF8&iwloc=&output=embed',
     },
     manchester: {
       id: 'manchester',
-      name: 'Manchester Base (Flixton)',
-      shortTitle: '426 Flixton Rd',
-      address: '426 Flixton Road, Flixton, M41 6QT, Manchester, UK',
+      name: 'Latin King Detailing Mobile',
+      shortTitle: 'Mobile Detailing',
+      address: '426 Flixton Road, Flixton, Urmston, M41 6QT, Manchester, UK',
       postcode: 'M41 6QT',
-      landmark: 'Flixton Rd, serving Urmston, Trafford & Manchester',
-      mapsUrl:
-        'https://www.google.com/maps/search/?api=1&query=426+Flixton+Road,+Flixton,+M41+6QT,+Manchester,+UK',
+      landmark: 'Direct to your home or workplace across Manchester',
+      mapsUrl: SITE_CONFIG.primaryWorkshop.googleMapsUrl,
       embedUrl:
-        'https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s426+Flixton+Road,+Flixton,+M41+6QT,+Manchester,+UK!6i14!3m1!1sen!5m1!1sen',
+        'https://maps.google.com/maps?q=426%20Flixton%20Road,%20Flixton,%20Urmston,%20Manchester%20M41%206QT&t=&z=15&ie=UTF8&iwloc=&output=embed',
     },
   };
 

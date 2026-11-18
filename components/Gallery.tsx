@@ -83,7 +83,7 @@ export function Gallery({ initialLimit, showExploreAllButton = false }: GalleryP
               Recent Transformations: <span className="text-red-600 dark:text-red-500">Manchester Studio</span>
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2 max-w-[60ch] leading-[1.65]">
-              Explore genuine Ceramic Pro 9H applications, paint correction stages, and cabin restorations completed at our Farnworth facility.
+              Explore genuine Ceramic Pro 9H applications, paint correction stages, and cabin restorations completed by Latin King Detailing.
             </p>
           </div>
 
@@ -171,7 +171,7 @@ export function Gallery({ initialLimit, showExploreAllButton = false }: GalleryP
                 {/* Bottom Details */}
                 <div>
                   <div className="text-[11px] font-medium text-zinc-200 line-clamp-1">
-                    Farnworth Workshop
+                    Latin King Detailing
                   </div>
                   <div className="text-[10px] text-zinc-400 font-mono">
                     {img.width} × {img.height}
@@ -235,7 +235,7 @@ export function Gallery({ initialLimit, showExploreAllButton = false }: GalleryP
                 {activeLightboxIndex + 1} / {filteredImages.length}
               </span>
               <span className="hidden sm:inline-block text-xs text-zinc-300">
-                {activeImage.serviceTag} · Farnworth Studio
+                {activeImage.serviceTag} · Latin King Detailing
               </span>
             </div>
 

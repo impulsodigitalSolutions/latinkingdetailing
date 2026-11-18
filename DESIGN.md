@@ -3,7 +3,7 @@
 
 ## 1. Identity & Philosophy
 - **Brand**: Latin King Detailing
-- **Workshop**: 115 Albert Road, Farnworth, Manchester BL4 9EA (5 minutes from M61 Junction 4)
+- **Location**: 426 Flixton Road, Flixton, Urmston, Manchester M41 6QT
 - **Specialisms**: Ceramic Pro 9H Certified Installer, KAVACA Self-Healing PPF Approved, Multi-Stage Machine Polishing & Paint Correction
 - **Voice**: Authentic British automotive craftsmanship. Direct, precise, knowledgeable, unpretentious. Speaks the language of dual-action rotary polishers, micron clear-coat depth readings, chemical nanoceramic bonding, and harsh Lancashire winter resilience (road salt, motorway gravel, acid rain).
 

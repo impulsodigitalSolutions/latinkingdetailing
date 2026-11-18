@@ -10,12 +10,12 @@ import { SITE_CONFIG } from '@/lib/site-data';
 export const metadata: Metadata = {
   title: 'Showroom Detailing & Ceramic Coating Gallery | Latin King Detailing Manchester',
   description:
-    'Explore our portfolio of Ceramic Pro 9H ceramic coatings, multi-stage paint corrections, and deep interior valets completed at our Farnworth, Manchester workshop.',
+    'Explore our portfolio of Ceramic Pro 9H ceramic coatings, multi-stage paint corrections, and deep interior valets completed by Latin King Detailing in Manchester.',
   openGraph: {
     title: 'Showroom Detailing & Ceramic Coating Gallery | Latin King Detailing',
     description:
       'Genuine customer vehicle transformations from Manchester and Greater Manchester. Supercars, daily drivers, and prestige restorations.',
-    url: 'https://ceramicpromanchester.com/gallery',
+    url: 'https://latinkingdetailing.co.uk/gallery',
     siteName: 'Latin King Detailing',
     type: 'website',
   },
@@ -45,7 +45,7 @@ export default function GalleryPage() {
                 Showroom Detailing &amp; Transformations
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 max-w-[60ch] leading-[1.65]">
-                Every vehicle featured here was detailed and protected inside our dedicated Farnworth workshop. From high-gloss 9H nanoceramic shielding to defect-free machine paint correction, browse real results from Greater Manchester owners.
+                Every vehicle featured here was detailed and protected by Latin King Detailing. From high-gloss 9H nanoceramic shielding to defect-free machine paint correction, browse real results from Greater Manchester owners.
               </p>
 
               {/* Quick Trust Badges */}
@@ -106,7 +106,7 @@ export default function GalleryPage() {
                   Dust-Controlled Ceramic Bays
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  Our Ceramic Pro coatings cure under controlled temperature and humidity conditions in Farnworth, preventing airborne contamination from bonding into the quartz layer.
+                  Our Ceramic Pro coatings cure under controlled temperature and humidity conditions, preventing airborne contamination from bonding into the quartz layer.
                 </p>
               </div>
             </div>

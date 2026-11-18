@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Professional Automotive Detailing Services | Latin King Detailing',
     description:
-      'Certified Ceramic Pro 9H installer and paint correction specialist based in Farnworth, Manchester. Transparent pricing, multi-stage machine polishing, and showroom restorations.',
-    url: 'https://ceramicpromanchester.com/services',
+      'Certified Ceramic Pro 9H installer and paint correction specialist based in Urmston, Manchester. Transparent pricing, multi-stage machine polishing, and showroom restorations.',
+    url: 'https://latinkingdetailing.co.uk/services',
     siteName: 'Latin King Detailing',
     type: 'website',
   },
