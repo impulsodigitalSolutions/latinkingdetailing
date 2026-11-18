@@ -31,6 +31,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://latinkingdetailing.co.uk'),
   title: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline} | Ceramic Pro 9H Certified`,
   description:
     "Manchester's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & Paint Correction Specialist based at 426 Flixton Road, Urmston, Manchester. Call 07482 225323.",
@@ -57,10 +58,10 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.brandName,
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1200&q=80',
-        width: 1200,
-        height: 630,
-        alt: `${SITE_CONFIG.brandName} · Ceramic Pro 9H Supercar Detailing`,
+        url: '/images/hero-showcase.jpg',
+        width: 1500,
+        height: 1500,
+        alt: `${SITE_CONFIG.brandName} · Ceramic Pro 9H Certified Detailing`,
       },
     ],
   },
