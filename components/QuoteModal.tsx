@@ -1,26 +1,52 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { useModals } from './ModalContext';
 import { QuoteForm } from './QuoteForm';
-import { X, Sparkles, MapPin, Phone } from 'lucide-react';
+import { X, MapPin, Phone } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/site-data';
 
 export function QuoteModal() {
   const { isQuoteOpen, closeQuoteModal, selectedServiceForQuote } = useModals();
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isQuoteOpen) {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isQuoteOpen) {
         closeQuoteModal();
+        return;
+      }
+
+      if (event.key !== 'Tab' || !isQuoteOpen) return;
+
+      const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input:not([disabled]):not([tabindex="-1"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusable?.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     };
+
     if (isQuoteOpen) {
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
+      dialogRef.current
+        ?.querySelector<HTMLElement>('input:not([tabindex="-1"])')
+        ?.focus();
     } else {
       document.body.style.overflow = '';
     }
+
     return () => {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
@@ -30,78 +56,79 @@ export function QuoteModal() {
   if (!isQuoteOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      {/* Backdrop */}
+    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto p-4 sm:p-6">
       <div
-        className="fixed inset-0 bg-black/85 transition-opacity"
+        className="fixed inset-0 bg-black/80"
         onClick={closeQuoteModal}
         aria-hidden="true"
       />
 
-      {/* Modal Dialog */}
       <div
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="quote-modal-title"
-        className="relative w-full max-w-xl my-8 bg-white dark:bg-workshop-card border border-zinc-200 dark:border-white/10 rounded-3xl shadow-2xl overflow-hidden z-10 transition-colors"
+        className="relative z-10 my-8 w-full max-w-xl border-t-2 border-red-600 bg-white dark:border-red-500 dark:bg-workshop-card"
       >
-        {/* Top red accent line */}
-        <div className="h-1.5 w-full bg-red-600" />
-
         <div className="p-6 sm:p-8">
-          {/* Header with Official Logo */}
-          <div className="flex items-start justify-between gap-4 mb-6">
-            <div className="flex items-start gap-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-zinc-950 border border-red-500/30 p-1 flex items-center justify-center shrink-0 shadow-md">
-                <img
+          <div className="flex items-start justify-between gap-6">
+            <div>
+              <div className="flex items-center gap-3">
+                <Image
                   src="/images/logo-dark.png"
-                  alt="Latin King Detailing"
-                  className="w-full h-full object-contain"
+                  alt=""
+                  width={64}
+                  height={32}
+                  className="h-8 w-auto object-contain dark:hidden"
+                />
+                <Image
+                  src="/images/logo-light.png"
+                  alt=""
+                  width={64}
+                  height={32}
+                  className="hidden h-8 w-auto object-contain dark:block"
                 />
               </div>
-              <div>
-                <h2 id="quote-modal-title" className="font-heading font-semibold text-2xl sm:text-3xl text-zinc-900 dark:text-white tracking-tight">
-                  Get Your Vehicle Quote
-                </h2>
-                <p className="text-zinc-600 dark:text-zinc-400 text-xs font-medium mt-1">
-                  Manchester Workshop · Ceramic Pro 9H Certified
-                </p>
-              </div>
+              <h2
+                id="quote-modal-title"
+                className="mt-4 font-heading text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white sm:text-3xl"
+              >
+                Request a quote
+              </h2>
+              <p className="mt-1 text-[12px] text-zinc-500 dark:text-zinc-400">
+                Urmston workshop · Ceramic Pro 9H certified
+              </p>
             </div>
+
             <button
               type="button"
               onClick={closeQuoteModal}
-              className="p-2 rounded-xl text-zinc-400 hover:text-zinc-700 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
-              aria-label="Close quote modal"
+              className="-mr-1 -mt-1 rounded-sm p-2 text-zinc-500 transition-colors hover:text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 dark:text-zinc-400 dark:hover:text-red-400"
+              aria-label="Close quote form"
             >
-              <X className="w-5 h-5" />
+              <X className="h-5 w-5" aria-hidden="true" />
             </button>
           </div>
 
-          {/* Form */}
-          <QuoteForm
-            initialService={selectedServiceForQuote}
-            isModal={true}
-            onSuccess={() => {}}
-          />
+          <div className="mt-8">
+            <QuoteForm initialService={selectedServiceForQuote} isModal />
+          </div>
 
-          {/* Footer note */}
-          <div className="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 dark:text-zinc-400 gap-2">
+          <div className="mt-8 flex flex-col gap-3 border-t border-zinc-200 pt-4 text-xs text-zinc-500 sm:flex-row sm:items-center sm:justify-between dark:border-white/10 dark:text-zinc-400">
             <a
               href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 hover:text-red-500 transition-colors"
+              className="inline-flex items-start gap-2 rounded-sm transition-colors hover:text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 dark:hover:text-red-400"
             >
-              <MapPin className="w-3.5 h-3.5 text-red-500" />
-              <span>426 Flixton Road, Flixton, Urmston, Manchester M41 6QT</span>
+              <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-red-600 dark:text-red-500" aria-hidden="true" />
+              <span>426 Flixton Road, Urmston, Manchester M41 6QT</span>
             </a>
-
             <a
               href={SITE_CONFIG.phoneHref}
-              className="flex items-center gap-1 hover:text-red-500 font-bold transition-colors"
+              className="inline-flex items-center gap-2 rounded-sm font-semibold transition-colors hover:text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 dark:hover:text-red-400"
             >
-              <Phone className="w-3 h-3 text-red-500" />
+              <Phone className="h-3.5 w-3.5 text-red-600 dark:text-red-500" aria-hidden="true" />
               <span>{SITE_CONFIG.phone}</span>
             </a>
           </div>

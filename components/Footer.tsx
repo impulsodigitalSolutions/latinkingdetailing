@@ -187,7 +187,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/faq" className="hover:text-red-400 transition-colors">
-                  FAQs &amp; Pricing
+                  FAQs
                 </Link>
               </li>
             </ul>

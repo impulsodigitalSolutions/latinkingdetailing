@@ -1,514 +1,661 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { SERVICES, ServiceItem, SITE_CONFIG } from '@/lib/site-data';
 import { useModals } from './ModalContext';
 import {
+  ArrowDownRight,
+  ArrowRight,
+  ArrowUpRight,
+  Armchair,
+  Award,
+  Car,
+  Check,
+  Droplets,
   ShieldCheck,
-  Shield,
+  Sparkles,
+  Wrench,
+} from 'lucide-react';
+
+/* ------------------------------------------------------------------ */
+/* Tokens & data helpers                                              */
+/* ------------------------------------------------------------------ */
+
+const CATEGORIES = [
+  { id: 'all', label: 'All services' },
+  { id: 'coating', label: 'Coating & protection' },
+  { id: 'polishing', label: 'Paint correction' },
+  { id: 'valet', label: 'Restoration & valet' },
+  { id: 'maintenance', label: 'Maintenance' },
+] as const;
+
+type CategoryId = (typeof CATEGORIES)[number]['id'];
+type DetailCategory = Exclude<CategoryId, 'all'>;
+
+const SERVICE_CATEGORY: Record<string, DetailCategory> = {
+  'ceramic-coating': 'coating',
+  'leather-coating': 'coating',
+  'machine-polishing': 'polishing',
+  'the-kings-detail': 'valet',
+  'deep-clean-engine-bay': 'valet',
+  'full-valet': 'valet',
+  'maintenance-wash': 'maintenance',
+};
+
+const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  ShieldCheck,
   Sparkles,
   Armchair,
-  CheckCircle2,
-  ArrowRight,
   Award,
-  Layers,
   Wrench,
-  Clock,
   Car,
   Droplets,
-  Check,
-  MapPin,
-  Phone,
-  Tag,
-  Calendar,
-} from 'lucide-react';
-import { WhatsAppIcon } from './icons/BrandIcons';
+};
 
-export function ServicesDetailView() {
-  const { openQuoteModal } = useModals();
-  const [activeCategory, setActiveCategory] = useState<string>('all');
+const primaryButton =
+  'inline-flex items-center justify-center gap-2 rounded-md bg-red-600 px-5 py-3 text-sm font-semibold text-white transition-[background-color,transform] duration-150 ease-out hover:bg-brand-red-hover active:scale-[0.97] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-workshop-dark';
 
-  const categories = [
-    { id: 'all', label: 'All 6 Services' },
-    { id: 'coating', label: 'Coating & Protection' },
-    { id: 'polishing', label: 'Machine Polishing' },
-    { id: 'valet', label: 'Restoration & Valet' },
-    { id: 'maintenance', label: 'Maintenance Wash' },
-  ];
+const quietLink =
+  'group inline-flex items-center gap-1.5 rounded-sm text-sm font-medium text-zinc-600 dark:text-zinc-300 transition-colors duration-150 hover:text-red-600 dark:hover:text-red-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500';
 
-  const getCategoryForService = (id: string) => {
-    switch (id) {
-      case 'ceramic-coating':
-      case 'leather-coating':
-        return 'coating';
-      case 'machine-polishing':
-        return 'polishing';
-      case 'the-kings-detail':
-      case 'deep-clean-engine-bay':
-      case 'full-valet':
-      case 'full-valet-mini-valet':
-        return 'valet';
-      case 'maintenance-wash':
-        return 'maintenance';
-      default:
-        return 'all';
-    }
-  };
+const pad = (n: number) => String(n).padStart(2, '0');
 
-  const filteredServices = SERVICES.filter((s) => {
-    if (activeCategory === 'all') return true;
-    return getCategoryForService(s.id) === activeCategory;
-  });
+function categoryLabel(id: string) {
+  return CATEGORIES.find((c) => c.id === SERVICE_CATEGORY[id])?.label ?? 'Detailing';
+}
 
-  const getServiceIcon = (name: string) => {
-    switch (name) {
-      case 'ShieldCheck':
-        return <ShieldCheck className="w-6 h-6 text-red-500" />;
-      case 'Shield':
-        return <Shield className="w-6 h-6 text-red-500" />;
-      case 'Sparkles':
-        return <Sparkles className="w-6 h-6 text-red-500" />;
-      case 'Armchair':
-        return <Armchair className="w-6 h-6 text-red-500" />;
-      case 'Wrench':
-        return <Wrench className="w-6 h-6 text-red-500" />;
-      case 'Car':
-        return <Car className="w-6 h-6 text-red-500" />;
-      case 'Droplets':
-        return <Droplets className="w-6 h-6 text-red-500" />;
-      case 'Award':
-      default:
-        return <Award className="w-6 h-6 text-red-500" />;
-    }
-  };
+function priceRows(service: ServiceItem): { label: string; value: string }[] {
+  if (Array.isArray(service.pricingDetails)) {
+    return service.pricingDetails.map((p) => ({ label: p.label, value: p.price }));
+  }
+  const head = (service.startingPrice ?? '').split('(')[0].trim();
+  return head ? [{ label: 'Starting at', value: head }] : [];
+}
 
+function priceNote(service: ServiceItem): string | undefined {
+  if (Array.isArray(service.pricingDetails)) return undefined;
+  return (service.startingPrice ?? '').match(/\(([^)]*)\)/)?.[1];
+}
+
+/* ------------------------------------------------------------------ */
+/* Small editorial primitives                                         */
+/* ------------------------------------------------------------------ */
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="pt-8 pb-16 md:pt-12 md:pb-24">
-      {/* Services Hero Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
-          Professional Automotive Detailing &amp; Ceramic Coating
-        </h1>
-
-        <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-[60ch] mx-auto mt-5 leading-[1.65] font-normal">
-          From our base at 426 Flixton Road in Urmston and our fully mobile detailing van across Manchester, Latin King Detailing provides certified Ceramic Pro 9H coatings, multi-stage machine polishing, leather protection, and showroom valets using only professional-grade products.
-        </p>
-
-        {/* Workshop Quick Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mt-6 text-xs text-zinc-500 dark:text-zinc-400">
-          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10 font-medium">
-            <ShieldCheck className="w-4 h-4 text-red-500" /> Ceramic Pro 9H Certified
-          </span>
-          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10 font-medium">
-            <MapPin className="w-4 h-4 text-red-500" /> Flixton &amp; Urmston, Manchester
-          </span>
-          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/10 font-medium">
-            <Clock className="w-4 h-4 text-red-500" /> 24/7 Available
-          </span>
-        </div>
-
-        {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-10">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-colors active:scale-[0.98] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
-                activeCategory === cat.id
-                  ? 'bg-red-600 text-white shadow-md'
-                  : 'bg-zinc-100 dark:bg-workshop-card-subtle text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-white/10'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Quick Anchor Jump Links */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-4 pt-4 border-t border-zinc-200/80 dark:border-zinc-800/80 text-xs">
-          <span className="text-zinc-400 font-semibold mr-1">Jump to:</span>
-          {SERVICES.map((s, idx) => (
-            <a
-              key={s.id}
-              href={`#${s.id}`}
-              className="px-2.5 py-1 rounded-md bg-zinc-100/70 dark:bg-zinc-800/50 hover:bg-red-500/10 hover:text-red-500 text-zinc-600 dark:text-zinc-400 transition-colors"
-            >
-              <span className="font-mono text-zinc-400 dark:text-zinc-500 mr-1">0{idx + 1}.</span>
-              <span>{s.title.split(' - ')[0].split(' (')[0]}</span>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* Services Detailed List */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        {filteredServices.map((service: ServiceItem, index: number) => {
-          const isCeramic = service.id === 'ceramic-coating';
-          const serviceNumber = String(index + 1).padStart(2, '0');
-
-          return (
-            <article
-              id={service.id}
-              key={service.id}
-              className={`scroll-mt-28 rounded-3xl p-6 sm:p-10 md:p-12 border transition-colors ${
-                isCeramic
-                  ? 'bg-gradient-to-br from-white via-red-500/[0.02] to-red-500/[0.04] dark:from-workshop-card-subtle dark:via-workshop-card dark:to-red-500/[0.05] border-red-500/50 shadow-2xl ring-1 ring-red-500/20'
-                  : 'bg-white dark:bg-workshop-card border-zinc-200 dark:border-white/10 shadow-xl'
-              }`}
-            >
-              {/* Header Row: Number + Icon + Title + Pricing Pill */}
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 pb-6 border-b border-zinc-100 dark:border-zinc-800/80">
-                <div className="flex items-start gap-4">
-                  <div className="flex flex-col items-center">
-                    <span className="font-mono font-semibold text-2xl sm:text-3xl text-red-600 dark:text-red-500 tabular-nums">
-                      {serviceNumber}
-                    </span>
-                    <div className="w-px h-8 bg-gradient-to-b from-red-500 to-transparent my-1" />
-                  </div>
-
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <div className="p-2 rounded-xl bg-red-500/10 text-red-600 dark:text-red-400 shrink-0">
-                        {getServiceIcon(service.iconName)}
-                      </div>
-                      {isCeramic && (
-                        <span className="px-2.5 py-0.5 rounded-full bg-red-600 text-white font-semibold text-[10px] shadow-xs">
-                          Signature 9H Manchester
-                        </span>
-                      )}
-                      <span className="text-xs font-medium text-zinc-400 dark:text-zinc-500">
-                        Latin King Detailing
-                      </span>
-                    </div>
-
-                    <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
-                      {service.title}
-                    </h2>
-
-                    {service.tagline && (
-                      <p className="font-heading font-medium text-sm sm:text-base text-red-600 dark:text-red-400 mt-1">
-                        {service.tagline}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                {/* Service Cost Badge */}
-                {service.startingPrice && (
-                  <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10 shrink-0 md:max-w-xs text-left">
-                    <div className="flex items-center gap-1.5 text-xs font-semibold text-red-600 dark:text-red-400 mb-1">
-                      <Tag className="w-3.5 h-3.5" />
-                      <span>Service Cost</span>
-                    </div>
-                    <div className="font-mono font-semibold text-sm sm:text-base text-zinc-900 dark:text-white tabular-nums">
-                      {service.startingPrice}
-                    </div>
-
-                    {/* Pricing Breakdown if multi-tier */}
-                    {Array.isArray(service.pricingDetails) && (
-                      <div className="mt-2.5 pt-2 border-t border-zinc-200 dark:border-zinc-800 space-y-1 font-mono text-xs tabular-nums">
-                        {service.pricingDetails.map((pd, pdi) => (
-                          <div key={pdi} className="flex justify-between text-zinc-600 dark:text-zinc-400">
-                            <span>{pd.label}:</span>
-                            <span className="font-medium text-zinc-900 dark:text-zinc-200">{pd.price}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {/* Body: Full Verbatim Description */}
-              <div className="py-6 space-y-6">
-                <div>
-                  <h3 className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 mb-2">
-                    Service Description
-                  </h3>
-                  <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 leading-[1.65] font-normal max-w-[60ch]">
-                    {service.fullDesc}
-                  </p>
-                </div>
-
-                {/* Section: What Is / Extended Explanation */}
-                {service.whatIs && (
-                  <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10 space-y-2">
-                    <h4 className="font-heading font-semibold text-sm text-zinc-900 dark:text-white flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-red-500" />
-                      {service.id === 'ceramic-coating' ? 'What Is Ceramic Coating?' : 'What Interior Coating Does'}
-                    </h4>
-                    <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-[1.65] max-w-[60ch]">
-                      {service.whatIs}
-                    </p>
-                  </div>
-                )}
-
-                {/* Machine Polishing: Why Choose Machine Polishing? */}
-                {service.whyChoose && service.whyChoose.length > 0 && (
-                  <div>
-                    <h4 className="font-heading font-semibold text-sm text-zinc-900 dark:text-white mb-4">
-                      Why Choose Machine Polishing?
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      {service.whyChoose.map((item, wci) => (
-                        <div
-                          key={wci}
-                          className="p-5 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10"
-                        >
-                          <div className="font-heading font-semibold text-sm text-zinc-900 dark:text-white flex items-center gap-2 mb-1.5">
-                            <Check className="w-4 h-4 text-red-500 shrink-0" />
-                            <span>{item.title}</span>
-                          </div>
-                          <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65]">
-                            {item.desc}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Interior Surfaces We Protect (Leather Service) */}
-                {service.surfacesProtected && service.surfacesProtected.length > 0 && (
-                  <div>
-                    <h4 className="font-heading font-semibold text-sm text-zinc-900 dark:text-white mb-4">
-                      Interior Surfaces We Protect
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                      {service.surfacesProtected.map((item, spi) => (
-                        <div
-                          key={spi}
-                          className="p-4 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10"
-                        >
-                          <div className="font-heading font-semibold text-sm text-zinc-900 dark:text-white flex items-center gap-2 mb-1">
-                            <span className="w-2 h-2 rounded-full bg-red-500" />
-                            <span>{item.title}</span>
-                          </div>
-                          <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-[1.65]">
-                            {item.desc}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* The King's Detail: What's Included */}
-                {service.includedItems && service.includedItems.length > 0 && (
-                  <div>
-                    <h4 className="font-heading font-semibold text-sm text-zinc-900 dark:text-white mb-4">
-                      What’s Included in The King’s Detail
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      {service.includedItems.map((item, incIdx) => (
-                        <div
-                          key={incIdx}
-                          className="p-5 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10"
-                        >
-                          <div className="font-heading font-semibold text-sm text-zinc-900 dark:text-white flex items-center gap-2 mb-2">
-                            <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0" />
-                            <span>{item.title}</span>
-                          </div>
-                          <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65]">
-                            {item.desc}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Sub Services Breakdown (Deep Clean & Engine Bay / Full Valet Options) */}
-                {service.subServices && service.subServices.length > 0 && (
-                  <div className="space-y-4">
-                    <h4 className="font-heading font-semibold text-sm text-zinc-900 dark:text-white">
-                      Detailed Service Options
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {service.subServices.map((sub, ssi) => (
-                        <div
-                          key={ssi}
-                          className="p-5 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10 flex flex-col justify-between"
-                        >
-                          <div>
-                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                              <h5 className="font-heading font-semibold text-base text-zinc-900 dark:text-white">
-                                {sub.title}
-                              </h5>
-                              {sub.price && (
-                                <span className="font-mono text-xs font-medium tabular-nums px-2.5 py-1 rounded-md bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 self-start sm:self-auto">
-                                  {sub.price}
-                                </span>
-                              )}
-                            </div>
-                            {sub.subtitle && (
-                              <div className="font-mono text-xs font-medium text-red-500 mb-2">
-                                {sub.subtitle}
-                              </div>
-                            )}
-                            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65]">
-                              {sub.desc}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* 6-Step Process Breakdown (Ceramic Coating) */}
-                {service.steps && service.steps.length > 0 && (
-                  <div>
-                    <h4 className="font-heading font-semibold text-base text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
-                      <ShieldCheck className="w-5 h-5 text-red-500" />
-                      Our 6-Step Ceramic Coating Process
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {service.steps.map((st) => (
-                        <div
-                          key={st.step}
-                          className="p-4 rounded-2xl bg-zinc-50 dark:bg-workshop-row border border-zinc-200 dark:border-white/10 flex gap-3"
-                        >
-                          <div className="w-8 h-8 rounded-xl bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 font-mono font-medium flex items-center justify-center shrink-0 text-xs">
-                            0{st.step}
-                          </div>
-                          <div>
-                            <h5 className="font-heading font-semibold text-xs sm:text-sm text-zinc-900 dark:text-white">
-                              {st.title}
-                            </h5>
-                            <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1 leading-[1.65]">
-                              {st.desc}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Ceramic Pro Bronze / Silver / Gold Tiers */}
-                {service.tiers && service.tiers.length > 0 && (
-                  <div>
-                    <h4 className="font-heading font-semibold text-base text-zinc-900 dark:text-white mb-4">
-                      Ceramic Pro 9H Package Tiers (Manchester Workshop)
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      {service.tiers.map((tier) => (
-                        <div
-                          key={tier.name}
-                          className={`rounded-2xl p-5 border flex flex-col justify-between ${
-                            tier.name.includes('Silver')
-                              ? 'border-red-500/50 bg-red-500/[0.03] dark:bg-red-500/[0.05] shadow-md ring-1 ring-red-500/30'
-                              : 'border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/40'
-                          }`}
-                        >
-                          <div>
-                            {tier.name.includes('Silver') && (
-                              <span className="text-[10px] font-semibold text-red-600 dark:text-red-400 bg-red-500/10 px-2 py-0.5 rounded-full inline-block mb-2">
-                                Most Popular Package
-                              </span>
-                            )}
-                            <h5 className="font-heading font-semibold text-base text-zinc-900 dark:text-white">
-                              {tier.name}
-                            </h5>
-                            <div className="font-mono text-xs text-red-600 dark:text-red-400 font-semibold mt-1">
-                              {tier.duration}
-                            </div>
-                            <div className="font-mono text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5 mb-3">
-                              {tier.layers}
-                            </div>
-                            <ul className="space-y-1.5 text-xs text-zinc-600 dark:text-zinc-300">
-                              {tier.features.map((feat, fi) => (
-                                <li key={fi} className="flex items-start gap-1.5">
-                                  <Check className="w-3.5 h-3.5 text-red-500 shrink-0 mt-0.5" />
-                                  <span>{feat}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Recommendation Notice */}
-                {service.recommendation && (
-                  <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-800 dark:text-amber-200 text-xs sm:text-sm font-medium flex items-center gap-2.5">
-                    <Clock className="w-5 h-5 shrink-0 text-amber-500" />
-                    <span>{service.recommendation}</span>
-                  </div>
-                )}
-
-                {/* Highlights Checklist Row */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-zinc-50/50 dark:bg-workshop-row/80 border border-zinc-200/80 dark:border-white/5">
-                  <div className="text-xs font-bold text-zinc-400 mb-3">
-                    Certified Highlights & Standards:
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-xs">
-                    {service.highlights.map((hl, hli) => (
-                      <div key={hli} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-red-500 shrink-0" />
-                        <span className="text-zinc-700 dark:text-zinc-300">{hl}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Action Footer: Verbatim Hook + Call to Action Buttons */}
-              <div className="pt-6 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div>
-                  {service.hookText && (
-                    <div className="text-sm sm:text-base font-extrabold text-zinc-900 dark:text-white">
-                      &ldquo;{service.hookText}&rdquo;
-                    </div>
-                  )}
-                  <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
-                    426 Flixton Road, Flixton, Urmston, Manchester · Available 24/7
-                  </div>
-                </div>
-
-                <div className="flex w-full sm:w-auto items-center flex-wrap gap-2.5">
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-zinc-600 dark:text-zinc-300 hover:text-red-500 dark:hover:text-red-400 transition-colors px-3 py-2.5 rounded-xl border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-zinc-800/60"
-                  >
-                    <span>Full Guide</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-
-                  <a
-                    href={`https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(
-                      `Hello Latin King Detailing, I would like to book or ask about: ${service.title}`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-                    title="WhatsApp Latin King Detailing"
-                  >
-                    <WhatsAppIcon className="w-4 h-4" />
-                    <span>WhatsApp</span>
-                  </a>
-
-                  <button
-                    type="button"
-                    onClick={() => openQuoteModal(service.title)}
-                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
-                  >
-                    <span>{service.ctaText || 'Get a Free Quote'}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </article>
-          );
-        })}
-      </div>
+    <div className="flex items-center gap-2.5 font-mono text-[11px] font-medium text-zinc-500 dark:text-zinc-400">
+      <span className="h-px w-4 bg-red-600 dark:bg-red-500" aria-hidden="true" />
+      {children}
     </div>
   );
 }
 
+type DetailItem = { title: string; desc: string };
+
+function NumberedRows({ label, items }: { label: string; items: DetailItem[] }) {
+  if (!items.length) return null;
+  return (
+    <section>
+      <SectionLabel>{label}</SectionLabel>
+      <div className="mt-4 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((item, i) => (
+          <div key={item.title} className="border-t border-zinc-200 pt-4 dark:border-white/10">
+            <div className="flex items-baseline gap-2.5">
+              <span className="font-mono text-[11px] tabular-nums text-red-600 dark:text-red-500">
+                {pad(i + 1)}
+              </span>
+              <h3 className="font-heading text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                {item.title}
+              </h3>
+            </div>
+            <p className="mt-2 text-xs leading-[1.7] text-zinc-600 dark:text-zinc-400">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function StepRows({ steps }: { steps: NonNullable<ServiceItem['steps']> }) {
+  return (
+    <section>
+      <SectionLabel>How we work · six stages</SectionLabel>
+      <ol className="mt-4 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+        {steps.map((step) => (
+          <li key={step.step} className="border-t border-zinc-200 pt-4 dark:border-white/10">
+            <div className="flex items-baseline gap-2.5">
+              <span className="font-mono text-[11px] tabular-nums text-red-600 dark:text-red-500">
+                {pad(step.step)}
+              </span>
+              <h3 className="font-heading text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                {step.title}
+              </h3>
+            </div>
+            <p className="mt-2 text-xs leading-[1.7] text-zinc-600 dark:text-zinc-400">{step.desc}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+function DotRows({ label, items }: { label: string; items: DetailItem[] }) {
+  if (!items.length) return null;
+  return (
+    <section>
+      <SectionLabel>{label}</SectionLabel>
+      <div className="mt-3 grid gap-x-10 sm:grid-cols-2">
+        {items.map((item) => (
+          <div
+            key={item.title}
+            className="flex gap-3 border-b border-zinc-200 py-3.5 dark:border-white/10"
+          >
+            <span
+              className="mt-2 h-1.5 w-1.5 shrink-0 bg-red-600 dark:bg-red-500"
+              aria-hidden="true"
+            />
+            <div>
+              <h3 className="font-heading text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                {item.title}
+              </h3>
+              <p className="mt-1 text-xs leading-[1.7] text-zinc-600 dark:text-zinc-400">
+                {item.desc}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function OptionRows({ items }: { items: NonNullable<ServiceItem['subServices']> }) {
+  return (
+    <section>
+      <SectionLabel>Available options</SectionLabel>
+      <div className="mt-3 grid gap-x-10 sm:grid-cols-2">
+        {items.map((item) => (
+          <div key={item.title} className="border-b border-zinc-200 py-4 dark:border-white/10">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h3 className="font-heading text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                {item.title}
+              </h3>
+              {item.price && (
+                <span className="font-mono text-xs tabular-nums text-red-600 dark:text-red-500">
+                  {item.price}
+                </span>
+              )}
+            </div>
+            {item.subtitle && (
+              <div className="mt-1 font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
+                {item.subtitle}
+              </div>
+            )}
+            <p className="mt-2 text-xs leading-[1.7] text-zinc-600 dark:text-zinc-400">
+              {item.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function TierGrid({ tiers }: { tiers: NonNullable<ServiceItem['tiers']> }) {
+  return (
+    <section>
+      <SectionLabel>Package options</SectionLabel>
+      <div className="mt-4 grid gap-px bg-zinc-200 md:grid-cols-3 dark:bg-white/10">
+        {tiers.map((tier) => {
+          const recommended = tier.name.includes('Silver');
+          return (
+            <div
+              key={tier.name}
+              className={`bg-white p-5 sm:p-6 dark:bg-workshop-dark ${
+                recommended ? 'border-t-2 border-red-600 dark:border-red-500' : ''
+              }`}
+            >
+              {recommended && (
+                <div className="mb-3 font-mono text-[10px] font-medium text-red-600 dark:text-red-500">
+                  Most chosen
+                </div>
+              )}
+              <h3 className="font-heading text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+                {tier.name}
+              </h3>
+              <div className="mt-1 font-mono text-xs text-zinc-700 dark:text-zinc-300">
+                {tier.duration}
+              </div>
+              <div className="mt-0.5 font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
+                {tier.layers}
+              </div>
+              <ul className="mt-5 space-y-2.5 border-t border-zinc-200 pt-4 dark:border-white/10">
+                {tier.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex gap-2.5 text-xs leading-[1.6] text-zinc-600 dark:text-zinc-400"
+                  >
+                    <Check
+                      className="mt-0.5 h-3.5 w-3.5 shrink-0 text-red-600 dark:text-red-500"
+                      aria-hidden="true"
+                    />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Page                                                               */
+/* ------------------------------------------------------------------ */
+
+export function ServicesDetailView() {
+  const { openQuoteModal } = useModals();
+  const [activeCategory, setActiveCategory] = useState<CategoryId>('all');
+
+  const counts = useMemo(
+    () =>
+      CATEGORIES.reduce<Record<CategoryId, number>>(
+        (acc, cat) => {
+          acc[cat.id] =
+            cat.id === 'all'
+              ? SERVICES.length
+              : SERVICES.filter((s) => SERVICE_CATEGORY[s.id] === cat.id).length;
+          return acc;
+        },
+        { all: 0, coating: 0, polishing: 0, valet: 0, maintenance: 0 }
+      ),
+    []
+  );
+
+  const visibleServices = useMemo(
+    () =>
+      activeCategory === 'all'
+        ? SERVICES
+        : SERVICES.filter((s) => SERVICE_CATEGORY[s.id] === activeCategory),
+    [activeCategory]
+  );
+
+  const facts = [
+    { label: 'Based', value: `${SITE_CONFIG.address.street}, ${SITE_CONFIG.address.town}` },
+    { label: 'Accreditation', value: 'Ceramic Pro 9H certified installer' },
+    { label: 'Coverage', value: 'Studio & mobile across Greater Manchester' },
+    { label: 'Hours', value: '24/7, seven days a week' },
+  ];
+
+  const onTabKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const { key } = event;
+    if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(key)) return;
+    event.preventDefault();
+
+    const current = CATEGORIES.findIndex((cat) => cat.id === activeCategory);
+    let next = current;
+    if (key === 'ArrowRight') next = (current + 1) % CATEGORIES.length;
+    if (key === 'ArrowLeft') next = (current - 1 + CATEGORIES.length) % CATEGORIES.length;
+    if (key === 'Home') next = 0;
+    if (key === 'End') next = CATEGORIES.length - 1;
+
+    setActiveCategory(CATEGORIES[next].id);
+    const tabs = event.currentTarget.querySelectorAll<HTMLButtonElement>('[role="tab"]');
+    tabs[next]?.focus();
+  };
+
+  return (
+    <div className="pb-24">
+      {/* Hero — asymmetric editorial split */}
+      <section className="border-b border-zinc-200 dark:border-white/10">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.35fr_0.65fr] lg:gap-20 lg:px-8 lg:py-24">
+          <div>
+            <div className="flex items-center gap-3 font-mono text-[11px] text-red-600 dark:text-red-500">
+              <span className="h-px w-6 bg-red-600 dark:bg-red-500" aria-hidden="true" />
+              <span>Services / Urmston, Manchester</span>
+            </div>
+
+            <h1 className="h1-hero mt-6 max-w-[20ch]">
+              Detailing &amp; protection, without the shortcuts.
+            </h1>
+
+            <p className="mt-6 max-w-[62ch] text-base leading-[1.7] text-zinc-600 dark:text-zinc-400 sm:text-lg">
+              From our workshop on Flixton Road and our fully mobile setup, we handle certified
+              Ceramic Pro 9H coatings, machine paint correction, interior protection and showroom
+              valets — using professional-grade products and no production-line shortcuts.
+            </p>
+
+            <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+              <button
+                type="button"
+                onClick={() => openQuoteModal()}
+                className={primaryButton}
+              >
+                Request a quote
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </button>
+              <a href="#service-index" className={quietLink}>
+                Browse all {pad(SERVICES.length)} services
+                <ArrowDownRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+
+          <aside className="lg:pt-3">
+            <div className="border-t-2 border-red-600 pt-5 dark:border-red-500">
+              <div className="font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
+                The workshop, at a glance
+              </div>
+              <dl className="mt-3 divide-y divide-zinc-200 dark:divide-white/10">
+                {facts.map((fact) => (
+                  <div key={fact.label} className="grid grid-cols-[6.5rem_1fr] gap-3 py-3.5">
+                    <dt className="text-xs text-zinc-500 dark:text-zinc-400">{fact.label}</dt>
+                    <dd className="text-sm text-zinc-800 dark:text-zinc-200">{fact.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      {/* Single page-level index: filter + service list */}
+      <section id="service-index" className="scroll-mt-24">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h2 className="h2-section">The services</h2>
+            <span className="font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
+              {pad(visibleServices.length)} / {pad(SERVICES.length)} disciplines
+            </span>
+          </div>
+
+          <div
+            role="tablist"
+            aria-label="Filter services by category"
+            onKeyDown={onTabKeyDown}
+            className="mt-8 flex flex-wrap gap-x-8 gap-y-1 border-b border-zinc-200 dark:border-white/10"
+          >
+            {CATEGORIES.map((cat) => {
+              const active = activeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  aria-controls="services-panel"
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`relative rounded-sm pb-3 pt-2 text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
+                    active
+                      ? 'text-zinc-900 dark:text-white'
+                      : 'text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200'
+                  }`}
+                >
+                  {cat.label}
+                  <span
+                    className={`ml-2 font-mono text-[10px] tabular-nums ${
+                      active ? 'text-red-600 dark:text-red-500' : 'text-zinc-400 dark:text-zinc-600'
+                    }`}
+                  >
+                    {pad(counts[cat.id])}
+                  </span>
+                  {active && (
+                    <span
+                      className="absolute inset-x-0 bottom-0 h-0.5 bg-red-600 dark:bg-red-500"
+                      aria-hidden="true"
+                    />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="mt-2 border-b border-zinc-200 dark:border-white/10">
+            {visibleServices.map((service, i) => {
+              const Icon = ICONS[service.iconName] ?? Award;
+              return (
+                <a
+                  key={service.id}
+                  href={`#${service.id}`}
+                  className="group grid grid-cols-[2.25rem_1fr_1.5rem] items-center gap-3 border-t border-zinc-200 py-4 transition-colors duration-150 hover:bg-zinc-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-red-500 dark:border-white/10 dark:hover:bg-white/[0.02] sm:grid-cols-[3rem_1fr_12rem_8rem_1.5rem]"
+                >
+                  <span className="font-mono text-xs tabular-nums text-red-600 dark:text-red-500">
+                    {pad(i + 1)}
+                  </span>
+                  <span className="flex items-center gap-3 font-heading text-base font-medium text-zinc-900 transition-colors duration-150 group-hover:text-red-600 dark:text-zinc-100 dark:group-hover:text-red-400 sm:text-lg">
+                    <Icon className="h-4 w-4 shrink-0 text-zinc-400" aria-hidden="true" />
+                    {service.title}
+                  </span>
+                  <span className="hidden font-mono text-[11px] text-zinc-500 dark:text-zinc-400 sm:block">
+                    {categoryLabel(service.id)}
+                  </span>
+                  <span className="hidden text-right font-mono text-xs tabular-nums text-zinc-700 dark:text-zinc-300 sm:block">
+                    {service.startingPrice?.split('(')[0].trim()}
+                  </span>
+                  <ArrowDownRight
+                    className="h-4 w-4 justify-self-end text-zinc-400 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:text-red-600 dark:group-hover:text-red-400"
+                    aria-hidden="true"
+                  />
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Service detail — editorial spec sheets, no nested cards */}
+      <div
+        id="services-panel"
+        role="tabpanel"
+        aria-label={CATEGORIES.find((c) => c.id === activeCategory)?.label ?? 'All services'}
+        className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"
+      >
+        {visibleServices.map((service, index) => {
+          const Icon = ICONS[service.iconName] ?? Award;
+          const rows = priceRows(service);
+          const note = priceNote(service);
+
+          return (
+            <article
+              key={service.id}
+              id={service.id}
+              className="scroll-mt-24 border-t border-zinc-200 py-12 sm:py-16 dark:border-white/10"
+            >
+              {/* Header */}
+              <header className="grid gap-6 lg:grid-cols-[auto_1fr_auto] lg:items-start lg:gap-10">
+                <div className="flex items-center gap-4 lg:gap-6">
+                  <span className="font-mono text-3xl tabular-nums text-red-600 dark:text-red-500">
+                    {pad(index + 1)}
+                  </span>
+                  <span
+                    className="hidden h-10 w-px bg-zinc-200 sm:block dark:bg-white/10"
+                    aria-hidden="true"
+                  />
+                </div>
+
+                <div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Icon className="h-4 w-4 text-zinc-400" aria-hidden="true" />
+                    <span className="font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
+                      {categoryLabel(service.id)}
+                    </span>
+                    {service.id === 'ceramic-coating' && (
+                      <span className="font-mono text-[10px] text-red-600 dark:text-red-500">
+                        · Signature service
+                      </span>
+                    )}
+                  </div>
+                  <h2 className="mt-2 font-heading text-[clamp(1.6rem,3vw,2.5rem)] font-semibold leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
+                    {service.title}
+                  </h2>
+                  {service.tagline && (
+                    <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+                      {service.tagline}
+                    </p>
+                  )}
+                </div>
+
+                <div className="border-l-2 border-zinc-200 pl-4 lg:min-w-[15rem] dark:border-white/10">
+                  <div className="font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
+                    Pricing
+                  </div>
+                  <div className="mt-2 space-y-1.5">
+                    {rows.map((row) => (
+                      <div key={row.label}>
+                        <div className="font-mono text-[10px] text-zinc-400 dark:text-zinc-500">
+                          {row.label}
+                        </div>
+                        <div className="font-mono text-sm font-medium tabular-nums text-zinc-900 dark:text-zinc-100">
+                          {row.value}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {note && (
+                    <p className="mt-2 max-w-[26ch] text-[11px] leading-[1.6] text-zinc-500 dark:text-zinc-400">
+                      {note}
+                    </p>
+                  )}
+                </div>
+              </header>
+
+              {/* Narrative + standing spec */}
+              <div className="mt-10 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
+                <div className="space-y-8">
+                  <section>
+                    <SectionLabel>The work</SectionLabel>
+                    <p className="mt-3 max-w-[62ch] text-[15px] leading-[1.8] text-zinc-700 dark:text-zinc-300">
+                      {service.fullDesc}
+                    </p>
+                  </section>
+
+                  {service.whatIs && (
+                    <section className="border-l-2 border-red-600 pl-5 dark:border-red-500">
+                      <SectionLabel>
+                        {service.id === 'ceramic-coating'
+                          ? 'What ceramic coating actually is'
+                          : 'How the protection works'}
+                      </SectionLabel>
+                      <p className="mt-3 max-w-[62ch] text-sm leading-[1.8] text-zinc-600 dark:text-zinc-400">
+                        {service.whatIs}
+                      </p>
+                    </section>
+                  )}
+                </div>
+
+                <aside>
+                  <SectionLabel>What you get</SectionLabel>
+                  <ul className="mt-3 divide-y divide-zinc-200 dark:divide-white/10">
+                    {service.highlights.map((highlight) => (
+                      <li key={highlight} className="flex gap-3 py-3">
+                        <Check
+                          className="mt-0.5 h-3.5 w-3.5 shrink-0 text-red-600 dark:text-red-500"
+                          aria-hidden="true"
+                        />
+                        <span className="text-[13px] leading-[1.6] text-zinc-600 dark:text-zinc-400">
+                          {highlight}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {service.warranty && (
+                    <div className="mt-6 border-t border-zinc-200 pt-4 dark:border-white/10">
+                      <SectionLabel>Standard / warranty</SectionLabel>
+                      <p className="mt-2 text-[13px] leading-[1.6] text-zinc-700 dark:text-zinc-300">
+                        {service.warranty}
+                      </p>
+                    </div>
+                  )}
+                </aside>
+              </div>
+
+              {/* Structured detail */}
+              {(service.steps ||
+                service.tiers ||
+                service.whyChoose ||
+                service.surfacesProtected ||
+                service.includedItems ||
+                service.subServices ||
+                service.recommendation) && (
+                <div className="mt-12 space-y-10 border-t border-zinc-200 pt-10 dark:border-white/10">
+                  {service.steps && <StepRows steps={service.steps} />}
+                  {service.tiers && <TierGrid tiers={service.tiers} />}
+                  {service.whyChoose && (
+                    <NumberedRows label="Why it matters" items={service.whyChoose} />
+                  )}
+                  {service.surfacesProtected && (
+                    <DotRows label="Surfaces we treat" items={service.surfacesProtected} />
+                  )}
+                  {service.includedItems && (
+                    <NumberedRows label="What's included" items={service.includedItems} />
+                  )}
+                  {service.subServices && <OptionRows items={service.subServices} />}
+                  {service.recommendation && (
+                    <div className="border-l-2 border-amber-500 pl-4">
+                      <div className="font-mono text-[11px] text-amber-700 dark:text-amber-400">
+                        Good to know
+                      </div>
+                      <p className="mt-1.5 max-w-[62ch] text-sm leading-[1.7] text-zinc-600 dark:text-zinc-400">
+                        {service.recommendation}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* One primary action per service */}
+              <footer className="mt-10 flex flex-col gap-5 border-t border-zinc-200 pt-6 sm:flex-row sm:items-center sm:justify-between dark:border-white/10">
+                <p className="font-heading text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                  {service.hookText && <span>&ldquo;{service.hookText}&rdquo;</span>}
+                </p>
+                <div className="flex items-center gap-6">
+                  <Link href={`/services/${service.slug}`} className={quietLink}>
+                    Full guide
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => openQuoteModal(service.title)}
+                    className={primaryButton}
+                  >
+                    {service.ctaText || 'Get a free quote'}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </button>
+                </div>
+              </footer>
+            </article>
+          );
+        })}
+      </div>
+
+      {/* Closing */}
+      <section className="mt-16 border-y border-zinc-200 bg-zinc-50/60 py-14 dark:border-white/10 dark:bg-workshop-sunken/40">
+        <div className="mx-auto flex max-w-7xl flex-col gap-7 px-4 sm:px-6 md:flex-row md:items-end md:justify-between lg:px-8">
+          <div>
+            <h2 className="font-heading text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+              Not sure which one fits?
+            </h2>
+            <p className="mt-2 max-w-[55ch] text-sm leading-[1.7] text-zinc-600 dark:text-zinc-400">
+              Tell us the car and what you&rsquo;re after. We&rsquo;ll recommend the right level
+              without the hard sell — or compare the coating packages side by side.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-6">
+            <Link href="/comparison" className={quietLink}>
+              Compare coatings
+              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </Link>
+            <button type="button" onClick={() => openQuoteModal()} className={primaryButton}>
+              Ask us
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
