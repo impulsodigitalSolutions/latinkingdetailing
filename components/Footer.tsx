@@ -196,7 +196,7 @@ export function Footer() {
           {/* Column 3: Service Areas (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
             <h4 className="text-xs font-bold text-red-500">
-              Service Areas (24 Towns)
+              Areas We Cover (Manchester &amp; Cheshire)
             </h4>
             <div className="flex flex-wrap gap-1.5 text-[11px] text-zinc-400">
               {SERVICE_AREAS_24.map((town, idx) => (
@@ -351,7 +351,7 @@ export function Footer() {
               Sitemap
             </Link>
             <span className="flex items-center gap-1 text-zinc-400">
-              Manchester & Manchester, UK
+              Manchester, UK
             </span>
           </div>
         </div>

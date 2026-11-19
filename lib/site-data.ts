@@ -6,6 +6,9 @@ export interface ServiceItem {
   shortDesc: string;
   fullDesc: string;
   iconName: string;
+  images?: string[];
+  detailGallery?: { src: string; alt: string; caption?: string }[];
+  video?: string;
   highlights: string[];
   warranty?: string;
   startingPrice?: string;
@@ -261,6 +264,38 @@ export const SERVICES: ServiceItem[] = [
     whatIs:
       'Unlike traditional wax, which sits on top of the paint and washes off within a few weeks, our ceramic coating is a liquid polymer that fuses directly into your paintwork. Once cured, it becomes a semi-permanent part of the surface. Rated at 9H on the pencil hardness scale (the hardest rating achievable), it adds a tough protective layer that resists light wash swirls, UV rays, acid rain, bird droppings, road salt, and everything Greater Manchester weather throws at your car. Its extreme hydrophobic properties make water and grime bead off effortlessly, meaning your car stays cleaner for longer, washes easier, and retains higher resale value.',
     iconName: 'ShieldCheck',
+    images: [
+      '/images/about/ceramic-coating.jpg',
+      '/images/hero-bmw.jpg',
+      '/images/hero-porsche.jpg',
+    ],
+    detailGallery: [
+      {
+        src: '/images/about/ceramic-coating.jpg',
+        alt: 'Ceramic Pro 9H coating application with extreme water beading',
+        caption: 'Extreme hydrophobic contact angle and chemical resistance',
+      },
+      {
+        src: '/images/hero-bmw.jpg',
+        alt: 'BMW 3 Series M-Sport with Ceramic Pro 9H gloss reflection',
+        caption: 'Deep mirror reflection on Brooklyn Grey BMW M-Sport',
+      },
+      {
+        src: '/images/hero-porsche.jpg',
+        alt: 'Porsche Taycan with ceramic paint protection',
+        caption: 'Nanoceramic clear coat shield on Carrara White Porsche Taycan',
+      },
+      {
+        src: '/images/gallery/img-2.jpeg',
+        alt: 'Showroom ceramic finish under workshop inspection lights',
+        caption: 'Controlled bay inspection and temperature-regulated curing',
+      },
+      {
+        src: '/images/gallery/img-20.jpeg',
+        alt: 'Flawless ceramic reflection on customer vehicle',
+        caption: 'Multi-year durable finish backed by VIN-registered warranty',
+      },
+    ],
     warranty: 'Up to Lifetime VIN-Registered Ceramic Pro Warranty',
     hookText: 'Lock in deep, hydrophobic gloss for years.',
     ctaText: 'Book a Coating Consultation',
@@ -355,6 +390,38 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: "Safely refines your clear coat to eliminate swirl marks, scratches, buffer trails, and dull oxidation to bring back depth, clarity, and mirror-like gloss.",
     fullDesc:
       'Everyday driving, automatic car washes, and environmental exposure leave your paintwork covered in swirl marks, light scratches, buffer trails, water spots, and dull oxidation. At Latin King Detailing, our machine polishing service safely refines your clear coat to bring back depth, clarity, and mirror-like gloss.',
+    images: [
+      '/images/about/paint-correction.jpg',
+      '/images/hero-showcase.jpg',
+      '/images/gallery/img-14.jpeg',
+    ],
+    detailGallery: [
+      {
+        src: '/images/about/paint-correction.jpg',
+        alt: 'Precision dual-action machine polishing in progress',
+        caption: 'Dual-action machine polishing with professional micro-abrasive compound',
+      },
+      {
+        src: '/images/hero-showcase.jpg',
+        alt: 'Swirl-free clear coat after multi-stage correction',
+        caption: 'Permanent swirl and scratch removal with zero masking fillers',
+      },
+      {
+        src: '/images/gallery/img-14.jpeg',
+        alt: 'Deep gloss paint refinement under inspection LEDs',
+        caption: 'Surface defect elimination verified under high-intensity inspection lights',
+      },
+      {
+        src: '/images/gallery/img-15.jpeg',
+        alt: 'Refined automotive paintwork Latin King Detailing',
+        caption: 'Multi-stage paint correction bringing out depth and optical clarity',
+      },
+      {
+        src: '/images/gallery/img-16.jpeg',
+        alt: 'Mirror paint reflection after final jewelling polish',
+        caption: 'Ultra-fine jewelling stage for maximum distinction of image',
+      },
+    ],
     whyChoose: [
       {
         title: 'True Defect Removal',
@@ -390,6 +457,34 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: 'Ceramic-grade leather and interior coatings that guard against UV fade, body oil staining, spills, and premature cracking.',
     fullDesc:
       'Most people think about protecting the paint, yet interiors take just as much punishment and the cabin is where you sit every day. Latin King Detailing applies ceramic-grade leather and interior coatings that guard against UV fade, body oil staining, spills, and premature cracking.',
+    images: [
+      '/images/Services/Interior-deep-clean.jpeg',
+      '/images/Services/interior-deep-clean-1.jpeg',
+      '/images/about/interior-detailing.jpg',
+    ],
+    video: '/images/Services/Interior-deep-clean-video.mp4',
+    detailGallery: [
+      {
+        src: '/images/Services/Interior-deep-clean.jpeg',
+        alt: 'Interior deep clean and leather restoration',
+        caption: 'Deep steam extraction and stain removal on vehicle cabin seats',
+      },
+      {
+        src: '/images/Services/interior-deep-clean-1.jpeg',
+        alt: 'Cabin detailing and seat leather conditioning',
+        caption: 'Factory satin matte leather nourishment and UV barrier protection',
+      },
+      {
+        src: '/images/about/interior-detailing.jpg',
+        alt: 'Lotus Emira interior leather and Alcantara protection',
+        caption: 'Alcantara, steering wheel, and nappa leather hydrophobic protection',
+      },
+      {
+        src: '/images/gallery/img-13.jpeg',
+        alt: 'Full cabin interior sanitation Latin King Detailing',
+        caption: 'Hygienic steam clean and anti-bacterial odour barrier',
+      },
+    ],
     whatIs:
       "Unlike traditional leather conditioners that only moisturise the surface for a few days, our ceramic-grade protection forms an invisible, breathable barrier that lasts for months. It repels liquids before they stain, blocks UV radiation, and resists the abrasion that wears down seats and steering wheels - all while preserving your interior's natural look and feel.",
     surfacesProtected: [
@@ -443,6 +538,33 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: 'Our signature, multi-stage restoration service designed to extract ingrained dirt from every pore and crevice and bring your vehicle back to showroom condition.',
     fullDesc:
       'There’s a big difference between a car that’s been washed and a car that’s been detailed. The King’s Detail is the signature, multi-stage restoration service from Latin King Detailing: designed to extract ingrained dirt from every pore and crevice and bring a neglected or daily-driven car back to showroom condition.',
+    images: [
+      '/images/about/exterior-detailing.jpg',
+      '/images/Services/Interior-deep-clean.jpeg',
+      '/images/hero-bmw.jpg',
+    ],
+    detailGallery: [
+      {
+        src: '/images/about/exterior-detailing.jpg',
+        alt: 'Full exterior detail on Porsche Taycan',
+        caption: 'Full multi-stage exterior wash, decontamination, and gloss polish',
+      },
+      {
+        src: '/images/Services/Interior-deep-clean.jpeg',
+        alt: 'Comprehensive interior steam clean and extraction',
+        caption: 'Deep carpet, seat, and cabin extraction with leather conditioning',
+      },
+      {
+        src: '/images/hero-bmw.jpg',
+        alt: 'Showroom exterior finish Latin King Detailing',
+        caption: 'Bumper-to-bumper transformation inside and out',
+      },
+      {
+        src: '/images/Services/before-and-after-Engine bay clean.jpeg',
+        alt: 'Engine bay detailed and dressed',
+        caption: 'Optional engine bay detailing and under-bonnet dressing',
+      },
+    ],
     includedItems: [
       {
         title: 'Exterior Decontamination & Polish',
@@ -484,6 +606,33 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: 'Hygienic cabin refresh and under-bonnet care. Removes built-up dirt, bacteria, and grime down to the last bolt.',
     fullDesc:
       'A comprehensive hygiene and under-bonnet care package designed to eliminate deep-seated contamination, odour-causing bacteria, and engine grease.',
+    images: [
+      '/images/Services/before-and-after-Engine bay clean.jpeg',
+      '/images/gallery/img-10.jpeg',
+      '/images/gallery/img-12.jpeg',
+    ],
+    detailGallery: [
+      {
+        src: '/images/Services/before-and-after-Engine bay clean.jpeg',
+        alt: 'Engine bay detailing before and after transformation',
+        caption: 'Genuine Before & After: Degreased, steam cleaned, and dressed',
+      },
+      {
+        src: '/images/gallery/img-10.jpeg',
+        alt: 'Safe touchless degreasing pre-wash',
+        caption: 'Safe citrus degreasing with electronic component safeguarding',
+      },
+      {
+        src: '/images/gallery/img-12.jpeg',
+        alt: 'Engine bay plastic and hose dressing',
+        caption: 'Satin finish dressing resisting dirt, heat, and moisture build-up',
+      },
+      {
+        src: '/images/Services/interior-deep-clean-1.jpeg',
+        alt: 'Cabin interior deep clean and sanitation',
+        caption: 'Anti-bacterial steam cleaning of vents, plastics, and high-touch areas',
+      },
+    ],
     subServices: [
       {
         title: 'Interior & Exterior Deep Clean',
@@ -523,6 +672,33 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: 'Comprehensive top-to-bottom clean inside and out, leaving your vehicle spotless, sanitised, refreshed, and well presented.',
     fullDesc:
       'Our Full Valet provides an intensive, top-to-bottom clean inside and out: leaving your vehicle spotless, sanitised, refreshed, and well presented. Ideal for busy drivers and family cars that need professional care.',
+    images: [
+      '/images/gallery/img-10.jpeg',
+      '/images/Services/interior-deep-clean-1.jpeg',
+      '/images/gallery/img-11.jpeg',
+    ],
+    detailGallery: [
+      {
+        src: '/images/gallery/img-10.jpeg',
+        alt: 'High foaming snow foam pre-wash on vehicle',
+        caption: 'Multi-stage snow foam pre-wash lifting road grime and dirt safely',
+      },
+      {
+        src: '/images/Services/interior-deep-clean-1.jpeg',
+        alt: 'Interior cabin vacuum and shampooing',
+        caption: 'Thorough interior vacuum, dashboard wipe-down, and glass polishing',
+      },
+      {
+        src: '/images/gallery/img-11.jpeg',
+        alt: 'Wheel barrel and caliper cleaning',
+        caption: 'Dedicated wheel face, barrel, and arch cleaning with satin tyre dress',
+      },
+      {
+        src: '/images/hero-porsche.jpg',
+        alt: 'Cleaned and glossed vehicle post valet',
+        caption: 'Hydrophobic gloss finish ready for collection or mobile hand-over',
+      },
+    ],
     subServices: [
       {
         title: 'Full Valet (Small / Medium Car)',
@@ -545,7 +721,7 @@ export const SERVICES: ServiceItem[] = [
       'Safe pH-neutral hand wash & wheel face cleaning',
       'Full interior vacuum, dashboard wipe & glass polished inside and out',
       'Tyres dressed with long-lasting satin finish',
-      'Flexible booking slots for busy drivers in Manchester & Manchester',
+      'Flexible booking slots for busy drivers in Manchester & Cheshire',
       'Clear, honest pricing based on vehicle size',
     ],
   },
@@ -558,6 +734,33 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: 'The essential routine step performed every 4–5 weeks to prevent grime build-up and preserve your ceramic coating swirl-free.',
     fullDesc:
       'A Maintenance Wash is the essential routine step designed to keep your car looking pristine after a full valet, detail, or ceramic coating. Ideally performed every 4 to 5 weeks at Latin King Detailing, this safe hand-wash prevents the build-up of road grime and contaminants that can dull your finish: preserving the results of previous detailing work and keeping your paintwork swirl-free.',
+    images: [
+      '/images/gallery/img-10.jpeg',
+      '/images/gallery/img-11.jpeg',
+      '/images/hero-porsche.jpg',
+    ],
+    detailGallery: [
+      {
+        src: '/images/gallery/img-10.jpeg',
+        alt: 'pH-neutral snow foam pre-wash maintenance wash',
+        caption: 'pH-neutral snow foam pre-wash safe for existing wax and ceramic coatings',
+      },
+      {
+        src: '/images/gallery/img-11.jpeg',
+        alt: 'Two-bucket wash technique with grit guard',
+        caption: 'Two-bucket wash method with grit guards and plush microfibre mitts',
+      },
+      {
+        src: '/images/hero-porsche.jpg',
+        alt: 'Touchless air dry and gloss topper',
+        caption: 'Touchless warm air drying and hydrophobic gloss booster spray',
+      },
+      {
+        src: '/images/about/ceramic-coating.jpg',
+        alt: 'Hydrophobic water beading maintenance',
+        caption: 'Preserving ceramic coating contact angle and self-cleaning performance',
+      },
+    ],
     iconName: 'Droplets',
     warranty: 'Swirl-Free Hand Wash Protocol',
     hookText: 'Keep that just-detailed shine all year round.',
@@ -869,42 +1072,33 @@ export const REVIEWS: ReviewItem[] = [
   },
 ];
 
-export const SERVICE_AREAS_24 = [
-  'Manchester',
+export const MAIN_LOCATIONS_10 = [
   'Urmston',
   'Flixton',
-  'Trafford',
   'Stretford',
   'Sale',
-  'Salford',
-  'Altrincham',
-  'Stockport',
-  'Wilmslow',
+  'Irlam',
   'Eccles',
-  'Swinton',
-  'Worsley',
-  'Walkden',
-  'Radcliffe',
-  'Whitefield',
-  'Bury',
-  'Horwich',
-  'Westhoughton',
-  'Kearsley',
-  'Little Lever',
-  'Leigh',
-  'Atherton',
-  'Tyldesley',
+  'Altrincham',
+  'Hale',
+  'Bowdon',
+  'Partington',
 ];
+
+export const COVERAGE_REGIONS = ['Manchester', 'Cheshire'];
+
+// Export as SERVICE_AREAS_24 for backwards-compatibility with existing imports
+export const SERVICE_AREAS_24 = MAIN_LOCATIONS_10;
 
 export const TRUSTED_PARTNER = {
   badge: 'LK',
-  name: 'Latin King Detailing: Manchester Partner',
+  name: 'Latin King Detailing: Manchester & Cheshire Partner',
   status: 'Verified Partner',
   rating: '5.0 ★',
-  reviews: '47+ reviews',
+  reviews: '60+ reviews',
   description:
-    'Mobile car detailing, paint correction, ceramic coating, and interior protection delivered to your door across Manchester, Salford, Stretford, Sale, Altrincham, and 15+ Greater Manchester locations.',
-  tags: ['Mobile Valeting', 'Paint Correction', 'Ceramic Coating', 'Interior Protection'],
+    'Mobile car detailing, paint correction, ceramic coating, and interior protection delivered to your door across Manchester and Cheshire: Urmston, Flixton, Stretford, Sale, Irlam, Eccles, Altrincham, Hale, Bowdon, and Partington.',
+  tags: ['Mobile Detailing', 'Paint Correction', 'Ceramic Coating', 'Interior Protection'],
   phone: '07482 225323',
 };
 

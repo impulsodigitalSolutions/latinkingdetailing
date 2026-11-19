@@ -7,14 +7,10 @@ import { Footer } from '@/components/Footer';
 import { SITE_CONFIG } from '@/lib/site-data';
 import {
   ChevronRight,
-  ShieldCheck,
   CheckCircle2,
-  Sparkles,
-  Truck,
   MapPin,
   Phone,
   ArrowRight,
-  Star,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -88,22 +84,52 @@ const SPECIALISMS = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
+      {/* Sticky Floating Capsule Navbar */}
       <Navbar />
 
-      <main className="flex-1">
-        {/* Breadcrumb Navigation */}
-        <div className="border-b border-zinc-200/80 dark:border-white/5 bg-zinc-50/70 dark:bg-workshop-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <nav className="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
-              <Link href="/" className="hover:text-red-500 transition-colors">
+      <main className="flex-1 page-transition">
+        {/* Dedicated Page Hero Banner - Consistent with Our Work, Locations, FAQs */}
+        <section className="pt-10 pb-6 sm:pt-14 sm:pb-8 border-b border-zinc-200/60 dark:border-white/5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Breadcrumb Navigation */}
+            <nav className="flex items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400 mb-6" aria-label="Breadcrumb">
+              <Link
+                href="/"
+                className="hover:text-red-600 dark:hover:text-red-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded-sm"
+              >
                 Home
               </Link>
-              <ChevronRight className="w-3.5 h-3.5 text-zinc-400" />
-              <span className="text-zinc-900 dark:text-white font-medium">About Us</span>
+              <ChevronRight className="w-3.5 h-3.5 text-zinc-400" aria-hidden="true" />
+              <span className="text-zinc-900 dark:text-white font-semibold">About Us</span>
             </nav>
+
+            <div className="max-w-3xl">
+              <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
+                About Latin King Detailing
+              </h1>
+              <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 max-w-[60ch] leading-[1.65]">
+                Founded out of a true passion for cars and perfection. Specialist mobile and workshop vehicle detailing, paint correction, and certified Ceramic Pro 9H nanoprotection across Manchester and Cheshire.
+              </p>
+
+              {/* Quick Trust Badges */}
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-6 text-xs text-zinc-600 dark:text-zinc-400">
+                <span className="inline-flex items-center gap-1.5 font-semibold">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                  Ceramic Pro 9H Certified
+                </span>
+                <span className="inline-flex items-center gap-1.5 font-semibold">
+                  <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0" />
+                  Mobile &amp; Workshop Studio
+                </span>
+                <span className="inline-flex items-center gap-1.5 font-semibold">
+                  <CheckCircle2 className="w-4 h-4 text-zinc-400 shrink-0" />
+                  Manchester &amp; Cheshire Coverage
+                </span>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* Hero / Founder Story Section */}
         <section className="py-14 sm:py-20 border-b border-zinc-200/80 dark:border-white/5">
@@ -112,9 +138,9 @@ export default function AboutPage() {
               {/* Left Column: Heading and Narrative */}
               <div className="lg:col-span-7 space-y-6">
                 <div>
-                  <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white mb-3">
+                  <h2 className="font-heading font-semibold text-[clamp(2rem,4vw,3.25rem)] leading-[1.08] tracking-[-0.03em] text-zinc-900 dark:text-white mb-3">
                     Passion for Car Detailing
-                  </h1>
+                  </h2>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-600 dark:text-red-400 text-xs font-bold">
                     <MapPin className="w-3.5 h-3.5" />
                     <span>Urmston &amp; Greater Manchester · Mobile &amp; Studio</span>
@@ -164,48 +190,59 @@ export default function AboutPage() {
                     href={SITE_CONFIG.whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-md"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 active:scale-[0.98] text-white font-bold text-xs transition-colors shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 cursor-pointer"
                   >
                     <span>Chat on WhatsApp</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </a>
                   <a
                     href={`tel:${SITE_CONFIG.phone}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-100 dark:bg-workshop-card hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-900 dark:text-white font-semibold text-xs border border-zinc-200 dark:border-white/10 transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-100 dark:bg-workshop-card hover:bg-zinc-200 dark:hover:bg-zinc-800 active:scale-[0.98] text-zinc-900 dark:text-white font-semibold text-xs border border-zinc-200 dark:border-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 cursor-pointer"
                   >
-                    <Phone className="w-3.5 h-3.5 text-red-500" />
+                    <Phone className="w-3.5 h-3.5 text-red-500" aria-hidden="true" />
                     <span>Call {SITE_CONFIG.phone}</span>
                   </a>
                 </div>
               </div>
 
-              {/* Right Column: Photography Showcase */}
-              <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-zinc-200/80 dark:border-white/10 bg-zinc-900 shadow-lg">
+              {/* Right Column: Photography & Mobile Studio Showcase */}
+              <div className="lg:col-span-5 grid grid-cols-[1.08fr_0.92fr] gap-3 sm:gap-4 items-end">
+                <figure className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-zinc-200/80 dark:border-white/10 bg-zinc-900">
                   <Image
-                    src="/images/about/about-hero.jpg"
-                    alt="Latin King Detailing founder at work on automotive detailing"
+                    src="/images/about/about-car.jpg"
+                    alt="Finished vehicle after professional detailing in Manchester"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 42vw"
+                    sizes="(max-width: 640px) 50vw, 24vw"
                     className="object-cover"
-                    priority
+                    preload
                   />
-                </div>
+                  <figcaption className="absolute inset-x-0 bottom-0 bg-zinc-950/85 px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
+                    Mobile Van
+                  </figcaption>
+                </figure>
 
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-zinc-200/80 dark:border-white/10 bg-zinc-900 shadow-md">
-                  <Image
-                    src="/images/about/about-van.jpg"
-                    alt="Latin King Detailing fully equipped mobile van in Manchester"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 42vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
-                    <span className="text-xs text-white font-semibold">
-                      Fully Equipped Mobile Detailing Van
-                    </span>
-                  </div>
-                </div>
+                <figure className="relative aspect-[9/16] overflow-hidden rounded-3xl border border-zinc-200/80 dark:border-white/10 bg-zinc-900">
+                  <video
+                    width={576}
+                    height={1024}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label="Latin King Detailing mobile van providing on-site car detailing"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  >
+                    <source
+                      src="/images/about/about-mobile-van-video.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                  <figcaption className="absolute inset-x-0 bottom-0 bg-zinc-950/85 px-3 py-3 text-[10px] font-semibold uppercase leading-tight tracking-[0.14em] text-white">
+                    Mobile studio
+                  </figcaption>
+                </figure>
               </div>
             </div>
           </div>
@@ -273,10 +310,10 @@ export default function AboutPage() {
                     <div className="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/80">
                       <Link
                         href={`/services/${item.slug}`}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 dark:text-red-400 hover:text-red-500 transition-colors"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 dark:text-red-400 hover:text-red-500 active:scale-[0.98] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded-sm"
                       >
                         <span>View {item.title}</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
+                        <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                       </Link>
                     </div>
                   </div>
@@ -289,7 +326,7 @@ export default function AboutPage() {
         {/* Experience the Difference CTA Banner */}
         <section className="py-16 border-b border-zinc-200/80 dark:border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-3xl p-8 sm:p-12 bg-workshop-card text-white border border-red-500/30 shadow-xl relative overflow-hidden">
+            <div className="rounded-3xl p-8 sm:p-12 bg-workshop-card text-white border border-red-500/30 shadow-md relative overflow-hidden">
               <div className="max-w-3xl">
                 <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
                   Experience the Difference
@@ -305,16 +342,16 @@ export default function AboutPage() {
                     href={SITE_CONFIG.whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-md"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 active:scale-[0.98] text-white font-bold text-xs transition-colors shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 cursor-pointer"
                   >
                     <span>Message on WhatsApp</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </a>
                   <Link
                     href="/our-work"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/20 transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 active:scale-[0.98] text-white font-semibold text-xs border border-white/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 cursor-pointer"
                   >
-                    <span>Explore Our 71 Transformations</span>
+                    <span>Explore Our Transformations</span>
                   </Link>
                 </div>
               </div>

@@ -9,13 +9,13 @@ import { SITE_CONFIG, SERVICE_AREAS_24 } from '@/lib/site-data';
 import { WhatsAppIcon } from '@/components/icons/BrandIcons';
 
 export const metadata: Metadata = {
-  title: 'Areas We Serve in Manchester & Greater Manchester | Latin King Detailing',
+  title: 'Areas We Serve in Manchester & Cheshire | Latin King Detailing',
   description:
-    'Latin King Detailing serves drivers across 24 towns in Manchester and Greater Manchester. Based at 426 Flixton Road, Flixton, Urmston, Manchester M41 6QT. Mobile detailing also available.',
+    'Latin King Detailing covers Manchester and Cheshire. Main locations: Urmston, Flixton, Stretford, Sale, Irlam, Eccles, Altrincham, Hale, Bowdon, Partington. Mobile detailing and base at 426 Flixton Road.',
   openGraph: {
-    title: 'Manchester & Greater Manchester Detailing Service Areas | Latin King Detailing',
+    title: 'Manchester & Cheshire Detailing Service Areas | Latin King Detailing',
     description:
-      'Professional automotive detailing in Flixton, Urmston, and Greater Manchester. Ceramic Pro 9H coating, paint correction, and valeting for 24 towns across Greater Manchester.',
+      'Professional automotive detailing in Urmston, Flixton, Manchester and Cheshire. Ceramic Pro 9H coating, paint correction, and mobile valeting across our 10 core locations.',
     url: 'https://latinkingdetailing.co.uk/locations',
     siteName: 'Latin King Detailing',
     type: 'website',
@@ -38,15 +38,15 @@ export default function LocationsPage() {
                 Home
               </Link>
               <ChevronRight className="w-3.5 h-3.5 text-zinc-400" />
-              <span className="text-zinc-900 dark:text-white font-semibold">Service Areas &amp; Workshop</span>
+              <span className="text-zinc-900 dark:text-white font-semibold">Manchester &amp; Cheshire Service Areas</span>
             </nav>
 
             <div className="max-w-3xl">
               <h1 className="font-heading font-semibold text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05] tracking-[-0.03em] text-zinc-900 dark:text-white">
-                Where We Work: Manchester &amp; Greater Manchester
+                Where We Work: Manchester &amp; Cheshire
               </h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg mt-4 max-w-[60ch] leading-[1.65]">
-                Our base is located at <strong>426 Flixton Road, Flixton, Urmston, Manchester M41 6QT</strong>. We provide expert mobile detailing directly to your home or workplace across 24 towns and boroughs in Greater Manchester.
+                Our base is located at <strong>426 Flixton Road, Flixton, Urmston, Manchester M41 6QT</strong>. We provide expert mobile detailing directly to your home or workplace across 10 core locations in Manchester and Cheshire.
               </p>
             </div>
           </div>
@@ -145,32 +145,48 @@ export default function LocationsPage() {
                 {/* Approximate Drive Times */}
                 <div className="p-6 rounded-3xl bg-zinc-50 dark:bg-workshop-card-subtle border border-zinc-200 dark:border-white/10">
                   <h3 className="text-xs font-semibold text-zinc-500 mb-3">
-                    Approximate Drive Times to Workshop
+                    Approximate Drive Times from Urmston Workshop
                   </h3>
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
-                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Manchester Town</span>
-                      <span className="font-bold text-red-600 dark:text-red-400">8 mins</span>
+                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Flixton</span>
+                      <span className="font-bold text-red-600 dark:text-red-400">2 mins</span>
                     </div>
                     <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
-                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Kearsley</span>
-                      <span className="font-bold text-red-600 dark:text-red-400">3 mins</span>
+                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Urmston</span>
+                      <span className="font-bold text-red-600 dark:text-red-400">4 mins</span>
                     </div>
                     <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
-                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Manchester</span>
-                      <span className="font-bold text-red-600 dark:text-red-400">18 mins</span>
+                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Partington</span>
+                      <span className="font-bold text-red-600 dark:text-red-400">7 mins</span>
                     </div>
                     <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
-                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Bury / Radcliffe</span>
+                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Stretford</span>
+                      <span className="font-bold text-red-600 dark:text-red-400">9 mins</span>
+                    </div>
+                    <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
+                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Irlam</span>
+                      <span className="font-bold text-red-600 dark:text-red-400">9 mins</span>
+                    </div>
+                    <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
+                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Sale</span>
+                      <span className="font-bold text-red-600 dark:text-red-400">11 mins</span>
+                    </div>
+                    <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
+                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Eccles</span>
+                      <span className="font-bold text-red-600 dark:text-red-400">11 mins</span>
+                    </div>
+                    <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
+                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Altrincham</span>
                       <span className="font-bold text-red-600 dark:text-red-400">14 mins</span>
                     </div>
                     <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
-                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Salford / Eccles</span>
+                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Bowdon</span>
                       <span className="font-bold text-red-600 dark:text-red-400">15 mins</span>
                     </div>
                     <div className="p-2 rounded-xl bg-white dark:bg-workshop-panel border border-zinc-200 dark:border-white/5 flex items-center justify-between">
-                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Wigan / Chorley</span>
-                      <span className="font-bold text-red-600 dark:text-red-400">22 mins</span>
+                      <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Hale</span>
+                      <span className="font-bold text-red-600 dark:text-red-400">16 mins</span>
                     </div>
                   </div>
                 </div>

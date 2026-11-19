@@ -22,23 +22,23 @@ export function ServiceAreas() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-heading font-semibold text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-zinc-900 dark:text-white">
-            Serving Manchester &amp; 24 Regional Towns
+            Serving Manchester &amp; Cheshire
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-[60ch] mx-auto leading-[1.65]">
-            Latin King Detailing provides mobile detailing across 24 Greater Manchester boroughs alongside our base at 426 Flixton Road.
+            Latin King Detailing provides mobile detailing across Manchester and Cheshire alongside our base at 426 Flixton Road, Urmston.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: 24 Service Areas Pill Cloud */}
+          {/* Left Column: 10 Service Areas Pill Cloud */}
           <div className="lg:col-span-7 bg-white dark:bg-workshop-card-subtle rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-white/10 shadow-md">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
                 <h3 className="font-heading font-semibold text-[1.25rem] leading-[1.3] tracking-[-0.01em] text-zinc-900 dark:text-white">
-                  24 Greater Manchester Locations
+                  10 Main Coverage Locations
                 </h3>
                 <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
-                  Click any location to check workshop access or book
+                  Click any location to check mobile service availability or request a quote
                 </p>
               </div>
 
@@ -49,7 +49,7 @@ export function ServiceAreas() {
                   type="text"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="Filter your town..."
+                  placeholder="Filter location..."
                   className="w-full pl-9 pr-3 py-1.5 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-workshop-panel text-xs text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500/50"
                 />
               </div>
@@ -59,7 +59,7 @@ export function ServiceAreas() {
             <div className="flex flex-wrap gap-2.5">
               {filteredAreas.map((town, idx) => {
                 const isSelected = selectedTown === town;
-                const isManchesterOrUrmston = town === 'Manchester' || town === 'Urmston' || town === 'Flixton';
+                const isBaseLocation = town === 'Urmston' || town === 'Flixton';
 
                 return (
                   <button
@@ -74,14 +74,14 @@ export function ServiceAreas() {
                     className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
                       isSelected
                         ? 'bg-red-600 text-white shadow-md'
-                        : isManchesterOrUrmston
+                        : isBaseLocation
                         ? 'bg-red-500/15 border border-red-500/40 text-red-700 dark:text-red-300 hover:bg-red-500/25'
                         : 'bg-zinc-100 dark:bg-workshop-elevated text-zinc-700 dark:text-zinc-200 border border-zinc-200/80 dark:border-white/10 hover:border-red-400/50 hover:text-red-500'
                     }`}
                   >
                     <MapPin className="w-3.5 h-3.5 opacity-70 shrink-0" />
                     <span>{town}</span>
-                    {isManchesterOrUrmston && (
+                    {isBaseLocation && (
                       <span className="text-[10px] font-bold px-1 rounded bg-red-500/20 text-red-800 dark:text-red-200">
                         HQ Base
                       </span>
@@ -94,7 +94,7 @@ export function ServiceAreas() {
             <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-red-500" />
-                Workshop is 5 minutes from junction 4 of the M61
+                Base at 426 Flixton Road, Urmston · Mobile to your door
               </span>
               <div className="flex items-center gap-3">
                 <Link
@@ -105,7 +105,7 @@ export function ServiceAreas() {
                 </Link>
                 <button
                   type="button"
-                  onClick={() => openQuoteModal('Greater Manchester Service')}
+                  onClick={() => openQuoteModal('Manchester & Cheshire Service')}
                   className="font-bold text-red-600 dark:text-red-400 hover:underline cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                 >
                   Book Inspection
@@ -121,7 +121,7 @@ export function ServiceAreas() {
                 Network &amp; Partner Workshop
               </span>
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200">
-                Manchester South
+                Manchester &amp; Cheshire
               </span>
             </div>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Navbar } from '@/components/Navbar';
@@ -54,7 +55,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     keywords: [
       service.title,
       `${service.title} Manchester`,
-      `${service.title} Bolton`,
+      `${service.title} Cheshire`,
+      `${service.title} Urmston`,
+      `${service.title} Altrincham`,
       'Latin King Detailing',
       'Car Detailing Manchester',
       'Ceramic Coating Flixton',
@@ -128,7 +131,20 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         addressCountry: 'GB',
       },
     },
-    areaServed: ['Manchester', 'Flixton', 'Urmston', 'Trafford', 'Bolton', 'Salford'],
+    areaServed: [
+      'Manchester',
+      'Cheshire',
+      'Urmston',
+      'Flixton',
+      'Stretford',
+      'Sale',
+      'Irlam',
+      'Eccles',
+      'Altrincham',
+      'Hale',
+      'Bowdon',
+      'Partington',
+    ],
     offers: {
       '@type': 'Offer',
       priceDescription: service.startingPrice,
@@ -219,40 +235,69 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 </div>
               </div>
 
-              {/* Service Highlights Card */}
-              <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-white dark:bg-workshop-card border border-zinc-200/80 dark:border-white/10 shadow-lg">
-                <div className="flex items-center gap-3 pb-4 mb-4 border-b border-zinc-100 dark:border-zinc-800">
-                  <div className="p-2.5 rounded-2xl bg-red-500/10 shrink-0">
-                    {getServiceIcon(service.iconName)}
+              {/* Service Hero Showcase & Highlights */}
+              <div className="lg:col-span-5 space-y-6">
+                {service.images && service.images[0] && (
+                  <div className="relative h-64 sm:h-72 w-full rounded-3xl overflow-hidden bg-zinc-950 border border-zinc-200/80 dark:border-white/10 shadow-lg group">
+                    <Image
+                      src={service.images[0]}
+                      alt={`${service.title} workshop service, Latin King Detailing`}
+                      fill
+                      priority
+                      className="object-cover object-center group-hover:scale-105 motion-safe:transition-transform duration-500"
+                      sizes="(max-width: 1024px) 100vw, 520px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-white">
+                      <span className="px-3 py-1 rounded-full bg-black/60 border border-white/20 backdrop-blur-sm font-semibold">
+                        {service.id === 'deep-clean-engine-bay'
+                          ? 'Engine Bay Restoration'
+                          : service.id === 'leather-coating'
+                          ? 'Interior Studio Detail'
+                          : 'Latin King Detailing Studio Finish'}
+                      </span>
+                      <span className="font-mono text-[11px] text-zinc-300">
+                        Flixton &amp; Manchester
+                      </span>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-heading font-semibold text-base text-zinc-900 dark:text-white">
-                      Key Service Highlights
-                    </h3>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                      Executed to certified detailing standards
-                    </p>
+                )}
+
+                {/* Service Highlights Card */}
+                <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-workshop-card border border-zinc-200/80 dark:border-white/10 shadow-lg">
+                  <div className="flex items-center gap-3 pb-4 mb-4 border-b border-zinc-100 dark:border-zinc-800">
+                    <div className="p-2.5 rounded-2xl bg-red-500/10 shrink-0">
+                      {getServiceIcon(service.iconName)}
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-base text-zinc-900 dark:text-white">
+                        Key Service Highlights
+                      </h3>
+                      <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                        Executed to certified detailing standards
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <ul className="space-y-3">
-                  {service.highlights.map((highlight, hIdx) => (
-                    <li key={hIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-[1.65]">
-                      <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="space-y-3">
+                    {service.highlights.map((highlight, hIdx) => (
+                      <li key={hIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-[1.65]">
+                        <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                <div className="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800 text-xs text-zinc-500 dark:text-zinc-400 flex items-center justify-between">
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5 text-red-500" />
-                    <span>Mobile &amp; Workshop Studio</span>
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5 text-red-500" />
-                    <span>Available 24/7</span>
-                  </span>
+                  <div className="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800 text-xs text-zinc-500 dark:text-zinc-400 flex items-center justify-between">
+                    <span className="flex items-center gap-1">
+                      <MapPin className="w-3.5 h-3.5 text-red-500" />
+                      <span>Mobile &amp; Workshop Studio</span>
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5 text-red-500" />
+                      <span>Available 24/7</span>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -506,35 +551,89 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
               <Link
                 href="/our-work"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 dark:text-red-400 hover:underline shrink-0"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 dark:text-red-400 hover:underline shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded-sm"
               >
-                <span>View All 71 Workshop Photos</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span>View All Transformation Photos</span>
+                <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-              {relatedImages.map((img) => (
-                <div
-                  key={img.id}
-                  className="rounded-2xl overflow-hidden border border-zinc-200/80 dark:border-white/10 bg-zinc-900 aspect-[4/3] relative group"
-                >
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    width={img.width}
-                    height={img.height}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
-                    <span className="text-[11px] text-white font-medium truncate">
-                      {img.serviceTag}
-                    </span>
+            {/* Dedicated Service Gallery */}
+            {service.detailGallery && service.detailGallery.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {service.detailGallery.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="group rounded-2xl overflow-hidden border border-zinc-200/80 dark:border-white/10 bg-white dark:bg-workshop-card flex flex-col shadow-xs"
+                  >
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-zinc-950">
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        className="object-cover object-center group-hover:scale-105 motion-safe:transition-transform duration-300"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                      {service.id === 'deep-clean-engine-bay' && idx === 0 && (
+                        <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-black/85 border border-red-500/40 text-[11px] font-semibold text-red-400">
+                          Before &amp; After Result
+                        </div>
+                      )}
+                    </div>
+                    {item.caption && (
+                      <div className="p-3.5 text-xs text-zinc-600 dark:text-zinc-300 leading-snug">
+                        {item.caption}
+                      </div>
+                    )}
                   </div>
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                {relatedImages.map((img) => (
+                  <div
+                    key={img.id}
+                    className="rounded-2xl overflow-hidden border border-zinc-200/80 dark:border-white/10 bg-zinc-900 aspect-[4/3] relative group"
+                  >
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      className="object-cover group-hover:scale-105 motion-safe:transition-transform duration-300"
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 motion-safe:transition-opacity p-3 flex items-end">
+                      <span className="text-[11px] text-white font-medium truncate">
+                        {img.serviceTag}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Video player for services with real video demo (Interior deep clean) */}
+            {service.video && (
+              <div className="mt-8 rounded-3xl overflow-hidden border border-zinc-200/80 dark:border-white/10 bg-zinc-950 shadow-xl">
+                <div className="p-4 bg-zinc-900 border-b border-white/10 flex items-center justify-between text-xs font-semibold text-zinc-200">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-red-500 motion-safe:animate-pulse" />
+                    <span>Live Interior Deep Clean &amp; Steam Extraction</span>
+                  </div>
+                  <span className="font-mono text-[11px] text-red-400">Workshop Video</span>
                 </div>
-              ))}
-            </div>
+                <div className="p-2 sm:p-4 bg-black flex justify-center">
+                  <video
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full max-h-[500px] rounded-2xl object-contain bg-black"
+                    src={service.video}
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -547,7 +646,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </h2>
               <Link
                 href="/services"
-                className="text-xs font-bold text-red-600 dark:text-red-400 hover:underline inline-flex items-center gap-1"
+                className="text-xs font-bold text-red-600 dark:text-red-400 hover:underline inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded-sm"
               >
                 <span>Full Menu</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -559,7 +658,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 <Link
                   key={other.id}
                   href={`/services/${other.slug}`}
-                  className="p-5 rounded-2xl bg-zinc-50 dark:bg-workshop-card border border-zinc-200/80 dark:border-white/10 hover:border-red-500/50 transition-colors group flex flex-col justify-between"
+                  className="p-5 rounded-2xl bg-zinc-50 dark:bg-workshop-card border border-zinc-200/80 dark:border-white/10 hover:border-red-500/50 transition-colors group flex flex-col justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                 >
                   <div>
                     <div className="flex items-start justify-between gap-2 mb-1.5">
@@ -576,7 +675,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   </div>
                   <div className="mt-4 pt-3 border-t border-zinc-200/60 dark:border-zinc-800 text-[11px] font-bold text-red-600 dark:text-red-400 flex items-center gap-1">
                     <span>Learn More</span>
-                    <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="w-3 h-3 motion-safe:group-hover:translate-x-0.5 motion-safe:transition-transform" />
                   </div>
                 </Link>
               ))}

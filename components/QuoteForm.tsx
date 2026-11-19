@@ -81,7 +81,7 @@ function Field({
     <div>
       <label
         htmlFor={id}
-        className="mb-1 block font-mono text-[12px] text-zinc-500 dark:text-zinc-400"
+        className="mb-0.5 block font-mono text-[11px] text-zinc-500 sm:mb-1 sm:text-[12px] dark:text-zinc-400"
       >
         {label}
       </label>
@@ -93,11 +93,11 @@ function Field({
         onBlur,
       })}
       {error ? (
-        <p id={`${id}-error`} role="alert" className="mt-1.5 text-[12px] text-red-600 dark:text-red-400">
+        <p id={`${id}-error`} role="alert" className="mt-1 text-[11px] text-red-600 sm:mt-1.5 sm:text-[12px] dark:text-red-400">
           {error}
         </p>
       ) : hint ? (
-        <p id={`${id}-hint`} className="mt-1.5 text-[12px] text-zinc-400 dark:text-zinc-500">
+        <p id={`${id}-hint`} className="mt-1 text-[11px] text-zinc-400 sm:mt-1.5 sm:text-[12px] dark:text-zinc-500">
           {hint}
         </p>
       ) : null}
@@ -106,7 +106,7 @@ function Field({
 }
 
 const fieldClass = (invalid: boolean) =>
-  `w-full border-0 border-b bg-transparent px-0 py-2.5 text-[15px] text-zinc-900 placeholder:text-zinc-400 transition-colors duration-150 focus:outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 dark:text-zinc-100 dark:placeholder:text-zinc-600 ${
+  `w-full border-0 border-b bg-transparent px-0 py-1.5 text-[14px] text-zinc-900 placeholder:text-zinc-400 transition-colors duration-150 focus:outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 sm:py-2.5 sm:text-[15px] dark:text-zinc-100 dark:placeholder:text-zinc-600 ${
     invalid
       ? 'border-red-600 outline-red-600/50 dark:border-red-500 dark:outline-red-500/60'
       : 'border-zinc-300 outline-red-600/40 hover:border-zinc-400 focus:border-red-600 dark:border-white/15 dark:outline-red-500/50 dark:hover:border-white/30 dark:focus:border-red-500'
@@ -241,17 +241,17 @@ export function QuoteForm({ initialService = '', onSuccess, isModal = false }: Q
   }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-9">
+    <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-5 sm:space-y-9">
       {status === 'error' && serverError && (
         <div role="alert" className="border-l-2 border-red-600 bg-red-50/60 px-4 py-3 dark:bg-red-500/5">
           <p className="text-sm leading-[1.6] text-red-800 dark:text-red-300">{serverError}</p>
         </div>
       )}
 
-      <fieldset className="space-y-6">
+      <fieldset className="space-y-3 sm:space-y-6">
         <legend className="sr-only">Your details</legend>
         <GroupLabel>Your details</GroupLabel>
-        <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
+        <div className="grid gap-x-8 gap-y-3 sm:grid-cols-2 sm:gap-y-6">
           <Field
             idPrefix={idPrefix}
             name="fullName"
@@ -344,7 +344,7 @@ export function QuoteForm({ initialService = '', onSuccess, isModal = false }: Q
         </div>
       </fieldset>
 
-      <fieldset className="space-y-6 border-t border-zinc-200 pt-8 dark:border-white/10">
+      <fieldset className="space-y-3 border-t border-zinc-200 pt-4 sm:space-y-6 sm:pt-8 dark:border-white/10">
         <legend className="sr-only">Your enquiry</legend>
         <GroupLabel>Your enquiry</GroupLabel>
 
@@ -399,14 +399,14 @@ export function QuoteForm({ initialService = '', onSuccess, isModal = false }: Q
         </Field>
       </fieldset>
 
-      <div className="flex flex-col gap-6 border-t border-zinc-200 pt-6 sm:flex-row sm:items-center sm:justify-between dark:border-white/10">
-        <p className="max-w-[38ch] text-xs leading-[1.6] text-zinc-500 dark:text-zinc-400">
+      <div className="flex flex-col gap-2 border-t border-zinc-200 pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pt-6 dark:border-white/10">
+        <p className="hidden max-w-[38ch] text-xs leading-[1.6] text-zinc-500 sm:block dark:text-zinc-400">
           We only use these details to reply to your enquiry.
         </p>
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-red-600 px-6 py-3 text-sm font-semibold text-white transition-[background-color,transform] duration-150 ease-out hover:bg-brand-red-hover active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-workshop-dark"
+          className="inline-flex min-h-10 items-center justify-center gap-2 rounded-md bg-red-600 px-5 py-2 text-sm font-semibold text-white transition-[background-color,transform] duration-150 ease-out hover:bg-brand-red-hover active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:min-h-11 sm:px-6 sm:py-3 dark:focus-visible:ring-offset-workshop-dark"
         >
           {status === 'submitting' ? (
             <>

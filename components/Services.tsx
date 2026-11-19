@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SERVICES, ServiceItem, getTopServices } from '@/lib/site-data';
 import { useModals } from './ModalContext';
 import {
@@ -196,9 +197,60 @@ export function Services({ limit }: ServicesProps) {
                       {service.title}
                     </Link>
                   </h3>
-                  <div className="text-xs font-semibold text-red-600 dark:text-red-400 mt-1 mb-3">
+                  <div className="text-xs font-semibold text-red-600 dark:text-red-400 mt-1 mb-4">
                     {service.tagline}
                   </div>
+
+                  {/* 2-3 Images Showcase Strip */}
+                  {service.images && service.images.length > 0 && (
+                    <div className="mb-5 space-y-2">
+                      {/* Main Featured Image */}
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="block relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-zinc-950 border border-zinc-200/80 dark:border-white/10 group/img focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                      >
+                        <Image
+                          src={service.images[0]}
+                          alt={`${service.title} workshop transformation`}
+                          fill
+                          className="object-cover object-center group-hover/img:scale-105 transition-transform duration-300"
+                          sizes="(max-width: 768px) 100vw, 600px"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+
+                        {service.id === 'deep-clean-engine-bay' ? (
+                          <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-black/85 border border-red-500/40 text-[11px] font-semibold text-red-400">
+                            Before &amp; After Transformation
+                          </div>
+                        ) : (
+                          <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-black/80 border border-white/15 text-[11px] font-medium text-zinc-200">
+                            Latin King Workshop Finish
+                          </div>
+                        )}
+                      </Link>
+
+                      {/* 2 Companion Detail Thumbnails */}
+                      {service.images.length > 1 && (
+                        <div className="grid grid-cols-2 gap-2 h-20 sm:h-24">
+                          {service.images.slice(1, 3).map((imgUrl, imgIdx) => (
+                            <Link
+                              key={imgIdx}
+                              href={`/services/${service.slug}`}
+                              className="relative h-full rounded-xl overflow-hidden bg-zinc-900 border border-zinc-200/60 dark:border-white/10 group/thumb focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                            >
+                              <Image
+                                src={imgUrl}
+                                alt={`${service.title} detail photo ${imgIdx + 2}`}
+                                fill
+                                className="object-cover object-center group-hover/thumb:scale-105 transition-transform duration-200"
+                                sizes="(max-width: 768px) 50vw, 300px"
+                              />
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
 
                   {/* Short Description */}
                   <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-[1.65] mb-6">

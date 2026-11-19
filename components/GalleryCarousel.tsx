@@ -206,7 +206,7 @@ export function GalleryCarousel() {
             href="/our-work"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs tracking-wide shadow-md shadow-red-600/20 transition-colors"
           >
-            <span>Explore Our Work (All 71 Transformations)</span>
+            <span>Explore Our Work</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SERVICES, ServiceItem, SITE_CONFIG } from '@/lib/site-data';
 import { useModals } from './ModalContext';
 import {
@@ -101,14 +102,12 @@ function NumberedRows({ label, items }: { label: string; items: DetailItem[] }) 
       <div className="mt-4 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item, i) => (
           <div key={item.title} className="border-t border-zinc-200 pt-4 dark:border-white/10">
-            <div className="flex items-baseline gap-2.5">
+            <h3 className="font-heading text-sm font-semibold text-zinc-900 dark:text-zinc-100 flex items-baseline gap-2.5">
               <span className="font-mono text-[11px] tabular-nums text-red-600 dark:text-red-500">
                 {pad(i + 1)}
               </span>
-              <h3 className="font-heading text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-                {item.title}
-              </h3>
-            </div>
+              <span>{item.title}</span>
+            </h3>
             <p className="mt-2 text-xs leading-[1.7] text-zinc-600 dark:text-zinc-400">{item.desc}</p>
           </div>
         ))}
@@ -124,14 +123,12 @@ function StepRows({ steps }: { steps: NonNullable<ServiceItem['steps']> }) {
       <ol className="mt-4 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
         {steps.map((step) => (
           <li key={step.step} className="border-t border-zinc-200 pt-4 dark:border-white/10">
-            <div className="flex items-baseline gap-2.5">
+            <h3 className="font-heading text-sm font-semibold text-zinc-900 dark:text-zinc-100 flex items-baseline gap-2.5">
               <span className="font-mono text-[11px] tabular-nums text-red-600 dark:text-red-500">
                 {pad(step.step)}
               </span>
-              <h3 className="font-heading text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-                {step.title}
-              </h3>
-            </div>
+              <span>{step.title}</span>
+            </h3>
             <p className="mt-2 text-xs leading-[1.7] text-zinc-600 dark:text-zinc-400">{step.desc}</p>
           </li>
         ))}
@@ -216,14 +213,16 @@ function TierGrid({ tiers }: { tiers: NonNullable<ServiceItem['tiers']> }) {
                 recommended ? 'border-t-2 border-red-600 dark:border-red-500' : ''
               }`}
             >
-              {recommended && (
-                <div className="mb-3 font-mono text-[10px] font-medium text-red-600 dark:text-red-500">
-                  Most chosen
-                </div>
-              )}
-              <h3 className="font-heading text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                {tier.name}
-              </h3>
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="font-heading text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+                  {tier.name}
+                </h3>
+                {recommended && (
+                  <span className="px-2 py-0.5 rounded-full bg-red-600/10 text-[10px] font-semibold text-red-600 dark:text-red-500">
+                    Most chosen
+                  </span>
+                )}
+              </div>
               <div className="mt-1 font-mono text-xs text-zinc-700 dark:text-zinc-300">
                 {tier.duration}
               </div>
@@ -259,21 +258,6 @@ function TierGrid({ tiers }: { tiers: NonNullable<ServiceItem['tiers']> }) {
 export function ServicesDetailView() {
   const { openQuoteModal } = useModals();
   const [activeCategory, setActiveCategory] = useState<CategoryId>('all');
-
-  const counts = useMemo(
-    () =>
-      CATEGORIES.reduce<Record<CategoryId, number>>(
-        (acc, cat) => {
-          acc[cat.id] =
-            cat.id === 'all'
-              ? SERVICES.length
-              : SERVICES.filter((s) => SERVICE_CATEGORY[s.id] === cat.id).length;
-          return acc;
-        },
-        { all: 0, coating: 0, polishing: 0, valet: 0, maintenance: 0 }
-      ),
-    []
-  );
 
   const visibleServices = useMemo(
     () =>
@@ -313,19 +297,19 @@ export function ServicesDetailView() {
       <section className="border-b border-zinc-200 dark:border-white/10">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.35fr_0.65fr] lg:gap-20 lg:px-8 lg:py-24">
           <div>
-            <div className="flex items-center gap-3 font-mono text-[11px] text-red-600 dark:text-red-500">
-              <span className="h-px w-6 bg-red-600 dark:bg-red-500" aria-hidden="true" />
-              <span>Services / Urmston, Manchester</span>
-            </div>
-
-            <h1 className="h1-hero mt-6 max-w-[20ch]">
+            <h1 className="h1-hero max-w-[20ch]">
               Detailing &amp; protection, without the shortcuts.
             </h1>
 
-            <p className="mt-6 max-w-[62ch] text-base leading-[1.7] text-zinc-600 dark:text-zinc-400 sm:text-lg">
+            <p className="mt-4 flex items-center gap-3 font-mono text-[11px] text-red-600 dark:text-red-500">
+              <span className="h-px w-6 bg-red-600 dark:bg-red-500" aria-hidden="true" />
+              <span>Services / Urmston, Manchester</span>
+            </p>
+
+            <p className="mt-4 max-w-[62ch] text-base leading-[1.7] text-zinc-600 dark:text-zinc-400 sm:text-lg">
               From our workshop on Flixton Road and our fully mobile setup, we handle certified
               Ceramic Pro 9H coatings, machine paint correction, interior protection and showroom
-              valets — using professional-grade products and no production-line shortcuts.
+              valets, using professional-grade products and no production-line shortcuts.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
@@ -367,9 +351,7 @@ export function ServicesDetailView() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="h2-section">The services</h2>
-            <span className="font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
-              {pad(visibleServices.length)} / {pad(SERVICES.length)} disciplines
-            </span>
+       
           </div>
 
           <div
@@ -400,7 +382,7 @@ export function ServicesDetailView() {
                       active ? 'text-red-600 dark:text-red-500' : 'text-zinc-400 dark:text-zinc-600'
                     }`}
                   >
-                    {pad(counts[cat.id])}
+                    {/* {pad(counts[cat.id])} */}
                   </span>
                   {active && (
                     <span
@@ -417,10 +399,10 @@ export function ServicesDetailView() {
             {visibleServices.map((service, i) => {
               const Icon = ICONS[service.iconName] ?? Award;
               return (
-                <a
+                <Link
                   key={service.id}
-                  href={`#${service.id}`}
-                  className="group grid grid-cols-[2.25rem_1fr_1.5rem] items-center gap-3 border-t border-zinc-200 py-4 transition-colors duration-150 hover:bg-zinc-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-red-500 dark:border-white/10 dark:hover:bg-white/[0.02] sm:grid-cols-[3rem_1fr_12rem_8rem_1.5rem]"
+                  href={`/services/${service.slug}`}
+                  className="group grid grid-cols-[2.25rem_1fr] items-center gap-3 border-t border-zinc-200 py-4 transition-colors duration-150 hover:bg-zinc-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-red-500 dark:border-white/10 dark:hover:bg-white/[0.02] sm:grid-cols-[3rem_1fr_12rem_8rem]"
                 >
                   <span className="font-mono text-xs tabular-nums text-red-600 dark:text-red-500">
                     {pad(i + 1)}
@@ -435,11 +417,7 @@ export function ServicesDetailView() {
                   <span className="hidden text-right font-mono text-xs tabular-nums text-zinc-700 dark:text-zinc-300 sm:block">
                     {service.startingPrice?.split('(')[0].trim()}
                   </span>
-                  <ArrowDownRight
-                    className="h-4 w-4 justify-self-end text-zinc-400 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:text-red-600 dark:group-hover:text-red-400"
-                    aria-hidden="true"
-                  />
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -602,6 +580,52 @@ export function ServicesDetailView() {
                       <p className="mt-1.5 max-w-[62ch] text-sm leading-[1.7] text-zinc-600 dark:text-zinc-400">
                         {service.recommendation}
                       </p>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Real Workshop Results: kept after "What's included" and the structured detail */}
+              {service.images && service.images.length > 0 && (
+                <div className="mt-10 border-t border-zinc-200 pt-8 dark:border-white/10">
+                  <SectionLabel>Workshop transformations</SectionLabel>
+                  <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {service.images.map((imgSrc, imgI) => (
+                      <div
+                        key={imgI}
+                        className="group relative h-56 sm:h-64 overflow-hidden rounded-2xl bg-zinc-950 border border-zinc-200/80 dark:border-white/10"
+                      >
+                        <Image
+                          src={imgSrc}
+                          alt={`${service.title} transformation ${imgI + 1}`}
+                          fill
+                          className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+                        {service.id === 'deep-clean-engine-bay' && imgI === 0 && (
+                          <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-black/85 border border-red-500/40 text-[11px] font-semibold text-red-400">
+                            Before &amp; After Transformation
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Optional Video demonstration for interior deep clean */}
+                  {service.video && (
+                    <div className="mt-5 rounded-2xl overflow-hidden border border-zinc-200/80 dark:border-white/10 bg-black">
+                      <div className="p-3 bg-zinc-900 border-b border-white/10 text-xs font-semibold text-zinc-200 flex items-center justify-between">
+                        <span>Interior Deep Clean &amp; Extraction Demo</span>
+                        <span className="text-[11px] font-mono text-red-400">Workshop Video</span>
+                      </div>
+                      <video
+                        controls
+                        playsInline
+                        preload="metadata"
+                        className="w-full max-h-[420px] object-cover"
+                        src={service.video}
+                      />
                     </div>
                   )}
                 </div>
