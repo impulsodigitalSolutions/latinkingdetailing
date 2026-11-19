@@ -125,7 +125,6 @@ export const SITE_CONFIG = {
   
   openingHours: 'Available 24/7 (Monday – Sunday: 24 Hours)',
   
-  // Social Proof & Verified Social Media IDs (Extracted from https://www.latinkingdetailing.co.uk/)
   googleRating: 5.0,
   googleReviewCount: 60,
   facebookRating: 5.0,

@@ -51,7 +51,7 @@ export function Hero() {
             </span>
             <span className="text-zinc-500">|</span>
             <span className="text-zinc-300">
-              Urmston &amp; Manchester
+              Manchester &amp; Cheshire
             </span>
           </div>
 

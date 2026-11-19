@@ -90,10 +90,10 @@ export function AboutStorySection() {
 
               <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-workshop-card border border-zinc-200/80 dark:border-white/10 col-span-2 sm:col-span-1">
                 <div className="font-mono text-lg font-bold text-red-600 dark:text-red-400">
-                  4.7 / 5.0
+                  5.0
                 </div>
                 <div className="text-xs font-semibold text-zinc-900 dark:text-zinc-100 mt-0.5">
-                  Google &amp; Facebook
+                  Google 
                 </div>
                 <div className="text-[11px] text-zinc-500 dark:text-zinc-400">
                   Customer satisfaction

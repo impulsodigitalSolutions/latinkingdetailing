@@ -57,24 +57,6 @@ export function Footer() {
                   </div>
                 </div>
               </a>
-
-              <a
-                href="https://www.facebook.com/latinkingdetailing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 p-2.5 rounded-xl bg-workshop-muted border border-white/10 hover:border-blue-500/40 w-full max-w-xs transition-colors group"
-              >
-                <FacebookIcon className="w-5 h-5 text-brand-fb shrink-0" />
-                <div className="text-xs">
-                  <div className="flex items-center gap-1.5 font-bold text-white group-hover:text-blue-400 transition-colors">
-                    <span>5.0 Facebook Rating</span>
-                    <StarRating rating={SITE_CONFIG.facebookRating} size="w-3 h-3" />
-                  </div>
-                  <div className="text-[11px] text-zinc-400">
-                    {SITE_CONFIG.facebookFollowers} Active Community Followers
-                  </div>
-                </div>
-              </a>
             </div>
 
             {/* Verified Social Media Accounts */}
