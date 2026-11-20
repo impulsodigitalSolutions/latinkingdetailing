@@ -5,17 +5,20 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ComparisonTable } from '@/components/ComparisonTable';
 import { Sparkles, Shield, ShieldCheck, ChevronRight, CheckCircle2, XCircle, ArrowRight, Layers } from 'lucide-react';
-import { SITE_CONFIG } from '@/lib/site-data';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Ceramic Coating vs Dealership Sealant vs Wax | Latin King Detailing Manchester',
+  title: 'Ceramic Coating vs Dealership Sealant vs Wax',
   description:
     'Compare Ceramic Pro 9H nanoceramic coating, dealership paint protection sealants, and traditional carnauba waxes. Learn why true molecular bonding outperforms dealership add-ons.',
+  alternates: {
+    canonical: `${SITE_CONFIG.baseUrl}/comparison`,
+  },
   openGraph: {
     title: 'Ceramic Coating vs Dealership Sealant vs Wax | Latin King Detailing',
     description:
       'Detailed automotive paint protection matrix. Scratch resistance, chemical immunity, water beading, and lifespan comparisons.',
-    url: 'https://ceramicpromanchester.com/comparison',
+    url: `${SITE_CONFIG.baseUrl}/comparison`,
     siteName: 'Latin King Detailing',
     type: 'website',
   },

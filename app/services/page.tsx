@@ -3,17 +3,20 @@ import type { Metadata } from 'next';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ServicesDetailView } from '@/components/ServicesDetailView';
-import { SITE_CONFIG } from '@/lib/site-data';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Our Detailing & Ceramic Coating Services | Latin King Detailing Manchester',
+  title: 'Our Detailing & Ceramic Coating Services',
   description:
     'Explore our professional car detailing and paint protection services in Manchester: Ceramic Pro 9H Coating, Machine Polishing, Leather Protection, The King’s Detail, Deep Clean & Engine Bay, Full Valet, and Maintenance Washes.',
+  alternates: {
+    canonical: `${SITE_CONFIG.baseUrl}/services`,
+  },
   openGraph: {
     title: 'Professional Automotive Detailing Services | Latin King Detailing',
     description:
       'Certified Ceramic Pro 9H installer and paint correction specialist based in Urmston, Manchester. Transparent pricing, multi-stage machine polishing, and showroom restorations.',
-    url: 'https://latinkingdetailing.co.uk/services',
+    url: `${SITE_CONFIG.baseUrl}/services`,
     siteName: 'Latin King Detailing',
     type: 'website',
   },

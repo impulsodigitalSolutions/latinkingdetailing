@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
-import { SERVICES, SITE_CONFIG, getServiceBySlug, ServiceItem } from '@/lib/site-data';
+import { SERVICES, getServiceBySlug, ServiceItem } from '@/lib/site-data';
+import { SITE_CONFIG } from '@/lib/site-config';
 import { WORKSHOP_GALLERY_IMAGES } from '@/lib/gallery-data';
 import {
   ShieldCheck,
@@ -62,10 +63,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'Car Detailing Manchester',
       'Ceramic Coating Flixton',
     ],
+    alternates: {
+      canonical: `${SITE_CONFIG.baseUrl}/services/${service.slug}`,
+    },
     openGraph: {
       title,
       description,
-      url: `https://${SITE_CONFIG.domain}/services/${service.slug}`,
+      url: `${SITE_CONFIG.baseUrl}/services/${service.slug}`,
       siteName: SITE_CONFIG.brandName,
       type: 'website',
     },

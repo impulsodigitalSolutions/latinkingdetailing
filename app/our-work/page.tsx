@@ -5,17 +5,20 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Gallery } from '@/components/Gallery';
 import { Sparkles, ArrowRight, ShieldCheck, CheckCircle2, ChevronRight, Eye } from 'lucide-react';
-import { SITE_CONFIG } from '@/lib/site-data';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Our Work | Detailing & Ceramic Coating Transformations | Latin King Detailing Manchester',
+  title: 'Our Work | Vehicle Detailing Transformations',
   description:
     'Explore our portfolio of Ceramic Pro 9H ceramic coatings, multi-stage paint corrections, and deep interior valets completed by Latin King Detailing in Manchester.',
+  alternates: {
+    canonical: `${SITE_CONFIG.baseUrl}/our-work`,
+  },
   openGraph: {
     title: 'Our Work & Vehicle Transformations | Latin King Detailing',
     description:
       'Genuine customer vehicle transformations from Manchester and Greater Manchester. Supercars, daily drivers, and prestige restorations.',
-    url: 'https://latinkingdetailing.co.uk/our-work',
+    url: `${SITE_CONFIG.baseUrl}/our-work`,
     siteName: 'Latin King Detailing',
     type: 'website',
   },

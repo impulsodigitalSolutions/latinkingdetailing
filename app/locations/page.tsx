@@ -5,18 +5,22 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ServiceAreas } from '@/components/ServiceAreas';
 import { MapPin, Navigation, Phone, Clock, ChevronRight, ShieldCheck, CheckCircle2, Car, ExternalLink } from 'lucide-react';
-import { SITE_CONFIG, SERVICE_AREAS_24 } from '@/lib/site-data';
+import { SERVICE_AREAS_24 } from '@/lib/site-data';
+import { SITE_CONFIG } from '@/lib/site-config';
 import { WhatsAppIcon } from '@/components/icons/BrandIcons';
 
 export const metadata: Metadata = {
-  title: 'Areas We Serve in Manchester & Cheshire | Latin King Detailing',
+  title: 'Areas We Serve in Manchester & Cheshire',
   description:
     'Latin King Detailing covers Manchester and Cheshire. Main locations: Urmston, Flixton, Stretford, Sale, Irlam, Eccles, Altrincham, Hale, Bowdon, Partington. Mobile detailing and base at 426 Flixton Road.',
+  alternates: {
+    canonical: `${SITE_CONFIG.baseUrl}/locations`,
+  },
   openGraph: {
     title: 'Manchester & Cheshire Detailing Service Areas | Latin King Detailing',
     description:
       'Professional automotive detailing in Urmston, Flixton, Manchester and Cheshire. Ceramic Pro 9H coating, paint correction, and mobile valeting across our 10 core locations.',
-    url: 'https://latinkingdetailing.co.uk/locations',
+    url: `${SITE_CONFIG.baseUrl}/locations`,
     siteName: 'Latin King Detailing',
     type: 'website',
   },

@@ -6,17 +6,21 @@ import { Footer } from '@/components/Footer';
 import { Reviews } from '@/components/Reviews';
 import { GoogleIcon, FacebookIcon, StarRating } from '@/components/icons/BrandIcons';
 import { CheckCircle2, ChevronRight, Star, ExternalLink, Sparkles, PenSquare, MapPin } from 'lucide-react';
-import { SITE_CONFIG, REVIEWS } from '@/lib/site-data';
+import { REVIEWS } from '@/lib/site-data';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Customer Reviews & Ratings | Latin King Detailing Manchester',
+  title: 'Customer Reviews & Ratings',
   description:
     'Read verified customer reviews for Latin King Detailing in Urmston, Flixton, and Greater Manchester. 5.0★ Google rating with 60+ verified reviews from prestige and daily car owners.',
+  alternates: {
+    canonical: `${SITE_CONFIG.baseUrl}/reviews`,
+  },
   openGraph: {
     title: 'Customer Reviews & Testimonials | Latin King Detailing',
     description:
       'Verified customer ratings and testimonials for Ceramic Pro 9H coating, paint correction, and valeting services in Manchester.',
-    url: 'https://latinkingdetailing.co.uk/reviews',
+    url: `${SITE_CONFIG.baseUrl}/reviews`,
     siteName: 'Latin King Detailing',
     type: 'website',
   },

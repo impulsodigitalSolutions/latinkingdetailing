@@ -7,7 +7,7 @@ import { QuoteModal } from '@/components/QuoteModal';
 import { ServiceDetailModal } from '@/components/ServiceDetailModal';
 import { GalleryModal } from '@/components/GalleryModal';
 import { FloatingActions } from '@/components/FloatingActions';
-import { SITE_CONFIG } from '@/lib/site-data';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-heading',
@@ -31,8 +31,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://latinkingdetailing.co.uk'),
-  title: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline} | Ceramic Pro 9H Certified`,
+  metadataBase: new URL(SITE_CONFIG.baseUrl),
+  title: {
+    default: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline} | Ceramic Pro 9H Certified`,
+    template: `%s | ${SITE_CONFIG.brandName}`,
+  },
   description:
     "Manchester's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & Paint Correction Specialist based at 426 Flixton Road, Urmston, Manchester. Call 07482 225323.",
   keywords: [
@@ -48,10 +51,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: SITE_CONFIG.brandName }],
   creator: SITE_CONFIG.brandName,
+  alternates: {
+    canonical: SITE_CONFIG.baseUrl,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://latinkingdetailing.co.uk',
+    url: SITE_CONFIG.baseUrl,
     title: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline}`,
     description:
       "Manchester's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & Paint Correction Specialist. Based at 426 Flixton Road, Urmston, Manchester.",
@@ -74,6 +80,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   icons: {
     icon: '/images/logo-crown.png',

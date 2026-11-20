@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
-import { SITE_CONFIG } from '@/lib/site-data';
+import { SITE_CONFIG } from '@/lib/site-config';
 import {
   ChevronRight,
   CheckCircle2,
@@ -14,17 +14,17 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Us | Latin King Detailing - Manchester Detailing Specialists',
+  title: 'About Us',
   description:
     'Founded out of a true passion for cars and perfection. Professional mobile detailing across Urmston, Flixton, and Greater Manchester, based at 426 Flixton Road.',
   alternates: {
-    canonical: 'https://latinkingdetailing.co.uk/about',
+    canonical: `${SITE_CONFIG.baseUrl}/about`,
   },
   openGraph: {
     title: 'About Latin King Detailing | Passion for Car Detailing',
     description:
       'Professional mobile detailing in Urmston, Manchester. High-quality results, attention to detail, and complete customer satisfaction.',
-    url: 'https://latinkingdetailing.co.uk/about',
+    url: `${SITE_CONFIG.baseUrl}/about`,
   },
 };
 
