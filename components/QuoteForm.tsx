@@ -2,6 +2,7 @@
 
 import React, { useId, useRef, useState } from 'react';
 import { SERVICE_OPTIONS, SITE_CONFIG } from '@/lib/site-data';
+import { trackConversion } from '@/lib/analytics';
 import {
   CONTACT_LIMITS,
   resolveService,
@@ -171,6 +172,7 @@ export function QuoteForm({ initialService = '', onSuccess, isModal = false }: Q
       }
 
       setStatus('success');
+      trackConversion.generateLead(values.service, values.vehicle, values.source || 'quote_form');
       onSuccess?.();
     } catch {
       setServerError('We could not reach the server. Check your connection and try again.');
@@ -241,7 +243,7 @@ export function QuoteForm({ initialService = '', onSuccess, isModal = false }: Q
   }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-5 sm:space-y-9">
+    <form ref={formRef} onSubmit={handleSubmit} noValidate data-clarity-mask="true" className="space-y-5 sm:space-y-9">
       {status === 'error' && serverError && (
         <div role="alert" className="border-l-2 border-red-600 bg-red-50/60 px-4 py-3 dark:bg-red-500/5">
           <p className="text-sm leading-[1.6] text-red-800 dark:text-red-300">{serverError}</p>
