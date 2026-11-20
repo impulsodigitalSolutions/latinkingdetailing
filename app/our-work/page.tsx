@@ -10,16 +10,16 @@ import { JsonLd } from '@/components/JsonLd';
 import { getBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Our Work | Vehicle Detailing Transformations',
+  title: 'Car Detailing Portfolio & Gallery',
   description:
-    'Explore our portfolio of Ceramic Pro 9H ceramic coatings, multi-stage paint corrections, and deep interior valets completed by Latin King Detailing in Manchester.',
+    'Browse our Manchester detailing portfolio: Ceramic Pro 9H coatings, multi-stage paint correction, and prestige vehicle restorations with verified results.',
   alternates: {
     canonical: `${SITE_CONFIG.baseUrl}/our-work`,
   },
   openGraph: {
-    title: 'Our Work & Vehicle Transformations | Latin King Detailing',
+    title: 'Car Detailing Portfolio & Gallery | Latin King Detailing',
     description:
-      'Genuine customer vehicle transformations from Manchester and Greater Manchester. Supercars, daily drivers, and prestige restorations.',
+      'Browse our Manchester detailing portfolio: Ceramic Pro 9H coatings, multi-stage paint correction, and prestige vehicle restorations with verified results.',
     url: `${SITE_CONFIG.baseUrl}/our-work`,
     siteName: 'Latin King Detailing',
     type: 'website',

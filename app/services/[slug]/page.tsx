@@ -45,12 +45,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!service) {
     return {
-      title: 'Service Not Found | Latin King Detailing Manchester',
+      title: 'Service Not Found',
     };
   }
 
-  const title = `${service.title} | Latin King Detailing Manchester`;
-  const description = `${service.shortDesc} Certified Ceramic Pro 9H installer and detailing specialists based at 426 Flixton Road, Urmston, Manchester. ${service.startingPrice}. Call 07482 225323.`;
+  const title = service.title;
+  const description = `${service.shortDesc} Ceramic Pro 9H accredited detailing at 426 Flixton Road, Urmston, Manchester. ${service.startingPrice}. Call 07482 225323.`.slice(0, 160);
 
   return {
     title,

@@ -8,16 +8,16 @@ import { JsonLd } from '@/components/JsonLd';
 import { getBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Our Detailing & Ceramic Coating Services',
+  title: 'Detailing & Ceramic Coating Services',
   description:
-    'Explore our professional car detailing and paint protection services in Manchester: Ceramic Pro 9H Coating, Machine Polishing, Leather Protection, The King’s Detail, Deep Clean & Engine Bay, Full Valet, and Maintenance Washes.',
+    'Certified Ceramic Pro 9H coating, multi-stage machine polishing, and deep interior detailing in Manchester. Transparent pricing and guaranteed showroom finish.',
   alternates: {
     canonical: `${SITE_CONFIG.baseUrl}/services`,
   },
   openGraph: {
-    title: 'Professional Automotive Detailing Services | Latin King Detailing',
+    title: 'Detailing & Ceramic Coating Services | Latin King Detailing',
     description:
-      'Certified Ceramic Pro 9H installer and paint correction specialist based in Urmston, Manchester. Transparent pricing, multi-stage machine polishing, and showroom restorations.',
+      'Certified Ceramic Pro 9H coating, multi-stage machine polishing, and deep interior detailing in Manchester. Transparent pricing and guaranteed showroom finish.',
     url: `${SITE_CONFIG.baseUrl}/services`,
     siteName: 'Latin King Detailing',
     type: 'website',

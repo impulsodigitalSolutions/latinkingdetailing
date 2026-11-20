@@ -35,11 +35,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.baseUrl),
   title: {
-    default: `${SITE_CONFIG.brandName} · ${SITE_CONFIG.tagline} | Ceramic Pro 9H Certified`,
+    default: `${SITE_CONFIG.brandName} · Ceramic Pro 9H Certified Detailing`,
     template: `%s | ${SITE_CONFIG.brandName}`,
   },
   description:
-    "Manchester's premier car ceramic coating and detailing specialists. Ceramic Pro 9H Certified Installer & Paint Correction Specialist based at 426 Flixton Road, Urmston, Manchester. Call 07482 225323.",
+    "Manchester's certified Ceramic Pro 9H installer and paint correction specialist in Urmston. Premium car detailing and mobile valeting. Call 07482 225323.",
   keywords: [
     'Ceramic Coating Manchester',
     'Car Detailing Manchester',

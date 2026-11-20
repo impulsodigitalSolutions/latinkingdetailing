@@ -135,8 +135,8 @@ export function GalleryCarousel() {
                 transform: `translateX(-${currentIndex * (100 / 4)}%)`,
               }}
             >
-              {carouselImages.concat(carouselImages.slice(0, 4)).map((img: WorkshopGalleryImage, idx: number) => {
-                const realIndex = idx % total;
+              {carouselImages.map((img: WorkshopGalleryImage, idx: number) => {
+                const realIndex = idx;
                 return (
                   <div
                     key={`${img.id}-${idx}`}

@@ -12,16 +12,16 @@ import { JsonLd } from '@/components/JsonLd';
 import { getBreadcrumbSchema, getReviewsSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Customer Reviews & Ratings',
+  title: '5-Star Customer Reviews & Ratings',
   description:
-    'Read verified customer reviews for Latin King Detailing in Urmston, Flixton, and Greater Manchester. 5.0★ Google rating with 60+ verified reviews from prestige and daily car owners.',
+    'Read 60+ verified 5.0-star Google reviews for Latin King Detailing in Manchester. Genuine customer feedback on Ceramic Pro 9H coating and paint correction.',
   alternates: {
     canonical: `${SITE_CONFIG.baseUrl}/reviews`,
   },
   openGraph: {
-    title: 'Customer Reviews & Testimonials | Latin King Detailing',
+    title: '5-Star Customer Reviews & Ratings | Latin King Detailing',
     description:
-      'Verified customer ratings and testimonials for Ceramic Pro 9H coating, paint correction, and valeting services in Manchester.',
+      'Read 60+ verified 5.0-star Google reviews for Latin King Detailing in Manchester. Genuine customer feedback on Ceramic Pro 9H coating and paint correction.',
     url: `${SITE_CONFIG.baseUrl}/reviews`,
     siteName: 'Latin King Detailing',
     type: 'website',

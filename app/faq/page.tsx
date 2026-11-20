@@ -12,16 +12,16 @@ import { getBreadcrumbSchema, getFaqSchema } from '@/lib/schema';
 import { FAQ_ITEMS } from '@/lib/site-data';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions',
+  title: 'Car Detailing FAQs & Pricing Guide',
   description:
-    'Find answers to common questions about Ceramic Pro 9H coating, paint correction stages, valeting packages, pricing estimates, and booking into our Manchester workshop.',
+    'Clear answers on Ceramic Pro 9H nanocoating durability, paint correction stages, valeting frequency, and pricing for all Greater Manchester car owners.',
   alternates: {
     canonical: `${SITE_CONFIG.baseUrl}/faq`,
   },
   openGraph: {
-    title: 'Detailing FAQs & Answers | Latin King Detailing',
+    title: 'Car Detailing FAQs & Pricing Guide | Latin King Detailing',
     description:
-      'Clear, honest answers about ceramic coatings, paint correction, warranty terms, and car care from certified Manchester specialists.',
+      'Clear answers on Ceramic Pro 9H nanocoating durability, paint correction stages, valeting frequency, and pricing for all Greater Manchester car owners.',
     url: `${SITE_CONFIG.baseUrl}/faq`,
     siteName: 'Latin King Detailing',
     type: 'website',

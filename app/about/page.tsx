@@ -16,16 +16,16 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'About Our Workshop & Detailing Team',
   description:
-    'Founded out of a true passion for cars and perfection. Professional mobile detailing across Urmston, Flixton, and Greater Manchester, based at 426 Flixton Road.',
+    'Founded on genuine passion for automotive perfection. Ceramic Pro 9H certified detailing specialists based at 426 Flixton Road, Urmston, Manchester.',
   alternates: {
     canonical: `${SITE_CONFIG.baseUrl}/about`,
   },
   openGraph: {
-    title: 'About Latin King Detailing | Passion for Car Detailing',
+    title: 'About Our Workshop & Detailing Team | Latin King Detailing',
     description:
-      'Professional mobile detailing in Urmston, Manchester. High-quality results, attention to detail, and complete customer satisfaction.',
+      'Founded on genuine passion for automotive perfection. Ceramic Pro 9H certified detailing specialists based at 426 Flixton Road, Urmston, Manchester.',
     url: `${SITE_CONFIG.baseUrl}/about`,
   },
 };

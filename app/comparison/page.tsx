@@ -10,16 +10,16 @@ import { JsonLd } from '@/components/JsonLd';
 import { getBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Ceramic Coating vs Dealership Sealant vs Wax',
+  title: 'Ceramic Coating vs Sealant vs Wax',
   description:
-    'Compare Ceramic Pro 9H nanoceramic coating, dealership paint protection sealants, and traditional carnauba waxes. Learn why true molecular bonding outperforms dealership add-ons.',
+    'Understand the key differences between Ceramic Pro 9H molecular bonding, dealership sealants, and carnauba waxes for permanent UK paintwork protection.',
   alternates: {
     canonical: `${SITE_CONFIG.baseUrl}/comparison`,
   },
   openGraph: {
-    title: 'Ceramic Coating vs Dealership Sealant vs Wax | Latin King Detailing',
+    title: 'Ceramic Coating vs Sealant vs Wax | Latin King Detailing',
     description:
-      'Detailed automotive paint protection matrix. Scratch resistance, chemical immunity, water beading, and lifespan comparisons.',
+      'Understand the key differences between Ceramic Pro 9H molecular bonding, dealership sealants, and carnauba waxes for permanent UK paintwork protection.',
     url: `${SITE_CONFIG.baseUrl}/comparison`,
     siteName: 'Latin King Detailing',
     type: 'website',
