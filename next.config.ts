@@ -103,6 +103,53 @@ const nextConfig: NextConfig = {
         destination: '/services/leather-coating',
         permanent: true,
       },
+      // Google Indexed Legacy URL Redirects (from Google Analytics / Search Console data)
+      {
+        source: '/car-detailing-manchester',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/services/engine-bay-cleaning',
+        destination: '/services/deep-clean-engine-bay',
+        permanent: true,
+      },
+      {
+        source: '/engine-bay-cleaning',
+        destination: '/services/deep-clean-engine-bay',
+        permanent: true,
+      },
+      {
+        source: '/services/deep-cleaning',
+        destination: '/services/the-kings-detail',
+        permanent: true,
+      },
+      {
+        source: '/deep-cleaning',
+        destination: '/services/the-kings-detail',
+        permanent: true,
+      },
+      {
+        source: '/services/valeting',
+        destination: '/services/full-valet',
+        permanent: true,
+      },
+      {
+        source: '/valeting',
+        destination: '/services/full-valet',
+        permanent: true,
+      },
+      // Legacy area routes: /areas/:area -> /locations/:area
+      {
+        source: '/areas/:area',
+        destination: '/locations/:area',
+        permanent: true,
+      },
+      {
+        source: '/areas',
+        destination: '/locations',
+        permanent: true,
+      },
     ];
   },
 };
