@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { SERVICE_AREAS_24, TRUSTED_PARTNER, SITE_CONFIG } from '@/lib/site-data';
+import { AREA_DETAILS } from '@/lib/location-data';
 import { MapPin, Search, Star, ShieldCheck, Phone, CheckCircle2, Sparkles } from 'lucide-react';
 import { WhatsAppIcon } from './icons/BrandIcons';
 import { useModals } from './ModalContext';
@@ -55,26 +56,19 @@ export function ServiceAreas() {
               </div>
             </div>
 
-            {/* Pill Cloud */}
+            {/* Pill Cloud Linking to Individual Area Pages */}
             <div className="flex flex-wrap gap-2.5">
               {filteredAreas.map((town, idx) => {
-                const isSelected = selectedTown === town;
+                const slug = town.toLowerCase().replace(/\s+/g, '-');
                 const isBaseLocation = town === 'Urmston' || town === 'Flixton';
+                const hasDedicatedPage = Boolean(AREA_DETAILS[slug]);
 
                 return (
-                  <button
+                  <Link
                     key={`${town}-${idx}`}
-                    type="button"
-                    onClick={() => {
-                      setSelectedTown(isSelected ? null : town);
-                      if (!isSelected) {
-                        openQuoteModal(`Service in / near ${town}`);
-                      }
-                    }}
-                    className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
-                      isSelected
-                        ? 'bg-red-600 text-white shadow-md'
-                        : isBaseLocation
+                    href={hasDedicatedPage ? `/locations/${slug}` : `/locations#${slug}`}
+                    className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
+                      isBaseLocation
                         ? 'bg-red-500/15 border border-red-500/40 text-red-700 dark:text-red-300 hover:bg-red-500/25'
                         : 'bg-zinc-100 dark:bg-workshop-elevated text-zinc-700 dark:text-zinc-200 border border-zinc-200/80 dark:border-white/10 hover:border-red-400/50 hover:text-red-500'
                     }`}
@@ -86,7 +80,7 @@ export function ServiceAreas() {
                         HQ Base
                       </span>
                     )}
-                  </button>
+                  </Link>
                 );
               })}
             </div>

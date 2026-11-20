@@ -460,7 +460,7 @@ export function Navbar() {
                       : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
                   }`}
                 >
-                  <span>24 Greater Manchester Locations</span>
+                  <span>Manchester &amp; Cheshire Locations</span>
                   <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
                 </Link>
                 <Link

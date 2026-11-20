@@ -330,13 +330,27 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="flex items-center gap-6">
-            <Link href="#privacy" className="hover:text-zinc-300 transition-colors">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <Link href="/privacy-policy" className="hover:text-zinc-300 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#sitemap" className="hover:text-zinc-300 transition-colors">
+            <Link href="/cookie-policy" className="hover:text-zinc-300 transition-colors">
+              Cookie Policy
+            </Link>
+            <Link href="/sitemap" className="hover:text-zinc-300 transition-colors">
               Sitemap
             </Link>
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new CustomEvent('lk_open_cookie_modal'));
+                }
+              }}
+              className="hover:text-zinc-300 transition-colors cursor-pointer text-left focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-red-500 rounded"
+            >
+              Cookie Settings
+            </button>
             <span className="flex items-center gap-1 text-zinc-400">
               Manchester, UK
             </span>

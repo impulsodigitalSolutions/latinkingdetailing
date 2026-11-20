@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { SITE_CONFIG } from '@/lib/site-config';
 import { SERVICES, BLOG_POSTS } from '@/lib/site-data';
+import { AREA_DETAILS } from '@/lib/location-data';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date();
@@ -61,6 +62,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${SITE_CONFIG.baseUrl}/sitemap`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_CONFIG.baseUrl}/privacy-policy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${SITE_CONFIG.baseUrl}/cookie-policy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ];
 
   // Dynamic service detail routes
@@ -79,6 +98,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...guideRoutes];
+  // Dynamic location routes
+  const locationRoutes: MetadataRoute.Sitemap = Object.keys(AREA_DETAILS).map((slug) => ({
+    url: `${SITE_CONFIG.baseUrl}/locations/${slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...guideRoutes, ...locationRoutes];
 }
+
 

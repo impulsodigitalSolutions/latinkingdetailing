@@ -100,7 +100,7 @@ export const SITE_CONFIG = {
     fullAddress: '426 Flixton Road, Flixton, Urmston, Manchester, M41 6QT, UK',
     landmark: 'Flixton, Urmston, Trafford & Greater Manchester',
     googleMapsUrl:
-      'https://www.google.com/maps/dir//Latin+king+detailing,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+United+Kingdom/@28.5780075,77.3439278,4865m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0xaf6cc52e3dc8dc1d:0xf85f8acd81c952a3!2m2!1d-2.3843237!2d53.4447194?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
+      'https://maps.google.com/?q=Latin+King+Detailing+426+Flixton+Rd+Urmston+Manchester+M41+6QT',
   },
   primaryWorkshop: {
     title: 'Latin King Detailing',
@@ -111,7 +111,7 @@ export const SITE_CONFIG = {
     fullAddress: '426 Flixton Road, Flixton, Urmston, Manchester, M41 6QT, UK',
     landmark: 'Flixton, Urmston, Trafford & Greater Manchester',
     googleMapsUrl:
-      'https://www.google.com/maps/dir//Latin+king+detailing,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+United+Kingdom/@28.5780075,77.3439278,4865m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0xaf6cc52e3dc8dc1d:0xf85f8acd81c952a3!2m2!1d-2.3843237!2d53.4447194?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
+      'https://maps.google.com/?q=Latin+King+Detailing+426+Flixton+Rd+Urmston+Manchester+M41+6QT',
   },
   secondaryWorkshop: {
     title: 'Latin King Detailing',
@@ -122,7 +122,7 @@ export const SITE_CONFIG = {
     fullAddress: '426 Flixton Road, Flixton, Urmston, Manchester, M41 6QT, UK',
     landmark: 'Flixton, Urmston, Trafford & Greater Manchester',
     googleMapsUrl:
-      'https://www.google.com/maps/dir//Latin+king+detailing,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+United+Kingdom/@28.5780075,77.3439278,4865m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0xaf6cc52e3dc8dc1d:0xf85f8acd81c952a3!2m2!1d-2.3843237!2d53.4447194?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
+      'https://maps.google.com/?q=Latin+King+Detailing+426+Flixton+Rd+Urmston+Manchester+M41+6QT',
   },
   
   openingHours: 'Available 24/7 (Monday – Sunday: 24 Hours)',
@@ -161,7 +161,7 @@ export const SITE_CONFIG = {
     {
       name: 'Google Maps',
       handle: '5.0★ (60+ Reviews)',
-      url: 'https://www.google.com/maps/dir//Latin+king+detailing,+426+Flixton+Rd,+Urmston,+Manchester+M41+6QT,+United+Kingdom/@28.5780075,77.3439278,4865m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0xaf6cc52e3dc8dc1d:0xf85f8acd81c952a3!2m2!1d-2.3843237!2d53.4447194?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D',
+      url: 'https://maps.google.com/?q=Latin+King+Detailing+426+Flixton+Rd+Urmston+Manchester+M41+6QT',
       icon: 'Google',
     },
   ],

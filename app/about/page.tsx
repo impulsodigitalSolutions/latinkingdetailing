@@ -180,7 +180,7 @@ export default function AboutPage() {
                       Urmston Base
                     </div>
                     <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
-                      Covering 24 towns
+                      10 Service Areas
                     </div>
                   </div>
 

@@ -17,6 +17,7 @@ export const SITE_CONFIG = {
 
   // Contact
   phone: '07482 225323',
+  phoneDisplay: '07482 225323',
   phoneFormatted: '+44 7482 225323',
   phoneHref: 'tel:07482225323',
   whatsappNumber: '447482225323',
