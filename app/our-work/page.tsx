@@ -6,6 +6,8 @@ import { Footer } from '@/components/Footer';
 import { Gallery } from '@/components/Gallery';
 import { Sparkles, ArrowRight, ShieldCheck, CheckCircle2, ChevronRight, Eye } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/site-config';
+import { JsonLd } from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Our Work | Vehicle Detailing Transformations',
@@ -25,8 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function OurWorkPage() {
+  const breadcrumbs = [
+    { name: 'Home', url: SITE_CONFIG.baseUrl },
+    { name: 'Our Work', url: `${SITE_CONFIG.baseUrl}/our-work` },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
+      <JsonLd id="schema-breadcrumb" data={getBreadcrumbSchema(breadcrumbs)} />
       {/* Sticky Floating Capsule Navbar */}
       <Navbar />
 

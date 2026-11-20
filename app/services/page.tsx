@@ -4,6 +4,8 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ServicesDetailView } from '@/components/ServicesDetailView';
 import { SITE_CONFIG } from '@/lib/site-config';
+import { JsonLd } from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Our Detailing & Ceramic Coating Services',
@@ -23,8 +25,14 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const breadcrumbs = [
+    { name: 'Home', url: SITE_CONFIG.baseUrl },
+    { name: 'Services', url: `${SITE_CONFIG.baseUrl}/services` },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
+      <JsonLd id="schema-breadcrumb" data={getBreadcrumbSchema(breadcrumbs)} />
       {/* Sticky Floating Capsule Navbar */}
       <Navbar />
 

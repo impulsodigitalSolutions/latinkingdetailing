@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { SITE_CONFIG } from '@/lib/site-config';
+import { JsonLd } from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/schema';
 import {
   ChevronRight,
   CheckCircle2,
@@ -83,8 +85,14 @@ const SPECIALISMS = [
 ];
 
 export default function AboutPage() {
+  const breadcrumbs = [
+    { name: 'Home', url: SITE_CONFIG.baseUrl },
+    { name: 'About', url: `${SITE_CONFIG.baseUrl}/about` },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
+      <JsonLd id="schema-breadcrumb" data={getBreadcrumbSchema(breadcrumbs)} />
       {/* Sticky Floating Capsule Navbar */}
       <Navbar />
 

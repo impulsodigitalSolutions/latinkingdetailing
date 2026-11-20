@@ -11,10 +11,15 @@ import { Reviews } from '@/components/Reviews';
 import { ServiceAreas } from '@/components/ServiceAreas';
 import { FaqSection } from '@/components/FaqSection';
 import { Footer } from '@/components/Footer';
+import { JsonLd } from '@/components/JsonLd';
+import { getLocalBusinessSchema, getFaqSchema } from '@/lib/schema';
+import { FAQ_ITEMS } from '@/lib/site-data';
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
+      <JsonLd id="schema-localbusiness" data={getLocalBusinessSchema()} />
+      <JsonLd id="schema-faq" data={getFaqSchema(FAQ_ITEMS)} />
       {/* Sticky Floating Glassmorphic Navbar */}
       <Navbar />
 

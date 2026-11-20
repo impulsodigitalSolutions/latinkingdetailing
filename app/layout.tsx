@@ -8,6 +8,8 @@ import { ServiceDetailModal } from '@/components/ServiceDetailModal';
 import { GalleryModal } from '@/components/GalleryModal';
 import { FloatingActions } from '@/components/FloatingActions';
 import { SITE_CONFIG } from '@/lib/site-config';
+import { JsonLd } from '@/components/JsonLd';
+import { getOrganizationSchema, getWebSiteSchema } from '@/lib/schema';
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-heading',
@@ -113,6 +115,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
+          <JsonLd id="schema-organization" data={getOrganizationSchema()} />
+          <JsonLd id="schema-website" data={getWebSiteSchema()} />
           <ModalProvider>
             {children}
             <QuoteModal />

@@ -7,6 +7,8 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { SERVICES, getServiceBySlug, ServiceItem } from '@/lib/site-data';
 import { SITE_CONFIG } from '@/lib/site-config';
+import { JsonLd } from '@/components/JsonLd';
+import { getServiceSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { WORKSHOP_GALLERY_IMAGES } from '@/lib/gallery-data';
 import {
   ShieldCheck,
@@ -115,55 +117,17 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const relatedImages = WORKSHOP_GALLERY_IMAGES.slice(0, 8);
   const otherServices = SERVICES.filter((s) => s.id !== service.id).slice(0, 4);
 
-  // Schema.org structured data
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: service.title,
-    description: service.shortDesc,
-    provider: {
-      '@type': 'AutoRepair',
-      name: SITE_CONFIG.brandName,
-      telephone: SITE_CONFIG.phone,
-      email: SITE_CONFIG.email,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: SITE_CONFIG.primaryWorkshop.street,
-        addressLocality: SITE_CONFIG.primaryWorkshop.town,
-        addressRegion: 'Greater Manchester',
-        postalCode: SITE_CONFIG.primaryWorkshop.postcode,
-        addressCountry: 'GB',
-      },
-    },
-    areaServed: [
-      'Manchester',
-      'Cheshire',
-      'Urmston',
-      'Flixton',
-      'Stretford',
-      'Sale',
-      'Irlam',
-      'Eccles',
-      'Altrincham',
-      'Hale',
-      'Bowdon',
-      'Partington',
-    ],
-    offers: {
-      '@type': 'Offer',
-      priceDescription: service.startingPrice,
-    },
-  };
+  const breadcrumbs = [
+    { name: 'Home', url: SITE_CONFIG.baseUrl },
+    { name: 'Services', url: `${SITE_CONFIG.baseUrl}/services` },
+    { name: service.title, url: `${SITE_CONFIG.baseUrl}/services/${service.slug}` },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
+      <JsonLd id={`schema-service-${service.slug}`} data={getServiceSchema(service)} />
+      <JsonLd id={`schema-breadcrumb-${service.slug}`} data={getBreadcrumbSchema(breadcrumbs)} />
       <Navbar />
-
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
 
       <main className="flex-1 page-transition">
         {/* Service Hero Banner */}

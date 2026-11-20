@@ -6,6 +6,8 @@ import { Footer } from '@/components/Footer';
 import { ComparisonTable } from '@/components/ComparisonTable';
 import { Sparkles, Shield, ShieldCheck, ChevronRight, CheckCircle2, XCircle, ArrowRight, Layers } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/site-config';
+import { JsonLd } from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Ceramic Coating vs Dealership Sealant vs Wax',
@@ -25,8 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function ComparisonPage() {
+  const breadcrumbs = [
+    { name: 'Home', url: SITE_CONFIG.baseUrl },
+    { name: 'Protection Comparison', url: `${SITE_CONFIG.baseUrl}/comparison` },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
+      <JsonLd id="schema-breadcrumb" data={getBreadcrumbSchema(breadcrumbs)} />
       {/* Sticky Floating Capsule Navbar */}
       <Navbar />
 

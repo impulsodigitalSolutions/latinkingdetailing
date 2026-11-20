@@ -7,6 +7,9 @@ import { FaqSection } from '@/components/FaqSection';
 import { HelpCircle, ChevronRight, Phone, MessageSquare, Sparkles } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/site-config';
 import { WhatsAppIcon } from '@/components/icons/BrandIcons';
+import { JsonLd } from '@/components/JsonLd';
+import { getBreadcrumbSchema, getFaqSchema } from '@/lib/schema';
+import { FAQ_ITEMS } from '@/lib/site-data';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
@@ -26,8 +29,15 @@ export const metadata: Metadata = {
 };
 
 export default function FaqPage() {
+  const breadcrumbs = [
+    { name: 'Home', url: SITE_CONFIG.baseUrl },
+    { name: 'FAQs', url: `${SITE_CONFIG.baseUrl}/faq` },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
+      <JsonLd id="schema-faq" data={getFaqSchema(FAQ_ITEMS)} />
+      <JsonLd id="schema-breadcrumb" data={getBreadcrumbSchema(breadcrumbs)} />
       {/* Sticky Floating Capsule Navbar */}
       <Navbar />
 

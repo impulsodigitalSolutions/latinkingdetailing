@@ -8,6 +8,8 @@ import { MapPin, Navigation, Phone, Clock, ChevronRight, ShieldCheck, CheckCircl
 import { SERVICE_AREAS_24 } from '@/lib/site-data';
 import { SITE_CONFIG } from '@/lib/site-config';
 import { WhatsAppIcon } from '@/components/icons/BrandIcons';
+import { JsonLd } from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Areas We Serve in Manchester & Cheshire',
@@ -27,8 +29,14 @@ export const metadata: Metadata = {
 };
 
 export default function LocationsPage() {
+  const breadcrumbs = [
+    { name: 'Home', url: SITE_CONFIG.baseUrl },
+    { name: 'Locations', url: `${SITE_CONFIG.baseUrl}/locations` },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 relative transition-colors duration-300">
+      <JsonLd id="schema-breadcrumb" data={getBreadcrumbSchema(breadcrumbs)} />
       {/* Sticky Floating Capsule Navbar */}
       <Navbar />
 
