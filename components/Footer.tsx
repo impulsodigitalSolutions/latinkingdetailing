@@ -104,6 +104,8 @@ export function Footer() {
                 {/* WhatsApp */}
                 <a
                   href={SITE_CONFIG.whatsappHref}
+                  data-track="whatsapp"
+                  data-cta-location="footer"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-workshop-muted border border-white/10 hover:border-emerald-500/60 text-zinc-300 hover:text-white transition-colors text-xs font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
@@ -207,6 +209,8 @@ export function Footer() {
               <div>
                 <a
                   href={SITE_CONFIG.phoneHref}
+                  data-track="call"
+                  data-cta-location="footer"
                   className="flex items-center gap-2 text-white font-bold hover:text-red-400 transition-colors"
                 >
                   <Phone className="w-4 h-4 text-red-500" />
@@ -217,6 +221,8 @@ export function Footer() {
               <div>
                 <a
                   href={SITE_CONFIG.whatsappHref}
+                  data-track="whatsapp"
+                  data-cta-location="footer"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors font-semibold"
@@ -309,6 +315,8 @@ export function Footer() {
 
             <a
               href={SITE_CONFIG.whatsappHref}
+              data-track="whatsapp"
+              data-cta-location="footer_social"
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded-full bg-workshop-muted border border-white/10 hover:border-emerald-500/60 hover:text-emerald-400 flex items-center justify-center text-zinc-400 transition-colors"

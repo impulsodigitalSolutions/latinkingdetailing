@@ -1,8 +1,13 @@
 'use client';
 
-import React, { useEffect, useRef, useSyncExternalStore } from 'react';
+import { useEffect, useRef, useSyncExternalStore } from 'react';
 import { usePathname } from 'next/navigation';
-import { trackEvent, trackConversion, isInternalTrafficOptedOut } from '@/lib/analytics';
+import {
+  trackEvent,
+  trackConversion,
+  isInternalTrafficOptedOut,
+  getTrafficAttribution,
+} from '@/lib/analytics';
 
 const emptySubscribe = () => () => {};
 
@@ -13,20 +18,51 @@ export function AnalyticsTracker() {
   const scrolled50Ref = useRef(false);
   const scrolled90Ref = useRef(false);
   const guideTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const hasAttributedRef = useRef(false);
 
-  // Handle Page Views on Route Changes
+  // Initial Session & Traffic Medium Attribution
+  useEffect(() => {
+    if (!isClient || hasAttributedRef.current) return;
+    hasAttributedRef.current = true;
+
+    if (isInternalTrafficOptedOut()) return;
+
+    const attribution = getTrafficAttribution();
+    trackEvent('session_landing', {
+      ...attribution,
+    });
+  }, [isClient, pathname]);
+
+  // Handle Page Views on Route Changes (helps see which page is viewed most)
   useEffect(() => {
     if (!isClient) return;
 
-    // Reset scroll tracking per page navigation
     scrolled50Ref.current = false;
     scrolled90Ref.current = false;
 
-    // Internal traffic opt-out check
-    if (isInternalTrafficOptedOut()) {
-      return;
-    }
+    if (isInternalTrafficOptedOut()) return;
 
+    const pageType =
+      pathname.startsWith('/services/') ? 'service_detail' :
+      pathname.startsWith('/locations/') ? 'location_page' :
+      pathname.startsWith('/guides/') ? 'guide_article' :
+      pathname === '/' ? 'homepage' :
+      pathname === '/faq' ? 'faq_hub' :
+      pathname === '/our-work' ? 'gallery_portfolio' :
+      pathname === '/comparison' ? 'comparison_matrix' :
+      pathname === '/reviews' ? 'reviews_page' :
+      pathname === '/about' ? 'about_page' :
+      'general_page';
+
+    // Push virtual_page_view for SPA routing in GTM
+    trackEvent('virtual_page_view', {
+      page_path: pathname,
+      page_title: document.title,
+      page_location: window.location.href,
+      page_type: pageType,
+    });
+
+    // Also trigger native gtag page_view if gtag script is loaded
     if (typeof window.gtag === 'function') {
       window.gtag('event', 'page_view', {
         page_path: pathname,
@@ -68,45 +104,40 @@ export function AnalyticsTracker() {
       const text = (element.innerText || element.getAttribute('aria-label') || element.getAttribute('title') || '').trim();
       const currentHost = window.location.host;
 
-      // 1. Phone clicks
-      if (href.startsWith('tel:')) {
-        const phone = href.replace('tel:', '');
-        trackEvent('click_call', {
-          link_text: text || phone,
-          link_url: href,
-          page_path: pathname,
-        });
+      const ctaLocation =
+        element.closest('header, nav') ? 'header' :
+        element.closest('footer') ? 'footer' :
+        element.closest('[id*="hero"]') ? 'hero' :
+        element.closest('[class*="sticky"], [class*="FloatingActions"]') ? 'sticky_bar' :
+        element.closest('[id*="service"], [class*="service"]') ? 'service_section' :
+        element.closest('[id*="locations"]') ? 'locations_section' :
+        'body';
+
+      // 1. Phone call clicks (attribute & href tracking)
+      const isCallTrack = element.getAttribute('data-track') === 'call' || href.startsWith('tel:');
+      if (isCallTrack) {
+        const phone = href.replace('tel:', '') || '07482 225323';
+        trackConversion.call(phone, ctaLocation);
         return;
       }
 
-      // 2. WhatsApp clicks
-      if (href.includes('wa.me') || href.includes('whatsapp.com')) {
-        trackEvent('click_whatsapp', {
-          link_text: text || 'WhatsApp',
-          link_url: href,
-          page_path: pathname,
-        });
+      // 2. WhatsApp clicks (attribute & href tracking)
+      const isWaTrack = element.getAttribute('data-track') === 'whatsapp' || href.includes('wa.me') || href.includes('whatsapp.com');
+      if (isWaTrack) {
+        trackConversion.whatsapp('447482225323', ctaLocation, text || 'WhatsApp Click');
         return;
       }
 
       // 3. Email clicks
       if (href.startsWith('mailto:')) {
         const email = href.replace('mailto:', '');
-        trackEvent('click_email', {
-          link_text: text || email,
-          link_url: href,
-          page_path: pathname,
-        });
+        trackConversion.email(email, ctaLocation);
         return;
       }
 
       // 4. Directions / Google Maps clicks
       if (href.includes('google.com/maps') || href.includes('maps.google.com') || href.includes('goo.gl/maps')) {
-        trackEvent('click_directions', {
-          link_text: text || 'Google Maps',
-          link_url: href,
-          page_path: pathname,
-        });
+        trackConversion.directions(text || 'Google Maps Flixton Base');
         return;
       }
 
@@ -146,11 +177,12 @@ export function AnalyticsTracker() {
         return;
       }
 
-      // 7. General Call-to-Action (CTA) clicks
+      // 7. Call-to-Action (CTA) clicks (Quote buttons, bookings, inquiries)
       const isCtaAttr = element.getAttribute('data-track-cta') || element.getAttribute('data-cta');
       const ctaKeywords = [
         'get quote',
         'request quote',
+        'request a quote',
         'request workshop quote',
         'book a detail',
         'book inspection',
@@ -164,19 +196,7 @@ export function AnalyticsTracker() {
       const isCtaText = ctaKeywords.some((keyword) => lowerText.includes(keyword));
 
       if (isCtaAttr || isCtaText) {
-        const ctaLocation =
-          element.closest('header, nav') ? 'header' :
-          element.closest('footer') ? 'footer' :
-          element.closest('[id*="hero"]') ? 'hero' :
-          element.closest('[class*="sticky"], [class*="FloatingActions"]') ? 'sticky_bar' :
-          element.closest('[id*="service"], [class*="service"]') ? 'service_section' :
-          'body';
-
-        trackEvent('click_cta', {
-          cta_text: text || isCtaAttr || 'Call To Action',
-          cta_location: ctaLocation,
-          page_path: pathname,
-        });
+        trackConversion.cta(text || isCtaAttr || 'Call To Action', ctaLocation);
       }
 
       // 8. FAQ Accordion Click Tracking
@@ -184,10 +204,7 @@ export function AnalyticsTracker() {
       if (faqTrigger) {
         const questionText = faqTrigger.innerText.trim();
         if (questionText) {
-          trackEvent('faq_open', {
-            question: questionText.slice(0, 120),
-            page_path: pathname,
-          });
+          trackConversion.faqOpen(questionText.slice(0, 120));
         }
       }
 
@@ -216,11 +233,8 @@ export function AnalyticsTracker() {
       const form = target.closest('form');
       if (form && !trackedFormsRef.current.has(form)) {
         trackedFormsRef.current.add(form);
-        const formId = form.id || form.getAttribute('name') || 'quote_form';
-        trackEvent('form_start', {
-          form_id: formId,
-          page_path: pathname,
-        });
+        const formId = form.id || form.getAttribute('name') || form.getAttribute('data-track') || 'quote_form';
+        trackConversion.formStart(formId);
       }
     };
 
@@ -235,14 +249,14 @@ export function AnalyticsTracker() {
       if (percentage >= 50 && !scrolled50Ref.current) {
         scrolled50Ref.current = true;
         if (pathname.startsWith('/services/') || pathname.startsWith('/guides/') || pathname === '/') {
-          trackEvent('scroll_depth', { depth: 50, page_path: pathname });
+          trackConversion.scrollDepth(50, pathname);
         }
       }
 
       if (percentage >= 90 && !scrolled90Ref.current) {
         scrolled90Ref.current = true;
         if (pathname.startsWith('/services/') || pathname.startsWith('/guides/') || pathname === '/') {
-          trackEvent('scroll_depth', { depth: 90, page_path: pathname });
+          trackConversion.scrollDepth(90, pathname);
         }
       }
     };

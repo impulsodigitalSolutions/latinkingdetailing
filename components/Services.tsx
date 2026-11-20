@@ -305,6 +305,8 @@ export function Services({ limit }: ServicesProps) {
 
                   <button
                     type="button"
+                    data-track-cta={service.ctaText || 'Book Service'}
+                    data-cta-location="service_card"
                     onClick={() => openQuoteModal(service.title)}
                     className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-900 dark:bg-zinc-800 hover:bg-red-600 dark:hover:bg-red-600 text-white font-bold text-xs transition-colors shadow-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
                   >

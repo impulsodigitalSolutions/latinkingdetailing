@@ -315,6 +315,8 @@ export function ServicesDetailView() {
             <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
               <button
                 type="button"
+                data-track-cta="Request a quote"
+                data-cta-location="services_hero"
                 onClick={() => openQuoteModal()}
                 className={primaryButton}
               >
@@ -643,6 +645,9 @@ export function ServicesDetailView() {
                   </Link>
                   <button
                     type="button"
+                    data-track-cta={service.ctaText || 'Get a free quote'}
+                    data-cta-location="services_list"
+                    data-service={service.slug}
                     onClick={() => openQuoteModal(service.title)}
                     className={primaryButton}
                   >
@@ -673,7 +678,13 @@ export function ServicesDetailView() {
               Compare coatings
               <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
             </Link>
-            <button type="button" onClick={() => openQuoteModal()} className={primaryButton}>
+            <button
+              type="button"
+              data-track-cta="Ask us"
+              data-cta-location="services_closing"
+              onClick={() => openQuoteModal()}
+              className={primaryButton}
+            >
               Ask us
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </button>

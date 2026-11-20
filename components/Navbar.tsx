@@ -293,6 +293,8 @@ export function Navbar() {
               {/* Primary Red Pill Button (Matching Latin King crown) */}
               <button
                 type="button"
+                data-track-cta="Get Quote"
+                data-cta-location="header"
                 onClick={() => openQuoteModal()}
                 className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 cursor-pointer"
               >
@@ -515,6 +517,8 @@ export function Navbar() {
             <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800 space-y-2.5">
               <button
                 type="button"
+                data-track-cta="Get a Free Quote"
+                data-cta-location="mobile_nav"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   openQuoteModal();
@@ -528,6 +532,8 @@ export function Navbar() {
               <div className="grid grid-cols-2 gap-2">
                 <a
                   href={SITE_CONFIG.whatsappHref}
+                  data-track="whatsapp"
+                  data-cta-location="mobile_nav"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs"
@@ -538,6 +544,8 @@ export function Navbar() {
 
                 <a
                   href={SITE_CONFIG.phoneHref}
+                  data-track="call"
+                  data-cta-location="mobile_nav"
                   className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold text-xs"
                 >
                   <Phone className="w-3.5 h-3.5 text-red-500" />

@@ -243,7 +243,15 @@ export function QuoteForm({ initialService = '', onSuccess, isModal = false }: Q
   }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} noValidate data-clarity-mask="true" className="space-y-5 sm:space-y-9">
+    <form
+      ref={formRef}
+      onSubmit={handleSubmit}
+      noValidate
+      data-track="quote_form"
+      data-form-name="quote_request"
+      data-clarity-mask="true"
+      className="space-y-5 sm:space-y-9"
+    >
       {status === 'error' && serverError && (
         <div role="alert" className="border-l-2 border-red-600 bg-red-50/60 px-4 py-3 dark:bg-red-500/5">
           <p className="text-sm leading-[1.6] text-red-800 dark:text-red-300">{serverError}</p>
@@ -407,6 +415,8 @@ export function QuoteForm({ initialService = '', onSuccess, isModal = false }: Q
         </p>
         <button
           type="submit"
+          data-track="quote_submit"
+          data-track-cta="Send enquiry"
           disabled={status === 'submitting'}
           className="inline-flex min-h-10 items-center justify-center gap-2 rounded-md bg-red-600 px-5 py-2 text-sm font-semibold text-white transition-[background-color,transform] duration-150 ease-out hover:bg-brand-red-hover active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:min-h-11 sm:px-6 sm:py-3 dark:focus-visible:ring-offset-workshop-dark"
         >

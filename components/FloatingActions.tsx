@@ -11,6 +11,8 @@ export function FloatingActions() {
     <div className="fixed bottom-3 right-3 z-40 flex flex-col items-end gap-2 sm:bottom-5 sm:right-5">
       <a
         href={SITE_CONFIG.phoneHref}
+        data-track="call"
+        data-cta-location="floating_bar"
         aria-label={`Call Latin King Detailing now on ${SITE_CONFIG.phone}`}
         title={`Call now: ${SITE_CONFIG.phone}`}
         className={buttonClass}
@@ -23,6 +25,8 @@ export function FloatingActions() {
 
       <a
         href={SITE_CONFIG.whatsappHref}
+        data-track="whatsapp"
+        data-cta-location="floating_bar"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"

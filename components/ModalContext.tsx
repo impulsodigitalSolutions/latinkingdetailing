@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState } from 'react';
 import { GalleryItem, ServiceItem, SERVICES } from '@/lib/site-data';
+import { trackEvent } from '@/lib/analytics';
 
 interface ModalContextType {
   isQuoteOpen: boolean;
@@ -29,6 +30,9 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
   const openQuoteModal = (serviceName?: string) => {
     if (serviceName) setSelectedServiceForQuote(serviceName);
     setIsQuoteOpen(true);
+    trackEvent('quote_modal_opened', {
+      selected_service: serviceName || 'general',
+    });
   };
 
   const closeQuoteModal = () => {

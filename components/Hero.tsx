@@ -69,6 +69,8 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
             <button
               type="button"
+              data-track-cta="Request Workshop Quote"
+              data-cta-location="hero"
               onClick={() => openQuoteModal()}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-red-600 hover:bg-red-500 active:scale-[0.98] text-white font-bold text-sm sm:text-base tracking-wide shadow-lg shadow-red-600/30 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
             >

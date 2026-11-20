@@ -211,6 +211,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 <div className="flex flex-col sm:flex-row items-center gap-3.5">
                   <a
                     href="#quote-section"
+                    data-track-cta={`Book ${service.title.split(' - ')[0]}`}
+                    data-cta-location="service_detail_hero"
+                    data-service={service.slug}
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm tracking-wide shadow-md shadow-red-600/20 transition-colors"
                   >
                     <span>Book {service.title.split(' - ')[0]}</span>
@@ -219,6 +222,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
                   <a
                     href={SITE_CONFIG.phoneHref}
+                    data-track="call"
+                    data-cta-location="service_detail_hero"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-zinc-300 dark:border-white/10 hover:border-red-500 bg-white dark:bg-workshop-card text-zinc-900 dark:text-white font-bold text-sm transition-colors"
                   >
                     <Phone className="w-4 h-4 text-red-500" />
@@ -513,6 +518,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     <div className="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-800">
                       <a
                         href={SITE_CONFIG.whatsappHref}
+                        data-track="whatsapp"
+                        data-cta-location="sub_services"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 dark:text-red-400 hover:text-red-500 transition-colors"

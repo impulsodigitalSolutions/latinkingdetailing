@@ -121,6 +121,9 @@ export default async function AreaDetailPage({ params }: PageProps) {
               <div className="flex flex-wrap items-center gap-3.5 pt-6">
                 <a
                   href={SITE_CONFIG.whatsappHref}
+                  data-track="whatsapp"
+                  data-cta-location="location_hero"
+                  data-area={area.slug}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs tracking-wide shadow-md shadow-emerald-600/20 transition-colors"
@@ -130,6 +133,9 @@ export default async function AreaDetailPage({ params }: PageProps) {
                 </a>
                 <a
                   href={SITE_CONFIG.phoneHref}
+                  data-track="call"
+                  data-cta-location="location_hero"
+                  data-area={area.slug}
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-zinc-300 dark:border-white/10 hover:border-red-500 bg-white dark:bg-workshop-card text-zinc-900 dark:text-white font-bold text-xs transition-colors"
                 >
                   <Phone className="w-4 h-4 text-red-500" />
@@ -280,6 +286,9 @@ export default async function AreaDetailPage({ params }: PageProps) {
                   <div className="pt-4">
                     <a
                       href={SITE_CONFIG.whatsappHref}
+                      data-track="whatsapp"
+                      data-cta-location="location_sidebar"
+                      data-area={area.slug}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs tracking-wide transition-colors"
