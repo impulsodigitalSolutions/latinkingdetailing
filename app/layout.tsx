@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Space_Grotesk, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
@@ -10,6 +11,9 @@ import { FloatingActions } from '@/components/FloatingActions';
 import { SITE_CONFIG } from '@/lib/site-config';
 import { JsonLd } from '@/components/JsonLd';
 import { getOrganizationSchema, getWebSiteSchema } from '@/lib/schema';
+import { CookieConsent } from '@/components/CookieConsent';
+import { ClarityScript } from '@/components/ClarityScript';
+import { AnalyticsTracker } from '@/components/AnalyticsTracker';
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-heading',
@@ -102,13 +106,58 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html
       lang="en"
       suppressHydrationWarning
       className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans h-full antialiased overflow-x-clip`}
     >
+      <head>
+        {/* Google Consent Mode v2 Default Configuration (UK GDPR / PECR compliance) */}
+        <script
+          id="google-consent-mode-default"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'wait_for_update': 500
+              });
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col overflow-x-clip bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 selection:bg-red-600 selection:text-white">
+        {/* Google Analytics 4 Script */}
+        {gaId && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            />
+            <Script
+              id="google-analytics-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaId}', {
+                    send_page_view: false
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
+
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -123,6 +172,9 @@ export default function RootLayout({
             <ServiceDetailModal />
             <GalleryModal />
             <FloatingActions />
+            <CookieConsent />
+            <ClarityScript />
+            <AnalyticsTracker />
           </ModalProvider>
         </ThemeProvider>
       </body>
