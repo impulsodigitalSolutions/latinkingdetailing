@@ -179,6 +179,7 @@ export const NAV_LINKS = [
   { name: 'Our Work', href: '/our-work' },
   { name: 'Comparison', href: '/comparison' },
   { name: 'Locations', href: '/locations' },
+  { name: 'Guides', href: '/guides' },
   { name: 'Reviews', href: '/reviews' },
   { name: 'FAQ', href: '/faq' },
 ];
@@ -1108,25 +1109,31 @@ export const FAQ_ITEMS = [
     id: 'faq-1',
     question: 'How much does ceramic coating cost in Manchester?',
     answer:
-      "Prices depend on your car's size and the package you want: entry-level starts from competitive rates on a compact car, and a full Ceramic Pro 9H application on an SUV or prestige vehicle will be more. The best thing to do is drop us a message with your make and model. We'll come straight back with an honest quote, no pressure.",
+      "Ceramic coating in Manchester starts from £200 for compact vehicles, ranging from £550 to £1,200+ for multi-stage Ceramic Pro 9H packages on larger SUVs and prestige cars. Final investment depends on vehicle dimensions and paint correction requirements. Contact us on WhatsApp (07482 225323) for an honest estimate with no pressure. [TODO: Confirm final tiered package pricing with client before publishing].",
   },
   {
     id: 'faq-2',
     question: 'Is ceramic coating worth it for a daily driver?',
     answer:
-      'Genuinely, yes: and most people notice the difference straight away. After coating, water beads off, dirt doesn\'t cling the same way, and you spend far less time washing. For a Greater Manchester daily driver dealing with road salt, rain, and bird lime all year, the protection is real. Most of our customers say it paid for itself within 12–18 months in reduced cleaning costs alone.',
+      "Yes, ceramic coating is especially valuable for daily drivers in Greater Manchester dealing with winter road salt, acid rain, and motorway grime. The permanent 9H quartz shield prevents contaminants from bonding, reducing weekly wash times by over 70%. Most owners find the coating pays for itself within 12 to 18 months in preserved resale value alone.",
   },
   {
     id: 'faq-3',
     question: 'How long does a Ceramic Pro coating last?',
     answer:
-      'A properly applied Ceramic Pro 9H coating lasts 2–5 years, depending on the package and how you look after it. The care routine is simple: pH-neutral shampoo, no automatic car washes, and an annual check with us. Do that, and you\'ll get every year out of it.',
+      "A professionally applied Ceramic Pro 9H nanocoating lasts between 2 and 5 years, backed by a traceable VIN warranty. Maintenance is straightforward: wash using the two-bucket method with pH-neutral shampoo, avoid automatic car washes, and book an annual decontamination check at our Urmston workshop.",
   },
   {
     id: 'faq-4',
     question: 'Why choose Ceramic Pro 9H over dealership paint protection?',
     answer:
-      "Dealerships typically apply quick polymer sealants (such as Supagard or Diamondbrite) that simply sit on top of the paint and wash away after a few months. Ceramic Pro 9H is a certified liquid polymer that chemically fuses with your clear coat at a molecular level, creating a permanent 9H hard glass barrier backed by a traceable VIN warranty.",
+      "Dealership packages (like Supagard or Diamondbrite) are basic polymer waxes that sit on the clear coat and wash away in 3 to 6 months. In contrast, Ceramic Pro 9H is an accredited industrial nanoceramic that forms a permanent chemical bond with factory paint, delivering verifiable 9H scratch resistance, chemical immunity, and documented warranty backing.",
+  },
+  {
+    id: 'faq-5',
+    question: 'How much does machine polishing and paint correction cost?',
+    answer:
+      "Single-stage machine polishing starts from £180, while multi-stage paint correction ranges from £250 to £450 depending on scratch depth and vehicle size. Deep clean detailing starts from £200, and dedicated engine bay detailing starts from £50. We measure clear coat depth with digital paint gauges before every correction. [TODO: Confirm final machine polishing tiers with client].",
   },
 ];
 

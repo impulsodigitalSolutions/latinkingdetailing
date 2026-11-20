@@ -48,30 +48,40 @@ export function ComparisonTable() {
           <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mt-4 max-w-[60ch] mx-auto leading-[1.65]">
             Not all automotive protections are created equal. Compare how certified Ceramic Pro 9H nanoceramics stack up against dealership polymer sealants and traditional waxes.
           </p>
+
+          {/* Answer Engine Direct Summary Block */}
+          <div className="mt-6 p-4 sm:p-5 rounded-2xl bg-white dark:bg-workshop-card border border-zinc-200/80 dark:border-white/10 text-left shadow-xs">
+            <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed font-medium">
+              <strong>Quick Verdict:</strong> Ceramic Pro 9H creates a permanent nanoceramic quartz bond with your vehicle’s factory clear coat, delivering measurable 9H scratch resistance, chemical immunity, and 2 to 5 years of verified protection. In contrast, dealership sealants (e.g. Supagard or Diamondbrite) wash away within 3 to 6 months, and traditional carnauba waxes degrade within 4 to 8 weeks under UK rain and road salt.
+            </p>
+          </div>
         </div>
 
         {/* Responsive Table Container */}
         <div className="rounded-3xl border border-zinc-200 dark:border-workshop-border bg-white dark:bg-workshop-card-subtle overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
+              <caption className="sr-only">
+                Automotive Paint Protection Matrix: Ceramic Pro 9H Nanoceramic vs Dealership Sealants vs Carnauba Wax
+              </caption>
               <thead>
                 <tr className="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-100/70 dark:bg-workshop-row">
-                  <th className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 w-1/4">
+                  <th scope="col" className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 w-1/4">
                     Protection Criteria
                   </th>
-                  <th className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-red-600 dark:text-red-500 w-1/4 bg-red-500/[0.04]">
+                  <th scope="col" className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-red-600 dark:text-red-500 w-1/4 bg-red-500/[0.04]">
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-red-500" />
                       <span>Ceramic Pro 9H</span>
                     </div>
                   </th>
-                  <th className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 w-1/4">
+                  <th scope="col" className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 w-1/4">
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-amber-500" />
                       <span>Dealership Sealant</span>
                     </div>
                   </th>
-                  <th className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-zinc-400 w-1/4">
+                  <th scope="col" className="py-5 px-4 sm:px-6 font-heading font-semibold text-xs sm:text-sm text-zinc-400 w-1/4">
                     Traditional Wax
                   </th>
                 </tr>
@@ -82,9 +92,9 @@ export function ComparisonTable() {
                     key={idx}
                     className="hover:bg-zinc-50/80 dark:hover:bg-zinc-800/40 transition-colors"
                   >
-                    <td className="py-4 px-4 sm:px-6 font-heading font-medium text-zinc-900 dark:text-white">
+                    <th scope="row" className="py-4 px-4 sm:px-6 font-heading font-medium text-zinc-900 dark:text-white text-left font-normal">
                       {row.feature}
-                    </td>
+                    </th>
 
                     {/* Ceramic Pro column */}
                     <td className="py-4 px-4 sm:px-6 font-semibold bg-red-500/[0.03] text-zinc-800 dark:text-zinc-200">

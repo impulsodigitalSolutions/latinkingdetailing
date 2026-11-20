@@ -13,6 +13,7 @@ import {
   MapPin,
   Phone,
   ArrowRight,
+  ShieldCheck,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -251,6 +252,43 @@ export default function AboutPage() {
                     Mobile studio
                   </figcaption>
                 </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Founder & Lead Detailer Profile (E-E-A-T Signal) */}
+        <section className="py-12 sm:py-16 bg-zinc-50/60 dark:bg-workshop-muted/30 border-b border-zinc-200/80 dark:border-white/5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-workshop-card border border-zinc-200/80 dark:border-white/10 shadow-sm max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-8">
+              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden shrink-0 border-2 border-red-500/20 shadow-md bg-zinc-900">
+                <Image
+                  src="/images/about/about-hero.jpg"
+                  alt="Latin King Detailing Founder and Master Detailer applying Ceramic Pro 9H nanocoating in Manchester workshop"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="space-y-3 text-center sm:text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-600 dark:text-red-400 text-xs font-bold uppercase tracking-wider">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                  <span>Master Detailer &amp; Founder</span>
+                </div>
+
+                <h3 className="font-heading font-semibold text-2xl sm:text-3xl text-zinc-900 dark:text-white">
+                  TODO: [Founder Name]
+                </h3>
+
+                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  Ceramic Pro 9H Factory-Certified Installer and Paint Correction Specialist with years of dedicated craft experience restoring sports cars, prestige saloons, and family vehicles across Greater Manchester and Cheshire.
+                </p>
+
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1 text-xs text-zinc-500 font-semibold">
+                  <span className="px-2.5 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200">Ceramic Pro 9H Certified</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200">Multi-Stage Machine Polishing</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200">£5M Public &amp; Vehicle Insured</span>
+                </div>
               </div>
             </div>
           </div>

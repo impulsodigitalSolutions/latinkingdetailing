@@ -149,7 +149,12 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/locations" className="hover:text-red-400 transition-colors">
-                  24 Regional Locations
+                  Manchester &amp; Cheshire Locations
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides" className="hover:text-red-400 transition-colors">
+                  Detailing Guides &amp; Advice
                 </Link>
               </li>
               <li>

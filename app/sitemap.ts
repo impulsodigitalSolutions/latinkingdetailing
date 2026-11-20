@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { SITE_CONFIG } from '@/lib/site-config';
-import { SERVICES } from '@/lib/site-data';
+import { SERVICES, BLOG_POSTS } from '@/lib/site-data';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date();
@@ -55,6 +55,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${SITE_CONFIG.baseUrl}/guides`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
   ];
 
   // Dynamic service detail routes
@@ -65,5 +71,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: service.slug === 'ceramic-coating' ? 0.9 : 0.8,
   }));
 
-  return [...staticRoutes, ...serviceRoutes];
+  // Dynamic guide detail routes
+  const guideRoutes: MetadataRoute.Sitemap = BLOG_POSTS.map((guide) => ({
+    url: `${SITE_CONFIG.baseUrl}/guides/${guide.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...guideRoutes];
 }
+

@@ -157,6 +157,30 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   {service.tagline}
                 </div>
 
+                {/* 40-60 Word Direct Answer-First Block (AEO / SERP Snippet) */}
+                <div className="p-4 sm:p-5 rounded-2xl bg-zinc-50 dark:bg-workshop-muted/80 border-l-4 border-red-600 dark:border-red-500 mb-6 shadow-xs">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-red-600 dark:text-red-400 mb-1 flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <span>Quick Summary &amp; Manchester Pricing</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 leading-relaxed font-medium">
+                    {service.slug === 'ceramic-coating' &&
+                      'Ceramic coating in Manchester starts from £200 for entry-level protection up to £1,200 for multi-stage Ceramic Pro 9H packages. It chemically bonds to your clear coat to deliver a permanent 9H quartz shield that resists swirl marks, road salt, UV fading, and bird etching for 2 to 5 years.'}
+                    {service.slug === 'machine-polishing' &&
+                      'Professional machine polishing in Manchester ranges from £180 for single-stage gloss enhancement to £250+ for multi-stage paint correction. It permanently removes 85% to 95% of wash swirls, light scratches, buffer trails, and oxidation, restoring mirror reflection and showroom depth.'}
+                    {service.slug === 'leather-coating' &&
+                      'Leather coating and interior protection starts from £150, creating an invisible, breathable barrier over automotive leather, Alcantara, and fabrics. It repels liquid spills, dye transfer from clothing, and harmful UV rays, preventing premature drying, cracking, and staining for up to 12 months.'}
+                    {service.slug === 'the-kings-detail' &&
+                      'The King’s Detail is our flagship complete vehicle transformation starting from £350. Combining exterior multi-stage paint decontamination, gloss enhancement machine polishing, full interior steam cleaning, and leather treatment, it delivers an immaculate, bumper-to-bumper showroom finish.'}
+                    {service.slug === 'deep-clean-engine-bay' &&
+                      'Deep clean detailing starts from £200 with engine bay detailing from £50. Using specialized pH-safe degreasers, steam cleaning, and delicate detailing brushes, we safely remove road grime, grease, and salt build-up from sensitive mechanical compartments, followed by factory-look non-greasy satin dressing.'}
+                    {service.slug === 'full-valet' &&
+                      'A professional full valet in Manchester starts from £100, providing an intensive multi-stage safe exterior wash, wheel arch decontamination, hand drying, and complete interior deep clean. Perfect for seasonal resets, pre-sale preparations, or maintaining vehicle condition.'}
+                    {service.slug === 'maintenance-wash' &&
+                      'Maintenance washes start from £40 for regular clients, utilising strict two-bucket safe wash protocols, grit guards, and pH-neutral snow foams. Specifically designed to safely clean ceramic coated and paint corrected vehicles across Manchester without introducing micro-swirls.'}
+                  </p>
+                </div>
+
                 <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg leading-[1.65] max-w-[60ch] mb-6">
                   {service.fullDesc || service.shortDesc}
                 </p>
