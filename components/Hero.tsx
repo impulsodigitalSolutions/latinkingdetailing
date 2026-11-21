@@ -19,10 +19,10 @@ export function Hero() {
       {/* Background Car & Mobile Van Showcase Image */}
       <div className="absolute inset-x-0 top-0 z-0 h-[46%] sm:inset-0 sm:h-auto">
         <Image
-          src="/hero-image.png"
+          src="/hero-new.png"
           alt="Latin King Detailing mobile detailing van and ceramic coated supercar, Manchester"
           fill
-          preload
+          priority
           className="object-cover object-[center_40%] sm:object-center"
           sizes="100vw"
         />
