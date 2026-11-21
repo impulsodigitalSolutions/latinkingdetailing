@@ -146,7 +146,7 @@ export function CookieConsent() {
               <div className="space-y-1 text-xs sm:text-sm text-zinc-300">
                 <p className="font-semibold text-white">Your Privacy &amp; Cookie Choices</p>
                 <p className="leading-relaxed text-zinc-400 text-xs">
-                  We use essential cookies to maintain secure site operation. With your explicit consent, we also utilise Google Analytics 4 and Microsoft Clarity to understand visitor behaviour and evaluate booking inquiries. See our{' '}
+                  We use essential cookies to maintain secure site operation. With your explicit consent, See our{' '}
                   <Link href="/cookie-policy" className="text-red-400 hover:underline">
                     Cookie Policy
                   </Link>{' '}
