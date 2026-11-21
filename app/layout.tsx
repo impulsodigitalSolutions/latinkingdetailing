@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Space_Grotesk, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
+import { Barlow, Barlow_Condensed, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { ModalProvider } from '@/components/ModalContext';
@@ -15,17 +15,17 @@ import { CookieConsent } from '@/components/CookieConsent';
 import { ClarityScript } from '@/components/ClarityScript';
 import { AnalyticsTracker } from '@/components/AnalyticsTracker';
 
-const spaceGrotesk = Space_Grotesk({
+const barlowCondensed = Barlow_Condensed({
   variable: '--font-heading',
   subsets: ['latin'],
-  weight: ['500', '600', '700'],
+  weight: ['600', '700', '800', '900'],
   display: 'swap',
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const barlow = Barlow({
   variable: '--font-sans',
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 });
 
@@ -122,7 +122,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans h-full antialiased overflow-x-clip`}
+      className={`${barlow.variable} ${barlowCondensed.variable} ${jetbrainsMono.variable} font-sans h-full antialiased overflow-x-clip`}
     >
       <head>
         {/* Google Consent Mode v2 Default Configuration (UK GDPR / PECR compliance) */}
@@ -160,7 +160,7 @@ export default function RootLayout({
           />
         )}
       </head>
-      <body className="min-h-full flex flex-col overflow-x-clip bg-white dark:bg-workshop-dark text-zinc-900 dark:text-zinc-100 selection:bg-red-600 selection:text-white">
+      <body className="min-h-full flex flex-col overflow-x-clip bg-slate-50 dark:bg-[#0e0e0f] text-zinc-900 dark:text-zinc-100 selection:bg-red-600 selection:text-white transition-colors duration-150">
         {/* Google Tag Manager (noscript fallback) */}
         {gtmId && (
           <noscript>

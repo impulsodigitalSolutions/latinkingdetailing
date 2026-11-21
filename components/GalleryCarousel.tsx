@@ -86,17 +86,6 @@ export function GalleryCarousel() {
               Real customer vehicles detailed, machine corrected, and ceramic protected inside our dedicated workshop and mobile units.
             </p>
           </div>
-
-          {/* External Link to Dedicated Our Work Page */}
-          <div>
-            <Link
-              href="/our-work"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-100 dark:bg-workshop-surface hover:bg-red-600 hover:text-white dark:hover:bg-red-600 text-zinc-800 dark:text-zinc-200 text-xs font-bold transition-colors border border-zinc-200 dark:border-white/10"
-            >
-              <span>Explore Our Work</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
         </div>
 
         {/* Carousel Container with Chevrons */}

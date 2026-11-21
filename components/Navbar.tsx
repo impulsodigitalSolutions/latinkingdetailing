@@ -86,20 +86,18 @@ export function Navbar() {
 
   return (
     <>
-      {/* Floating Capsule/Pill Navbar Wrapper */}
-      <div className="sticky top-3 sm:top-5 z-40 w-full px-3 sm:px-6 pointer-events-none transition-colors duration-150">
+      {/* Floating Capsule/Pill Navbar Wrapper - Fully transparent fixed wrapper */}
+      <div className="fixed inset-x-0 top-0 z-50 px-3 pt-3 pointer-events-none transition-all duration-200">
         <header
-          className={`pointer-events-auto max-w-6xl mx-auto rounded-full border transition-colors duration-150 px-4 sm:px-6 py-2 sm:py-2.5 ${
-            isScrolled
-              ? 'bg-white/95 dark:bg-workshop-card border-zinc-300 dark:border-workshop-border shadow-md'
-              : 'bg-white/90 dark:bg-workshop-card/95 border-zinc-200 dark:border-workshop-border shadow-sm'
+          className={`pointer-events-auto max-w-6xl mx-auto rounded-xl border border-zinc-200 dark:border-white/10 bg-white/95 dark:bg-[#111113] backdrop-blur-xs transition-all duration-200 ease-in-out px-4 sm:px-5 flex items-center justify-between shadow-xs dark:shadow-none ${
+            isScrolled ? 'h-12' : 'h-14'
           }`}
         >
-          <div className="flex items-center justify-between gap-2 sm:gap-4">
-            {/* Left: Full Official Brand Logo */}
+          <div className="flex items-center justify-between gap-2 sm:gap-4 w-full">
+            {/* Left: Full Official Brand Logo - Scaled to 36-40px top, 28-30px scrolled */}
             <Link
               href="/"
-              className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 rounded-full py-0.5"
+              className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 rounded-lg py-0.5"
               aria-label="Latin King Detailing"
             >
               {/* Dark mode full logo */}
@@ -107,9 +105,11 @@ export function Navbar() {
                 <Image
                   src="/images/logo-dark.png"
                   alt="Latin King Detailing"
-                  width={140}
-                  height={108}
-                  className="h-9 sm:h-11 md:h-12 w-auto object-contain"
+                  width={160}
+                  height={120}
+                  className={`w-auto object-contain transition-all duration-200 ${
+                    isScrolled ? 'h-[28px] sm:h-[30px]' : 'h-[36px] sm:h-[40px]'
+                  }`}
                   priority
                 />
               </div>
@@ -118,9 +118,11 @@ export function Navbar() {
                 <Image
                   src="/images/logo-light.png"
                   alt="Latin King Detailing"
-                  width={140}
-                  height={108}
-                  className="h-9 sm:h-11 md:h-12 w-auto object-contain"
+                  width={160}
+                  height={120}
+                  className={`w-auto object-contain transition-all duration-200 ${
+                    isScrolled ? 'h-[28px] sm:h-[30px]' : 'h-[36px] sm:h-[40px]'
+                  }`}
                   priority
                 />
               </div>
@@ -276,40 +278,40 @@ export function Navbar() {
               </Link>
             </nav>
 
-            {/* Right Controls: Red Pill CTA Button & Theme Toggle */}
-            <div className="flex items-center gap-2 sm:gap-2.5">
+            {/* Right Controls: Theme Toggle, Red Button & Menu */}
+            <div className="flex items-center gap-1 sm:gap-2">
               {/* Subtle Map Pin Icon Shortcut */}
               <a
                 href={SITE_CONFIG.primaryWorkshop.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden xl:inline-flex items-center justify-center w-8 h-8 rounded-full text-zinc-500 dark:text-zinc-400 hover:text-red-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                className="hidden xl:inline-flex items-center justify-center w-8 h-8 rounded-lg text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-colors"
                 title="Workshop Directions on Google Maps"
                 aria-label="Google Maps Location"
               >
                 <MapPin className="w-4 h-4" />
               </a>
 
-              {/* Primary Red Pill Button (Matching Latin King crown) */}
+              {/* Theme Toggle Button - visible on both mobile and desktop navbar */}
+              <ThemeToggle className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg hover:bg-zinc-100 dark:hover:bg-white/5 text-zinc-950 hover:text-black dark:text-zinc-200 dark:hover:text-white" />
+
+              {/* Primary Red Button (Matching tighter 12px aesthetic) - hidden on mobile, shown on md+ desktop */}
               <button
                 type="button"
                 data-track-cta="Get Quote"
                 data-cta-location="header"
                 onClick={() => openQuoteModal()}
-                className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 cursor-pointer"
+                className="hidden md:inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-lg bg-[#d3262a] hover:bg-[#b91c1c] text-white font-semibold text-xs tracking-wide transition-colors shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 cursor-pointer"
               >
                 <Sparkles className="w-3.5 h-3.5 text-white" />
                 <span className="whitespace-nowrap">Get Quote</span>
               </button>
 
-              {/* Theme Toggle (Circular / rounded-full right next to CTA) */}
-              <ThemeToggle className="rounded-full shrink-0" />
-
-              {/* Mobile Drawer Hamburger Button */}
+              {/* Mobile Drawer Hamburger Button - 44px tap area, plain icon, no background or border */}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="p-2 rounded-full text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors lg:hidden focus:outline-none"
+                className="w-11 h-11 flex items-center justify-center text-zinc-800 hover:text-black dark:text-[#f1eee8] dark:hover:text-white transition-colors lg:hidden focus:outline-none cursor-pointer"
                 aria-label="Open Navigation Menu"
               >
                 <Menu className="w-5 h-5" />
@@ -332,7 +334,7 @@ export function Navbar() {
           {/* Drawer content */}
           <div className="fixed inset-y-0 right-0 max-w-sm w-full bg-white dark:bg-workshop-muted shadow-2xl border-l border-zinc-200 dark:border-zinc-800 p-6 flex flex-col justify-between overflow-y-auto">
             <div>
-              {/* Header with Full Logo */}
+              {/* Header with Full Logo, Quiet Theme Toggle, and Close Button */}
               <div className="flex items-center justify-between pb-5 border-b border-zinc-200 dark:border-zinc-800">
                 <Link
                   href="/"
@@ -345,7 +347,7 @@ export function Navbar() {
                       alt="Latin King Detailing"
                       width={140}
                       height={108}
-                      className="h-11 w-auto object-contain"
+                      className="h-9 w-auto object-contain"
                       priority
                     />
                   </div>
@@ -355,20 +357,23 @@ export function Navbar() {
                       alt="Latin King Detailing"
                       width={140}
                       height={108}
-                      className="h-11 w-auto object-contain"
+                      className="h-9 w-auto object-contain"
                       priority
                     />
                   </div>
                 </Link>
 
-                <button
-                  type="button"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-full text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800"
-                  aria-label="Close menu"
-                >
-                  <X className="w-5 h-5" />
-                </button>
+                <div className="flex items-center gap-1">
+                  <ThemeToggle />
+                  <button
+                    type="button"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="w-11 h-11 flex items-center justify-center text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                    aria-label="Close menu"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
               </div>
 
               {/* Dedicated Services Page Link in Drawer */}

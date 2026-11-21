@@ -276,9 +276,9 @@ export default function AboutPage() {
                   <span>Master Detailer &amp; Founder</span>
                 </div>
 
-                <h3 className="font-heading font-semibold text-2xl sm:text-3xl text-zinc-900 dark:text-white">
+                {/* <h3 className="font-heading font-semibold text-2xl sm:text-3xl text-zinc-900 dark:text-white">
                   TODO: [Founder Name]
-                </h3>
+                </h3> */}
 
                 <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   Ceramic Pro 9H Factory-Certified Installer and Paint Correction Specialist with years of dedicated craft experience restoring sports cars, prestige saloons, and family vehicles across Greater Manchester and Cheshire.
